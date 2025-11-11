@@ -1,0 +1,209 @@
+{
+  "report": {
+    "meta": {
+      "report_id": "DH-TEST-001",
+      "version": "1.0",
+      "generated_at": "Nov 6, 2025",
+      "preview": true
+    },
+    "sections": [
+      {
+        "id": "note_from_defiant",
+        "title": "A Note from Your Defiant Team",
+        "fields": {
+          "provider_name": "Dr. Alisha Patel",
+          "provider_title": "Breast Specialist",
+          "provider_photo_url": "https://via.placeholder.com/80x80.png?text=AP",
+          "message": "We're here to help you find clarity and move forward confidently. This report summarizes what’s been found so far and what your next steps could look like."
+        }
+      },
+      {
+        "id": "diagnosis_summary",
+        "title": "Your Diagnosis So Far",
+        "fields": {
+          "primary_diagnosis": "Invasive Ductal Carcinoma (IDC)",
+          "date_of_diagnosis": "October 22, 2025",
+          "diagnosis_summary": "A small breast cancer was detected in your left breast during imaging. Your biopsy confirmed IDC, which is the most common type of breast cancer."
+        },
+        "tumors": [
+          {
+            "title": "Left breast lesion",
+            "cancer_type": "IDC",
+            "location": "Upper outer quadrant",
+            "size_cm": 1.2,
+            "stage": "Stage IA",
+            "grade": "Grade 2",
+            "hormoneReceptorStatus": "ER+/PR+",
+            "her2Status": "HER2-",
+            "laterality": "Left",
+            "notes": "Margins appear clear on biopsy.",
+            "source": {
+              "type": "Pathology Report",
+              "date": "Oct 21, 2025",
+              "report_name": "Biopsy #R2025-1102",
+              "facility": "Dana-Farber Cancer Institute"
+            }
+          }
+        ],
+        "whatThisMeans": {
+          "goodNews": "This cancer was found early, and treatment outcomes are excellent.",
+          "newOptions": "You’ll likely have several options for surgery and targeted therapies.",
+          "treatmentFocus": "The focus is to remove the cancer and reduce recurrence risk."
+        },
+        "footer_note": "We’ll confirm staging after imaging and surgical consultation."
+      },
+      {
+        "id": "next_steps",
+        "title": "Your Next Steps",
+        "description": "We’ve outlined what to expect and where you are in your diagnostic journey.",
+        "progressJourney": {
+          "current_stage": "Surgical Consultation",
+          "stages": [
+            { "name": "Imaging", "status": "complete" },
+            { "name": "Biopsy", "status": "complete" },
+            { "name": "Surgical Consult", "status": "in_progress" },
+            { "name": "Treatment Planning", "status": "pending" }
+          ]
+        },
+        "items": [
+          {
+            "name": "Schedule MRI for surgical mapping",
+            "category": "Imaging",
+            "status": "Pending",
+            "explanation": "An MRI can confirm there are no other lesions.",
+            "date": "Week of Nov 10",
+            "source": {
+              "type": "Radiology Order",
+              "date": "Nov 5, 2025"
+            }
+          },
+          {
+            "name": "Discuss surgery type with surgeon",
+            "category": "Surgery",
+            "status": "In Progress",
+            "explanation": "You’ll review options for lumpectomy vs mastectomy."
+          }
+        ]
+      },
+      {
+        "id": "treatment_planning",
+        "title": "Treatment Planning (Preview)",
+        "fields": {
+          "summary": "Treatment will depend on final surgical findings and receptor testing. You’ll likely need a short course of radiation after surgery.",
+          "disclaimer": "This is an early planning overview and may change after surgery.",
+          "as_of_date": "Nov 5, 2025"
+        },
+        "treatments": [
+          {
+            "name": "Lumpectomy",
+            "description": "Removes the tumor and surrounding tissue while conserving the breast.",
+            "specialty": "Breast Surgery",
+            "likelihood": "Very likely",
+            "expected_timing": "November 2025",
+            "subelements": {
+              "treatment_time": {
+                "duration": "Outpatient (1 day)",
+                "notes": "Typically home the same day."
+              },
+              "side_effects": [
+                {
+                  "description": "Temporary soreness and bruising",
+                  "severity": "Mild"
+                },
+                {
+                  "description": "Changes in breast shape or sensitivity",
+                  "severity": "Moderate"
+                }
+              ]
+            }
+          },
+          {
+            "name": "Adjuvant Radiation Therapy",
+            "description": "Targets any remaining cancer cells after surgery.",
+            "specialty": "Radiation Oncology",
+            "likelihood": "Likely",
+            "expected_timing": "2–3 weeks after surgery",
+            "subelements": {
+              "treatment_time": {
+                "duration": "3–4 weeks",
+                "notes": "Short daily sessions."
+              }
+            }
+          }
+        ],
+        "clinical_trials": [
+          {
+            "name": "TailorX Extended Outcomes Study",
+            "description": "Examines outcomes for women with early-stage HR+ breast cancer.",
+            "phase": "IV",
+            "status": "Recruiting",
+            "location": "Multiple sites (including Boston)",
+            "eligibility": "Stage I, HER2-negative, Oncotype <26",
+            "link": "https://clinicaltrials.gov/ct2/show/NCTXXXXXXX"
+          }
+        ],
+        "disclaimer_footer": "This section is informational only and not a treatment recommendation."
+      },
+      {
+        "id": "oncologist_questions",
+        "title": "Questions to Ask at Your Next Visit",
+        "description": "Bring these to your next consultation so you feel confident about your care plan.",
+        "categories": [
+          {
+            "name": "About the Diagnosis",
+            "questions": [
+              {
+                "text": "Can you explain what stage I means in my situation?",
+                "definition_terms": [
+                  {
+                    "term": "Stage I",
+                    "definition": "An early-stage breast cancer that is small and has not spread."
+                  }
+                ]
+              },
+              { "text": "Are any additional tests or scans needed before surgery?" }
+            ]
+          },
+          {
+            "name": "About Treatment",
+            "questions": [
+              {
+                "text": "Will I need radiation after surgery?"
+              },
+              {
+                "text": "What are the pros and cons of lumpectomy vs mastectomy?"
+              }
+            ]
+          }
+        ],
+        "footer_note": "Tip: bring a friend or record the visit (with your doctor’s consent)."
+      },
+      {
+        "id": "care_team",
+        "title": "Your Care Team",
+        "items": [
+          {
+            "name": "Dr. Alisha Patel",
+            "title": "Breast Surgeon",
+            "specialty": "Surgical Oncology",
+            "contact_email": "apatel@defianthealth.com"
+          },
+          {
+            "name": "Dr. James Lin",
+            "title": "Radiation Oncologist",
+            "specialty": "Radiation Therapy"
+          }
+        ]
+      },
+      {
+        "id": "footer",
+        "title": "About This Report",
+        "fields": {
+          "disclaimer": "This report is for informational use only and not a substitute for medical advice.",
+          "contact_info": "Questions? Email reports@defianthealth.com",
+          "organization": "Defiant Health © 2025"
+        }
+      }
+    ]
+  }
+}

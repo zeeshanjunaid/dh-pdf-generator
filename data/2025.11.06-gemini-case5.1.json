@@ -1,0 +1,578 @@
+{
+  "report": {
+    "meta": {
+      "report_id": "RPT-2025-1103-001",
+      "generated_at": "2025-11-03T00:00:00Z",
+      "patient_id": null,
+      "version": "1.0.0"
+    },
+    "sections": [
+      {
+        "id": "note_from_defiant",
+        "title": "A Note from Defiant",
+        "fields": {
+          "provider_name": null,
+          "provider_title": null,
+          "provider_photo_url": null,
+          "message": null
+        }
+      },
+      {
+        "id": "records_overview",
+        "title": "Your Records",
+        "fields": {
+          "patient_name": "Jane Doe",
+          "date_of_review": "2025-11-03",
+          "prepared_by": "Defiant Health",
+          "sources_summary": "Medical records shared with Defiant Health as of 11/02/2025"
+        },
+        "records_received": [
+          {
+            "name": "New Patient Chart (Breast Oncology)",
+            "date_received": "2024-12-17"
+          },
+          {
+            "name": "MM Telehealth Consult (Left Breast Biopsy Results)",
+            "date_received": "2024-12-03"
+          },
+          {
+            "name": "Anatomic Pathology (Left Breast Core Biopsy)",
+            "date_received": "2024-12-01"
+          },
+          {
+            "name": "Mammography (Post Clip Uni/Left)",
+            "date_received": "2024-12-03"
+          },
+          {
+            "name": "Biopsy, Breast, w/ Ultrasound Guidance (Proc) (Left Breast)",
+            "date_received": "2024-11-27"
+          },
+          {
+            "name": "Mammography, Diagnostic, Digital, Unilateral (Left Breast)",
+            "date_received": "2024-11-12"
+          },
+          {
+            "name": "Mammography (Unilat Left - Diagnostic)",
+            "date_received": "2024-10-17"
+          },
+          {
+            "name": "Mammography Screening (Bilateral)",
+            "date_received": "2024-09-23"
+          },
+          {
+            "name": "Patient Case (Breast Cancer Diagnosis)",
+            "date_received": "2024-12-03"
+          },
+          {
+            "name": "Surgical Pathology Report (Right Breast Excisional Biopsy)",
+            "date_received": "2022-11-16"
+          },
+          {
+            "name": "Mammography (Breast Specimen Right)",
+            "date_received": "2022-11-14"
+          },
+          {
+            "name": "US Core Biopsy Right (Canceled Biopsy)",
+            "date_received": "2022-07-25"
+          },
+          {
+            "name": "Ultrasound (Breast Right Limited - Follow-up)",
+            "date_received": "2022-07-06"
+          },
+          {
+            "name": "Mammography Screening (Bilateral)",
+            "date_received": "2022-06-28"
+          },
+          {
+            "name": "Ultrasound (Breast Right Limited - 6 Month Follow-up)",
+            "date_received": "2021-12-15"
+          },
+          {
+            "name": "Mammography (Post Clip Uni/Right)",
+            "date_received": "2021-06-13"
+          },
+          {
+            "name": "US Core Biopsy Right (Procedure and Addendum)",
+            "date_received": "2021-06-15"
+          },
+          {
+            "name": "Ultrasound (Breast Right Limited - Initial)",
+            "date_received": "2021-06-07"
+          },
+          {
+            "name": "Breast Surgery Note (New Patient Visit)",
+            "date_received": "2022-08-11"
+          }
+        ],
+        "notes": {
+          "limitations": "We can only review the test results and doctor notes that were provided to us. If you have had other tests, visits, or treatments not included in these records, this decision aid may be missing important information.",
+          "disclaimer": "This is not medical advice. Before making any medical decisions: Always consult with your healthcare team. Make sure your doctors have all of your complete medical records and test results. Discuss any questions or concerns about this decision aid with your oncologist."
+        }
+      },
+      {
+        "id": "diagnosis_summary",
+        "title": "Your Diagnosis",
+        "fields": {
+          "primary_diagnosis": "Invasive Ductal Carcinoma",
+          "diagnosis_summary": "Invasive ductal carcinoma (IDC) is the most common type of breast cancer. In simple terms, it started in the milk ducts (DCIS) and has now grown slightly outside of the ducts (IDC).",
+          "date_of_diagnosis": "2024-12-03"
+        },
+        "tumors": [
+          {
+            "title": "Tumor 1",
+            "cancer_type": "Invasive Ductal Carcinoma",
+            "location": "Left breast (8mm)",
+            "size_cm": 0.8,
+            "stage": "Clinical stage I/II",
+            "grade": "Nottingham grade 2",
+            "hormoneReceptorStatus": "Estrogen positive, Progesterone positive",
+            "her2Status": "HER2 negative (IHC 2+, FISH negative)",
+            "laterality": "left",
+            "source": {
+              "type": "pathology",
+              "date": "2024-12-01",
+              "report_name": "Anatomic Pathology (Left Breast Core Biopsy)",
+              "report_id": null,
+              "facility": null
+            },
+            "notes": "The tumor is small —less than a centimeter, or about the size of a dime. Grade 2 is considered intermediate —not the slowest, but also not the fastest or most aggressive. Initial tests show no signs of spread to the lymph nodes."
+          }
+        ],
+        "whatThisMeans": {
+          "goodNews": "The tumor is small, and initial tests show no signs of spread to the lymph nodes, which is a positive sign for a successful outcome.",
+          "newOptions": "A critical step in determining your course of treatment will likely come from something called the Oncotype DX score. This score will be the key piece of information that helps you and your Medical Oncologist decide if you can safely avoid chemotherapy.",
+          "treatmentFocus": "The primary, highly effective long-term treatment will be anti-hormone pills (endocrine therapy) to 'starve' the cancer and keep it from returning for years, because your cancer is hormone receptor positive.",
+          "otherConsiderations": "Your HER2 status suggests that your cancer does not overproduce the HER2 protein. This suggests you will not need the specific, targeted medications designed for HER2-positive cancer."
+        },
+        "footer_note": null
+      },
+      {
+        "id": "next_steps",
+        "title": "Next Steps",
+        "description": "Follow-up actions and recommendations",
+        "progressJourney": {
+          "current_stage": "Diagnostic Testing",
+          "stages": [
+            {
+              "name": "Diagnostic Testing",
+              "status": "complete",
+              "definition": null
+            },
+            {
+              "name": "Staging Testing",
+              "status": "in_progress",
+              "definition": null
+            },
+            {
+              "name": "Planning",
+              "status": "pending",
+              "definition": null
+            },
+            {
+              "name": "Treatment",
+              "status": "pending",
+              "definition": null
+            }
+          ]
+        },
+        "items": [
+          {
+            "name": "Bilateral mammogram",
+            "date": "2024-09-23",
+            "explanation": null,
+            "category": "Test",
+            "status": "completed",
+            "definition": null,
+            "source": {
+              "type": "mammogram",
+              "date": "2024-09-23",
+              "report_name": "Mammography Screening (Bilateral)",
+              "report_id": null,
+              "facility": null
+            }
+          },
+          {
+            "name": "Ultrasound - left breast",
+            "date": "2024-11-12",
+            "explanation": null,
+            "category": "Test",
+            "status": "completed",
+            "definition": null,
+            "source": {
+              "type": "ultrasound",
+              "date": "2024-11-12",
+              "report_name": "Mammography, Diagnostic, Digital, Unilateral (Left Breast)",
+              "report_id": null,
+              "facility": null
+            }
+          },
+          {
+            "name": "Axillary ultrasound",
+            "date": "2024-11-12",
+            "explanation": null,
+            "category": "Test",
+            "status": "completed",
+            "definition": null,
+            "source": {
+              "type": "ultrasound",
+              "date": "2024-11-12",
+              "report_name": "Mammography, Diagnostic, Digital, Unilateral (Left Breast)",
+              "report_id": null,
+              "facility": null
+            }
+          },
+          {
+            "name": "Breast core needle biopsy",
+            "date": "2024-11-27",
+            "explanation": null,
+            "category": "Test",
+            "status": "completed",
+            "definition": null,
+            "source": {
+              "type": "biopsy",
+              "date": "2024-11-27",
+              "report_name": "Biopsy, Breast, w/ Ultrasound Guidance (Proc) (Left Breast)",
+              "report_id": null,
+              "facility": null
+            }
+          },
+          {
+            "name": "Pathology testing for ER/PR/HER2 status",
+            "date": "2024-11-27",
+            "explanation": null,
+            "category": "Test",
+            "status": "completed",
+            "definition": null,
+            "source": {
+              "type": "pathology",
+              "date": "2024-12-01",
+              "report_name": "Anatomic Pathology (Left Breast Core Biopsy)",
+              "report_id": null,
+              "facility": null
+            }
+          },
+          {
+            "name": "Medical Oncology Consultation",
+            "date": "2024-12-17",
+            "explanation": "Appointment is scheduled for 12/17/24.",
+            "category": "Referral",
+            "status": "scheduled",
+            "definition": null,
+            "source": {
+              "type": "clinical_note",
+              "date": "2024-12-23",
+              "report_name": "Telehealth Consult",
+              "report_id": null,
+              "facility": null
+            }
+          },
+          {
+            "name": "Surgical Oncology Consultation",
+            "date": "2025-01-27",
+            "explanation": "Appointment is scheduled for 1/27/25.",
+            "category": "Referral",
+            "status": "scheduled",
+            "definition": null,
+            "source": {
+              "type": "clinical_note",
+              "date": "2024-12-23",
+              "report_name": "Telehealth Consult",
+              "report_id": null,
+              "facility": null
+            }
+          },
+          {
+            "name": "Germline genetic testing",
+            "date": null,
+            "explanation": "Blood test to check for inherited cancer gene changes (like BRCA1/BRCA2).",
+            "category": "Test",
+            "status": "pending",
+            "definition": null,
+            "source": {
+              "type": "guideline",
+              "date": null,
+              "report_name": "Dana-Farber Clinical Pathways",
+              "report_id": null,
+              "facility": "Dana-Farber Cancer Institute"
+            }
+          },
+          {
+            "name": "Oncotype DX",
+            "date": null,
+            "explanation": "Genetic test of the tumor to predict recurrence risk and whether chemotherapy would be beneficial. This is typically a test done using samples taken from the surgical removal of any tumor.",
+            "category": "Test",
+            "status": "pending",
+            "definition": null,
+            "source": {
+              "type": "guideline",
+              "date": null,
+              "report_name": "Dana-Farber Clinical Pathways",
+              "report_id": null,
+              "facility": "Dana-Farber Cancer Institute"
+            }
+          },
+          {
+            "name": "Referral to Radiation Oncology",
+            "date": null,
+            "explanation": "Recommended after breast surgery if breast conserving surgery is performed.",
+            "category": "Referral",
+            "status": "pending",
+            "definition": null,
+            "source": {
+              "type": "guideline",
+              "date": null,
+              "report_name": "Dana-Farber Clinical Pathways",
+              "report_id": null,
+              "facility": "Dana-Farber Cancer Institute"
+            }
+          }
+        ]
+      },
+      {
+        "id": "treatment_planning",
+        "title": "Your Likely Treatments",
+        "fields": {
+          "summary": "While your treatment plan will vary depending on the results of some of the tests and scans that need to be done, we have put together the most likely scenario based on what we know from your Medical Records as of 11/02/2025.",
+          "as_of_date": "2025-11-02",
+          "source": "Dana-Farber Clinical Pathways",
+          "source_link": null,
+          "disclaimer": null
+        },
+        "treatments": [
+          {
+            "name": "Endocrine therapy (hormone therapy)",
+            "description": "Most likely treatment given that you are hormone receptor positive (ER+ and PR+).",
+            "specialty": "medical oncology",
+            "likelihood": "highly_likely",
+            "expected_timing": "Typically started by the medical oncologist after surgery.",
+            "definition": null,
+            "subelements": {
+              "medications": [
+                {
+                  "name": "Aromatase inhibitors",
+                  "description": "Includes letrozole, anastrozole, or exemestane.",
+                  "glossary": []
+                },
+                {
+                  "name": "Selective Estrogen Receptor Modulators (SERM)",
+                  "description": "Like tamoxifen — pills that block estrogen.",
+                  "glossary": []
+                }
+              ],
+              "side_effects": [],
+              "treatment_time": {
+                "duration": null,
+                "notes": "Administered orally and continued long term depending on response."
+              }
+            },
+            "source": {
+              "type": "pathway",
+              "report_name": "Dana-Farber Clinical Pathways",
+              "report_id": null,
+              "facility": null
+            }
+          },
+          {
+            "name": "Surgical Oncology",
+            "description": "Surgery is likely required to fully remove the invasive ductal carcinoma (8mm) and associated DCIS.",
+            "specialty": "surgical oncology",
+            "likelihood": "highly_likely",
+            "expected_timing": "Immediate",
+            "definition": null,
+            "subelements": {
+              "medications": [],
+              "side_effects": [],
+              "treatment_time": {
+                "duration": null,
+                "notes": "The pros and cons of Lumpectomy vs. Mastectomy will be a valuable conversation to have with your surgeon."
+              }
+            },
+            "source": {
+              "type": "oncologist_summary",
+              "report_name": "Defiant Health",
+              "report_id": null,
+              "facility": "Defiant Health"
+            }
+          },
+          {
+            "name": "Chemotherapy",
+            "description": "This might be considered a part of your therapy regimen and will be dependent on the Oncotype DX score.",
+            "specialty": "medical oncology",
+            "likelihood": "possible",
+            "expected_timing": null,
+            "definition": null,
+            "subelements": {
+              "medications": [],
+              "side_effects": [],
+              "treatment_time": {
+                "duration": null,
+                "notes": null
+              }
+            },
+            "source": {
+              "type": "pathway",
+              "report_name": "Dana-Farber Clinical Pathways",
+              "report_id": null,
+              "facility": null
+            }
+          },
+          {
+            "name": "Radiation Oncology",
+            "description": "This might be recommended if you and your surgeon choose a Lumpectomy (Breast-Conserving Surgery).",
+            "specialty": "radiation oncology",
+            "likelihood": "possible",
+            "expected_timing": "After surgery",
+            "definition": null,
+            "subelements": {
+              "medications": [],
+              "side_effects": [],
+              "treatment_time": {
+                "duration": null,
+                "notes": null
+              }
+            },
+            "source": {
+              "type": "oncologist_summary",
+              "report_name": "Defiant Health",
+              "report_id": null,
+              "facility": "Defiant Health"
+            }
+          },
+          {
+            "name": "Ovarian suppression",
+            "description": "For premenopausal patients, ovarian suppression may be added to endocrine therapy as an alternative to chemotherapy depending on the Oncotype DX score result.",
+            "specialty": "medical oncology",
+            "likelihood": "possible",
+            "expected_timing": null,
+            "definition": null,
+            "subelements": {
+              "medications": [],
+              "side_effects": [],
+              "treatment_time": {
+                "duration": null,
+                "notes": "This is often given via monthly injections to temporarily or permanently stop ovarian function, significantly improving treatment effectiveness."
+              }
+            },
+            "source": {
+              "type": "pathway",
+              "report_name": "Dana-Farber Clinical Pathways",
+              "report_id": null,
+              "facility": null
+            }
+          }
+        ],
+        "clinical_trials": [],
+        "disclaimer_footer": null
+      },
+      {
+        "id": "oncologist_questions",
+        "title": "Helpful Questions for Your Oncologist",
+        "description": "Prompts to guide your next oncology visit.",
+        "categories": [
+          {
+            "name": "Questions for the Medical Oncologist",
+            "questions": [
+              {
+                "text": "Given my specific tumor status ($\text{HR}+/\text{HER}2-$), how soon can the OncotypeDX test be ordered, and when can we expect the results? How will this single score determine my need for chemotherapy?",
+                "definition_terms": []
+              },
+              {
+                "text": "I am currently taking an Estrogen Patch and Progesterone Pill. Since my cancer is hormone receptor positive, what is the immediate risk of continuing this, and when exactly should I stop taking?",
+                "definition_terms": []
+              },
+              {
+                "text": "What specific anti-hormone medication (e.g., Tamoxifen or an Aromatase Inhibitor) do you recommend, and for how many years will I need to take it? What are the most common side effects of this medication?",
+                "definition_terms": []
+              },
+              {
+                "text": "If my OncotypeDX score is high, what chemotherapy regimen would you recommend, and how many cycles would that involve?",
+                "definition_terms": []
+              },
+              {
+                "text": "Since I am premenopausal and my treatment will include endocrine therapy, what is the impact on my future fertility, and should I meet with the fertility counselor immediately?",
+                "definition_terms": []
+              },
+              {
+                "text": "What is the likelihood of experiencing specific side effects, like hair loss, weight changes, or joint pain, with the systemic treatment you anticipate recommending?",
+                "definition_terms": []
+              },
+              {
+                "text": "What support services or medications are available here at the clinic for managing fatigue, hot flashes, or any emotional concerns related to my diagnosis and treatment?",
+                "definition_terms": []
+              }
+            ]
+          },
+          {
+            "name": "Questions for the Surgical Oncologist",
+            "questions": [
+              {
+                "text": "Given my tumor size (8 mm) and clear margins, am I a good candidate for Breast-Conserving Surgery (Lumpectomy)? What factors might require me to have a mastectomy instead?",
+                "definition_terms": []
+              },
+              {
+                "text": "My initial ultrasound was negative for lymph node involvement. Will I still need a Sentinel Lymph Node Biopsy (SLNB) during the surgery, and what happens if cancer is found in those nodes?",
+                "definition_terms": []
+              },
+              {
+                "text": "What is your goal for clear margins, and what is the chance I would need a second surgery to clear them (a re-excision)?",
+                "definition_terms": []
+              },
+              {
+                "text": "What is the typical recovery time after a lumpectomy or mastectomy? When can I resume normal activities like running and walking my dog (as noted in my history)?",
+                "definition_terms": []
+              },
+              {
+                "text": "What will the breast look like after surgery, and will a plastic surgeon be involved in my care?",
+                "definition_terms": []
+              },
+              {
+                "text": "Who is the best point person on your team (e.g., a nurse navigator) for scheduling, pre-op instructions, and answering questions right after surgery?",
+                "definition_terms": []
+              }
+            ]
+          },
+          {
+            "name": "Questions for the Radiation Oncologist (Pending Referral)",
+            "questions": [
+              {
+                "text": "If I choose a Lumpectomy and SNLB, will I definitively need radiation therapy? If so, what is the goal of the radiation (e.g., reducing local recurrence)?",
+                "definition_terms": []
+              },
+              {
+                "text": "What is the typical course of treatment (e.g., 6 weeks of standard radiation, or a shorter course like hypofractionated), and how is that decision made?",
+                "definition_terms": []
+              },
+              {
+                "text": "What are the most common short-term side effects (skin changes, fatigue) and long-term risks (lung or heart exposure) associated with the specific radiation plan you would recommend for me?",
+                "definition_terms": []
+              },
+              {
+                "text": "What daily commitment does treatment require? Can I drive myself to and from my daily radiation appointments?",
+                "definition_terms": []
+              },
+              {
+                "text": "Does your center offer resources or support to help manage the fatigue that often comes with daily radiation?",
+                "definition_terms": []
+              }
+            ]
+          }
+        ],
+        "footer_note": null
+      },
+      {
+        "id": "care_team",
+        "title": "Your Care Team",
+        "items": []
+      },
+      {
+        "id": "footer",
+        "title": "Report Footer",
+        "fields": {
+          "disclaimer": "This decision aid helps you understand your medical information and prepare for doctor visits. It is not medical advice and does not replace talking with your healthcare team.",
+          "contact_info": "Questions? Contact us at support@defianthealth.com",
+          "organization": "Defiant Health"
+        }
+      }
+    ]
+  }
+}

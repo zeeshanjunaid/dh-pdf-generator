@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Defiant Health Diagnostic Report</title>
+  <style>
+    :root {
+      --aubergine: #38284E;
+      --ivory: #FFF8F4;
+      --honey: #FFC34D;
+      --persimmon: #FF7449;
+      --defiant-black: #1F1D2C;
+      --gray-lightest: #F8F8F8;
+      --gray: #8B8991;
+    }
+
+    body.defiant-report {
+      margin: 0;
+      background-color: var(--ivory);
+      color: var(--defiant-black);
+      font-family: "Visuelt Pro", "Inter", sans-serif;
+      line-height: 1.6;
+      padding: 2rem 1.5rem;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    header.report-header {
+      background-color: var(--aubergine);
+      color: var(--ivory);
+      padding: 2rem 1.5rem;
+      text-align: center;
+      font-family: "Druk", "Quincy CF", serif;
+      border-radius: 8px;
+      margin-bottom: 2rem;
+    }
+
+    header.report-header h1 {
+      font-weight: 700;
+      font-size: 2.5rem;
+      margin: 0 0 0.25rem 0;
+      line-height: 1.1;
+    }
+
+    header.report-header .subtitle {
+      font-family: "Visuelt Pro", "Inter", sans-serif;
+      font-weight: 500;
+      font-size: 1.125rem;
+      margin: 0;
+      opacity: 0.85;
+    }
+
+    main.report-body {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    section.section {
+      background: #ffffff;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(56, 40, 78, 0.1);
+      padding: 2rem 2.5rem;
+      margin-bottom: 2rem;
+      font-size: 1rem;
+      color: var(--defiant-black);
+    }
+
+    .section-title {
+      font-family: "Druk", "Quincy CF", serif;
+      font-weight: 700;
+      font-size: 2rem;
+      color: var(--aubergine);
+      margin-bottom: 1.25rem;
+      border-bottom: 2px solid var(--honey);
+      padding-bottom: 0.5rem;
+    }
+
+    /* Provider block */
+    .provider {
+      display: flex;
+      align-items: center;
+      margin-bottom: 1.5rem;
+    }
+
+    .provider-photo {
+      border-radius: 50%;
+      width: 72px;
+      height: 72px;
+      object-fit: cover;
+      margin-right: 1.5rem;
+      box-shadow: 0 0 6px rgba(56, 40, 78, 0.15);
+    }
+
+    .provider-name {
+      font-family: "Druk", "Quincy CF", serif;
+      font-weight: 700;
+      font-size: 1.25rem;
+      margin: 0 0 0.25rem 0;
+      color: var(--aubergine);
+    }
+
+    .provider-title {
+      font-family: "Visuelt Pro", "Inter", sans-serif;
+      font-weight: 600;
+      font-size: 1rem;
+      margin: 0;
+      color: var(--gray);
+    }
+
+    /* Summary box */
+    .summary-box {
+      background: var(--gray-lightest);
+      border-radius: 6px;
+      padding: 1rem 1.5rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem 3rem;
+      font-family: "Visuelt Pro", "Inter", sans-serif;
+      font-weight: 600;
+      font-size: 1rem;
+      color: var(--defiant-black);
+    }
+
+    .summary-item {
+      min-width: 140px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .summary-item strong {
+      font-weight: 700;
+      margin-bottom: 0.25rem;
+      color: var(--aubergine);
+    }
+
+    .summary-item span {
+      font-weight: 500;
+      color: var(--defiant-black);
+    }
+
+    /* Records list */
+    .records-list h3 {
+      font-family: "Druk", "Quincy CF", serif;
+      font-weight: 700;
+      font-size: 1.5rem;
+      margin-bottom: 0.75rem;
+      color: var(--aubergine);
+    }
+
+    ul.records {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      border-top: 1px solid var(--gray-lightest);
+      border-bottom: 1px solid var(--gray-lightest);
+    }
+
+    li.record-item {
+      display: flex;
+      justify-content: space-between;
+      padding: 0.75rem 1rem;
+      border-bottom: 1px solid var(--gray-lightest);
+      font-family: "Visuelt Pro", "Inter", sans-serif;
+      font-weight: 500;
+      font-size: 0.95rem;
+      color: var(--defiant-black);
+    }
+
+    li.record-item:last-child {
+      border-bottom: none;
+    }
+
+    .record-name {
+      font-weight: 600;
+      color: var(--aubergine);
+    }
+
+    .record-date {
+      color: var(--gray);
+      font-size: 0.9rem;
+    }
+
+    /* Aside blocks */
+    aside.records-sidebar {
+      margin-top: 1.5rem;
+      display: flex;
+      gap: 2rem;
+      flex-wrap: wrap;
+      font-family: "Visuelt Pro", "Inter", sans-serif;
+      color: var(--defiant-black);
+    }
+
+    .limitations, .disclaimer {
+      flex: 1 1 300px;
+      background: var(--gray-lightest);
+      border-radius: 6px;
+      padding: 1rem 1.5rem;
+      font-size: 0.9rem;
+      line-height: 1.4;
+    }
+
+    .limitations h4, .disclaimer h4 {
+      font-family: "Druk", "Quincy CF", serif;
+      font-weight: 700;
+      font-size: 1.1rem;
+      margin-top: 0;
+      margin-bottom: 0.5rem;
+      color: var(--aubergine);
+    }
+
+    /* Diagnosis Summary */
+    .diagnosis-info {
+      display: flex;
+      gap: 3rem;
+      margin-bottom: 1rem;
+      font-family: "Visuelt Pro", "Inter", sans-serif;
+      font-weight: 600;
+      font-size: 1rem;
+      color: var(--defiant-black);
+    }
+
+    .diagnosis-line strong {
+      color: var(--aubergine);
+      margin-right: 0.3rem;
+    }
+
+    .diagnosis-text {
+      font-family: "Visuelt Pro", "Inter", sans-serif;
+      font-weight: 400;
+      font-size: 1rem;
+      margin-bottom: 1.5rem;
+      color: var(--defiant-black);
+      line-height: 1.5;
+    }
+
+    .tumor-section h3 {
+      font-family: "Druk", "Quincy CF", serif;
+      font-weight: 700;
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      color: var(--aubergine);
+    }
+
+    .tumor-item {
+      border: 1px solid var(--gray-lightest);
+      border-radius: 6px;
+      padding: 1rem 1.5rem;
+      margin-bottom: 1rem;
+      font-family: "Visuelt Pro", "Inter", sans-serif;
+      font-size: 0.95rem;
+      color: var(--defiant-black);
+      line-height: 1.4;
+    }
+
+    .tumor-item h4 {
+      font-family: "Druk", "Quincy CF", serif;
+      font-weight: 700;
+      font-size: 1.2rem;
+      margin-top: 0;
+      margin-bottom: 0.5rem;
+      color: var(--aubergine);
+    }
+
+    .tumor-item p {
+      margin: 0.15rem 0;
+    }
+
+    .tumor-item p strong {
+      color: var(--aubergine);
+    }
+
+    .tumor-item p.notes {
+      font-style: italic;
+      margin-top: 0.5rem;
+      color: var(--gray);
+    }
+
+    /* What This Means */
+    .meaning-section {
+      background: var(--gray-lightest);
+      border-radius: 6px;
+      padding: 1rem 1.5rem;
+      font-family: "Visuelt Pro", "Inter", sans-serif;
+      font-size: 1rem;
+      color: var(--defiant-black);
+      line-height: 1.5;
+    }
+
+    .meaning-section h3 {
+      font-family: "Druk", "Quincy CF", serif;
+      font-weight: 700;
+      font-size: 1.5rem;
+      margin-top: 0;
+      margin-bottom: 1rem;
+      color: var(--aubergine);
+    }
+
+    /* Next Steps */
+    .next-steps .description {
+      font-family: "Visuelt Pro", "Inter", sans-serif;
+      font-size: 1rem;
+      margin-bottom: 1.5rem;
+      color: var(--defiant-black);
+      line-height: 1.5;
+    }
+
+    .journey p {
+      font-family: "Visuelt Pro", "Inter", sans-serif;
+      font-weight: 600;
+      font-size: 1rem;
+      margin-bottom: 1rem;
+      color: var(--aubergine);
+    }
+
+    .stages {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      font-family: "Visuelt Pro", "Inter", sans-serif;
+      font-size: 0.9rem;
+    }
+
+    .stage-item {
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      border: 1px solid var(--gray-lightest);
+      background-color: var(--gray-lightest);
+      color: var(--gray);
+      font-weight: 600;
+      user-select: none;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .stage-item.completed {
+      background-color: var(--honey);
+      border-color: var(--honey);
+      color: var(--aubergine);
+    }
+
+    .stage-item.current {
+      background-color: var(--persimmon);
+      border-color: var(--persimmon);
+      color: var(--ivory);
+    }
+
+    .stage-item.pending {
+      background-color: var(--gray-lightest);
+      border-color: var(--gray-lightest);
+      color: var(--gray);
+    }
+
+    .stage-name {
+      font-weight: 700;
+    }
+
+    .stage-status {
+      font-weight: 400;
+      font-size: 0.85rem;
+      margin-left: 0.3rem;
+      opacity: 0.7;
+    }
+
+    .steps-list {
+      margin-top: 1rem;
+      font-family: "Visuelt Pro", "Inter", sans-serif;
+    }
+
+    .step-item {
+      background: var(--gray-lightest);
+      border-radius: 6px;
+      padding: 1rem 1.25rem;
+      margin-bottom: 1rem;
+      border-left: 6px solid var(--gray-lightest);
+      transition: border-color 0.3s;
+    }
+
+    .step-item.completed {
+      border-left-color: var(--honey);
+      color: var(--defiant-black);
+    }
+
+    .step-item.in_progress {
+      border-left-color: var(--persimmon);
+      color: var(--defiant-black);
+    }
+
+    .step-item.pending {
+      border-left-color: var(--gray-lightest);
+      color: var(--gray);
+    }
+
+    .step-item h4 {
+      margin: 0 0 0.25rem 0;
+      font-family: "Druk", "Quincy CF", serif;
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: var(--aubergine);
+    }
+
+    .step-item .date, .step-item .explanation {
+      margin: 0.15rem 0;
+      font-size: 0.9rem;
+      color: var(--defiant-black);
+    }
+
+    .step-item .source {
+      font-size: 0.85rem;
+      color: var(--gray);
+      margin-top: 0.5rem;
+    }
+
+    /* Treatment Planning */
+    .treatments h3 {
+      font-family: "Druk", "Quincy CF", serif;
+      font-weight: 700;
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      color: var(--aubergine);
+    }
+
+    .treatment {
+      border: 1px solid var(--gray-lightest);
+      border-radius: 6px;
+      padding: 1rem 1.5rem;
+      margin-bottom: 1rem;
+      font-family: "Visuelt Pro", "Inter", sans-serif;
+      font-size: 1rem;
+      color: var(--defiant-black);
+      line-height: 1.4;
+    }
+
+    .treatment h4 {
+      font-family: "Druk", "Quincy CF", serif;
+      font-weight: 700;
+      font-size: 1.25rem;
+      margin-top: 0;
+      margin-bottom: 0.5rem;
+      color: var(--aubergine);
+    }
+
+    .treatment p {
+      margin: 0.25rem 0;
+    }
+
+    .treatment p strong {
+      color: var(--aubergine);
+    }
+
+    .treatment .source {
+      font-size: 0.85rem;
+      color: var(--gray);
+      margin-top: 0.5rem;
+    }
+
+    /* Oncologist Questions */
+    .oncologist-questions .question-category {
+      background: var(--gray-lightest);
+      border-radius: 6px;
+      padding: 1rem 1.5rem;
+      margin-bottom: 1.5rem;
+      font-family: "Visuelt Pro", "Inter", sans-serif;
+      color: var(--defiant-black);
+    }
+
+    .oncologist-questions .question-category h3 {
+      font-family: "Druk", "Quincy CF", serif;
+      font-weight: 700;
+      font-size: 1.4rem;
+      margin-top: 0;
+      margin-bottom: 1rem;
+      color: var(--aubergine);
+    }
+
+    .oncologist-questions ul {
+      list-style-type: disc;
+      padding-left: 1.5rem;
+      margin: 0;
+    }
+
+    .oncologist-questions li {
+      margin-bottom: 0.5rem;
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--defiant-black);
+    }
+
+    /* Care Team */
+    .care-team .team-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      font-family: "Visuelt Pro", "Inter", sans-serif;
+      color: var(--defiant-black);
+    }
+
+    .care-team .team-list li {
+      margin-bottom: 1rem;
+      font-weight: 600;
+      font-size: 1rem;
+      border-bottom: 1px solid var(--gray-lightest);
+      padding-bottom: 0.5rem;
+    }
+
+    .care-team .team-list li strong {
+      color: var(--aubergine);
+      font-weight: 700;
+    }
+
+    /* Footer */
+    footer.report-footer {
+      text-align: center;
+      font-family: "Visuelt Pro", "Inter", sans-serif;
+      font-size: 0.85rem;
+      color: var(--gray);
+      padding: 1rem 0;
+      border-top: 1px solid var(--gray-lightest);
+      margin-top: 3rem;
+      user-select: none;
+    }
+
+    footer.report-footer p {
+      margin: 0.25rem 0;
+    }
+  </style>
+</head>
+<body class="defiant-report">
+
+  <header class="report-header">
+    <h1>Your Breast Cancer Report</h1>
+    <p class="subtitle">Generated by Defiant Health</p>
+  </header>
+
+  <main class="report-body">
+    {{!-- Loop through all report sections --}}
+    {{#each report.sections}}
+
+      {{!-- ✳️ A NOTE FROM DEFIANT --}}
+      {{#if (eq id "note_from_defiant")}}
+      <section id="{{id}}" class="section note-from-defiant">
+        <h2 class="section-title">{{title}}</h2>
+        <div class="provider">
+          {{#if fields.provider_photo_url}}
+            <img src="{{fields.provider_photo_url}}" alt="{{fields.provider_name}}" class="provider-photo" />
+          {{/if}}
+          <div class="provider-text">
+            <h3 class="provider-name">{{fields.provider_name}}</h3>
+            <p class="provider-title">{{fields.provider_title}}</p>
+          </div>
+        </div>
+        <p class="message">{{fields.message}}</p>
+      </section>
+      {{/if}}
+
+      {{!-- ✳️ RECORDS OVERVIEW / SOURCES --}}
+      {{#if (eq id "records_overview")}}
+      <section id="{{id}}" class="section records-overview">
+        <h2 class="section-title">{{title}}</h2>
+
+        <div class="records-summary">
+          <div class="summary-box">
+            <div class="summary-item">
+              <strong>Patient Name</strong>
+              <span>{{fields.patient_name}}</span>
+            </div>
+            <div class="summary-item">
+              <strong>Date of Review</strong>
+              <span>{{fields.date_of_review}}</span>
+            </div>
+            <div class="summary-item">
+              <strong>Prepared By</strong>
+              <span>{{fields.prepared_by}}</span>
+            </div>
+            <div class="summary-item">
+              <strong>Sources</strong>
+              <span>{{fields.sources_summary}}</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="records-list">
+          <h3>Records Received</h3>
+          <ul class="records">
+            {{#if records_received}}
+              {{#each records_received}}
+                <li class="record-item">
+                  <div class="record-name">{{this.name}}</div>
+                  <div class="record-date">{{this.date_received}}</div>
+                </li>
+              {{/each}}
+            {{else}}
+              <li class="record-item">No records received.</li>
+            {{/if}}
+          </ul>
+        </div>
+
+        <aside class="records-sidebar">
+          <div class="limitations">
+            <h4>Limitations of this report</h4>
+            <p>{{notes.limitations}}</p>
+          </div>
+          <div class="disclaimer">
+            <h4>Before making any medical decisions</h4>
+            <p>{{notes.disclaimer}}</p>
+          </div>
+        </aside>
+      </section>
+      {{/if}}
+
+      {{!-- ✳️ DIAGNOSIS SUMMARY --}}
+      {{#if (eq id "diagnosis_summary")}}
+      <section id="{{id}}" class="section diagnosis-summary">
+        <h2 class="section-title">{{title}}</h2>
+
+        <div class="diagnosis-info">
+          <div class="diagnosis-line">
+            <strong>Primary Diagnosis:</strong>
+            <span>{{fields.primary_diagnosis}}</span>
+          </div>
+          <div class="diagnosis-line">
+            <strong>Date of Diagnosis:</strong>
+            <span>{{fields.date_of_diagnosis}}</span>
+          </div>
+        </div>
+
+        <p class="diagnosis-text">{{fields.diagnosis_summary}}</p>
+
+        {{#if tumors}}
+        <div class="tumor-section">
+          <h3>Tumor Details</h3>
+          {{#each tumors}}
+            <div class="tumor-item">
+              <h4>{{title}}</h4>
+              <p><strong>Type:</strong> {{cancer_type}}</p>
+              <p><strong>Location:</strong> {{location}}</p>
+              <p><strong>Size:</strong> {{size_cm}} cm</p>
+              <p><strong>Stage:</strong> {{stage}}</p>
+              <p><strong>Grade:</strong> {{grade}}</p>
+              <p><strong>Hormone Receptors:</strong> {{hormoneReceptorStatus}}</p>
+              <p><strong>HER2 Status:</strong> {{her2Status}}</p>
+              <p><strong>Side:</strong> {{laterality}}</p>
+              <p class="notes">{{notes}}</p>
+            </div>
+          {{/each}}
+        </div>
+        {{/if}}
+
+        {{#if whatThisMeans}}
+        <div class="meaning-section">
+          <h3>What This Means</h3>
+          <p>{{whatThisMeans.goodNews}}</p>
+          <p>{{whatThisMeans.newOptions}}</p>
+          <p>{{whatThisMeans.treatmentFocus}}</p>
+          <p>{{whatThisMeans.otherConsiderations}}</p>
+        </div>
+        {{/if}}
+      </section>
+      {{/if}}
+
+      {{!-- ✳️ NEXT STEPS --}}
+      {{#if (eq id "next_steps")}}
+      <section id="{{id}}" class="section next-steps">
+        <h2 class="section-title">{{title}}</h2>
+        <p class="description">{{description}}</p>
+
+        {{#if progressJourney}}
+        <div class="journey">
+          <p><strong>Where you are now:</strong> {{progressJourney.current_stage}}</p>
+          <div class="stages">
+            {{#each progressJourney.stages}}
+              <div class="stage-item {{status}}">
+                <span class="stage-name">{{name}}</span>
+                <span class="stage-status">({{status}})</span>
+              </div>
+            {{/each}}
+          </div>
+        </div>
+        {{/if}}
+
+        {{#if items}}
+        <div class="steps-list">
+          {{#each items}}
+            <div class="step-item {{status}}">
+              <h4>{{name}}</h4>
+              {{#if date}}<p class="date">{{date}}</p>{{/if}}
+              {{#if explanation}}<p class="explanation">{{explanation}}</p>{{/if}}
+              {{#if source}}
+                <p class="source">
+                  <strong>Source:</strong> {{source.type}} · {{source.date}} · {{source.report_name}}
+                </p>
+              {{/if}}
+            </div>
+          {{/each}}
+        </div>
+        {{/if}}
+      </section>
+      {{/if}}
+
+      {{!-- ✳️ TREATMENT PLANNING --}}
+      {{#if (eq id "treatment_planning")}}
+      <section id="{{id}}" class="section treatment-planning">
+        <h2 class="section-title">{{title}}</h2>
+
+        <p class="summary">{{fields.summary}}</p>
+        <p><strong>As of:</strong> {{fields.as_of_date}}</p>
+        <p><strong>Source:</strong> {{fields.source}}</p>
+
+        {{#if treatments}}
+        <div class="treatments">
+          <h3>Treatments</h3>
+          {{#each treatments}}
+            <div class="treatment">
+              <h4>{{name}}</h4>
+              <p>{{description}}</p>
+              <p><strong>Specialty:</strong> {{specialty}}</p>
+              <p><strong>Likelihood:</strong> {{likelihood}}</p>
+              <p><strong>Expected Timing:</strong> {{expected_timing}}</p>
+              {{#if subelements.treatment_time.notes}}
+                <p><strong>Treatment Time:</strong> {{subelements.treatment_time.notes}}</p>
+              {{/if}}
+              {{#if source.report_name}}
+                <p class="source"><strong>Source:</strong> {{source.report_name}}</p>
+              {{/if}}
+            </div>
+          {{/each}}
+        </div>
+        {{/if}}
+      </section>
+      {{/if}}
+
+      {{!-- ✳️ QUESTIONS FOR YOUR ONCOLOGIST --}}
+      {{#if (eq id "oncologist_questions")}}
+      <section id="{{id}}" class="section oncologist-questions">
+        <h2 class="section-title">{{title}}</h2>
+        <p class="description">{{description}}</p>
+
+        {{#each categories}}
+          <div class="question-category">
+            <h3>{{name}}</h3>
+            <ul>
+              {{#each questions}}
+                <li>{{text}}</li>
+              {{/each}}
+            </ul>
+          </div>
+        {{/each}}
+      </section>
+      {{/if}}
+
+      {{!-- ✳️ CARE TEAM --}}
+      {{#if (eq id "care_team")}}
+      <section id="{{id}}" class="section care-team">
+        <h2 class="section-title">{{title}}</h2>
+        {{#if items.length}}
+          <ul class="team-list">
+            {{#each items}}
+              <li>
+                <strong>{{name}}</strong> — {{title}} ({{specialty}})
+                {{#if contact_email}}<br>Email: {{contact_email}}{{/if}}
+                {{#if contact_phone}}<br>Phone: {{contact_phone}}{{/if}}
+              </li>
+            {{/each}}
+          </ul>
+        {{else}}
+          <p>No care team members listed.</p>
+        {{/if}}
+      </section>
+      {{/if}}
+
+      {{!-- ✳️ FOOTER --}}
+      {{#if (eq id "footer")}}
+      <footer class="report-footer">
+        <p class="disclaimer">{{fields.disclaimer}}</p>
+        <p class="contact">{{fields.contact_info}}</p>
+        <p class="organization">{{fields.organization}}</p>
+      </footer>
+      {{/if}}
+
+    {{/each}}
+  </main>
+</body>
+</html>

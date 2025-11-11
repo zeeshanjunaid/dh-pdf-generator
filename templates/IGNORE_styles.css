@@ -1,0 +1,794 @@
+/* =========================
+   Fonts
+   ========================= */
+
+@font-face {
+  font-family: "Quincy CF";
+  src: url("./fonts/QuincyCF-Text.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Quincy CF";
+  src: url("./fonts/QuincyCF-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Visuelt Pro";
+  src: url("./fonts/visuelt-variable-proportional-pro.woff2") format("woff2");
+  font-weight: 300 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Visuelt Pro";
+  src: url("./fonts/visuelt-variable-italic-pro.woff2") format("woff2");
+  font-weight: 300 700;
+  font-style: italic;
+}
+
+/* =========================
+   Color tokens
+   ========================= */
+
+:root {
+  --aubergine: #38284e;
+  --ivory: #fff8f4;
+  --orchid: #e2cece;
+  --defiant-black: #1f1d2c;
+
+  --white: #ffffff;
+  --honey: #ffc34d;
+  --persimmon: #ff7449;
+  --wisteria: #c7befa;
+  --cornflower: #b5c9ff;
+  --mint-tea: #e4eece;
+
+  --border-soft: rgba(0, 0, 0, 0.06);
+  --shadow-soft: 0 10px 24px rgba(0, 0, 0, 0.04);
+}
+
+/* =========================
+   Global
+   ========================= */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Visuelt Pro", system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+font-size: 16px;
+line-height: 150%;
+  background: var(--ivory);
+  color: var(--defiant-black);
+}
+
+/* =========================
+   Header
+   ========================= */
+
+.report-header {
+  background: var(--aubergine);
+  color: #ffffff;
+  padding: 14px 24px;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+.report-header__right {
+  flex: 1; /* Take remaining space */
+  text-align: left;
+  color: #1F1D2C;
+}
+.report-header__left {
+  flex: 0 0 35%; /* Fixed proportion for labels */
+  font-weight: 600;
+  color: #38284E; /* Aubergine */
+  text-align: left;
+}
+
+.report-header {
+  background-color: #38284e;
+  color: white;
+  display: flex;
+  flex-direction:column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 32px;
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+
+.top-nav {
+  display: flex;
+  justify-content: center;
+  background: white;
+  border-bottom: 1px solid #ddd;
+  gap: 20px;
+  padding: 10px 0;
+}
+
+.top-nav a {
+  color: #38284e;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.top-nav a:hover {
+  text-decoration: underline;
+}
+
+.report-header__logo {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  /*background: var(--ivory);*/
+}
+
+.report-header__title {
+  font-family: "Quincy CF", "Georgia", "Times New Roman", serif;
+  font-size: 28px;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.report-header__meta {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+/* =========================
+   Top Navigation
+   ========================= */
+
+.topnav {
+  position: sticky;
+  top: 70px; /* keeps it below header */
+  width: 100%;
+  background: var(--ivory); /* subtle but distinct from orchid */
+  border-top: 0px solid rgba(0, 0, 0, 0.05);
+  border-bottom: 0px solid rgba(0, 0, 0, 0.08);
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 14px 20px;
+  z-index: 40;
+}
+
+.topnav ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+}
+
+.topnav li {
+  display: inline-flex;
+}
+
+.topnav a {
+  font-family: "Visuelt Pro", sans-serif;
+  font-weight: 500;
+  text-decoration: none;
+  color: var(--aubergine);
+  border: 1px solid var(--defiant-black);
+  border-radius: 999px;
+  padding: 8px 16px;
+  background: white;
+  transition: all 0.2s ease;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+
+.topnav a:hover {
+  background: var(--aubergine);
+  text-decoration: underline;
+  color: white;
+}
+
+@media (max-width: 640px) {
+  .topnav {
+    padding: 12px;
+  }
+  .topnav a {
+    font-size: 14px;
+    padding: 6px 12px;
+  }
+}
+
+
+
+/* Button */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 13px;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  background: transparent;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.btn__icon {
+  font-size: 14px;
+}
+
+.btn:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+/* =========================
+   Layout
+   ========================= */
+
+.layout {
+  max-width: 1200px;
+  margin: 24px auto 48px;
+  padding: 0 24px;
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+}
+
+
+/* Dots for sections */
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  flex-shrink: 0;
+}
+
+.dot--orchid {
+  background: var(--orchid);
+}
+
+.dot--mint {
+  background: var(--mint-tea);
+}
+
+.dot--honey {
+  background: var(--honey);
+}
+
+.dot--cornflower {
+  background: var(--cornflower);
+}
+
+/* Main content */
+
+.content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* =========================
+   Cards & common elements
+   ========================= */
+
+.card {
+  background: var(--white);
+  border-radius: 18px;
+  padding: 20px 24px;
+  box-shadow: var(--shadow-soft);
+  border: 1px solid var(--border-soft);
+}
+
+.card__header {
+  margin-bottom: 8px;
+}
+
+.card__header h2 {
+  margin: 0;
+  font-family: "Quincy CF", "Georgia", "Times New Roman", serif;
+  font-size: 28px;
+  line-height: 110%; /* 52.8px */
+letter-spacing: -0.96px;
+  color: var(--defiant-black);
+}
+
+.card__header--split {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.card__body p {
+  margin: 6px 0px;
+  font-size: 16px;
+
+}
+
+.card--orchid-top {
+  border-top: 4px solid var(--orchid);
+}
+
+.card--mint-top {
+  border-top: 4px solid var(--mint-tea);
+}
+.card--cornflower-top {
+  border-top: 4px solid var(--cornflower);
+}
+.card--wisteria-top {
+  border-top: 4px solid var(--wisteria);
+}
+
+.card--mint {
+  background: var(--mint-tea);
+  border-color: rgba(0, 0, 0, 0.04);
+}
+
+.card--honey {
+  background: #fff6dd;
+  border-color: var(--honey);
+}
+.card--persimmon {
+  background: #fff6dd;
+  border-color: var(--persimmon);
+}
+.card--wisteria {
+  background: #fff6dd;
+  border-color: var(--wisteria);
+}
+.card-left {
+  display: flex;
+  flex-direction: column;
+}
+.card-right {
+  display: flex;
+  align-items: center;
+}
+
+
+/* subtle variation when nested (e.g. in tests card) */
+.subtle {
+  box-shadow: none;
+  margin-top: 12px;
+}
+
+/* Typography helpers */
+
+.lede {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.signature-line {
+  margin-top: 14px;
+}
+
+.caption {
+  font-size: 14px;
+  color: #555;
+}
+
+h3 {
+  margin: 12px 0 4px;
+  font-size: 24px;
+  font-family: "Quincy CF", "Georgia", "Times New Roman", serif;
+  line-height: 110%;
+  letter-spacing: -0.96px;
+}
+
+/* Diagnosis grid */
+
+.diagnosis-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 8px 16px;
+  margin-top: 10px;
+}
+
+.diagnosis-grid__item {
+  display: flex;
+  flex-direction: column;
+}
+.questions-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+  padding: 16px 20px;
+  margin: 16px 0;
+  border-left: 6px solid var(--persimmon);
+}
+.tumor-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+  padding: 16px 20px;
+  margin: 16px 0;
+  border-left: 6px solid var(--wisteria);
+}
+.tests-completed-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+  padding: 16px 20px;
+  margin: 16px 0;
+  border-left: 6px solid var(--cornflower);
+}
+.tests-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+  padding: 16px 20px;
+  margin: 16px 0;
+  border-left: 6px solid var(--honey);
+}
+
+.tumor-card h3 {
+  font-family: "Quincy CF", serif;
+  font-size: 24px;
+  margin-bottom: 8px;
+  color: var(--aubergine);
+}
+
+.tumor-details p {
+  font-family: "Visuelt Pro", sans-serif;
+  font-size: 16px;
+  line-height: 1.4;
+  margin: 2px 0;
+}
+
+.label {
+  font-size: 12px;
+  font-weight: 600;
+  color: #555;
+}
+
+.value {
+  font-size: 14px;
+}
+
+.badge {
+  display: inline-block;
+  margin-top: 2px;
+  padding: 3px 8px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+  background: var(--wisteria);
+}
+
+/* Callout under diagnosis */
+
+.callout {
+  margin-top: 12px;
+  padding: 14px 16px;
+  border-radius: 14px;
+  background: var(--mint-tea);
+  border: 1px solid rgba(0, 0, 0, 0.04);
+}
+
+.good-news {
+  color: #008055;
+}
+
+/* Checklists & lists */
+
+.checklist {
+  list-style: none;
+  padding-left: 0;
+  margin: 8px 0 12px;
+}
+
+.checklist li::before {
+  content: "•";
+  color: #008055;
+  margin-right: 6px;
+}
+
+.checklist li {
+  margin: 2px 0;
+}
+
+/* Stacked list */
+
+.stacked-list {
+  margin-top: 8px;
+}
+
+.stacked-list__item {
+  padding: 8px 10px;
+  border-radius: 12px;
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  background: #faf7f7;
+  margin-top: 6px;
+}
+
+/* Pills & tags */
+
+.pill-list {
+  list-style: none;
+  padding: 0;
+  margin: 6px 0 10px;
+}
+
+.pill-list li {
+  display: inline-flex;
+  padding: 5px 10px;
+  border-radius: 999px;
+  background: var(--mint-tea);
+  font-size: 13px;
+  margin: 3px 4px 0 0;
+}
+
+.pill-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.pill {
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: #f5f5f5;
+  font-size: 13px;
+}
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 3px 8px;
+  border-radius: 999px;
+  background: #f5f5f5;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.tag--primary {
+  background: var(--cornflower);
+  color: #212133;
+}
+
+.tag--muted {
+  background: #ececf0;
+}
+
+/* Treatment cards */
+
+.treatment-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.treatment-card {
+  border-radius: 14px;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  padding: 10px 12px;
+  background: #fafafa;
+}
+
+.treatment-card header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+
+.treatment-card h4 {
+  margin: 0;
+  font-family: "Quincy CF", "Times New Roman", serif;
+  font-size: 14px;
+}
+
+.treatment-card ul {
+  padding-left: 18px;
+  margin: 4px 0;
+}
+
+/* Resources */
+
+.resource-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin: 6px 0 12px;
+}
+
+.resource {
+  display: block;
+  padding: 8px 10px;
+  border-radius: 12px;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  text-decoration: none;
+  color: inherit;
+  background: #fafafa;
+}
+
+.resource__title {
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.resource__desc {
+  font-size: 13px;
+  color: #555;
+}
+
+/* Random table thing */
+.table {
+  display: table;
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0.5rem 0;
+}
+
+.row {
+  display: table-row;
+  background: #fff6dd;
+  border-color: var(--persimmon);
+}
+
+.cell {
+  display: table-cell;
+  padding: 8px 12px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  vertical-align: top;
+}
+
+.label {
+    flex: 0 0 35%; /* Fixed proportion for labels */
+  font-weight: 600;
+  color: #38284E; /* Aubergine */
+  text-align: left;
+}
+
+.value {
+  flex: 1; /* Take remaining space */
+  color: #1F1D2C; /* Defiant Black */
+  text-align: right;
+}
+
+/* Links */
+
+a {
+  color: var(--cornflower);
+}
+
+/* =========================
+   Responsive
+   ========================= */
+
+@media (max-width: 960px) {
+  .layout {
+    flex-direction: column;
+  }
+
+}
+
+@media (max-width: 640px) {
+  .report-header__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+  }
+}
+
+/* === PDF Layout and Page Control === */
+@media print {
+  html, body {
+    width: 8.5in;
+    height: 11in;
+    -webkit-print-color-adjust: exact !important;
+    color-adjust: exact !important;
+    margin: 0;
+    padding: 10;
+  }
+
+  .print-section {
+    display: block;
+    page-break-before: auto;
+    page-break-after: avoid;
+    page-break-inside: avoid !important;
+    break-before: auto;
+    break-after: avoid;
+    break-inside: avoid !important;
+  }
+
+  /* Force new page only when truly necessary */
+  .page-break {
+    page-break-before: always !important;
+  }
+
+   .report-header, .top-nav {
+    position: static !important;
+    display: block;
+    width: 100%;
+    page-break-after: avoid;
+    page-break-inside: avoid;
+    /*break-after: avoid;
+    break-inside: avoid;*/
+  }
+
+  /* Optional: keep them only on page 1 */
+  .report-header, .top-nav {
+    position: running(header);
+  }
+
+  @page {
+    @top-center {
+      content: element(header);
+    }
+  }
+
+  /* Hide Export button in PDF */
+  .export-btn {
+    display: none !important;
+  }
+
+  /* Neutralize flex/grid in print to allow grouping */
+  .card, .tumor-card, section, .container, .app, .wrapper {
+    display: block !important;
+    float: none !important;
+  }
+
+  /* Hide nav/buttons */
+  .topnav, .export-button {
+    display: none !important;
+  }
+}
+
+/* =========================
+   Print (Letter PDF)
+   ========================= 
+
+@media print {
+
+
+  .report-header {
+    position: static;
+	  margin-bottom: 0px;
+  }
+
+  .layout {
+    padding: 0;
+    margin: 0.1em;
+    max-width: none;
+    display: block;
+  }
+
+
+  .content {
+    margin: 0;
+  }
+
+  .card {
+    box-shadow: none;
+    border-radius: 0;
+    border: 1px solid #dddddd;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+}
+
+@page {
+  size: letter;
+  margin: 0.6in;
+}

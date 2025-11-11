@@ -1,0 +1,186 @@
+{
+  "report": {
+    "meta": {
+      "report_id": "RPT-C",
+      "generated_at": "2025-11-07T00:43:15.760683Z",
+      "patient_id": null,
+      "version": "1.0.0"
+    },
+    "sections": [
+      {
+        "id": "note_from_defiant",
+        "title": "A Note from Defiant",
+        "fields": {
+          "provider_name": null,
+          "provider_title": null,
+          "provider_photo_url": null,
+          "message": "We know waiting for answers can be stressful. This report summarizes what we\u2019ve learned so far and what comes next so you can feel informed and supported."
+        }
+      },
+      {
+        "id": "records_overview",
+        "title": "Your Records",
+        "fields": {
+          "patient_name": "Taylor Morgan",
+          "date_of_review": "2025-11-06",
+          "prepared_by": "Defiant Health",
+          "sources_summary": "Medical records shared with Defiant Health as of 11/06/2025"
+        },
+        "records_received": [
+          {
+            "name": "Mammogram (Screening Bilateral)",
+            "date_received": "2025-09-23"
+          },
+          {
+            "name": "Ultrasound (Breast Left)",
+            "date_received": "2025-10-02"
+          },
+          {
+            "name": "Pathology Report",
+            "date_received": "2025-10-10"
+          }
+        ],
+        "notes": {
+          "limitations": "We can only review the test results and doctor notes that were provided to us.",
+          "disclaimer": "This report is for informational purposes and not medical advice."
+        }
+      },
+      {
+        "id": "diagnosis_summary",
+        "title": "Your Diagnosis",
+        "fields": {
+          "primary_diagnosis": "Invasive Ductal Carcinoma",
+          "diagnosis_summary": "HER2-positive disease with clear treatment target.",
+          "date_of_diagnosis": "2025-10-10"
+        },
+        "tumors": [
+          {
+            "title": "Tumor 1",
+            "cancer_type": "Invasive Ductal Carcinoma",
+            "location": "Left breast",
+            "size_cm": 0.9,
+            "stage": "Stage II",
+            "grade": "Grade 2",
+            "hormoneReceptorStatus": "ER-, HER2+",
+            "her2Status": "ER-, HER2+",
+            "laterality": "left",
+            "source": {
+              "type": "pathology",
+              "date": "2025-10-10",
+              "report_name": "Pathology Report",
+              "report_id": null,
+              "facility": null
+            },
+            "notes": "Findings are consistent with the diagnosis summary."
+          }
+        ],
+        "whatThisMeans": {
+          "goodNews": "We have a clear diagnosis and early treatment plan.",
+          "newOptions": "Further testing or consultation may refine the plan.",
+          "treatmentFocus": "Focus will be on targeted or endocrine therapy based on results.",
+          "otherConsiderations": "Discuss final pathology and genetic testing with your oncologist."
+        }
+      },
+      {
+        "id": "next_steps",
+        "title": "Next Steps",
+        "description": "Follow-up actions and recommendations",
+        "progressJourney": {
+          "current_stage": "Diagnostic Testing",
+          "stages": [
+            {
+              "name": "Diagnostic Testing",
+              "status": "complete",
+              "definition": null
+            },
+            {
+              "name": "Planning",
+              "status": "in_progress",
+              "definition": null
+            },
+            {
+              "name": "Treatment",
+              "status": "pending",
+              "definition": null
+            }
+          ]
+        },
+        "items": [
+          {
+            "name": "Oncotype DX",
+            "date": null,
+            "category": "Test",
+            "status": "pending"
+          },
+          {
+            "name": "Surgical Consultation",
+            "date": "2025-11-10",
+            "category": "Referral",
+            "status": "scheduled"
+          }
+        ]
+      },
+      {
+        "id": "treatment_planning",
+        "title": "Your Likely Treatments",
+        "fields": {
+          "summary": "These are the most likely treatments based on your diagnosis and subtype.",
+          "as_of_date": "2025-11-06",
+          "source": "Defiant Health Pathways",
+          "source_link": null,
+          "disclaimer": null
+        },
+        "treatments": [
+          {
+            "name": "Chemotherapy",
+            "description": "Taxane-based regimen with HER2-targeted therapy",
+            "specialty": "medical oncology",
+            "likelihood": "highly_likely"
+          }
+        ],
+        "clinical_trials": [],
+        "disclaimer_footer": null
+      },
+      {
+        "id": "oncologist_questions",
+        "title": "Helpful Questions for Your Oncologist",
+        "description": "Prompts to guide your next oncology visit.",
+        "categories": [
+          {
+            "name": "Treatment Discussion",
+            "questions": [
+              {
+                "text": "What are my main treatment options and their potential side effects?",
+                "definition_terms": []
+              },
+              {
+                "text": "How will my receptor status influence my treatment plan?",
+                "definition_terms": []
+              }
+            ]
+          }
+        ],
+        "footer_note": null
+      },
+      {
+        "id": "care_team",
+        "title": "Your Care Team",
+        "items": [
+          {
+            "role": "Defiant Health Medical Team",
+            "contact": "support@defianthealth.com"
+          }
+        ]
+      },
+      {
+        "id": "footer",
+        "title": "Report Footer",
+        "fields": {
+          "disclaimer": "This decision aid is not medical advice and does not replace discussions with your care team.",
+          "contact_info": "Questions? Contact Defiant Health at support@defianthealth.com",
+          "organization": "Defiant Health"
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "name": "html-report",
+  "version": "1.0.0",
+  "description": "PDF report generator from JSON using Handlebars and Puppeteer",
+  "type": "module",
+  "scripts": {
+    "start": "node scripts/generate-report.js",
+    "generate": "node scripts/generate-report.js data/sample-patient.json",
+    "preview": "node scripts/preview-hbs.js",
+    "dev": "node scripts/watch-dev.js",
+    "watch": "node scripts/watch-dev.js",
+    "validate": "for f in data/*.json; do node scripts/generate-report.js \"$f\"; done",
+    "validate-all": "node scripts/validate-all-json.js",
+    "validate-all-json": "node scripts/validate-all-json.js",
+    "test-drive": "node scripts/test-drive-access.js",
+    "auto": "node scripts/auto-generate-from-drive.js",
+    "generate-drive": "node scripts/auto-generate-from-drive.js"
+  },
+  "dependencies": {
+    "chalk": "^5.6.2",
+    "dotenv": "^17.2.3",
+    "fs-extra": "^11.1.1",
+    "googleapis": "^126.0.1",
+    "handlebars": "^4.7.8",
+    "mime-types": "^3.0.1",
+    "open": "^10.2.0",
+    "puppeteer": "^22.7.1"
+  },
+  "devDependencies": {
+    "chokidar": "^4.0.3",
+    "http-server": "^14.1.1"
+  }
+}

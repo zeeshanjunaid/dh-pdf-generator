@@ -1,0 +1,264 @@
+{
+  "report": {
+    "meta": {
+      "report_id": "RPT-2024-1203-001",
+      "generated_at": "2024-12-03T12:00:00Z",
+      "patient_id": "PT-54321",
+      "version": "1.0.0"
+    },
+    "sections": [
+      {
+        "id": "note_from_defiant",
+        "title": "A Note from Defiant",
+        "fields": {
+          "provider_name": "Dr. Erin Thompson",
+          "provider_title": "Chief Medical Officer",
+          "provider_photo_url": "/images/erin-thompson.jpg",
+          "message": "We know waiting for answers can be stressful. This report summarizes what we’ve learned so far and what comes next so you can feel informed and supported."
+        }
+      },
+      {
+        "id": "diagnosis_summary",
+        "title": "Your Diagnosis",
+        "fields": {
+          "primary_diagnosis": "Invasive Ductal Carcinoma",
+          "diagnosis_summary": "Your results show early-stage breast cancer: Invasive Ductal Carcinoma, Estrogen positive, Progesterone positive (ER+/PR+), HER2 negative (IHC 2+, FISH negative), Nottingham grade 2.",
+          "date_of_diagnosis": "2024-12-03"
+        },
+        "tumors": [
+          {
+            "title": "Tumor 1",
+            "cancer_type": "Invasive Ductal Carcinoma",
+            "location": "Left breast (8mm)",
+            "stage": "Clinical stage I/II",
+            "grade": "Nottingham grade 2",
+            "hormoneReceptorStatus": "ER+ / PR+",
+            "her2Status": "HER2 negative (IHC 2+, FISH negative)",
+            "laterality": "left",
+            "source": {
+              "type": "pathology",
+              "date": "2024-12-01",
+              "report_name": "Anatomic Pathology (Left Breast Core Biopsy)",
+              "facility": "Defiant Health Review"
+            },
+            "notes": "Small tumor, less than a centimeter. Grade 2 is intermediate. Initial tests show no signs of spread to the lymph nodes."
+          }
+        ],
+        "whatThisMeans": {
+          "goodNews": "The tumor is small, and initial tests show no signs of spread to the lymph nodes, which is a positive sign for a successful outcome.",
+          "newOptions": "A critical step will be the Oncotype DX score to help determine the need for chemotherapy.",
+          "treatmentFocus": "The primary, highly effective long-term treatment will be anti-hormone pills (endocrine therapy) to 'starve' the cancer and keep it from returning for years."
+        },
+        "footer_note": "This summary is based on your latest pathology and imaging reports."
+      },
+      {
+        "id": "next_steps",
+        "title": "Next Steps",
+        "progressJourney": {
+          "current_stage": "Diagnostic Testing",
+          "stages": [
+            { "name": "Diagnostic Testing", "status": "complete" },
+            { "name": "Staging Testing", "status": "in_progress" },
+            { "name": "Planning", "status": "pending" },
+            { "name": "Treatment", "status": "pending" }
+          ]
+        },
+        "items": [
+          {
+            "name": "Breast core needle biopsy",
+            "date": "2024-11-27",
+            "explanation": "Tissue sample taken for pathology testing for ER/PR/HER2 status.",
+            "category": "Test",
+            "status": "completed"
+          },
+          {
+            "name": "Medical Oncology Consultation",
+            "date": "2024-12-17",
+            "explanation": "Meet with medical oncologist to review your results and discuss your treatment plan.",
+            "category": "Consultation",
+            "status": "scheduled"
+          },
+          {
+            "name": "Surgical Oncology Consultation",
+            "date": "2025-01-27",
+            "explanation": "Meet with surgical oncologist to discuss tumor removal options.",
+            "category": "Consultation",
+            "status": "scheduled"
+          }
+        ]
+      },
+      {
+        "id": "treatment_planning",
+        "title": "Your Likely Treatments",
+        "fields": {
+          "summary": "Knowing your likely treatment plan helps you prepare for your first oncology visit.",
+          "as_of_date": "2024-11-02",
+          "source": "Dana-Farber Clinical Pathways",
+          "source_link": "",
+          "disclaimer": "This overview reflects current clinical guidelines and may change based on new results."
+        },
+        "treatments": [
+          {
+            "name": "Endocrine therapy (hormone therapy)",
+            "description": "Most likely treatment given that you are hormone receptor positive (ER+ and PR+). This treatment 'starves' the cancer.",
+            "specialty": "medical oncology",
+            "likelihood": "Highly Likely",
+            "expected_timing": "Typically started by the medical oncologist after surgery.",
+            "subelements": {
+              "medications": [
+                {
+                  "name": "Aromatase inhibitors",
+                  "description": "Includes letrozole, anastrozole, or exemestane—pills that lower estrogen levels."
+                },
+                {
+                  "name": "Selective Estrogen Receptor Modulators",
+                  "description": "Like tamoxifen — pills that block estrogen."
+                }
+              ],
+              "side_effects": [
+                {
+                  "description": "Hot flashes, mild joint pain, and fatigue.",
+                  "severity": "mild"
+                }
+              ],
+              "treatment_time": {
+                "duration": "Multiple years",
+                "notes": "Administered orally and continued long term depending on response."
+              }
+            },
+            "source": {
+              "type": "pathway",
+              "report_name": "Dana-Farber Clinical Pathways",
+              "facility": "Dana-Farber Cancer Institute"
+            }
+          },
+          {
+            "name": "Surgical Oncology",
+            "description": "Likely required to fully remove the Invasive Ductal Carcinoma (8mm). Your choices will likely be either Lumpectomy or Mastectomy.",
+            "specialty": "Surgical Oncology",
+            "likelihood": "Highly Likely",
+            "expected_timing": "Immediate",
+            "subelements": {
+              "medications": [],
+              "side_effects": [],
+              "treatment_time": {
+                "duration": "To be discussed",
+                "notes": "The pros and cons of Lumpectomy vs. Mastectomy should be discussed with your surgeon."
+              }
+            },
+            "source": {
+              "type": "report",
+              "report_name": "Defiant Health Review",
+              "facility": "Defiant Health"
+            }
+          },
+          {
+            "name": "Chemotherapy",
+            "description": "This might be considered and will be dependent on the Oncotype DX score result.",
+            "specialty": "medical oncology",
+            "likelihood": "Might be considered",
+            "expected_timing": "Prior to or after surgery, depending on plan.",
+            "subelements": {
+              "medications": [],
+              "side_effects": [],
+              "treatment_time": {
+                "duration": "To be determined by Oncotype DX",
+                "notes": ""
+              }
+            },
+            "source": {
+              "type": "pathway",
+              "report_name": "Dana-Farber Clinical Pathways",
+              "facility": "Dana-Farber Cancer Institute"
+            }
+          },
+          {
+            "name": "Radiation Oncology",
+            "description": "This might be recommended if you and your surgeon choose a Lumpectomy (Breast-Conserving Surgery).",
+            "specialty": "Radiation Oncology",
+            "likelihood": "Might be considered",
+            "expected_timing": "After surgery.",
+            "subelements": {
+              "medications": [],
+              "side_effects": [],
+              "treatment_time": {
+                "duration": "To be discussed",
+                "notes": ""
+              }
+            },
+            "source": {
+              "type": "report",
+              "report_name": "Defiant Health Review",
+              "facility": "Defiant Health"
+            }
+          }
+        ],
+        "clinical_trials": [],
+        "disclaimer_footer": "Your treatment plan may change as additional test results become available."
+      },
+      {
+        "id": "oncologist_questions",
+        "title": "Helpful Questions for Your Oncologist",
+        "description": "Bring these questions to your appointment to help guide your discussion.",
+        "categories": [
+          {
+            "name": "Treatment Planning (Systemic Therapy)",
+            "questions": [
+              { "text": "Given my specific tumor status (HR+/HER2-), how soon can the OncotypeDX test be ordered, and when can we expect the results? How will this single score determine my need for chemotherapy?" },
+              { "text": "I am currently taking an Estrogen Patch and Progesterone Pill. Since my cancer is hormone receptor positive, what is the immediate risk of continuing this, and when exactly should I stop taking?" },
+              { "text": "What specific anti-hormone medication (e.g., Tamoxifen or an Aromatase Inhibitor) do you recommend, and for how many years will I need to take it? What are the most common side effects of this medication?" },
+              { "text": "If my OncotypeDX score is high, what chemotherapy regimen would you recommend, and how many cycles would that involve?" }
+            ]
+          },
+          {
+            "name": "Treatment Planning (Local Therapy)",
+            "questions": [
+              { "text": "Given my tumor size (8 mm) and clear margins, am I a good candidate for Breast-Conserving Surgery (Lumpectomy)? What factors might require me to have a mastectomy instead?" },
+              { "text": "My initial ultrasound was negative for lymph node involvement. Will I still need a Sentinel Lymph Node Biopsy (SLNB) during the surgery, and what happens if cancer is found in those nodes?" },
+              { "text": "What is your goal for clear margins, and what is the chance I would need a second surgery to clear them (a re-excision)?" }
+            ]
+          },
+          {
+            "name": "Quality of Life & Support",
+            "questions": [
+              { "text": "Since I am premenopausal and my treatment will include endocrine therapy, what is the impact on my future fertility, and should I meet with the fertility counselor immediately?" },
+              { "text": "What is the likelihood of experiencing specific side effects, like hair loss, weight changes, or joint pain, with the systemic treatment you anticipate recommending?" },
+              { "text": "What support services or medications are available here at the clinic for managing fatigue, hot flashes, or any emotional concerns related to my diagnosis and treatment?" },
+              { "text": "What will the breast look like after surgery, and will a plastic surgeon be involved in my care?" }
+            ]
+          }
+        ],
+        "footer_note": "Write down any additional questions before your next visit."
+      },
+      {
+        "id": "care_team",
+        "title": "Your Care Team",
+        "items": [
+          {
+            "name": "Dr. John Smith",
+            "title": "Medical Oncologist",
+            "specialty": "Medical Oncology",
+            "contact_email": "john.smith@defianthealth.com",
+            "contact_phone": "(617) 555-0100"
+          },
+          {
+            "name": "Sarah Nguyen, RN",
+            "title": "Oncology Nurse",
+            "specialty": "Nursing",
+            "contact_email": "sarah.nguyen@defianthealth.com",
+            "contact_phone": "(617) 555-0198"
+          }
+        ]
+      },
+      {
+        "id": "footer",
+        "title": "Report Footer",
+        "fields": {
+          "disclaimer": "This report is for informational purposes and should not replace medical advice.",
+          "contact_info": "Questions? Contact us at support@defianthealth.com",
+          "organization": "Defiant Health"
+        }
+      }
+    ]
+  }
+}

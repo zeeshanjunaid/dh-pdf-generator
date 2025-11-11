@@ -1,0 +1,114 @@
+{
+  "patientFirstName": "Testy",
+  "patientLastName": "McTester",
+  "patientDateOfBirth": "1990-01-01",
+  "patientEmail": "testy@email.com",
+  "reportDate":"2025-11-03",
+  "diagnosisDate": "2025-10-15",
+  "diagnosisSummary": "Mixed metastatic invasive lobular and ductal carcinoma",
+  "tumors": [
+  {
+  	"name": "Mixed metastatic invasive lobular and ductal carcinoma",
+    "location": "Right breast: 2 small tumors (0.4cm and 0.6cm)<br>Axillary lymph node (0.5cm)",
+  	"stage": "Stage IV",
+  	"grade": "Grade 1",
+  	"hormoneReceptorStatus": "Hormone Receptor Positive (HR+)",
+  	"her2Status": "HER2 positive (HER2+)"
+  },
+   {
+  	"name": "Tumor 1",
+    "location": "Right breast: 2 small tumors (0.4cm and 0.6cm)",
+  	"stage": "Stage IV",
+  	"grade": "Grade 1",
+  	"hormoneReceptorStatus": "Hormone Receptor Positive (HR+)",
+  	"her2Status": "HER2 positive (HER2+)"
+  },
+    {
+  	"name": "Tumor 2",
+    "location": "Axillary lymph node (0.5cm)",
+  	"stage": "Stage III",
+  	"grade": "Grade 2",
+  	"hormoneReceptorStatus": "Estrogen Receptor Positive (ER+)",
+  	"her2Status": "HER2 low"
+  }
+  ],
+  "whatThisMeans": {
+      "goodNews": "Because your cancer is hormone receptor positive, endocrine therapy can be very effective at slowing or stopping cancer growth.",
+      "newOptions": "Newer targeted treatments for HER2-low breast cancer may become part of your plan.",
+      "treatmentFocus": "Since the cancer is metastatic, treatment focuses on controlling the disease and helping you feel as well as possible."
+  },
+  "testsCompleted": [
+  {
+  	"name": "Breast imaging (diagnostic mammogram and ultrasound)",
+    "date": "October 12, 2025",
+    "explanation": "Description goes here"
+
+  },
+  {
+  	"name": "MRI-Guided Biopsy",
+    "date": "October 15, 2025",
+    "explanation": "Tissue sample taken using magnetic resonance imaging to locate and target suspicious breast area."
+
+  },
+    {
+  	"name": "Tumor Markers (CA 15-3, CA 27.29, CEA)",
+    "date": "October 22, 2025",
+    "explanation": "Measures proteins that cancer cells may release into blood, used to monitor disease progression or recurrence."
+
+  },
+  {
+  	"name": "Complete Blood Count (CBC)",
+    "date": "October 22, 2025",
+    "explanation": "Checks red blood cells, white blood cells, and platelets to ensure body is healthy enough for treatment"
+  }
+],
+  "testsNeeded": [
+  {
+  	"name": "PET/CT scan (full body scan)",
+    "date": "October 12, 2025",
+    "explanation": "To see the complete picture of where cancer has spread"
+
+  },
+    {
+  	"name": "Echocardiogram (heart ultrasound)",
+    "date": "October 15, 2025",
+    "explanation": "To make sure your heart is healthy before starting certain treatments"
+
+  },
+    {
+  	"name": "Germline genetic testing",
+    "date": "October 22, 2025",
+    "explanation": "Blood test to check for inherited cancer gene changes (like BRCA1/BRCA2)"
+
+  },
+    {
+  	"name": "Additional blood tests",
+    "date": "October 22, 2025",
+    "explanation": "Thyroid, Vitamin D, Vitamin B12"
+
+  }
+],
+  "treatmentTeam": {
+    "oncologist": "Dr. Melissa Chang",
+    "surgeon": "Dr. Rachel Nguyen",
+    "radiologist": "Dr. James Patel"
+  },
+  "resources": [
+    {
+      "title": "Understanding Your Pathology Report",
+      "url": "https://defianthealth.com/pathology-guide"
+    },
+    {
+      "title": "What to Ask Your Oncologist",
+      "url": "https://defianthealth.com/questions"
+    },
+    {
+      "title": "Support Services",
+      "url": "https://defianthealth.com/support"
+    }
+  ],
+  "contactInfo": {
+    "phone": "617-555-2487",
+    "email": "navigator@defianthealth.com"
+  }
+}

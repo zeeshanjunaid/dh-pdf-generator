@@ -1,0 +1,267 @@
+/*
+──────────────────────────────────────────────
+📘 DEFIANT HEALTH — HYBRID REPORT SCHEMA (.jsonc)
+──────────────────────────────────────────────
+Each section defines a key part of the patient-facing report.
+Supports both structured data (for automation)
+and narrative content (for human readability).
+──────────────────────────────────────────────
+*/
+
+{
+  "report": {
+    "meta": {
+      "report_id": "string",        // Unique identifier for this report instance
+      "generated_at": "datetime",   // ISO 8601 timestamp when report was generated
+      "patient_id": "string",       // Internal or pseudonymized reference to patient record
+      "version": "string"           // Schema or generator version
+    },
+
+    "sections": [
+
+      /*─────────────────────────────
+        NOTE FROM DEFIANT
+      ─────────────────────────────*/
+      {
+        "id": "note_from_defiant",  // Unique section ID
+        "title": "A Note from Defiant",  // Display name in report
+        "fields": {
+          "provider_name": "string",        // e.g., "Dr. Erin Thompson"
+          "provider_title": "string",       // e.g., "Chief Medical Officer"
+          "provider_photo_url": "string",   // e.g., "/images/erin-thompson.jpg"
+          "message": "string"               // Main welcome or summary note text
+        }
+      },
+
+      /*─────────────────────────────
+      RECORDS OVERVIEW / SOURCES
+    ─────────────────────────────*/
+    {
+      "id": "records_overview",
+      "title": "Your Records",
+      "fields": {
+        "patient_name": "string",              // e.g., "Jane Doe"
+        "date_of_review": "date",              // e.g., "2025-11-03"
+        "prepared_by": "string",               // e.g., "Defiant Health"
+        "sources_summary": "string"            // e.g., "Medical records shared with Defiant Health as of 11/02/2025"
+      },
+      "records_received": [
+        {
+          "name": "string",                    // e.g., "New Patient Chart (Breast Oncology)"
+          "date_received": "date"              // e.g., "2024-09-23"
+        }
+      ],
+      "notes": {
+        "limitations": "string",               // e.g., "We can only review the test results and doctor notes provided to us..."
+        "disclaimer": "string"                 // e.g., "Before making any medical decisions..."
+      }
+    },
+
+      /*─────────────────────────────
+        DIAGNOSIS SUMMARY
+      ─────────────────────────────*/
+      {
+        "id": "diagnosis_summary",  // Unique section ID
+        "title": "Your Diagnosis",  // Display name in report
+        "fields": {
+          "primary_diagnosis": "string",   // e.g., "Invasive Ductal Carcinoma"
+          "diagnosis_summary": "string",   // Narrative summary of diagnosis
+          "date_of_diagnosis": "date"      // e.g., "2025-10-12"
+        },
+
+        "tumors": [
+          {
+            "title": "string",                     // e.g., "Tumor 1"
+            "cancer_type": "definition-enabled string",  // e.g., "Invasive Ductal Carcinoma"
+            "location": "string",                  // e.g., "Left breast (8mm)"
+            "size_cm": "number",                   // e.g., 0.8
+            "stage": "definition-enabled string",  // e.g., "Stage IA"
+            "grade": "definition-enabled string",  // e.g., "Grade 1"
+            "hormoneReceptorStatus": "definition-enabled string", // e.g., "ER+ / PR+"
+            "her2Status": "definition-enabled string",  // e.g., "HER2-low"
+            "laterality": "enum[right,left,bilateral,unknown]",   // Breast side indicator
+            "source": {
+              "type": "enum[mammogram,ultrasound,mri,biopsy,pathology,clinical_note,other]", // Report type
+              "date": "date",               // Date of report
+              "report_name": "string",      // e.g., "Pathology Report"
+              "report_id": "string",        // Optional reference ID
+              "facility": "string"          // e.g., "Brigham and Women's Hospital"
+            },
+            "notes": "string"               // Optional notes or context
+          }
+        ],
+
+        "whatThisMeans": {
+          "goodNews": "string",             // e.g., "Hormone therapy can be very effective."
+          "newOptions": "string",           // e.g., "New HER2-low treatments may apply."
+          "treatmentFocus": "string",       // e.g., "Focus is on controlling the disease."
+          "otherConsiderations": "string"   // Optional additional guidance
+        },
+
+        "footer_note": "string"             // Optional note shown below section
+      },
+      
+
+      /*─────────────────────────────
+        NEXT STEPS
+      ─────────────────────────────*/
+      {
+        "id": "next_steps",
+        "title": "Next Steps",             // Display name in report
+        "description": "Follow-up actions and recommendations", // Optional helper text
+
+        "progressJourney": {
+          "current_stage": "string",       // e.g., "Staging Testing"
+          "stages": [
+            {
+              "name": "string",            // e.g., "Diagnostic Testing"
+              "status": "enum[pending,in_progress,complete]",  // Progress indicator
+              "definition": "string"       // Optional hover definition
+            }
+          ]
+        },
+
+        "items": [
+          {
+            "name": "string",              // e.g., "MRI-Guided Biopsy"
+            "date": "date",                // e.g., "2025-10-15"
+            "explanation": "string",       // Description of test or referral
+            "category": "enum[Test,Referral,Treatment,Consultation,Other]",  // Item category
+            "status": "enum[pending,scheduled,in_progress,completed]",       // Progress status
+            "definition": "string",        // Optional hover definition
+            "source": {
+              "type": "enum[mammogram,ultrasound,mri,biopsy,pathology,clinical_note,other]",  // Linked report type
+              "date": "date",              // Source date
+              "report_name": "string",     // e.g., "Pathology Addendum"
+              "report_id": "string",       // Optional reference ID
+              "facility": "string"         // e.g., "Dana-Farber Cancer Institute"
+            }
+          }
+        ]
+      },
+
+      /*─────────────────────────────
+        TREATMENT PLANNING
+      ─────────────────────────────*/
+      {
+        "id": "treatment_planning",
+        "title": "Your Likely Treatments", // Display name
+        "fields": {
+          "summary": "string",             // Overview text describing purpose of section
+          "as_of_date": "date",            // Date data was last reviewed or pulled from records
+          "source": "string",              // e.g., "Based on Dana-Farber Clinical Pathways"
+          "source_link": "url",            // e.g., "https://pathways.dana-farber.org"
+          "disclaimer": "string"           // Optional cautionary statement
+        },
+
+        "treatments": [
+          {
+            "name": "string",              // e.g., "Endocrine Therapy (Hormone Therapy)"
+            "description": "string",       // Why this treatment is recommended
+            "specialty": "enum[medical oncology, surgical oncology, radiation oncology]", // Clinical area
+            "likelihood": "enum[most_likely, highly_likely, likely, possible, unlikely]", // Probability level
+            "expected_timing": "string",   // e.g., "First-line", "Concurrent"
+            "definition": "string",        // Optional hover definition
+            "subelements": {
+              "medications": [
+                {
+                  "name": "string",        // e.g., "Aromatase Inhibitors"
+                  "description": "string", // e.g., "Includes letrozole, anastrozole, or exemestane"
+                  "glossary": [
+                    { "term": "string", "definition": "string" } // Optional tooltip terms
+                  ]
+                }
+              ],
+              "side_effects": [
+                {
+                  "description": "string", // e.g., "Hot flashes, joint pain, or fatigue"
+                  "severity": "enum[mild,moderate,severe]", // Optional severity level
+                  "management_notes": "string" // Optional care notes
+                }
+              ],
+              "treatment_time": {
+                "duration": "string",      // e.g., "4–6 weeks"
+                "notes": "string"          // Optional context or timing info
+              }
+            },
+            "source": {
+              "type": "enum[pathway,guideline,clinical_note,oncologist_summary,other]", // Source type
+              "report_name": "string",     // e.g., "Dana-Farber Pathways Summary"
+              "report_id": "string",       // Optional reference
+              "facility": "string"         // e.g., "Dana-Farber Cancer Institute"
+            }
+          }
+        ],
+
+        "clinical_trials": [
+          {
+            "name": "string",              // e.g., "NCT04812345 – HER2-low Study"
+            "description": "string",       // Short summary of trial purpose
+            "phase": "enum[I,II,III,IV]",  // Clinical trial phase
+            "eligibility": "string",       // Eligibility summary
+            "location": "string",          // e.g., "Dana-Farber Cancer Institute"
+            "link": "url",                 // Trial information link
+            "sponsor": "string",           // Sponsor or coordinating body
+            "status": "enum[recruiting,active,completed,unknown]", // Trial status
+            "notes": "string"              // Optional context for UI
+          }
+        ],
+
+        "disclaimer_footer": "string"      // Section-level disclaimer shown below treatments
+      },
+
+      /*─────────────────────────────
+        HELPFUL QUESTIONS FOR ONCOLOGIST
+      ─────────────────────────────*/
+      {
+        "id": "oncologist_questions",
+        "title": "Helpful Questions for Your Oncologist",  // Section title shown in report
+        "description": "Prompts to guide your next oncology visit.", // Optional intro text
+        "categories": [
+          {
+            "name": "string",              // e.g., "About your treatment"
+            "questions": [
+              {
+                "text": "string",          // e.g., "What is the main goal of my treatment?"
+                "definition_terms": [      // Optional glossary for specific terms
+                  { "term": "string", "definition": "string" }
+                ]
+              }
+            ]
+          }
+        ],
+        "footer_note": "string"            // Optional note at bottom of section
+      },
+
+      /*─────────────────────────────
+        CARE TEAM
+      ─────────────────────────────*/
+      {
+        "id": "care_team",
+        "title": "Your Care Team",         // Display name
+        "items": [
+          {
+            "name": "string",              // e.g., "Dr. John Smith"
+            "title": "string",             // e.g., "Breast Oncologist"
+            "specialty": "definition-enabled string", // e.g., "Medical Oncology"
+            "contact_email": "string",     // e.g., "john.smith@hospital.org"
+            "contact_phone": "string"      // e.g., "617-555-0100"
+          }
+        ]
+      },
+
+      /*─────────────────────────────
+        FOOTER
+      ─────────────────────────────*/
+      {
+        "id": "footer",
+        "title": "Report Footer",          // Display name
+        "fields": {
+          "disclaimer": "string",          // General report disclaimer
+          "contact_info": "string",        // e.g., "Questions? Contact your Defiant Health team."
+          "organization": "string"         // e.g., "Defiant Health"
+        }
+      }
+    ]
+  }
+}

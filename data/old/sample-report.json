@@ -1,0 +1,238 @@
+{
+  "report": {
+    "meta": {
+      "report_id": "RPT-2025-1105-001",
+      "generated_at": "2025-11-05T15:30:00Z",
+      "patient_id": "PT-54321",
+      "version": "1.0.0"
+    },
+    "sections": [
+      {
+        "id": "note_from_defiant",
+        "title": "A Note from Defiant",
+        "fields": {
+          "provider_name": "Dr. Erin Thompson",
+          "provider_title": "Chief Medical Officer",
+          "provider_photo_url": "/images/erin-thompson.jpg",
+          "message": "We know waiting for answers can be stressful. This report summarizes what we’ve learned so far and what comes next so you can feel informed and supported."
+        }
+      },
+      {
+        "id": "diagnosis_summary",
+        "title": "Your Diagnosis",
+        "fields": {
+          "primary_diagnosis": "Invasive Ductal Carcinoma",
+          "diagnosis_summary": "Your results show early-stage breast cancer that is hormone receptor positive (ER+ / PR+) and HER2-low.",
+          "date_of_diagnosis": "2025-10-12"
+        },
+        "tumors": [
+          {
+            "title": "Tumor 1",
+            "cancer_type": "Invasive Ductal Carcinoma",
+            "location": "Left breast (8mm)",
+            "stage": "Stage IA",
+            "grade": "Grade 1",
+            "hormoneReceptorStatus": "ER+ / PR+",
+            "her2Status": "HER2-low",
+            "laterality": "left",
+            "source": {
+              "type": "pathology",
+              "date": "2025-10-12",
+              "report_name": "Pathology Report",
+              "facility": "Dana-Farber Cancer Institute"
+            },
+            "notes": "Small, localized tumor with favorable biology."
+          }
+        ],
+        "whatThisMeans": {
+          "goodNews": "Hormone therapy can be very effective in slowing or stopping cancer growth.",
+          "newOptions": "HER2-low targeted therapies may be available if needed in the future.",
+          "treatmentFocus": "The goal is to treat early and minimize recurrence risk."
+        },
+        "footer_note": "This summary is based on your latest pathology and imaging reports."
+      },
+      {
+        "id": "next_steps",
+        "title": "Next Steps",
+        "progressJourney": {
+          "current_stage": "Staging Testing",
+          "stages": [
+            { "name": "Diagnostic Testing", "status": "complete" },
+            { "name": "Staging Testing", "status": "in_progress" },
+            { "name": "Planning", "status": "pending" },
+            { "name": "Treatment", "status": "pending" }
+          ]
+        },
+        "items": [
+          {
+            "name": "MRI-Guided Biopsy",
+            "date": "2025-10-15",
+            "explanation": "Tissue sample taken using magnetic resonance imaging to guide needle placement.",
+            "category": "Test",
+            "status": "completed"
+          },
+          {
+            "name": "Oncology Consultation",
+            "date": "2025-11-10",
+            "explanation": "Meet with medical oncologist to review your results and discuss your treatment plan.",
+            "category": "Consultation",
+            "status": "scheduled"
+          }
+        ]
+      },
+      {
+        "id": "treatment_planning",
+        "title": "Your Likely Treatments",
+        "fields": {
+          "summary": "Knowing your likely treatment plan helps you prepare for your first oncology visit.",
+          "as_of_date": "2025-10-28",
+          "source": "Dana-Farber Clinical Pathways",
+          "source_link": "https://pathways.dana-farber.org",
+          "disclaimer": "This overview reflects current clinical guidelines and may change based on new results."
+        },
+        "treatments": [
+          {
+            "name": "Endocrine Therapy (Hormone Therapy)",
+            "description": "Most likely first treatment given your hormone receptor positive (ER+/PR+) status.",
+            "specialty": "medical oncology",
+            "likelihood": "most_likely",
+            "expected_timing": "First-line",
+            "subelements": {
+              "medications": [
+                {
+                  "name": "Aromatase Inhibitors",
+                  "description": "Includes letrozole, anastrozole, or exemestane — pills that lower estrogen levels."
+                },
+                {
+                  "name": "CDK4/6 Inhibitors",
+                  "description": "Targeted drugs such as palbociclib, ribociclib, or abemaciclib that stop cancer cells from dividing."
+                }
+              ],
+              "side_effects": [
+                {
+                  "description": "Hot flashes, mild joint pain, and fatigue.",
+                  "severity": "mild"
+                }
+              ],
+              "treatment_time": {
+                "duration": "4–6 weeks",
+                "notes": "Administered orally and continued long term depending on response."
+              }
+            },
+            "source": {
+              "type": "pathway",
+              "report_name": "Dana-Farber Pathways",
+              "facility": "Dana-Farber Cancer Institute"
+            }
+          },
+          {
+            "name": "Targeted Therapy",
+            "description": "May be considered for HER2-low cancers using antibody-drug conjugates.",
+            "specialty": "medical oncology",
+            "likelihood": "highly_likely",
+            "expected_timing": "Concurrent or after hormone therapy",
+            "subelements": {
+              "medications": [
+                {
+                  "name": "Trastuzumab deruxtecan",
+                  "description": "Delivers chemotherapy directly to HER2-low cancer cells."
+                }
+              ],
+              "side_effects": [
+                {
+                  "description": "Possible fatigue or mild nausea, usually fewer side effects than traditional chemo.",
+                  "severity": "mild"
+                }
+              ],
+              "treatment_time": { "duration": "2–5 weeks" }
+            }
+          }
+        ],
+        "clinical_trials": [
+          {
+            "name": "NCT04812345 – HER2-low Breast Cancer Study",
+            "description": "Evaluating new targeted therapy for HER2-low breast cancer after endocrine treatment.",
+            "phase": "II",
+            "eligibility": "Postmenopausal HR+/HER2-low breast cancer",
+            "location": "Dana-Farber Cancer Institute",
+            "link": "https://clinicaltrials.gov/study/NCT04812345",
+            "status": "recruiting"
+          }
+        ],
+        "disclaimer_footer": "Your treatment plan may change as additional test results become available."
+      },
+      {
+        "id": "oncologist_questions",
+        "title": "Helpful Questions for Your Oncologist",
+        "description": "Bring these questions to your appointment to help guide your discussion.",
+        "categories": [
+          {
+            "name": "About your treatment",
+            "questions": [
+              { "text": "What is the main goal of my treatment?" },
+              { "text": "Which treatment will we try first, and why?" },
+              { "text": "How will we know if treatment is working?" },
+              {
+                "text": "How does my HER2-low status affect my treatment choices?",
+                "definition_terms": [
+                  {
+                    "term": "HER2-low",
+                    "definition": "A breast cancer subtype with low HER2 protein expression, which can affect treatment eligibility."
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "About daily life",
+            "questions": [
+              { "text": "How will treatment affect my energy and daily activities?" },
+              { "text": "What side effects should I expect, and how can we manage them?" },
+              { "text": "What warning signs should I watch for?" },
+              { "text": "What can I do to stay as healthy as possible during treatment?" }
+            ]
+          },
+          {
+            "name": "About support",
+            "questions": [
+              { "text": "Should I work with a palliative care team for symptom management?" },
+              { "text": "Are there clinical trials I should consider?" },
+              { "text": "What financial help is available?" },
+              { "text": "How can my family best support me?" }
+            ]
+          }
+        ],
+        "footer_note": "Write down any additional questions before your next visit."
+      },
+      {
+        "id": "care_team",
+        "title": "Your Care Team",
+        "items": [
+          {
+            "name": "Dr. John Smith",
+            "title": "Medical Oncologist",
+            "specialty": "Medical Oncology",
+            "contact_email": "john.smith@defianthealth.com",
+            "contact_phone": "(617) 555-0100"
+          },
+          {
+            "name": "Sarah Nguyen, RN",
+            "title": "Oncology Nurse",
+            "specialty": "Nursing",
+            "contact_email": "sarah.nguyen@defianthealth.com",
+            "contact_phone": "(617) 555-0198"
+          }
+        ]
+      },
+      {
+        "id": "footer",
+        "title": "Report Footer",
+        "fields": {
+          "disclaimer": "This report is for informational purposes and should not replace medical advice.",
+          "contact_info": "Questions? Contact your Defiant Health team.",
+          "organization": "Defiant Health"
+        }
+      }
+    ]
+  }
+}
