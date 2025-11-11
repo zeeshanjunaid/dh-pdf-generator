@@ -9,9 +9,12 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 // Point output to /templates instead of /output
-const dataPath = path.join(__dirname, "../data", "sample-report.json");
+const dataPath = path.join(__dirname, "../data", "2025.11.06-rpt-a.json");
 const templatePath = path.join(__dirname, "../templates", "report.hbs");
 const outputFile = path.join(__dirname, "../templates", "preview.html");
+
+// Register Handlebars helpers
+Handlebars.registerHelper("eq", (a, b) => a === b);
 
 async function generatePreview() {
   try {

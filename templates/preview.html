@@ -904,7 +904,7 @@
       <div class="doc-icon">📄</div>
       <div>
         <h1>Your Path Forward Report</h1>
-        <p class="subtitle">{{report.sections.[1].fields.patient_name}} • October 21 2025</p>
+        <p class="subtitle">Alex Johnson • October 21 2025</p>
       </div>
     </div>
   </header>
@@ -921,30 +921,43 @@
   </nav>
 
   <main class="report-body">
-    {{!-- Loop through all report sections --}}
-    {{#each report.sections}}
 
-      {{!-- ✳️ A NOTE FROM DEFIANT --}}
-      {{#if (eq id "note_from_defiant")}}
-      <section id="{{id}}" class="section note-from-defiant">
+      <section id="note_from_defiant" class="section note-from-defiant">
         <span class="heart-icon">💜</span>
         <h2 class="section-title">You're Not Alone</h2>
         
-        <p class="greeting">Dear {{../report.sections.[1].fields.patient_name}},</p>
+        <p class="greeting">Dear Alex Johnson,</p>
         
-        <p class="message-text">{{fields.message}}</p>
+        <p class="message-text">We know waiting for answers can be stressful. This report summarizes what we’ve learned so far and what comes next so you can feel informed and supported.</p>
         
         <p class="signature"><em>With care and respect,</em></p>
         <p class="team-name">The Defiant Health Team</p>
         <p class="contact-link"><a href="mailto:care@defianthealth.com">care@defianthealth.com</a></p>
       </section>
-      {{/if}}
 
 
 
-      {{!-- ✳️ DIAGNOSIS SUMMARY --}}
-      {{#if (eq id "diagnosis_summary")}}
-      <section id="{{id}}" class="section diagnosis-summary">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      <section id="diagnosis_summary" class="section diagnosis-summary">
         <div class="diagnosis-label-tab">YOUR DIAGNOSIS</div>
         
         <div class="diagnosis-header">
@@ -956,10 +969,8 @@
           <div class="diagnosis-meta-left">
             <h4 class="diagnosis-meta-title">Diagnosis Overview</h4>
             <p class="diagnosis-sources">
-              <strong>Sources:</strong> Medical records shared with Defiant Health as of <strong>{{fields.date_of_diagnosis}}</strong>, 
-              {{#if tumors.[0].source}}
-                {{tumors.[0].source.report_name}} ({{tumors.[0].source.date}})
-              {{/if}}
+              <strong>Sources:</strong> Medical records shared with Defiant Health as of <strong>2025-10-10</strong>, 
+                Pathology Report (2025-10-10)
             </p>
           </div>
           <div class="diagnosis-meta-right">
@@ -970,10 +981,8 @@
           </div>
         </div>
 
-        {{!-- Purple Overview Box --}}
         <div class="diagnosis-overview-box-wrapper">
           <div class="diagnosis-overview-box">
-          {{#if tumors.[0]}}
           <div class="diagnosis-stat">
             <div class="diagnosis-stat-label">Overall Stage</div>
             <div class="diagnosis-stat-content">
@@ -981,7 +990,7 @@
                 I/II
               </div>
               <div class="diagnosis-stat-value">
-                <div class="diagnosis-stat-main">{{tumors.[0].stage}}</div>
+                <div class="diagnosis-stat-main">Stage I</div>
               </div>
             </div>
           </div>
@@ -994,7 +1003,7 @@
               </div>
               <div class="diagnosis-stat-value">
                 <div class="diagnosis-stat-main">Nottingham</div>
-                <div class="diagnosis-stat-sub">{{tumors.[0].grade}}</div>
+                <div class="diagnosis-stat-sub">Grade 2</div>
               </div>
             </div>
           </div>
@@ -1021,42 +1030,38 @@
               </div>
             </div>
           </div>
-          {{/if}}
           </div>
         </div>
 
-        {{!-- Tumor Details --}}
-        {{#if tumors}}
         <div class="tumor-section">
           <h3>Diagnosis by Tumor</h3>
-          {{#each tumors}}
-            <h4>{{title}}</h4>
+            <h4>Tumor 1</h4>
             
             <div class="tumor-details-container">
               <div class="tumor-column">
                 <div class="tumor-detail-row">
                   <div class="tumor-detail-label">Cancer Type</div>
-                  <div class="tumor-detail-value">{{cancer_type}}</div>
+                  <div class="tumor-detail-value">Invasive Ductal Carcinoma</div>
                 </div>
                 <div class="tumor-detail-row">
                   <div class="tumor-detail-label">Location</div>
-                  <div class="tumor-detail-value">{{location}} ({{size_cm}}mm)</div>
+                  <div class="tumor-detail-value">Left breast (0.9mm)</div>
                 </div>
                 <div class="tumor-detail-row">
                   <div class="tumor-detail-label">Stage</div>
-                  <div class="tumor-detail-value">Clinical stage {{stage}}</div>
+                  <div class="tumor-detail-value">Clinical stage Stage I</div>
                 </div>
                 <div class="tumor-detail-row">
                   <div class="tumor-detail-label">Grade</div>
-                  <div class="tumor-detail-value">{{grade}}</div>
+                  <div class="tumor-detail-value">Grade 2</div>
                 </div>
                 <div class="tumor-detail-row">
                   <div class="tumor-detail-label">Hormone Receptor Status</div>
-                  <div class="tumor-detail-value">{{hormoneReceptorStatus}}</div>
+                  <div class="tumor-detail-value">ER+/PR+, HER2-</div>
                 </div>
                 <div class="tumor-detail-row">
                   <div class="tumor-detail-label">HER2 Status</div>
-                  <div class="tumor-detail-value">{{her2Status}}</div>
+                  <div class="tumor-detail-value">ER+/PR+, HER2-</div>
                 </div>
               </div>
 
@@ -1079,11 +1084,8 @@
                 </div>
               </div>
             </div>
-          {{/each}}
         </div>
-        {{/if}}
 
-        {{#if whatThisMeans}}
         <div class="meaning-section">
           <h3>Diagnosis Summary</h3>
           <p style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 2rem; font-weight: 600; color: white; line-height: 1.3; margin: 1.5rem 0;">
@@ -1094,142 +1096,162 @@
           <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-top: 2rem;">
             <div>
               <h4 style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 1.1rem; font-weight: 600; color: white; margin-bottom: 0.75rem;">Receptive to Endocrine Therapy</h4>
-              <p style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 0.95rem; color: rgba(255, 255, 255, 0.9); line-height: 1.5;">{{whatThisMeans.goodNews}}</p>
+              <p style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 0.95rem; color: rgba(255, 255, 255, 0.9); line-height: 1.5;">We have a clear diagnosis and early treatment plan.</p>
             </div>
             <div>
               <h4 style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 1.1rem; font-weight: 600; color: white; margin-bottom: 0.75rem;">New Treatments Available</h4>
-              <p style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 0.95rem; color: rgba(255, 255, 255, 0.9); line-height: 1.5;">{{whatThisMeans.newOptions}}</p>
+              <p style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 0.95rem; color: rgba(255, 255, 255, 0.9); line-height: 1.5;">Further testing or consultation may refine the plan.</p>
             </div>
             <div>
               <h4 style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 1.1rem; font-weight: 600; color: white; margin-bottom: 0.75rem;">Focus on curing cancer</h4>
-              <p style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 0.95rem; color: rgba(255, 255, 255, 0.9); line-height: 1.5;">{{whatThisMeans.treatmentFocus}}</p>
+              <p style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 0.95rem; color: rgba(255, 255, 255, 0.9); line-height: 1.5;">Focus will be on targeted or endocrine therapy based on results.</p>
             </div>
           </div>
         </div>
-        {{/if}}
       </section>
-      {{/if}}
 
-      {{!-- ✳️ NEXT STEPS --}}
-      {{#if (eq id "next_steps")}}
-      <section id="{{id}}" class="section next-steps">
-        <h2 class="section-title">{{title}}</h2>
-        <p class="description">{{description}}</p>
 
-        {{#if progressJourney}}
+
+
+
+
+
+
+
+
+
+      <section id="next_steps" class="section next-steps">
+        <h2 class="section-title">Next Steps</h2>
+        <p class="description">Follow-up actions and recommendations</p>
+
         <div class="journey">
-          <p><strong>Where you are now:</strong> {{progressJourney.current_stage}}</p>
+          <p><strong>Where you are now:</strong> Diagnostic Testing</p>
           <div class="stages">
-            {{#each progressJourney.stages}}
-              <div class="stage-item {{status}}">
-                <span class="stage-name">{{name}}</span>
-                <span class="stage-status">({{status}})</span>
+              <div class="stage-item complete">
+                <span class="stage-name">Diagnostic Testing</span>
+                <span class="stage-status">(complete)</span>
               </div>
-            {{/each}}
+              <div class="stage-item in_progress">
+                <span class="stage-name">Planning</span>
+                <span class="stage-status">(in_progress)</span>
+              </div>
+              <div class="stage-item pending">
+                <span class="stage-name">Treatment</span>
+                <span class="stage-status">(pending)</span>
+              </div>
           </div>
         </div>
-        {{/if}}
 
-        {{#if items}}
         <div class="steps-list">
-          {{#each items}}
-            <div class="step-item {{status}}">
-              <h4>{{name}}</h4>
-              {{#if date}}<p class="date">{{date}}</p>{{/if}}
-              {{#if explanation}}<p class="explanation">{{explanation}}</p>{{/if}}
-              {{#if source}}
-                <p class="source">
-                  <strong>Source:</strong> {{source.type}} · {{source.date}} · {{source.report_name}}
-                </p>
-              {{/if}}
+            <div class="step-item pending">
+              <h4>Oncotype DX</h4>
+              
+              
             </div>
-          {{/each}}
+            <div class="step-item scheduled">
+              <h4>Surgical Consultation</h4>
+              <p class="date">2025-11-10</p>
+              
+            </div>
         </div>
-        {{/if}}
       </section>
-      {{/if}}
 
-      {{!-- ✳️ TREATMENT PLANNING --}}
-      {{#if (eq id "treatment_planning")}}
-      <section id="{{id}}" class="section treatment-planning">
-        <h2 class="section-title">{{title}}</h2>
 
-        <p class="summary">{{fields.summary}}</p>
-        <p><strong>As of:</strong> {{fields.as_of_date}}</p>
-        <p><strong>Source:</strong> {{fields.source}}</p>
 
-        {{#if treatments}}
+
+
+
+
+
+
+
+
+      <section id="treatment_planning" class="section treatment-planning">
+        <h2 class="section-title">Your Likely Treatments</h2>
+
+        <p class="summary">These are the most likely treatments based on your diagnosis and subtype.</p>
+        <p><strong>As of:</strong> 2025-11-06</p>
+        <p><strong>Source:</strong> Defiant Health Pathways</p>
+
         <div class="treatments">
           <h3>Treatments</h3>
-          {{#each treatments}}
             <div class="treatment">
-              <h4>{{name}}</h4>
-              <p>{{description}}</p>
-              <p><strong>Specialty:</strong> {{specialty}}</p>
-              <p><strong>Likelihood:</strong> {{likelihood}}</p>
-              <p><strong>Expected Timing:</strong> {{expected_timing}}</p>
-              {{#if subelements.treatment_time.notes}}
-                <p><strong>Treatment Time:</strong> {{subelements.treatment_time.notes}}</p>
-              {{/if}}
-              {{#if source.report_name}}
-                <p class="source"><strong>Source:</strong> {{source.report_name}}</p>
-              {{/if}}
+              <h4>Endocrine Therapy</h4>
+              <p>Tamoxifen for 5 years</p>
+              <p><strong>Specialty:</strong> medical oncology</p>
+              <p><strong>Likelihood:</strong> highly_likely</p>
+              <p><strong>Expected Timing:</strong> </p>
             </div>
-          {{/each}}
+            <div class="treatment">
+              <h4>Lumpectomy</h4>
+              <p>Breast-conserving surgery</p>
+              <p><strong>Specialty:</strong> surgical oncology</p>
+              <p><strong>Likelihood:</strong> highly_likely</p>
+              <p><strong>Expected Timing:</strong> </p>
+            </div>
         </div>
-        {{/if}}
       </section>
-      {{/if}}
 
-      {{!-- ✳️ QUESTIONS FOR YOUR ONCOLOGIST --}}
-      {{#if (eq id "oncologist_questions")}}
-      <section id="{{id}}" class="section oncologist-questions">
-        <h2 class="section-title">{{title}}</h2>
-        <p class="description">{{description}}</p>
 
-        {{#each categories}}
+
+
+
+
+
+
+
+
+
+      <section id="oncologist_questions" class="section oncologist-questions">
+        <h2 class="section-title">Helpful Questions for Your Oncologist</h2>
+        <p class="description">Prompts to guide your next oncology visit.</p>
+
           <div class="question-category">
-            <h3>{{name}}</h3>
+            <h3>Treatment Discussion</h3>
             <ul>
-              {{#each questions}}
-                <li>{{text}}</li>
-              {{/each}}
+                <li>What are my main treatment options and their potential side effects?</li>
+                <li>How will my receptor status influence my treatment plan?</li>
             </ul>
           </div>
-        {{/each}}
       </section>
-      {{/if}}
 
-      {{!-- ✳️ CARE TEAM --}}
-      {{#if (eq id "care_team")}}
-      <section id="{{id}}" class="section care-team">
-        <h2 class="section-title">{{title}}</h2>
-        {{#if items.length}}
+
+
+
+
+
+
+
+
+
+
+      <section id="care_team" class="section care-team">
+        <h2 class="section-title">Your Care Team</h2>
           <ul class="team-list">
-            {{#each items}}
               <li>
-                <strong>{{name}}</strong> — {{title}} ({{specialty}})
-                {{#if contact_email}}<br>Email: {{contact_email}}{{/if}}
-                {{#if contact_phone}}<br>Phone: {{contact_phone}}{{/if}}
+                <strong></strong> —  ()
+                
+                
               </li>
-            {{/each}}
           </ul>
-        {{else}}
-          <p>No care team members listed.</p>
-        {{/if}}
       </section>
-      {{/if}}
 
-      {{!-- ✳️ FOOTER --}}
-      {{#if (eq id "footer")}}
+
+
+
+
+
+
+
+
+
+
       <footer class="report-footer">
-        <p class="disclaimer">{{fields.disclaimer}}</p>
-        <p class="contact">{{fields.contact_info}}</p>
-        <p class="organization">{{fields.organization}}</p>
+        <p class="disclaimer">This decision aid is not medical advice and does not replace discussions with your care team.</p>
+        <p class="contact">Questions? Contact Defiant Health at support@defianthealth.com</p>
+        <p class="organization">Defiant Health</p>
       </footer>
-      {{/if}}
 
-    {{/each}}
   </main>
 </body>
 </html>
