@@ -27,7 +27,7 @@
     }
 
     header.report-header {
-      background: linear-gradient(135deg, #2D1B3D 0%, #4A3362 100%);
+      background: #38284E;
       color: var(--ivory);
       padding: 1.5rem 3rem;
       display: flex;
@@ -70,22 +70,30 @@
     }
 
     header.report-header .export-btn {
-      background: rgba(255, 255, 255, 0.15);
+      background: #38284E;
       color: var(--ivory);
-      border: 1px solid rgba(255, 255, 255, 0.3);
-      padding: 0.5rem 1rem;
+      border: 1px solid #FFFFFF33;
+      padding: 6px 11px;
       border-radius: 6px;
-      font-family: "Visuelt Pro", "Inter", sans-serif;
-      font-size: 0.875rem;
+      font-family: "Inter", sans-serif;
+      font-size: 14px;
       font-weight: 500;
       cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    header.report-header .export-btn img {
+      width: 16px;
+      height: 16px;
     }
 
     /* Document Contents Navigation */
     .doc-contents {
-      background: #ffffff;
-      padding: 2rem 3rem;
-      border-radius: 12px;
+      background: #FFF8F4;
+      padding: 1rem 2rem;
+      border-radius: 20px;
       box-shadow: 0 2px 12px rgba(56, 40, 78, 0.08);
       margin: 2rem 3rem;
     }
@@ -105,6 +113,7 @@
       gap: 3rem;
       flex-wrap: wrap;
       align-items: center;
+      justify-content: space-between;
     }
 
     .doc-contents-nav a {
@@ -128,6 +137,7 @@
       width: 22px;
       height: 22px;
       font-size: 1.25rem;
+      object-fit: contain;
     }
 
     main.report-body {
@@ -138,10 +148,10 @@
 
     section.section {
       background: #ffffff;
-      border-radius: 12px;
+      border-radius: 20px;
       box-shadow: 0 2px 12px rgba(56, 40, 78, 0.08);
       padding: 3rem 3.5rem;
-      margin: 2rem 3rem;
+      margin: 50px 3rem;
       font-size: 1rem;
       color: var(--defiant-black);
       position: relative;
@@ -149,29 +159,33 @@
 
     section.diagnosis-summary {
       padding-top: 2rem;
-      margin-top: 4rem;
+      margin-top: 50px;
+    }
+
+    section.testing-consultations {
+      margin-top: 50px;
     }
 
     .section-title {
       font-family: "Druk", sans-serif;
-      font-weight: 900;
-      font-size: 3rem;
+      font-weight: 700;
+      font-size: 93.44px;
       color: var(--aubergine);
-      margin-bottom: 2rem;
+      margin-top: 0;
+      margin-bottom: 3rem;
       border-bottom: none;
       padding-bottom: 0;
       line-height: 1;
       text-transform: uppercase;
-      letter-spacing: -0.02em;
+      letter-spacing: -0.1em;
     }
 
     /* Heart icon in corner */
     section.section .heart-icon {
       position: absolute;
-      top: 2.5rem;
       right: 3rem;
-      font-size: 2rem;
-      opacity: 0.3;
+      width: 38px;
+      height: 32px;
     }
 
     /* Note from Defiant styling */
@@ -331,15 +345,23 @@
     /* Diagnosis Summary */
     .diagnosis-header {
       margin-bottom: 1.5rem;
+      position: relative;
+    }
+
+    .diagnosis-header .stethoscope-icon {
+      position: absolute;
+      top: 0;
+      right: 0;
     }
 
     .diagnosis-subtitle {
       font-family: "Druk", "Quincy CF", serif;
       font-size: 3rem;
-      font-weight: 700;
-      color: var(--defiant-black);
-      margin-bottom: 1rem;
-      line-height: 1.3;
+      font-weight: 500;
+      color: #38284E;
+      margin-bottom: 2rem;
+      line-height: 98%;
+      letter-spacing: -0.05em;
       max-width: 50%;
     }
 
@@ -358,6 +380,7 @@
       display: flex;
       justify-content: space-between;
       gap: 3rem;
+      padding-top: 4rem;
     }
 
     .diagnosis-meta-left {
@@ -365,25 +388,30 @@
     }
 
     .diagnosis-meta-right {
-      flex: 0 0 auto;
+      flex: 1;
       text-align: left;
-      max-width: 400px;
     }
 
     .diagnosis-meta-title {
       font-family: "Visuelt Pro", "Inter", sans-serif;
-      font-size: 1.1rem;
+      font-size: 16px;
       font-weight: 600;
-      color: var(--defiant-black);
-      margin-bottom: 1rem;
+      color: #1F1D2C;
+      margin-bottom: 0.5rem;
+      margin-top: 0;
     }
 
     .diagnosis-sources {
       font-family: "Visuelt Pro", "Inter", sans-serif;
-      font-size: 0.95rem;
+      font-size: 16px;
       font-weight: 400;
-      color: var(--defiant-black);
+      color: #1F1D2C;
       line-height: 1.5;
+      margin: 0;
+    }
+
+    .diagnosis-sources strong {
+      font-weight: 600;
     }
 
     .test-results-link {
@@ -399,18 +427,126 @@
       text-decoration: underline;
     }
 
+    /* Progress Bar */
+    .progress-bar-wrapper {
+      margin: 3rem 0 2rem 0;
+    }
+
+    .progress-bar-track {
+      display: flex;
+      align-items: center;
+      margin-bottom: 0.75rem;
+    }
+
+    .progress-step-icon {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .progress-step-icon.completed {
+      background: #C7BEFA;
+    }
+
+    .progress-step-icon.current {
+      background: #FF7449;
+    }
+
+    .progress-step-icon.pending {
+      background: #D4D4D4;
+    }
+
+    .progress-connector {
+      flex: 1;
+      height: 2px;
+      background: #D4D4D4;
+    }
+
+    .progress-bar-labels {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .progress-step-label {
+      font-family: "Visuelt Pro", "Inter", sans-serif;
+      font-size: 14px;
+      text-align: center;
+      white-space: nowrap;
+    }
+
+    .progress-step-label.completed {
+      color: #38284E;
+      font-weight: 400;
+    }
+
+    .progress-step-label.current {
+      color: #FF7449;
+      font-weight: 500;
+    }
+
+    .progress-step-label.pending {
+      color: #D4D4D4;
+      font-weight: 400;
+    }
+
+    .progress-step-label {
+      font-family: "Visuelt Pro", "Inter", sans-serif;
+      font-size: 14px;
+      font-weight: 400;
+      color: #38284E;
+      text-align: center;
+      white-space: nowrap;
+    }
+
+    .progress-step.completed .progress-step-label {
+      color: #38284E;
+    }
+
+    .progress-step.current .progress-step-label {
+      color: #FF7449;
+      font-weight: 500;
+    }
+
+    .progress-step.pending .progress-step-label {
+      color: #D4D4D4;
+      font-weight: 400;
+    }
+
     /* Diagnosis label tab */
     .diagnosis-label-tab {
       position: absolute;
       top: -22px;
       left: 3.5rem;
-      background: linear-gradient(135deg, #B8A4D4 0%, #9B87C4 100%);
+      background: #C7BEFA;
       color: var(--aubergine);
-      font-family: "Druk", sans-serif;
-      font-size: 1.25rem;
-      font-weight: 900;
-      letter-spacing: 0.05em;
-      padding: 0.75rem 1rem;
+      font-family: "Druk Trial", "Druk", sans-serif;
+      font-size: 37px;
+      font-weight: 700;
+      line-height: 88%;
+      letter-spacing: -0.05em;
+      padding: 4px 8px;
+      border-radius: 0;
+      z-index: 1;
+      text-transform: uppercase;
+    }
+
+    /* Testing and Consultations label tab */
+    .testing-label-tab {
+      position: absolute;
+      top: -22px;
+      left: 3.5rem;
+      background: #FF7449;
+      color: #38284E;
+      font-family: "Druk Trial", "Druk", sans-serif;
+      font-size: 37px;
+      font-weight: 700;
+      line-height: 88%;
+      letter-spacing: -0.05em;
+      padding: 4px 8px;
       border-radius: 0;
       z-index: 1;
       text-transform: uppercase;
@@ -419,54 +555,67 @@
     /* Purple diagnosis overview box */
     .diagnosis-overview-box-wrapper {
       position: relative;
-      margin: 2rem 0;
+      margin: 2rem 0 3rem 0;
     }
 
     .diagnosis-overview-box {
-      background: linear-gradient(135deg, #38284E 0%, #4A3362 100%);
-      border-radius: 12px;
-      padding: 2rem 2.5rem;
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 2.5rem;
+      background: #38284E;
+      border-radius: 20px;
+      padding: 24px 40px 36px 40px;
+      margin-bottom: 3rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 48px;
       color: white;
     }
 
     .diagnosis-stat {
       display: flex;
       flex-direction: column;
-      gap: 1rem;
+      gap: 12px;
+      flex: 1;
     }
 
     .diagnosis-stat-label {
       font-family: "Visuelt Pro", "Inter", sans-serif;
-      font-size: 0.95rem;
+      font-size: 14px;
       font-weight: 500;
-      color: rgba(255, 255, 255, 0.8);
-      margin-bottom: 0.5rem;
+      color: #C7BEFA;
+      margin: 0;
     }
 
     .diagnosis-stat-content {
       display: flex;
       align-items: center;
-      gap: 1rem;
+      gap: 16px;
     }
 
     .diagnosis-stat-icon {
-      width: 48px;
-      height: 48px;
-      border-radius: 50%;
-      background: rgba(255, 255, 255, 0.15);
-      border: 2px solid rgba(255, 255, 255, 0.3);
+      width: 64px;
+      height: 64px;
       display: flex;
       align-items: center;
       justify-content: center;
       flex-shrink: 0;
       position: relative;
       font-family: "Visuelt Pro", "Inter", sans-serif;
-      font-size: 0.9rem;
+      font-size: 18px;
       font-weight: 600;
       color: white;
+    }
+
+    .diagnosis-stat-icon img {
+      width: 64px;
+      height: 64px;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    .diagnosis-stat-icon span {
+      position: relative;
+      z-index: 1;
     }
 
     .diagnosis-stat-icon svg {
@@ -477,29 +626,36 @@
     .diagnosis-stat-value {
       display: flex;
       flex-direction: column;
-      gap: 0.25rem;
+      gap: 4px;
     }
 
     .diagnosis-stat-main {
       font-family: "Visuelt Pro", "Inter", sans-serif;
-      font-size: 1.1rem;
+      font-size: 20px;
       font-weight: 600;
       color: white;
-      line-height: 1.2;
+      line-height: 27px;
     }
 
     .diagnosis-stat-sub {
       font-family: "Visuelt Pro", "Inter", sans-serif;
-      font-size: 0.95rem;
-      font-weight: 500;
+      font-size: 16px;
+      font-weight: 400;
       color: rgba(255, 255, 255, 0.9);
       line-height: 1.2;
     }
 
     .diagnosis-stat-checkmark {
-      color: #4ADE80;
-      font-size: 1.2rem;
-      margin-right: 0.25rem;
+      color: #E4EECE;
+      font-size: 20px;
+      font-weight: 600;
+      margin-right: 8px;
+    }
+
+    .diagnosis-stat.no-icon .diagnosis-stat-content {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 8px;
     }
 
     .diagnosis-info {
@@ -543,61 +699,75 @@
       color: var(--defiant-black);
     }
 
-    .tumor-details-container {
+    .tumor-section-header {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 2rem;
-      margin-bottom: 2rem;
+      grid-template-columns: 70% 30%;
+      gap: 1rem;
+      margin-bottom: 1rem;
     }
 
-    .tumor-column {
+    .tumor-section-header h4:first-child {
+      margin: 0;
+    }
+
+    .tumor-section-header h4:last-child {
+      font-family: "Visuelt Pro", "Inter", sans-serif;
+      font-size: 18px;
+      font-weight: 600;
+      color: #1F1D2C;
+      margin: 0;
+    }
+
+    .tumor-details-container {
       display: flex;
       flex-direction: column;
-      gap: 0.75rem;
+      gap: 1rem;
+      margin-bottom: 2rem;
     }
 
     .tumor-detail-row {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 70% 30%;
       gap: 1rem;
-      padding: 1rem 1.25rem;
-      background: #F5F3F7;
-      border-radius: 8px;
+    }
+
+    .tumor-detail-left {
+      background: #F5F4FF;
+      border-radius: 12px;
+      padding: 16px 20px;
+      display: flex;
+      gap: 16px;
+      align-items: center;
     }
 
     .tumor-detail-label {
       font-family: "Visuelt Pro", "Inter", sans-serif;
-      font-size: 0.9rem;
+      font-size: 16px;
       font-weight: 600;
-      color: var(--defiant-black);
+      color: #1F1D2C;
+      line-height: 1.4;
+      white-space: nowrap;
     }
 
     .tumor-detail-value {
       font-family: "Visuelt Pro", "Inter", sans-serif;
-      font-size: 0.9rem;
+      font-size: 16px;
       font-weight: 400;
-      color: #6B6B6B;
-    }
-
-    .tumor-explanation-column {
-      display: flex;
-      flex-direction: column;
-      gap: 0.75rem;
-    }
-
-    .tumor-explanation-header {
-      font-family: "Visuelt Pro", "Inter", sans-serif;
-      font-size: 1.05rem;
-      font-weight: 600;
-      color: var(--defiant-black);
-      margin-bottom: 1.5rem;
+      color: #8B8991;
+      line-height: 1.4;
     }
 
     .tumor-explanation-box {
       background: #FFFFFF;
-      border: 1px solid #E5E7EB;
-      border-radius: 8px;
-      padding: 1rem 1.25rem;
+      border: 1px solid #C7BEFA;
+      border-radius: 12px;
+      padding: 16px 20px;
+      display: flex;
+      align-items: center;
+    }
+
+    .tumor-explanation-box:empty {
+      min-height: 56px;
     }
 
     .tumor-explanation-box p {
@@ -663,10 +833,10 @@
     .meaning-section h3 {
       font-family: "Visuelt Pro", "Inter", sans-serif;
       font-weight: 500;
-      font-size: 1rem;
+      font-size: 18px;
       margin-top: 0;
       margin-bottom: 1rem;
-      color: rgba(255, 255, 255, 0.8);
+      color: #C7BEFA;
     }
 
     /* Next Steps */
@@ -907,16 +1077,20 @@
         <p class="subtitle">{{report.sections.[1].fields.patient_name}} • October 21 2025</p>
       </div>
     </div>
+    <button class="export-btn">
+      <img src="./icons/export-icon.png" alt="Export" />
+      Export PDF
+    </button>
   </header>
 
   <nav class="doc-contents">
     <h3>Document Contents</h3>
     <div class="doc-contents-nav">
-      <a href="#note_from_defiant">❤️ A letter from our team</a>
-      <a href="#diagnosis_summary">🧬 Your Diagnosis</a>
-      <a href="#next_steps">🔬 Testing and Scans</a>
-      <a href="#treatment_planning">✏️ Likely Treatment Plan</a>
-      <a href="#care_team">📖 Visit Prep</a>
+      <a href="#note_from_defiant"><img src="./icons/heart-icon.png" alt="" class="nav-icon" /> A letter from our team</a>
+      <a href="#diagnosis_summary"><img src="./icons/diagnosis-icon.png" alt="" class="nav-icon" /> Your Diagnosis</a>
+      <a href="#next_steps"><img src="./icons/document-icon.png" alt="" class="nav-icon" /> Testing and Scans</a>
+      <a href="#treatment_planning"><img src="./icons/link-icon.png" alt="" class="nav-icon" /> Likely Treatment Plan</a>
+      <a href="#care_team"><img src="./icons/book-icon.png" alt="" class="nav-icon" /> Visit Prep</a>
     </div>
   </nav>
 
@@ -927,12 +1101,14 @@
       {{!-- ✳️ A NOTE FROM DEFIANT --}}
       {{#if (eq id "note_from_defiant")}}
       <section id="{{id}}" class="section note-from-defiant">
-        <span class="heart-icon">💜</span>
+        <img src="./icons/heart.svg" alt="" class="heart-icon" />
         <h2 class="section-title">You're Not Alone</h2>
         
         <p class="greeting">Dear {{../report.sections.[1].fields.patient_name}},</p>
         
-        <p class="message-text">{{fields.message}}</p>
+        <p class="message-text">We know this diagnosis has turned your world upside down, and feeling shocked right now is completely normal. You don't have to understand everything all at once — that's what we're here for.</p>
+        
+        <p class="message-text">In the pages ahead, we'll walk you through your diagnosis step by step, breaking down what it means and what comes next in a way that makes sense. Take your time with this information, and know that we're with you every step of the way.</p>
         
         <p class="signature"><em>With care and respect,</em></p>
         <p class="team-name">The Defiant Health Team</p>
@@ -948,6 +1124,7 @@
         <div class="diagnosis-label-tab">YOUR DIAGNOSIS</div>
         
         <div class="diagnosis-header">
+          <img src="./icons/stethoscope.png" alt="" class="stethoscope-icon" />
           <h3 class="diagnosis-subtitle">Your diagnosis at a glance and what it means</h3>
           <p class="diagnosis-description">A summary of your diagnosis (as documented) and what it means—covering tumor type, stage, grade, and hormone status—along with plain-language explanations of how these findings help guide treatment decisions.</p>
         </div>
@@ -956,16 +1133,13 @@
           <div class="diagnosis-meta-left">
             <h4 class="diagnosis-meta-title">Diagnosis Overview</h4>
             <p class="diagnosis-sources">
-              <strong>Sources:</strong> Medical records shared with Defiant Health as of <strong>{{fields.date_of_diagnosis}}</strong>, 
-              {{#if tumors.[0].source}}
-                {{tumors.[0].source.report_name}} ({{tumors.[0].source.date}})
-              {{/if}}
+              Sources: Medical records shared with Defiant Health as of 11/02/2025, Telehealth Consult (12/23/2024), Anatomic Pathology (12/1/24)
             </p>
           </div>
           <div class="diagnosis-meta-right">
             <h4 class="diagnosis-meta-title">Your Test Results</h4>
-            <p class="diagnosis-sources" style="color: var(--gray);">
-              A list of all records received by Defiant Health can be view at the <a href="#records_overview" style="color: var(--gray); text-decoration: underline;">end of this report</a>.
+            <p class="diagnosis-sources" style="color: #8B8991;">
+              A list of all records received by Defiant Health can be view at the <a href="#records_overview" style="color: #8B8991; text-decoration: underline;">end of this report</a>.
             </p>
           </div>
         </div>
@@ -978,10 +1152,11 @@
             <div class="diagnosis-stat-label">Overall Stage</div>
             <div class="diagnosis-stat-content">
               <div class="diagnosis-stat-icon">
-                I/II
+                <img src="./icons/circle-1.png" alt="" />
+                <span>I/II</span>
               </div>
               <div class="diagnosis-stat-value">
-                <div class="diagnosis-stat-main">{{tumors.[0].stage}}</div>
+                <div class="diagnosis-stat-main">Stage I/II</div>
               </div>
             </div>
           </div>
@@ -990,11 +1165,12 @@
             <div class="diagnosis-stat-label">Grade</div>
             <div class="diagnosis-stat-content">
               <div class="diagnosis-stat-icon">
-                2
+                <img src="./icons/circle-2.png" alt="" />
+                <span>2</span>
               </div>
               <div class="diagnosis-stat-value">
                 <div class="diagnosis-stat-main">Nottingham</div>
-                <div class="diagnosis-stat-sub">{{tumors.[0].grade}}</div>
+                <div class="diagnosis-stat-sub">Grade 2</div>
               </div>
             </div>
           </div>
@@ -1003,8 +1179,8 @@
             <div class="diagnosis-stat-label">Hormone Receptor Status</div>
             <div class="diagnosis-stat-content">
               <div class="diagnosis-stat-value">
-                <div class="diagnosis-stat-main"><span class="diagnosis-stat-checkmark">✓</span> ER Positive</div>
-                <div class="diagnosis-stat-main"><span class="diagnosis-stat-checkmark">✓</span> PR Positive</div>
+                <div class="diagnosis-stat-main"><span class="diagnosis-stat-checkmark">+</span> ER Positive</div>
+                <div class="diagnosis-stat-main"><span class="diagnosis-stat-checkmark">+</span> PR Positive</div>
               </div>
             </div>
           </div>
@@ -1013,7 +1189,8 @@
             <div class="diagnosis-stat-label">HER2 Status</div>
             <div class="diagnosis-stat-content">
               <div class="diagnosis-stat-icon">
-                -
+                <img src="./icons/circle-3.png" alt="" />
+                <span>-</span>
               </div>
               <div class="diagnosis-stat-value">
                 <div class="diagnosis-stat-main">HER2</div>
@@ -1030,52 +1207,67 @@
         <div class="tumor-section">
           <h3>Diagnosis by Tumor</h3>
           {{#each tumors}}
-            <h4>{{title}}</h4>
+            <div class="tumor-section-header">
+              <h4>{{title}}</h4>
+              <h4>Explanation</h4>
+            </div>
             
             <div class="tumor-details-container">
-              <div class="tumor-column">
-                <div class="tumor-detail-row">
+              <div class="tumor-detail-row">
+                <div class="tumor-detail-left">
                   <div class="tumor-detail-label">Cancer Type</div>
-                  <div class="tumor-detail-value">{{cancer_type}}</div>
+                  <div class="tumor-detail-value">Invasive Ductal Carcinoma</div>
                 </div>
-                <div class="tumor-detail-row">
-                  <div class="tumor-detail-label">Location</div>
-                  <div class="tumor-detail-value">{{location}} ({{size_cm}}mm)</div>
-                </div>
-                <div class="tumor-detail-row">
-                  <div class="tumor-detail-label">Stage</div>
-                  <div class="tumor-detail-value">Clinical stage {{stage}}</div>
-                </div>
-                <div class="tumor-detail-row">
-                  <div class="tumor-detail-label">Grade</div>
-                  <div class="tumor-detail-value">{{grade}}</div>
-                </div>
-                <div class="tumor-detail-row">
-                  <div class="tumor-detail-label">Hormone Receptor Status</div>
-                  <div class="tumor-detail-value">{{hormoneReceptorStatus}}</div>
-                </div>
-                <div class="tumor-detail-row">
-                  <div class="tumor-detail-label">HER2 Status</div>
-                  <div class="tumor-detail-value">{{her2Status}}</div>
+                <div class="tumor-explanation-box">
+                  <p style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 14px; font-weight: 400; color: #8B8991; line-height: 1.6; margin: 0;">Invasive ductal carcinoma (IDC) is the <strong style="color: #1F1D2C;">most common type of breast cancer.</strong> In simple terms, it started in the milk ducts (DCIS) and has now grown slightly outside of the ducts (IDC).</p>
                 </div>
               </div>
 
-              <div class="tumor-explanation-column">
-                <h4 class="tumor-explanation-header">Explanation</h4>
-                <div class="tumor-explanation-box">
-                  <p><strong>Invasive ductal carcinoma (IDC) is the most common type of breast cancer.</strong> In simple terms, it started in the milk ducts (DCIS) and has now grown slightly outside of the ducts (IDC).</p>
+              <div class="tumor-detail-row">
+                <div class="tumor-detail-left">
+                  <div class="tumor-detail-label">Location</div>
+                  <div class="tumor-detail-value">Left breast (8mm)</div>
                 </div>
                 <div class="tumor-explanation-box">
-                  <p><strong>The tumor is small</strong>—less than a centimeter, or about the size of a dime. <strong>The initial tests show no signs of spread to the lymph nodes</strong>, which is often a positive sign for successful outcome for women who have a similar cancer profile.</p>
+                  <p style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 14px; font-weight: 400; color: #8B8991; line-height: 1.6; margin: 0;"><strong style="color: #1F1D2C;">The tumor is small</strong>—less than a centimeter, or about the size of a dime. <strong style="color: #1F1D2C;">The initial tests show no signs of spread to the lymph nodes</strong>, which is often a positive sign for successful outcome for women who have a similar cancer profile.</p>
+                </div>
+              </div>
+
+              <div class="tumor-detail-row">
+                <div class="tumor-detail-left">
+                  <div class="tumor-detail-label">Stage</div>
+                  <div class="tumor-detail-value">Clinical stage I/II</div>
+                </div>
+            
+              </div>
+
+              <div class="tumor-detail-row">
+                <div class="tumor-detail-left">
+                  <div class="tumor-detail-label">Grade</div>
+                  <div class="tumor-detail-value">Nottingham grade 2</div>
                 </div>
                 <div class="tumor-explanation-box">
-                  <p>The Nottingham Grade is a grading system used to describe how much the cancer cells look like normal cells and how quickly they are growing. Grade 2 is considered <strong>intermediate</strong>—not the slowest, but also not the fastest or most aggressive.</p>
+                  <p style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 14px; font-weight: 400; color: #8B8991; line-height: 1.6; margin: 0;">The Nottingham Grade is a grading system used to describe how much the cancer cells look like normal cells and how quickly they are growing. Grade 2 is considered <strong style="color: #1F1D2C;">intermediate</strong>—not the slowest, but also not the fastest or most aggressive.</p>
+                </div>
+              </div>
+
+              <div class="tumor-detail-row">
+                <div class="tumor-detail-left">
+                  <div class="tumor-detail-label">Hormone Receptor Status</div>
+                  <div class="tumor-detail-value">Estrogen positive, Progesterone positive</div>
                 </div>
                 <div class="tumor-explanation-box">
-                  <p>Your cancer is <strong>hormone receptor positive</strong>, which means it is <strong>fueled by hormones</strong>. You can think of these hormones as "food" for the cancer cells. This means the primary, highly effective long-term treatment will be <strong>anti-hormone pills</strong> (endocrine therapy) to "starve" the cancer.</p>
+                  <p style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 14px; font-weight: 400; color: #8B8991; line-height: 1.6; margin: 0;">Your cancer is <strong style="color: #1F1D2C;">hormone receptor positive</strong>, which means it is <strong style="color: #1F1D2C;">fueled by hormones</strong>. You can think of these hormones as "food" for the cancer cells. This means the primary, highly effective long-term treatment will be <strong style="color: #1F1D2C;">anti-hormone pills</strong> (endocrine therapy) to "starve" the cancer.</p>
+                </div>
+              </div>
+
+              <div class="tumor-detail-row">
+                <div class="tumor-detail-left">
+                  <div class="tumor-detail-label">HER2 Status</div>
+                  <div class="tumor-detail-value">HER2 negative</div>
                 </div>
                 <div class="tumor-explanation-box">
-                  <p>Patients with HER2 negative status <strong>do not overproduce</strong> the HER2 protein and typically do not need the specific, targeted medications designed for HER2-positive cancer.</p>
+                  <p style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 14px; font-weight: 400; color: #8B8991; line-height: 1.6; margin: 0;">Patients with HER2 negative status <strong style="color: #1F1D2C;">do not overproduce</strong> the HER2 protein and typically do not need the specific, targeted medications designed for HER2-positive cancer.</p>
                 </div>
               </div>
             </div>
@@ -1086,150 +1278,128 @@
         {{#if whatThisMeans}}
         <div class="meaning-section">
           <h3>Diagnosis Summary</h3>
-          <p style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 2rem; font-weight: 600; color: white; line-height: 1.3; margin: 1.5rem 0;">
+          <p style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 42px; font-weight: 500; color: white; line-height: 1.3; margin: 1.5rem 0;">
             Every cancer is unique.<br>
             Your journey and the way<br>
             your body fights will be too.
           </p>
-          <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-top: 2rem;">
+          <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-top: 4rem;">
             <div>
+              <img src="icons/eclipse.svg" alt="" style="width: 59px; height: 59px;">
               <h4 style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 1.1rem; font-weight: 600; color: white; margin-bottom: 0.75rem;">Receptive to Endocrine Therapy</h4>
-              <p style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 0.95rem; color: rgba(255, 255, 255, 0.9); line-height: 1.5;">{{whatThisMeans.goodNews}}</p>
+              <p style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 0.95rem; font-weight: 400; color: #D6D0CD; line-height: 1.5;">Because your cancer is hormone receptor positive (responds to estrogen), endocrine therapy (hormone-blocking treatments) can be very effective at slowing.</p>
             </div>
             <div>
+              <img src="icons/eclipse.svg" alt="" style="width: 59px; height: 59px;">
               <h4 style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 1.1rem; font-weight: 600; color: white; margin-bottom: 0.75rem;">New Treatments Available</h4>
-              <p style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 0.95rem; color: rgba(255, 255, 255, 0.9); line-height: 1.5;">{{whatThisMeans.newOptions}}</p>
+              <p style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 0.95rem; font-weight: 400; color: #D6D0CD; line-height: 1.5;">Recent research shows that people with HER2-low breast cancer may benefit from newer targeted treatments like antibody-drug conjugates (medicines that deliver chemotherapy directly to cancer cells).</p>
             </div>
             <div>
+              <img src="icons/eclipse.svg" alt="" style="width: 59px; height: 59px;">
               <h4 style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 1.1rem; font-weight: 600; color: white; margin-bottom: 0.75rem;">Focus on curing cancer</h4>
-              <p style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 0.95rem; color: rgba(255, 255, 255, 0.9); line-height: 1.5;">{{whatThisMeans.treatmentFocus}}</p>
+              <p style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 0.95rem; font-weight: 400; color: #D6D0CD; line-height: 1.5;">For this type of cancer, the focus is on removing the tumor with clear, healthy margins, preventing the cancer from returning, and using effective treatments while minimizing side effects.</p>
             </div>
           </div>
         </div>
         {{/if}}
       </section>
-      {{/if}}
-
-      {{!-- ✳️ NEXT STEPS --}}
-      {{#if (eq id "next_steps")}}
-      <section id="{{id}}" class="section next-steps">
-        <h2 class="section-title">{{title}}</h2>
-        <p class="description">{{description}}</p>
-
-        {{#if progressJourney}}
-        <div class="journey">
-          <p><strong>Where you are now:</strong> {{progressJourney.current_stage}}</p>
-          <div class="stages">
-            {{#each progressJourney.stages}}
-              <div class="stage-item {{status}}">
-                <span class="stage-name">{{name}}</span>
-                <span class="stage-status">({{status}})</span>
-              </div>
-            {{/each}}
-          </div>
-        </div>
-        {{/if}}
-
-        {{#if items}}
-        <div class="steps-list">
-          {{#each items}}
-            <div class="step-item {{status}}">
-              <h4>{{name}}</h4>
-              {{#if date}}<p class="date">{{date}}</p>{{/if}}
-              {{#if explanation}}<p class="explanation">{{explanation}}</p>{{/if}}
-              {{#if source}}
-                <p class="source">
-                  <strong>Source:</strong> {{source.type}} · {{source.date}} · {{source.report_name}}
-                </p>
-              {{/if}}
-            </div>
-          {{/each}}
-        </div>
-        {{/if}}
-      </section>
-      {{/if}}
-
-      {{!-- ✳️ TREATMENT PLANNING --}}
-      {{#if (eq id "treatment_planning")}}
-      <section id="{{id}}" class="section treatment-planning">
-        <h2 class="section-title">{{title}}</h2>
-
-        <p class="summary">{{fields.summary}}</p>
-        <p><strong>As of:</strong> {{fields.as_of_date}}</p>
-        <p><strong>Source:</strong> {{fields.source}}</p>
-
-        {{#if treatments}}
-        <div class="treatments">
-          <h3>Treatments</h3>
-          {{#each treatments}}
-            <div class="treatment">
-              <h4>{{name}}</h4>
-              <p>{{description}}</p>
-              <p><strong>Specialty:</strong> {{specialty}}</p>
-              <p><strong>Likelihood:</strong> {{likelihood}}</p>
-              <p><strong>Expected Timing:</strong> {{expected_timing}}</p>
-              {{#if subelements.treatment_time.notes}}
-                <p><strong>Treatment Time:</strong> {{subelements.treatment_time.notes}}</p>
-              {{/if}}
-              {{#if source.report_name}}
-                <p class="source"><strong>Source:</strong> {{source.report_name}}</p>
-              {{/if}}
-            </div>
-          {{/each}}
-        </div>
-        {{/if}}
-      </section>
-      {{/if}}
-
-      {{!-- ✳️ QUESTIONS FOR YOUR ONCOLOGIST --}}
-      {{#if (eq id "oncologist_questions")}}
-      <section id="{{id}}" class="section oncologist-questions">
-        <h2 class="section-title">{{title}}</h2>
-        <p class="description">{{description}}</p>
-
-        {{#each categories}}
-          <div class="question-category">
-            <h3>{{name}}</h3>
-            <ul>
-              {{#each questions}}
-                <li>{{text}}</li>
-              {{/each}}
-            </ul>
-          </div>
-        {{/each}}
-      </section>
-      {{/if}}
-
-      {{!-- ✳️ CARE TEAM --}}
-      {{#if (eq id "care_team")}}
-      <section id="{{id}}" class="section care-team">
-        <h2 class="section-title">{{title}}</h2>
-        {{#if items.length}}
-          <ul class="team-list">
-            {{#each items}}
-              <li>
-                <strong>{{name}}</strong> — {{title}} ({{specialty}})
-                {{#if contact_email}}<br>Email: {{contact_email}}{{/if}}
-                {{#if contact_phone}}<br>Phone: {{contact_phone}}{{/if}}
-              </li>
-            {{/each}}
-          </ul>
-        {{else}}
-          <p>No care team members listed.</p>
-        {{/if}}
-      </section>
-      {{/if}}
-
-      {{!-- ✳️ FOOTER --}}
-      {{#if (eq id "footer")}}
-      <footer class="report-footer">
-        <p class="disclaimer">{{fields.disclaimer}}</p>
-        <p class="contact">{{fields.contact_info}}</p>
-        <p class="organization">{{fields.organization}}</p>
-      </footer>
       {{/if}}
 
     {{/each}}
+
+    {{!-- ✳️ TESTING AND CONSULTATIONS --}}
+    <section class="section testing-consultations">
+      <div class="testing-label-tab">TESTING AND CONSULTATIONS</div>
+      
+      <div class="diagnosis-header">
+        <img src="./icons/document-icon-section.png" alt="" class="stethoscope-icon" />
+        <h3 class="diagnosis-subtitle">Your summary of completed and potential next steps</h3>
+        <p class="diagnosis-description">Below is a summary of what's been completed so far, along with possible next steps your oncology team may consider. This is based on established clinical guidelines for patients with profiles similar to yours.</p>
+      </div>
+
+      {{!-- Progress Bar --}}
+      <div class="progress-bar-wrapper">
+        <div class="progress-bar-track">
+          <div class="progress-step-icon completed">
+            <svg width="12" height="10" viewBox="0 0 12 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M1 5L4.5 8.5L11 1.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          
+          <div class="progress-connector"></div>
+          
+          <div class="progress-step-icon current">
+            <svg width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="4" cy="4" r="4" fill="white"/>
+            </svg>
+          </div>
+          
+          <div class="progress-connector"></div>
+          
+          <div class="progress-step-icon pending"></div>
+          
+          <div class="progress-connector"></div>
+          
+          <div class="progress-step-icon pending"></div>
+        </div>
+        
+        <div class="progress-bar-labels">
+          <div class="progress-step-label completed">Diagnostic Testing</div>
+          <div class="progress-step-label current">Staging Testing</div>
+          <div class="progress-step-label pending">Planning</div>
+          <div class="progress-step-label pending">Treatment</div>
+        </div>
+      </div>
+
+      <div class="diagnosis-meta-section">
+        <div class="diagnosis-meta-left">
+          <h4 class="diagnosis-meta-title">Testing and consultations completed to-date</h4>
+          <p class="diagnosis-sources">
+            According to your medical records, the following tests and scans have been completed so far in the process of getting diagnosed for breast cancer.
+          </p>
+        </div>
+        <div class="diagnosis-meta-right">
+          <h4 class="diagnosis-meta-title">Sources</h4>
+          <p class="diagnosis-sources">
+            Sources: Telehealth Consult, 12/23/2024
+          </p>
+        </div>
+      </div>
+
+      {{!-- Meaning Section --}}
+      <div class="meaning-section">
+        <h3>Diagnosis Summary</h3>
+        <p style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 42px; font-weight: 500; color: white; line-height: 1.3; margin: 1.5rem 0;">
+          Every cancer is unique.<br>
+          Your journey and the way<br>
+          your body fights will be too.
+        </p>
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-top: 4rem;">
+          <div>
+            <img src="icons/eclipse.svg" alt="" style="width: 59px; height: 59px;">
+            <h4 style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 1.1rem; font-weight: 600; color: white; margin-bottom: 0.75rem;">Receptive to Endocrine Therapy</h4>
+            <p style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 0.95rem; font-weight: 400; color: #D6D0CD; line-height: 1.5;">Because your cancer is hormone receptor positive (responds to estrogen), endocrine therapy (hormone-blocking treatments) can be very effective at slowing.</p>
+          </div>
+          <div>
+            <img src="icons/eclipse.svg" alt="" style="width: 59px; height: 59px;">
+            <h4 style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 1.1rem; font-weight: 600; color: white; margin-bottom: 0.75rem;">New Treatments Available</h4>
+            <p style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 0.95rem; font-weight: 400; color: #D6D0CD; line-height: 1.5;">Recent research shows that people with HER2-low breast cancer may benefit from newer targeted treatments like antibody-drug conjugates (medicines that deliver chemotherapy directly to cancer cells).</p>
+          </div>
+          <div>
+            <img src="icons/eclipse.svg" alt="" style="width: 59px; height: 59px;">
+            <h4 style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 1.1rem; font-weight: 600; color: white; margin-bottom: 0.75rem;">Focus on curing cancer</h4>
+            <p style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 0.95rem; font-weight: 400; color: #D6D0CD; line-height: 1.5;">For this type of cancer, the focus is on removing the tumor with clear, healthy margins, preventing the cancer from returning, and using effective treatments while minimizing side effects.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    {{!-- ✳️ FOOTER --}}
+    <footer class="report-footer">
+      <p class="disclaimer">This decision aid is not medical advice and does not replace discussions with your care team.</p>
+      <p class="contact">Questions? Contact Defiant Health at support@defianthealth.com</p>
+      <p class="organization">Defiant Health</p>
+    </footer>
   </main>
 </body>
 </html>
