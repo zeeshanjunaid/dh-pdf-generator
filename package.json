@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "start": "node scripts/generate-report.js",
-    "generate": "node scripts/generate-report.js data/sample-patient.json",
+    "generate": "node scripts/generate-report.js data/2025.11.06-rpt-a.json",
     "preview": "node scripts/preview-hbs.js",
     "dev": "node scripts/watch-dev.js",
     "watch": "node scripts/watch-dev.js",

@@ -135,7 +135,8 @@ export async function generatePDF(jsonPath) {
 // 🧩 CLI Execution Guard
 // ============================
 // Only runs when called directly via the command line.
-if (import.meta.url === `file://${process.argv[1]}`) {
+const isMainModule = process.argv[1] && import.meta.url.endsWith(path.basename(process.argv[1]));
+if (isMainModule) {
   const inputPath = process.argv[2];
   if (!inputPath) {
     console.error("❌ Please provide a JSON input path.");
