@@ -397,7 +397,7 @@
       font-size: 16px;
       font-weight: 600;
       color: #1F1D2C;
-      margin-bottom: 0.5rem;
+      margin-bottom: 30px;
       margin-top: 0;
     }
 
@@ -449,15 +449,28 @@
     }
 
     .progress-step-icon.completed {
-      background: #C7BEFA;
+      background: none;
+      width: 20px;
+      height: 20px;
+      border-radius: 0;
+    }
+
+    .progress-step-icon.completed svg {
+      width: 20px;
+      height: 20px;
+      display: block;
     }
 
     .progress-step-icon.current {
       background: #FF7449;
+      width: 20px;
+      height: 20px;
     }
 
     .progress-step-icon.pending {
       background: #D4D4D4;
+      width: 20px;
+      height: 20px;
     }
 
     .progress-connector {
@@ -514,6 +527,188 @@
     .progress-step.pending .progress-step-label {
       color: #D4D4D4;
       font-weight: 400;
+    }
+
+    /* Testing Items List */
+    .testing-items-wrapper {
+      margin-top: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .testing-items-wrapper + .testing-items-wrapper {
+      margin-top: 2rem;
+    }
+
+    .testing-divider {
+      height: 1px;
+      background: #0000001A;
+      margin-top: 3rem;
+      margin-bottom: 3rem;
+    }
+
+    /* Likely Tests Section */
+    .likely-tests-wrapper {
+      margin-top: 2rem;
+    }
+
+    .likely-tests-title {
+      font-family: "Visuelt Pro", "Inter", sans-serif;
+      font-size: 18px;
+      font-weight: 600;
+      color: #1F1D2C;
+      margin: 0 0 1.5rem 0;
+    }
+
+    .likely-tests-list {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .likely-test-item {
+      background: #F8F8F8;
+      border-radius: 12px;
+      padding: 20px 24px;
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+    }
+
+    .likely-test-badge {
+      font-family: "Visuelt Pro", "Inter", sans-serif;
+      font-size: 14px;
+      font-weight: 500;
+      color: #0A0A0A;
+      border: 1px solid #FF7449;
+      border-radius: 8px;
+      padding: 4px 8px;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .likely-test-content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .likely-test-name {
+      font-family: "Visuelt Pro", "Inter", sans-serif;
+      font-size: 16px;
+      font-weight: 600;
+      color: #1F1D2C;
+      margin: 0;
+      line-height: 1.4;
+    }
+
+    .likely-test-description {
+      font-family: "Visuelt Pro", "Inter", sans-serif;
+      font-size: 14px;
+      font-weight: 400;
+      color: #8B8991;
+      margin: 0;
+      line-height: 1.6;
+    }
+
+    .likely-tests-disclaimer {
+      font-family: "Visuelt Pro", "Inter", sans-serif;
+      font-size: 14px;
+      font-weight: 400;
+      color: #8B8991;
+      margin: 1.5rem 0 0 0;
+      font-style: italic;
+    }
+
+    .testing-items-title {
+      font-family: "Visuelt Pro", "Inter", sans-serif;
+      font-size: 18px;
+      font-weight: 600;
+      color: #0A0A0A;
+      margin: 0 0 1.25rem 0;
+    }
+
+    .testing-items-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .testing-item {
+      background: #F5F4FF;
+      border-radius: 12px;
+      padding: 12px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .testing-item-icon {
+      flex-shrink: 0;
+      width: 20px;
+      height: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .testing-item-icon img {
+      width: 20px;
+      height: 20px;
+      display: block;
+    }
+
+    .testing-item-content {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      min-width: 0;
+    }
+
+    .testing-item-title {
+      font-family: "Visuelt Pro", "Inter", sans-serif;
+      font-size: 16px;
+      font-weight: 400;
+      color: #1F1D2C;
+      line-height: 1.4;
+    }
+
+    .testing-item-right {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      flex-shrink: 0;
+      min-width: 200px;
+      justify-content: flex-end;
+    }
+
+    .testing-item-badge {
+      font-family: "Visuelt Pro", "Inter", sans-serif;
+      font-size: 14px;
+      line-height: 16px;
+      font-weight: 500;
+      color: #1F1D2C;
+      border: 1px solid #0D9488;
+      background: #B9F8CF;
+      border-radius: 8px;
+      padding: 4px 12px;
+      white-space: nowrap;
+      flex-shrink: 0;
+      width: 90px;
+      text-align: center;
+    }
+
+    .testing-item-date {
+      font-family: "Visuelt Pro", "Inter", sans-serif;
+      font-size: 16px;
+      font-weight: 400;
+      color: #1F1D2C;
+      white-space: nowrap;
+      flex-shrink: 0;
+      width: 70px;
+      text-align: left;
     }
 
     /* Diagnosis label tab */
@@ -996,6 +1191,219 @@
       margin-top: 0.5rem;
     }
 
+    /* Treatment Goals Section */
+    .treatment-goals-section {
+      margin-top: 3rem;
+    }
+
+    .treatment-goals-title {
+      font-family: "Visuelt Pro", "Inter", sans-serif;
+      font-size: 24px;
+      font-weight: 600;
+      color: #1F1D2C;
+      margin: 0 0 1.5rem 0;
+    }
+
+    .treatment-goals-intro {
+      font-family: "Visuelt Pro", "Inter", sans-serif;
+      font-size: 16px;
+      font-weight: 400;
+      color: #1F1D2C;
+      margin: 0 0 2rem 0;
+    }
+
+    .treatment-goals-highlight {
+      background: #FFC34D;
+      padding: 2px 4px;
+      border-radius: 4px;
+      font-weight: 500;
+    }
+
+    .treatment-goals-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+
+    .treatment-goal-box {
+      background: #FFFFFF;
+      border: 1px solid #FFC34D;
+      border-radius: 12px;
+      padding: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      min-height: 80px;
+    }
+
+    .treatment-goal-text {
+      font-family: "Visuelt Pro", "Inter", sans-serif;
+      font-size: 16px;
+      font-weight: 600;
+      color: #1F1D2C;
+      line-height: 1.4;
+      margin: 0;
+    }
+
+    /* Personal Goals Section */
+    .personal-goals-section {
+      margin-top: 3rem;
+    }
+
+    .personal-goals-title {
+      font-family: "Visuelt Pro", "Inter", sans-serif;
+      font-size: 20px;
+      font-weight: 600;
+      color: #1F1D2C;
+      margin: 0 0 24px 0;
+      line-height: 1.3;
+    }
+
+    .personal-goals-content {
+      display: flex;
+      gap: 3rem;
+      align-items: flex-start;
+    }
+
+    .personal-goals-left {
+      flex: 0 0 280px;
+    }
+
+    .personal-goals-description {
+      font-family: "Visuelt Pro", "Inter", sans-serif;
+      font-size: 14px;
+      font-weight: 400;
+      color: #8B8991;
+      margin: 0;
+      line-height: 1.6;
+    }
+
+    .personal-goals-right {
+      flex: 1;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: flex-start;
+    }
+
+    .personal-goal-pill {
+      background: #F5E6DE;
+      border-radius: 8px;
+      padding: 8px 16px;
+      font-family: "Visuelt Pro", "Inter", sans-serif;
+      font-size: 14px;
+      font-weight: 500;
+      color: #1F1D2C;
+      white-space: nowrap;
+    }
+
+    /* Treatment Cards Section */
+    .treatment-cards-section {
+      margin-top: 3rem;
+    }
+
+    .treatment-category-title {
+      font-family: "Visuelt Pro", "Inter", sans-serif;
+      font-size: 20px;
+      font-weight: 600;
+      color: #1F1D2C;
+      margin: 0 0 24px 0;
+    }
+
+    .treatment-card {
+      background: #F8F8F8;
+      border-radius: 12px;
+      padding: 32px;
+      margin-bottom: 24px;
+    }
+
+    .treatment-card-header {
+      margin-bottom: 24px;
+    }
+
+    .treatment-badge {
+      background: #FFC34D;
+      border-radius: 8px;
+      padding: 6px 12px;
+      font-family: "Visuelt Pro", "Inter", sans-serif;
+      font-size: 14px;
+      font-weight: 500;
+      color: #1F1D2C;
+      display: inline-block;
+      margin-bottom: 16px;
+    }
+
+    .treatment-badge.outlined {
+      background: transparent;
+      border: 1px solid #FFC34D;
+    }
+
+    .treatment-name {
+      font-family: "Visuelt Pro", "Inter", sans-serif;
+      font-size: 20px;
+      font-weight: 600;
+      color: #1F1D2C;
+      margin: 0 0 12px 0;
+      line-height: 1.3;
+    }
+
+    .treatment-intro {
+      font-family: "Visuelt Pro", "Inter", sans-serif;
+      font-size: 14px;
+      font-weight: 400;
+      color: #8B8991;
+      margin: 0;
+      line-height: 1.6;
+    }
+
+    .treatment-separator {
+      height: 1px;
+      background: #0000001A;
+      margin: 24px 0;
+    }
+
+    .treatment-details {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+    }
+
+    .treatment-detail-section h4 {
+      font-family: "Visuelt Pro", "Inter", sans-serif;
+      font-size: 16px;
+      font-weight: 600;
+      color: #1F1D2C;
+      margin: 0 0 12px 0;
+    }
+
+    .treatment-detail-section p {
+      font-family: "Visuelt Pro", "Inter", sans-serif;
+      font-size: 14px;
+      font-weight: 400;
+      color: #8B8991;
+      margin: 0;
+      line-height: 1.6;
+    }
+
+    .treatment-detail-section ul {
+      font-family: "Visuelt Pro", "Inter", sans-serif;
+      font-size: 14px;
+      font-weight: 400;
+      color: #8B8991;
+      margin: 0;
+      padding-left: 1.25rem;
+      line-height: 1.6;
+    }
+
+    .treatment-detail-section li {
+      margin-bottom: 8px;
+    }
+
+    .treatment-detail-section li::marker {
+      color: #FFC34D;
+    }
+
     /* Oncologist Questions */
     .oncologist-questions .question-category {
       background: var(--gray-lightest);
@@ -1050,6 +1458,21 @@
       font-weight: 700;
     }
 
+    /* Records Received Items */
+    .record-item-name {
+      font-family: "Visuelt Pro", "Inter", sans-serif;
+      font-size: 16px;
+      font-weight: 400;
+      color: #1F1D2C;
+    }
+
+    .record-item-date {
+      font-family: "Visuelt Pro", "Inter", sans-serif;
+      font-size: 16px;
+      font-weight: 500;
+      color: #8B8991;
+    }
+
     /* Footer */
     footer.report-footer {
       text-align: center;
@@ -1057,7 +1480,6 @@
       font-size: 0.85rem;
       color: var(--gray);
       padding: 1rem 0;
-      border-top: 1px solid var(--gray-lightest);
       margin-top: 3rem;
       user-select: none;
     }
@@ -1335,18 +1757,15 @@
       <div class="progress-bar-wrapper">
         <div class="progress-bar-track">
           <div class="progress-step-icon completed">
-            <svg width="12" height="10" viewBox="0 0 12 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M1 5L4.5 8.5L11 1.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="10" cy="10" r="10" fill="#C7BEFA"/>
+              <path d="M6 10L9 13L14 7" stroke="#38284E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
           </div>
           
           <div class="progress-connector"></div>
           
-          <div class="progress-step-icon current">
-            <svg width="8" height="8" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="4" cy="4" r="4" fill="white"/>
-            </svg>
-          </div>
+          <div class="progress-step-icon current"></div>
           
           <div class="progress-connector"></div>
           
@@ -1380,8 +1799,166 @@
         </div>
       </div>
 
+      <div class="testing-items-wrapper">
+        <h3 class="testing-items-title">Completed Tests</h3>
+        
+        <div class="testing-items-list">
+          <div class="testing-item">
+            <div class="testing-item-content">
+              <div class="testing-item-icon">
+                <img src="./icons/black-checkmark.svg" alt="Completed" />
+              </div>
+              <div class="testing-item-title">Bilateral mammogram</div>
+            </div>
+            <div class="testing-item-right">
+              <div class="testing-item-badge">Completed</div>
+              <div class="testing-item-date">9/23/24</div>
+            </div>
+          </div>
+
+          <div class="testing-item">
+            <div class="testing-item-content">
+              <div class="testing-item-icon">
+                <img src="./icons/black-checkmark.svg" alt="Completed" />
+              </div>
+              <div class="testing-item-title">Ultrasound - left breast</div>
+            </div>
+            <div class="testing-item-right">
+              <div class="testing-item-badge">Completed</div>
+              <div class="testing-item-date">11/12/24</div>
+            </div>
+          </div>
+
+          <div class="testing-item">
+            <div class="testing-item-content">
+              <div class="testing-item-icon">
+                <img src="./icons/black-checkmark.svg" alt="Completed" />
+              </div>
+              <div class="testing-item-title">Axillary ultrasound</div>
+            </div>
+            <div class="testing-item-right">
+              <div class="testing-item-badge">Completed</div>
+              <div class="testing-item-date">11/12/24</div>
+            </div>
+          </div>
+
+          <div class="testing-item">
+            <div class="testing-item-content">
+              <div class="testing-item-icon">
+                <img src="./icons/black-checkmark.svg" alt="Completed" />
+              </div>
+              <div class="testing-item-title">Breast core needle biopsy</div>
+            </div>
+            <div class="testing-item-right">
+              <div class="testing-item-badge">Completed</div>
+              <div class="testing-item-date">11/27/24</div>
+            </div>
+          </div>
+
+          <div class="testing-item">
+            <div class="testing-item-content">
+              <div class="testing-item-icon">
+                <img src="./icons/black-checkmark.svg" alt="Completed" />
+              </div>
+              <div class="testing-item-title">Pathology testing for ER/PR/HER2 status</div>
+            </div>
+            <div class="testing-item-right">
+              <div class="testing-item-badge">Completed</div>
+              <div class="testing-item-date">11/27/24</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testing-items-wrapper">
+        <h3 class="testing-items-title">Completed Referrals</h3>
+        
+        <div class="testing-items-list">
+          <div class="testing-item">
+            <div class="testing-item-content">
+              <div class="testing-item-icon">
+                <img src="./icons/black-checkmark.svg" alt="Completed" />
+              </div>
+              <div class="testing-item-title">Referral to Medical Oncology</div>
+            </div>
+            <div class="testing-item-right">
+              <div class="testing-item-badge">Scheduled</div>
+              <div class="testing-item-date">12/17/24</div>
+            </div>
+          </div>
+
+          <div class="testing-item">
+            <div class="testing-item-content">
+              <div class="testing-item-icon">
+                <img src="./icons/black-checkmark.svg" alt="Completed" />
+              </div>
+              <div class="testing-item-title">Referral to Surgery</div>
+            </div>
+            <div class="testing-item-right">
+              <div class="testing-item-badge">Scheduled</div>
+              <div class="testing-item-date">1/27/25</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testing-divider"></div>
+
+      <div class="diagnosis-meta-section" style="margin-top: 0; padding-top: 0;">
+        <div class="diagnosis-meta-left">
+          <h4 class="diagnosis-meta-title">Tests and consultations likely still needed</h4>
+          <p class="diagnosis-sources">
+            These are additional tests and referrals that your oncology and healthcare team may consider based on established breast cancer guidelines for people with cancer types that are similar to yours. These tests or referrals may not happen all at once or be needed at all, but might serve to help you understand what might be ordered by your healthcare team.
+          </p>
+        </div>
+        <div class="diagnosis-meta-right">
+          <h4 class="diagnosis-meta-title">Sources</h4>
+          <p class="diagnosis-sources">
+            Defiant Health and Dana-Farber Clinical Pathways, vX.XX dated X/XX/XXXX and based on guidelines for patients with similar profiles.
+          </p>
+        </div>
+      </div>
+
+      <div class="likely-tests-wrapper">
+        <h3 class="likely-tests-title">Tests that your oncology team may consider</h3>
+        
+        <div class="likely-tests-list">
+          <div class="likely-test-item">
+            <div class="likely-test-badge">Highly Likely</div>
+            <div class="likely-test-content">
+              <h4 class="likely-test-name">Germline genetic testing</h4>
+              <p class="likely-test-description">Blood test to check for inherited cancer gene changes (like BRCA1/BRCA2). This is sometimes suggested if you have a strong family history of breast cancer, are under age 50, or have other important risk factors.</p>
+            </div>
+          </div>
+
+          <div class="likely-test-item">
+            <div class="likely-test-badge">Highly Likely</div>
+            <div class="likely-test-content">
+              <h4 class="likely-test-name">Oncotype DX</h4>
+              <p class="likely-test-description">Genetic test using tissue from the cancer that helps predict recurrence risk and whether chemotherapy would be beneficial. This is typically a test done using samples taken from the initial biopsy or more typically, from surgical removal of a tumor.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="likely-tests-wrapper" style="margin-top: 3rem;">
+        <h3 class="likely-tests-title">Consultations your oncology team may consider</h3>
+        
+        <div class="likely-tests-list">
+          <div class="likely-test-item">
+            <div class="likely-test-badge consider">Consider</div>
+            <div class="likely-test-content">
+              <h4 class="likely-test-name">Referral to Radiation Oncology</h4>
+              <p class="likely-test-description">Recommended after breast surgery if breast conserving surgery is performed.</p>
+            </div>
+          </div>
+        </div>
+
+        <p class="likely-tests-disclaimer">(These are not medical recommendations but may be helpful discussion points to discuss with your oncologist.)</p>
+      </div>
+
       <div class="meaning-section">
-        <h3>Diagnosis Summary</h3>
+        <h3 style="color: #FF7449;">Testing and Consultations Summary</h3>
         <p style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 42px; font-weight: 500; color: white; line-height: 1.3; margin: 1.5rem 0;">
           Every cancer is unique.<br>
           Your journey and the way<br>
@@ -1389,19 +1966,624 @@
         </p>
         <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-top: 4rem;">
           <div>
-            <img src="icons/eclipse.svg" alt="" style="width: 59px; height: 59px;">
+            <img src="icons/circle-orange.svg" alt="" style="width: 59px; height: 59px;">
             <h4 style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 1.1rem; font-weight: 600; color: white; margin-bottom: 0.75rem;">Receptive to Endocrine Therapy</h4>
             <p style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 0.95rem; font-weight: 400; color: #D6D0CD; line-height: 1.5;">Because your cancer is hormone receptor positive (responds to estrogen), endocrine therapy (hormone-blocking treatments) can be very effective at slowing.</p>
           </div>
           <div>
-            <img src="icons/eclipse.svg" alt="" style="width: 59px; height: 59px;">
+            <img src="icons/circle-orange.svg" alt="" style="width: 59px; height: 59px;">
             <h4 style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 1.1rem; font-weight: 600; color: white; margin-bottom: 0.75rem;">New Treatments Available</h4>
             <p style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 0.95rem; font-weight: 400; color: #D6D0CD; line-height: 1.5;">Recent research shows that people with HER2-low breast cancer may benefit from newer targeted treatments like antibody-drug conjugates (medicines that deliver chemotherapy directly to cancer cells).</p>
           </div>
           <div>
-            <img src="icons/eclipse.svg" alt="" style="width: 59px; height: 59px;">
+            <img src="icons/circle-orange.svg" alt="" style="width: 59px; height: 59px;">
             <h4 style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 1.1rem; font-weight: 600; color: white; margin-bottom: 0.75rem;">Focus on curing cancer</h4>
             <p style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 0.95rem; font-weight: 400; color: #D6D0CD; line-height: 1.5;">For this type of cancer, the focus is on removing the tumor with clear, healthy margins, preventing the cancer from returning, and using effective treatments while minimizing side effects.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section testing-consultations">
+      <div class="testing-label-tab" style="background-color: #FFC34D;">TREATMENT PLANNING</div>
+      
+      <div class="diagnosis-header">
+        <img src="./icons/link.svg" alt="" class="stethoscope-icon" />
+        <h3 class="diagnosis-subtitle">Treatment planning for a cancer like yours</h3>
+        <p class="diagnosis-description">
+          When planning your cancer treatment, your doctors will create a plan made just for you—no two people are treated the same. They'll base it on three key things:
+        </p>
+        <ul style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 16px; font-weight: 400; color: #8B8991; line-height: 1.6; margin: 1rem 0 0 0; padding-left: 1.5rem;">
+          <li style="margin-bottom: 0.5rem;">Your cancer's profile (like the small size and hormone status we discussed)</li>
+          <li style="margin-bottom: 0.5rem;">Your overall health (any other medical issues you may have)</li>
+          <li style="margin-bottom: 0.5rem;">Your personal wishes and goals</li>
+        </ul>
+        <p class="diagnosis-description" style="margin-top: 1rem;">
+          Because every person and every tumor is different, this careful, personalized approach ensures your plan is designed to give you the very best results while honoring your health and preferences.
+        </p>
+      </div>
+
+      <div class="testing-divider" style="margin-top: 4rem;"></div>
+
+      <div class="treatment-goals-section">
+        <h3 class="treatment-goals-title">Typical treatment goals for cancers like yours</h3>
+        <p class="treatment-goals-intro">For <span class="treatment-goals-highlight">stage I breast cancer,</span> the main goals are to:</p>
+        
+        <div class="treatment-goals-grid">
+          <div class="treatment-goal-box">
+            <p class="treatment-goal-text">Completely cure the cancer with treatment</p>
+          </div>
+          <div class="treatment-goal-box">
+            <p class="treatment-goal-text">Remove the tumor with clear, healthy margins</p>
+          </div>
+          <div class="treatment-goal-box">
+            <p class="treatment-goal-text">Prevent the cancer from returning</p>
+          </div>
+          <div class="treatment-goal-box">
+            <p class="treatment-goal-text">Minimize side effects</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="personal-goals-section">
+        <h3 class="personal-goals-title">Your personal goals matter</h3>
+        <div class="personal-goals-content">
+          <div class="personal-goals-left">
+            <p class="personal-goals-description">Select or circle the options you'd like your oncology team to know about that matter to you and your lifestyle.</p>
+          </div>
+          <div class="personal-goals-right">
+            <div class="personal-goal-pill">Fertility</div>
+            <div class="personal-goal-pill">Pregnancy Outcomes</div>
+            <div class="personal-goal-pill">Menopause Care</div>
+            <div class="personal-goal-pill">Pregnancy Outcomes</div>
+            <div class="personal-goal-pill">Menopause Care</div>
+            <div class="personal-goal-pill">Working Life</div>
+            <div class="personal-goal-pill">Fertility</div>
+            <div class="personal-goal-pill">Working Life</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testing-divider" style="margin-top: 3rem; margin-bottom: 4rem;"></div>
+
+      <div class="diagnosis-meta-section" style="margin-top: 0; padding-top: 0;">
+        <div class="diagnosis-meta-left">
+          <h4 class="diagnosis-meta-title">What types of treatments will be considered</h4>
+          <p class="diagnosis-sources">
+            Cancer treatment planning is a team effort. Your care may involve specialists from medical oncology, surgical oncology, and sometimes radiation oncology—each focusing on a different part of your care:
+          </p>
+          <ul style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 14px; font-weight: 400; color: #8B8991; line-height: 1.6; margin: 1rem 0 0 0; padding-left: 1.25rem; list-style-position: outside;">
+            <li style="margin-bottom: 0.75rem;"><strong style="font-weight: 600; color: #1F1D2C;">Surgical oncology</strong> removes the tumor and checks nearby lymph nodes.</li>
+            <li style="margin-bottom: 0.75rem;"><strong style="font-weight: 600; color: #1F1D2C;">Medical oncology</strong> manages treatments that work throughout the body—such as anti-hormone pills, targeted therapies, or chemotherapy if needed—to reduce the risk of recurrence.</li>
+            <li style="margin-bottom: 0.75rem;"><strong style="font-weight: 600; color: #1F1D2C;">Radiation oncology</strong> plans radiation treatment, if appropriate, often after a lumpectomy to help prevent the cancer from returning in the breast.</li>
+          </ul>
+        </div>
+        <div class="diagnosis-meta-right">
+          <h4 class="diagnosis-meta-title">Sources</h4>
+          <p class="diagnosis-sources">
+            Defiant Health and Dana-Farber Clinical Pathways, vX.XX dated X/XX/XXXX and based on guidelines for patients with similar profiles.
+          </p>
+          <p class="diagnosis-sources" style="margin-top: 1rem;">
+            Dana-Farber disclaimer goes here excluding DF from liability for the suggestions made.
+          </p>
+        </div>
+      </div>
+
+      <div class="treatment-cards-section">
+        <h3 class="treatment-category-title">Medical Oncology</h3>
+        
+        <div class="treatment-card">
+          <div class="treatment-card-header">
+            <div class="treatment-badge">Highly Likely</div>
+            <h4 class="treatment-name">Endocrine therapy (hormone therapy)</h4>
+            <p class="treatment-intro">This is most likely first treatment given that you are hormone receptor positive (ER+ and PR+). Blocking estrogen and stopping the cancer spreading is the priority.</p>
+          </div>
+          
+          <div class="treatment-separator"></div>
+          
+          <div class="treatment-details">
+            <div class="treatment-detail-section">
+              <h4>Medications</h4>
+              <ul>
+                <li>Aromatase inhibitors (letrozole, anastrozole, exemestane) or selective estrogen receptor modulators like tamoxifen — pills that block estrogen</li>
+                <li>Often combined with CDK4/6 inhibitors (palbociclib, ribociclib, abemaciclib) — targeted drugs that stop cancer cells from dividing</li>
+              </ul>
+            </div>
+            <div class="treatment-detail-section">
+              <h4>Side Effects</h4>
+              <p>Generally well-tolerated with manageable side effects like hot flashes and joint pain</p>
+            </div>
+            <div class="treatment-detail-section">
+              <h4>Treatment Length</h4>
+              <p>4–6 weeks</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="treatment-card">
+          <div class="treatment-card-header">
+            <div class="treatment-badge outlined">Might be considered</div>
+            <h4 class="treatment-name">Ovarian suppression</h4>
+            <p class="treatment-intro">For premenopausal patients, ovarian suppression may be added to endocrine therapy as an alternative to chemotherapy depending on the Oncotype DX score result.</p>
+          </div>
+          
+          <div class="treatment-separator"></div>
+          
+          <div class="treatment-details">
+            <div class="treatment-detail-section">
+              <h4>Medications</h4>
+              <ul>
+                <li>This is often given via monthly injections to temporarily or permanently stop ovarian function, significantly improving treatment effectiveness.</li>
+              </ul>
+            </div>
+            <div class="treatment-detail-section">
+              <h4>Side Effects</h4>
+              <p>Usually causes fewer side effects than traditional chemotherapy</p>
+            </div>
+            <div class="treatment-detail-section">
+              <h4>Treatment Length</h4>
+              <p>2–5 weeks (administered at the same time as Hormone Therapy)</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="treatment-card">
+          <div class="treatment-card-header">
+            <div class="treatment-badge outlined">Might be considered</div>
+            <h4 class="treatment-name">Chemotherapy</h4>
+            <p class="treatment-intro">This might be considered a part of your therapy regimen and will be dependent on the Oncotype DX score.</p>
+          </div>
+          
+          <div class="treatment-separator"></div>
+          
+          <div class="treatment-details">
+            <div class="treatment-detail-section">
+              <h4>Medications</h4>
+              <ul>
+                <li>...</li>
+              </ul>
+            </div>
+            <div class="treatment-detail-section">
+              <h4>Side Effects</h4>
+              <p>...</p>
+            </div>
+            <div class="treatment-detail-section">
+              <h4>Treatment Length</h4>
+              <p>...</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="meaning-section">
+        <h3 style="color: #FFC34D;">Treatment Planning Summary</h3>
+        <p style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 42px; font-weight: 500; color: white; line-height: 1.3; margin: 1.5rem 0;">
+          Every cancer is unique.<br>
+          Your journey and the way<br>
+          your body fights will be too.
+        </p>
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-top: 4rem;">
+          <div>
+            <img src="icons/circle-yellow.svg" alt="" style="width: 59px; height: 59px;">
+            <h4 style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 1.1rem; font-weight: 600; color: white; margin-bottom: 0.75rem;">Receptive to Endocrine Therapy</h4>
+            <p style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 0.95rem; font-weight: 400; color: #D6D0CD; line-height: 1.5;">Because your cancer is hormone receptor positive (responds to estrogen), endocrine therapy (hormone-blocking treatments) can be very effective at slowing.</p>
+          </div>
+          <div>
+            <img src="icons/circle-yellow.svg" alt="" style="width: 59px; height: 59px;">
+            <h4 style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 1.1rem; font-weight: 600; color: white; margin-bottom: 0.75rem;">New Treatments Available</h4>
+            <p style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 0.95rem; font-weight: 400; color: #D6D0CD; line-height: 1.5;">Recent research shows that people with HER2-low breast cancer may benefit from newer targeted treatments like antibody-drug conjugates (medicines that deliver chemotherapy directly to cancer cells).</p>
+          </div>
+          <div>
+            <img src="icons/circle-yellow.svg" alt="" style="width: 59px; height: 59px;">
+            <h4 style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 1.1rem; font-weight: 600; color: white; margin-bottom: 0.75rem;">Focus on curing cancer</h4>
+            <p style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 0.95rem; font-weight: 400; color: #D6D0CD; line-height: 1.5;">For this type of cancer, the focus is on removing the tumor with clear, healthy margins, preventing the cancer from returning, and using effective treatments while minimizing side effects.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section testing-consultations">
+      <div class="testing-label-tab" style="background-color: #E4EECE;">VISIT PREP</div>
+      
+      <div class="diagnosis-header">
+        <img src="./icons/book.svg" alt="" class="stethoscope-icon" />
+        <h3 class="diagnosis-subtitle">Helpful discussion points with your specialist team</h3>
+      </div>
+
+      <div style="margin-top: 3rem;">
+        <h3 style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 18px; font-weight: 600; color: #1F1D2C; margin: 0 0 1.5rem 0;">Questions for the Medical Oncologist</h3>
+        
+        <p style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 16px; font-weight: 400; color: #8B8991; line-height: 1.6; margin: 0 0 1rem 0;">
+          The Medical Oncologist will focus on treatments that include systemic (drug) therapy and overall risk of the cancer coming back after treatment.
+        </p>
+
+        <h4 style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 16px; font-weight: 600; color: #1F1D2C; margin: 2rem 0 1rem 0;">Treatment Planning (Systemic Therapy)</h4>
+
+        <ul style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 16px; font-weight: 400; color: #8B8991; line-height: 1.6; margin: 0; padding-left: 1.25rem; list-style-position: outside;">
+          <li style="margin-bottom: 12px;">
+            <strong style="font-weight: 600; color: #8B8991;">OncotypeDX:</strong> "Given my specific tumor status ($\text{HR}+/\text{HER}2-$), how soon can the OncotypeDX test be ordered, and when can we expect the results? How will this single score determine my need for chemotherapy?"
+          </li>
+          <li style="margin-bottom: 12px;">
+            <strong style="font-weight: 600; color: #8B8991;">Hormone Replacement Therapy (HRT):</strong> "I am currently taking an Estrogen Patch and Progesterone Pill. Since my cancer is hormone receptor positive, what is the immediate risk of continuing this, and when exactly should I be taking?"
+          </li>
+          <li style="margin-bottom: 12px;">
+            <strong style="font-weight: 600; color: #8B8991;">Endocrine Therapy:</strong> "What specific anti-hormone medication (e.g., Tamoxifen or an Aromatase Inhibitor) do you recommend, and how many years will I need to take it? What are the most common side effects of this medication?"
+          </li>
+          <li style="margin-bottom: 12px;">
+            <strong style="font-weight: 600; color: #8B8991;">Prophylactic Options:</strong> "If my OncotypeDX score is high, what chemotherapy regimen would you recommend, and how many cycles would that involve?"
+          </li>
+        </ul>
+
+        <h4 style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 16px; font-weight: 600; color: #1F1D2C; margin: 2.5rem 0 1rem 0;">Quality of Life & Support</h4>
+
+        <ul style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 16px; font-weight: 400; color: #8B8991; line-height: 1.6; margin: 0; padding-left: 1.25rem; list-style-position: outside;">
+          <li style="margin-bottom: 12px;">
+            <strong style="font-weight: 600; color: #8B8991;">Fertility:</strong> "Since I am premenopausal and my treatment will include endocrine therapy, what is the impact on my future fertility, and should I meet with the fertility counselor immediately?"
+          </li>
+          <li style="margin-bottom: 12px;">
+            <strong style="font-weight: 600; color: #8B8991;">Side Effects:</strong> "What is the likelihood of experiencing specific side effects, like hair loss, weight changes, or joint pain, with the systemic treatment you anticipate prescribing?"
+          </li>
+          <li style="margin-bottom: 12px;">
+            <strong style="font-weight: 600; color: #8B8991;">Symptom Management:</strong> "What support services or medications are available here at the clinic for managing fatigue, hot flashes, or any emotional concerns related to my diagnosis and treatment?"
+          </li>
+        </ul>
+      </div>
+
+      <div class="testing-divider" style="margin: 3rem 0;"></div>
+
+      <div style="margin-top: 3rem;">
+        <h3 style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 18px; font-weight: 600; color: #1F1D2C; margin: 0 0 1.5rem 0;">Questions for the Surgical Oncologist</h3>
+        
+        <p style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 16px; font-weight: 400; color: #8B8991; line-height: 1.6; margin: 0 0 1rem 0;">
+          The Surgical Oncologist will focus on the definitive removal of the tumor and staging the axilla.
+        </p>
+
+        <h4 style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 16px; font-weight: 600; color: #1F1D2C; margin: 2rem 0 1rem 0;">Treatment Planning (Local Therapy)</h4>
+
+        <ul style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 16px; font-weight: 400; color: #8B8991; line-height: 1.6; margin: 0; padding-left: 1.25rem; list-style-position: outside;">
+          <li style="margin-bottom: 12px;">
+            <strong style="font-weight: 600; color: #8B8991;">Surgical Options:</strong> "Given my tumor size (8 mm) and clear margins, am I a good candidate for Breast-Conserving Surgery (Lumpectomy)? What factors would require me to have a mastectomy instead?"
+          </li>
+          <li style="margin-bottom: 12px;">
+            <strong style="font-weight: 600; color: #8B8991;">Axillary Staging:</strong> "My initial ultrasound was negative for lymph node involvement. Will I still need a Sentinel Lymph Node Biopsy (SLNB) during the surgery, and what happens if cancer is found in those nodes?"
+          </li>
+          <li style="margin-bottom: 12px;">
+            <strong style="font-weight: 600; color: #8B8991;">Margin Status:</strong> "What is your goal for clear margins, and what is the chance I would need a second surgery to clear them (a re-excision)?"
+          </li>
+        </ul>
+
+        <h4 style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 16px; font-weight: 600; color: #1F1D2C; margin: 2.5rem 0 1rem 0;">Quality of Life & Daily Life</h4>
+
+        <ul style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 16px; font-weight: 400; color: #8B8991; line-height: 1.6; margin: 0; padding-left: 1.25rem; list-style-position: outside;">
+          <li style="margin-bottom: 12px;">
+            <strong style="font-weight: 600; color: #8B8991;">Recovery:</strong> "What is the typical recovery time after a lumpectomy or mastectomy? When can I resume normal activities like running and walking my dog (as noted in my history)?"
+          </li>
+          <li style="margin-bottom: 12px;">
+            <strong style="font-weight: 600; color: #8B8991;">Aesthetics:</strong> "What will the breast look like after surgery, and will a plastic surgeon be involved in my care?"
+          </li>
+          <li style="margin-bottom: 12px;">
+            <strong style="font-weight: 600; color: #8B8991;">Support:</strong> "Who is the best point person on your team (e.g., a nurse navigator) for scheduling, pre-op instructions, and answering questions right after surgery?"
+          </li>
+        </ul>
+      </div>
+
+      <div class="testing-divider" style="margin: 3rem 0;"></div>
+
+      <div style="margin-top: 3rem;">
+        <h3 style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 18px; font-weight: 600; color: #1F1D2C; margin-bottom: 1.5rem;">Questions for the Radiation Oncologist (Pending Referral)</h3>
+        <p style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 16px; font-weight: 400; color: #8B8991; margin-bottom: 1rem; line-height: 1.6;">The Radiation Oncologist will discuss post-operative radiation if you choose a lumpectomy.</p>
+        
+        <h4 style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 16px; font-weight: 600; color: #1F1D2C; margin-top: 2rem; margin-bottom: 1rem;">Treatment Planning (Radiation)</h4>
+        <ul style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 16px; font-weight: 400; color: #8B8991; padding-left: 1.25rem; list-style-position: outside; line-height: 1.6;">
+          <li style="margin-bottom: 12px;"><strong style="font-weight: 600; color: #8B8991;">Need for Radiation:</strong> "If I choose a Lumpectom and SNLB, will I definitively need radiation therapy? If so, what is the goal of the radiation (e.g., reducing local recurrence)?"</li>
+          <li style="margin-bottom: 12px;"><strong style="font-weight: 600; color: #8B8991;">Radiation Schedule:</strong> "What is the typical course of treatment (e.g., 6 weeks of standard radiation, or a shorter course like hypofractionated), and how is that decision made?"</li>
+          <li style="margin-bottom: 12px;"><strong style="font-weight: 600; color: #8B8991;">Side Effects:</strong> "What are the most common short-term side effects (skin changes, fatigue) and long-term risks (lung or heart exposure) associated with the specific radiation plan you would recommend for me?"</li>
+        </ul>
+
+        <h4 style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 16px; font-weight: 600; color: #1F1D2C; margin-top: 2.5rem; margin-bottom: 1rem;">Daily Life & Support</h4>
+        <ul style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 16px; font-weight: 400; color: #8B8991; padding-left: 1.25rem; list-style-position: outside; line-height: 1.6;">
+          <li style="margin-bottom: 12px;"><strong style="font-weight: 600; color: #8B8991;">Logistics:</strong> "What daily commitment does treatment require? Can I drive myself to and from my daily radiation appointments?"</li>
+          <li style="margin-bottom: 12px;"><strong style="font-weight: 600; color: #8B8991;">Support:</strong> "Does your center offer resources or support to help manage the fatigue that often comes with daily radiation?"</li>
+        </ul>
+      </div>
+    </section>
+
+    <div style="background: #FFE4DC; border-radius: 20px; padding: 48px; margin: 50px 3rem;">
+      <h3 style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 24px; font-weight: 600; color: #38284E; margin: 0 0 1.5rem 0;">Disclaimer</h3>
+      
+      <p style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 16px; font-weight: 400; color: #8B8991; line-height: 1.5; margin: 0 0 1.25rem 0;">
+        This patient education helps you understand your medical information and prepare for doctor visits. It is not medical advice and does not replace talking with your healthcare team.
+      </p>
+      
+      <p style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 16px; font-weight: 400; color: #8B8991; line-height: 1.5; margin: 0 0 1.25rem 0;">
+        <strong style="font-weight: 600; color: #38284E;">Questions?</strong> Contact us at support@defianthealth.com
+      </p>
+      
+      <p style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 16px; font-weight: 400; color: #8B8991; line-height: 1.5; margin: 0 0 1.25rem 0;">
+        <strong style="font-weight: 600; color: #38284E;">Updates:</strong> We recommend updating this decision aid after major appointments or new test results.
+      </p>
+      
+      <p style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 16px; font-weight: 400; color: #8B8991; line-height: 1.5; margin: 0;">
+        Your healthcare team is your best source for medical advice tailored to your specific situation. They are there to support you every step of the way.
+      </p>
+    </div>
+
+    <section class="section testing-consultations">
+      <div class="testing-label-tab" style="background-color: #C7BEFA;">YOUR RECORDS</div>
+
+      <h4 style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 18px; font-weight: 700; color: #1F1D2C; margin: 0 0 0.75rem 0;">Records Overview</h4>
+
+      <div class="records-layout" style="display: flex; gap: 4rem;">
+        <div style="flex: 0 0 62%;">
+          <div style="background: #FFFFFF; border: 1px solid #C7BEFA; border-radius: 12px; padding: 24px 28px; margin-bottom: 2rem; display: grid; grid-template-columns: auto 1fr; column-gap: 3rem; row-gap: 16px;">
+            <span style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 16px; font-weight: 400; color: #1F1D2C;">Patient Name</span>
+            <span style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 16px; font-weight: 400; color: #1F1D2C;">Jane Doe</span>
+            
+            <span style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 16px; font-weight: 400; color: #1F1D2C;">Date of Review</span>
+            <span style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 16px; font-weight: 400; color: #1F1D2C;">11/03/2025</span>
+            
+            <span style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 16px; font-weight: 400; color: #1F1D2C;">Prepared by</span>
+            <span style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 16px; font-weight: 400; color: #1F1D2C;">Defiant Health</span>
+            
+            <span style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 16px; font-weight: 400; color: #1F1D2C;">Sources</span>
+            <span style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 16px; font-weight: 400; color: #1F1D2C;">Medical records shared with Defiant Health as of 11/02/2025</span>
+          </div>
+
+          <h4 style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 16px; font-weight: 600; color: #1F1D2C; margin: 0 0 0.75rem 0;">Records Received</h4>
+          
+          <div style="display: flex; flex-direction: column; gap: 10px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; padding: 16px 20px; background: #F5F4FF; border-radius: 12px;">
+              <div style="display: flex; align-items: center; gap: 12px;">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M9.99935 18.3337C14.6017 18.3337 18.3327 14.6027 18.3327 10.0003C18.3327 5.39795 14.6017 1.66699 9.99935 1.66699C5.39698 1.66699 1.66602 5.39795 1.66602 10.0003C1.66602 14.6027 5.39698 18.3337 9.99935 18.3337Z" stroke="#38284E" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M7.5 9.99967L9.16667 11.6663L12.5 8.33301" stroke="#38284E" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span class="record-item-name">Bilateral mammogram</span>
+              </div>
+              <span class="record-item-date">9/23/24</span>
+            </div>
+            
+            <div style="display: flex; justify-content: space-between; align-items: center; padding: 16px 20px; background: #F5F4FF; border-radius: 12px;">
+              <div style="display: flex; align-items: center; gap: 12px;">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M9.99935 18.3337C14.6017 18.3337 18.3327 14.6027 18.3327 10.0003C18.3327 5.39795 14.6017 1.66699 9.99935 1.66699C5.39698 1.66699 1.66602 5.39795 1.66602 10.0003C1.66602 14.6027 5.39698 18.3337 9.99935 18.3337Z" stroke="#38284E" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M7.5 9.99967L9.16667 11.6663L12.5 8.33301" stroke="#38284E" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span class="record-item-name">MM Telehealth Consult (Left Breast Biopsy Results)</span>
+              </div>
+              <span class="record-item-date">9/23/24</span>
+            </div>
+            
+            <div style="display: flex; justify-content: space-between; align-items: center; padding: 16px 20px; background: #F5F4FF; border-radius: 12px;">
+              <div style="display: flex; align-items: center; gap: 12px;">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M9.99935 18.3337C14.6017 18.3337 18.3327 14.6027 18.3327 10.0003C18.3327 5.39795 14.6017 1.66699 9.99935 1.66699C5.39698 1.66699 1.66602 5.39795 1.66602 10.0003C1.66602 14.6027 5.39698 18.3337 9.99935 18.3337Z" stroke="#38284E" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M7.5 9.99967L9.16667 11.6663L12.5 8.33301" stroke="#38284E" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span class="record-item-name">Anatomic Pathology (Left Breast Core Biopsy)</span>
+              </div>
+              <span class="record-item-date">9/23/24</span>
+            </div>
+            
+            <div style="display: flex; justify-content: space-between; align-items: center; padding: 16px 20px; background: #F5F4FF; border-radius: 12px;">
+              <div style="display: flex; align-items: center; gap: 12px;">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M9.99935 18.3337C14.6017 18.3337 18.3327 14.6027 18.3327 10.0003C18.3327 5.39795 14.6017 1.66699 9.99935 1.66699C5.39698 1.66699 1.66602 5.39795 1.66602 10.0003C1.66602 14.6027 5.39698 18.3337 9.99935 18.3337Z" stroke="#38284E" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M7.5 9.99967L9.16667 11.6663L12.5 8.33301" stroke="#38284E" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span class="record-item-name">Mammography (Post Clip Uni/Left)</span>
+              </div>
+              <span class="record-item-date">9/23/24</span>
+            </div>
+            
+            <div style="display: flex; justify-content: space-between; align-items: center; padding: 16px 20px; background: #F5F4FF; border-radius: 12px;">
+              <div style="display: flex; align-items: center; gap: 12px;">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M9.99935 18.3337C14.6017 18.3337 18.3327 14.6027 18.3327 10.0003C18.3327 5.39795 14.6017 1.66699 9.99935 1.66699C5.39698 1.66699 1.66602 5.39795 1.66602 10.0003C1.66602 14.6027 5.39698 18.3337 9.99935 18.3337Z" stroke="#38284E" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M7.5 9.99967L9.16667 11.6663L12.5 8.33301" stroke="#38284E" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span class="record-item-name">Biopsy, Breast, w/ Ultrasound Guidance (Proc) (Left Breast)</span>
+              </div>
+              <span class="record-item-date">9/23/24</span>
+            </div>
+            
+            <div style="display: flex; justify-content: space-between; align-items: center; padding: 16px 20px; background: #F5F4FF; border-radius: 12px;">
+              <div style="display: flex; align-items: center; gap: 12px;">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M9.99935 18.3337C14.6017 18.3337 18.3327 14.6027 18.3327 10.0003C18.3327 5.39795 14.6017 1.66699 9.99935 1.66699C5.39698 1.66699 1.66602 5.39795 1.66602 10.0003C1.66602 14.6027 5.39698 18.3337 9.99935 18.3337Z" stroke="#38284E" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M7.5 9.99967L9.16667 11.6663L12.5 8.33301" stroke="#38284E" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span class="record-item-name">Mammography, Diagnostic, Digital, Unilateral (Left Breast)</span>
+              </div>
+              <span class="record-item-date">9/23/24</span>
+            </div>
+            
+            <div style="display: flex; justify-content: space-between; align-items: center; padding: 16px 20px; background: #F5F4FF; border-radius: 12px;">
+              <div style="display: flex; align-items: center; gap: 12px;">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M9.99935 18.3337C14.6017 18.3337 18.3327 14.6027 18.3327 10.0003C18.3327 5.39795 14.6017 1.66699 9.99935 1.66699C5.39698 1.66699 1.66602 5.39795 1.66602 10.0003C1.66602 14.6027 5.39698 18.3337 9.99935 18.3337Z" stroke="#38284E" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M7.5 9.99967L9.16667 11.6663L12.5 8.33301" stroke="#38284E" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span class="record-item-name">Mammography (Unilat Left - Diagnostic)</span>
+              </div>
+              <span class="record-item-date">9/23/24</span>
+            </div>
+            
+            <div style="display: flex; justify-content: space-between; align-items: center; padding: 16px 20px; background: #F5F4FF; border-radius: 12px;">
+              <div style="display: flex; align-items: center; gap: 12px;">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M9.99935 18.3337C14.6017 18.3337 18.3327 14.6027 18.3327 10.0003C18.3327 5.39795 14.6017 1.66699 9.99935 1.66699C5.39698 1.66699 1.66602 5.39795 1.66602 10.0003C1.66602 14.6027 5.39698 18.3337 9.99935 18.3337Z" stroke="#38284E" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M7.5 9.99967L9.16667 11.6663L12.5 8.33301" stroke="#38284E" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span class="record-item-name">Ultrasound, Breast (Left)</span>
+              </div>
+              <span class="record-item-date">9/24/24</span>
+            </div>
+            
+            <div style="display: flex; justify-content: space-between; align-items: center; padding: 16px 20px; background: #F5F4FF; border-radius: 12px;">
+              <div style="display: flex; align-items: center; gap: 12px;">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M9.99935 18.3337C14.6017 18.3337 18.3327 14.6027 18.3327 10.0003C18.3327 5.39795 14.6017 1.66699 9.99935 1.66699C5.39698 1.66699 1.66602 5.39795 1.66602 10.0003C1.66602 14.6027 5.39698 18.3337 9.99935 18.3337Z" stroke="#38284E" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M7.5 9.99967L9.16667 11.6663L12.5 8.33301" stroke="#38284E" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span class="record-item-name">MRI Breast (Left)</span>
+              </div>
+              <span class="record-item-date">9/25/24</span>
+            </div>
+            
+            <div style="display: flex; justify-content: space-between; align-items: center; padding: 16px 20px; background: #F5F4FF; border-radius: 12px;">
+              <div style="display: flex; align-items: center; gap: 12px;">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M9.99935 18.3337C14.6017 18.3337 18.3327 14.6027 18.3327 10.0003C18.3327 5.39795 14.6017 1.66699 9.99935 1.66699C5.39698 1.66699 1.66602 5.39795 1.66602 10.0003C1.66602 14.6027 5.39698 18.3337 9.99935 18.3337Z" stroke="#38284E" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M7.5 9.99967L9.16667 11.6663L12.5 8.33301" stroke="#38284E" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span class="record-item-name">Surgical Consultation (Left Breast)</span>
+              </div>
+              <span class="record-item-date">9/26/24</span>
+            </div>
+            
+            <div style="display: flex; justify-content: space-between; align-items: center; padding: 16px 20px; background: #F5F4FF; border-radius: 12px;">
+              <div style="display: flex; align-items: center; gap: 12px;">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M9.99935 18.3337C14.6017 18.3337 18.3327 14.6027 18.3327 10.0003C18.3327 5.39795 14.6017 1.66699 9.99935 1.66699C5.39698 1.66699 1.66602 5.39795 1.66602 10.0003C1.66602 14.6027 5.39698 18.3337 9.99935 18.3337Z" stroke="#38284E" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M7.5 9.99967L9.16667 11.6663L12.5 8.33301" stroke="#38284E" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span class="record-item-name">Nuclear Medicine Scan (Breast)</span>
+              </div>
+              <span class="record-item-date">9/27/24</span>
+            </div>
+            
+            <div style="display: flex; justify-content: space-between; align-items: center; padding: 16px 20px; background: #F5F4FF; border-radius: 12px;">
+              <div style="display: flex; align-items: center; gap: 12px;">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M9.99935 18.3337C14.6017 18.3337 18.3327 14.6027 18.3327 10.0003C18.3327 5.39795 14.6017 1.66699 9.99935 1.66699C5.39698 1.66699 1.66602 5.39795 1.66602 10.0003C1.66602 14.6027 5.39698 18.3337 9.99935 18.3337Z" stroke="#38284E" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M7.5 9.99967L9.16667 11.6663L12.5 8.33301" stroke="#38284E" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span class="record-item-name">Genetic Counseling (Breast Cancer Risk)</span>
+              </div>
+              <span class="record-item-date">9/28/24</span>
+            </div>
+            
+            <div style="display: flex; justify-content: space-between; align-items: center; padding: 16px 20px; background: #F5F4FF; border-radius: 12px;">
+              <div style="display: flex; align-items: center; gap: 12px;">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M9.99935 18.3337C14.6017 18.3337 18.3327 14.6027 18.3327 10.0003C18.3327 5.39795 14.6017 1.66699 9.99935 1.66699C5.39698 1.66699 1.66602 5.39795 1.66602 10.0003C1.66602 14.6027 5.39698 18.3337 9.99935 18.3337Z" stroke="#38284E" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M7.5 9.99967L9.16667 11.6663L12.5 8.33301" stroke="#38284E" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span class="record-item-name">Follow-up Appointment (Breast Health)</span>
+              </div>
+              <span class="record-item-date">9/29/24</span>
+            </div>
+            
+            <div style="display: flex; justify-content: space-between; align-items: center; padding: 16px 20px; background: #F5F4FF; border-radius: 12px;">
+              <div style="display: flex; align-items: center; gap: 12px;">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M9.99935 18.3337C14.6017 18.3337 18.3327 14.6027 18.3327 10.0003C18.3327 5.39795 14.6017 1.66699 9.99935 1.66699C5.39698 1.66699 1.66602 5.39795 1.66602 10.0003C1.66602 14.6027 5.39698 18.3337 9.99935 18.3337Z" stroke="#38284E" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M7.5 9.99967L9.16667 11.6663L12.5 8.33301" stroke="#38284E" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span class="record-item-name">CT Scan (Chest, Unilateral)</span>
+              </div>
+              <span class="record-item-date">9/30/24</span>
+            </div>
+            
+            <div style="display: flex; justify-content: space-between; align-items: center; padding: 16px 20px; background: #F5F4FF; border-radius: 12px;">
+              <div style="display: flex; align-items: center; gap: 12px;">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M9.99935 18.3337C14.6017 18.3337 18.3327 14.6027 18.3327 10.0003C18.3327 5.39795 14.6017 1.66699 9.99935 1.66699C5.39698 1.66699 1.66602 5.39795 1.66602 10.0003C1.66602 14.6027 5.39698 18.3337 9.99935 18.3337Z" stroke="#38284E" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M7.5 9.99967L9.16667 11.6663L12.5 8.33301" stroke="#38284E" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span class="record-item-name">Core Needle Biopsy (Right Breast)</span>
+              </div>
+              <span class="record-item-date">10/1/24</span>
+            </div>
+            
+            <div style="display: flex; justify-content: space-between; align-items: center; padding: 16px 20px; background: #F5F4FF; border-radius: 12px;">
+              <div style="display: flex; align-items: center; gap: 12px;">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M9.99935 18.3337C14.6017 18.3337 18.3327 14.6027 18.3327 10.0003C18.3327 5.39795 14.6017 1.66699 9.99935 1.66699C5.39698 1.66699 1.66602 5.39795 1.66602 10.0003C1.66602 14.6027 5.39698 18.3337 9.99935 18.3337Z" stroke="#38284E" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M7.5 9.99967L9.16667 11.6663L12.5 8.33301" stroke="#38284E" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span class="record-item-name">Mammography, Screening, Digital, Bilateral</span>
+              </div>
+              <span class="record-item-date">10/2/24</span>
+            </div>
+            
+            <div style="display: flex; justify-content: space-between; align-items: center; padding: 16px 20px; background: #F5F4FF; border-radius: 12px;">
+              <div style="display: flex; align-items: center; gap: 12px;">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M9.99935 18.3337C14.6017 18.3337 18.3327 14.6027 18.3327 10.0003C18.3327 5.39795 14.6017 1.66699 9.99935 1.66699C5.39698 1.66699 1.66602 5.39795 1.66602 10.0003C1.66602 14.6027 5.39698 18.3337 9.99935 18.3337Z" stroke="#38284E" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M7.5 9.99967L9.16667 11.6663L12.5 8.33301" stroke="#38284E" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span class="record-item-name">Ductogram (Right Breast)</span>
+              </div>
+              <span class="record-item-date">10/3/24</span>
+            </div>
+            
+            <div style="display: flex; justify-content: space-between; align-items: center; padding: 16px 20px; background: #F5F4FF; border-radius: 12px;">
+              <div style="display: flex; align-items: center; gap: 12px;">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M9.99935 18.3337C14.6017 18.3337 18.3327 14.6027 18.3327 10.0003C18.3327 5.39795 14.6017 1.66699 9.99935 1.66699C5.39698 1.66699 1.66602 5.39795 1.66602 10.0003C1.66602 14.6027 5.39698 18.3337 9.99935 18.3337Z" stroke="#38284E" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M7.5 9.99967L9.16667 11.6663L12.5 8.33301" stroke="#38284E" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span class="record-item-name">Breast MRI with Contrast (Bilateral)</span>
+              </div>
+              <span class="record-item-date">10/4/24</span>
+            </div>
+            
+            <div style="display: flex; justify-content: space-between; align-items: center; padding: 16px 20px; background: #F5F4FF; border-radius: 12px;">
+              <div style="display: flex; align-items: center; gap: 12px;">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M9.99935 18.3337C14.6017 18.3337 18.3327 14.6027 18.3327 10.0003C18.3327 5.39795 14.6017 1.66699 9.99935 1.66699C5.39698 1.66699 1.66602 5.39795 1.66602 10.0003C1.66602 14.6027 5.39698 18.3337 9.99935 18.3337Z" stroke="#38284E" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M7.5 9.99967L9.16667 11.6663L12.5 8.33301" stroke="#38284E" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span class="record-item-name">Clinical Breast Exam (Follow-up)</span>
+              </div>
+              <span class="record-item-date">10/5/24</span>
+            </div>
+            
+            <div style="display: flex; justify-content: space-between; align-items: center; padding: 16px 20px; background: #F5F4FF; border-radius: 12px;">
+              <div style="display: flex; align-items: center; gap: 12px;">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M9.99935 18.3337C14.6017 18.3337 18.3327 14.6027 18.3327 10.0003C18.3327 5.39795 14.6017 1.66699 9.99935 1.66699C5.39698 1.66699 1.66602 5.39795 1.66602 10.0003C1.66602 14.6027 5.39698 18.3337 9.99935 18.3337Z" stroke="#38284E" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M7.5 9.99967L9.16667 11.6663L12.5 8.33301" stroke="#38284E" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span class="record-item-name">Ultrasound-Guided Aspiration (Right Breast)</span>
+              </div>
+              <span class="record-item-date">10/6/24</span>
+            </div>
+            
+            <div style="display: flex; justify-content: space-between; align-items: center; padding: 16px 20px; background: #F5F4FF; border-radius: 12px;">
+              <div style="display: flex; align-items: center; gap: 12px;">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M9.99935 18.3337C14.6017 18.3337 18.3327 14.6027 18.3327 10.0003C18.3327 5.39795 14.6017 1.66699 9.99935 1.66699C5.39698 1.66699 1.66602 5.39795 1.66602 10.0003C1.66602 14.6027 5.39698 18.3337 9.99935 18.3337Z" stroke="#38284E" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M7.5 9.99967L9.16667 11.6663L12.5 8.33301" stroke="#38284E" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span class="record-item-name">Oncology Referral (Breast Cancer)</span>
+              </div>
+              <span class="record-item-date">10/7/24</span>
+            </div>
+          </div>
+        </div>
+
+        <div style="flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
+          <div>
+            <h4 style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 16px; font-weight: 600; color: #1F1D2C; margin: 0 0 0.75rem 0;">Limitations of this report</h4>
+            
+            <p style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 16px; font-weight: 400; color: #8B8991; line-height: 1.6; margin: 0 0 1rem 0;">
+              We can only review the test results and doctor notes that were provided to us. If you have had other tests, visits, or treatments not included in these records, this decision aid may be missing important information.
+            </p>
+            
+            <p style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 16px; font-weight: 400; color: #8B8991; line-height: 1.6; margin: 0;">
+              This patient education does not replace medical advice from your healthcare providers. Treatment options mentioned are generalized and may not apply to your specific situation.
+            </p>
+          </div>
+          
+          <div style="margin-top: 2rem;">
+            <h4 style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 16px; font-weight: 600; color: #8B8991; margin: 0 0 0.75rem 0;">Before making any medical decisions</h4>
+            
+            <p style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 16px; font-weight: 400; color: #8B8991; line-height: 1.6; margin: 0;">
+              Always consult with your healthcare team. Make sure your doctors have all of your complete medical records and test results. Discuss any questions or concerns about this decision aid with your oncologist.
+            </p>
           </div>
         </div>
       </div>
