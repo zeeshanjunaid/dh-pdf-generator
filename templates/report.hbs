@@ -26,6 +26,42 @@
       -moz-osx-font-smoothing: grayscale;
     }
 
+    /* PDF Page Break Control */
+    @media print {
+      body.defiant-report {
+        background-color: #e2cece;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+
+      /* Prevent breaking inside these elements */
+      section.section,
+      .doc-contents,
+      .diagnosis-overview-box,
+      .meaning-section,
+      .treatment-card,
+      .testing-items-wrapper,
+      .diagnosis-meta-section,
+      .treatment-goals-section,
+      .personal-goals-section,
+      .likely-tests-wrapper {
+        page-break-inside: avoid;
+        break-inside: avoid;
+      }
+
+      /* Keep header at top of each page */
+      header.report-header {
+        page-break-after: avoid;
+        break-after: avoid;
+      }
+
+      /* Start new sections on new page if needed */
+      section.section {
+        page-break-before: auto;
+        break-before: auto;
+      }
+    }
+
     header.report-header {
       background: #38284E;
       color: var(--ivory);
