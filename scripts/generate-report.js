@@ -23,13 +23,28 @@ export async function generatePDF(jsonPath) {
     const source = fs.readFileSync(templatePath, "utf8");
     const template = Handlebars.compile(source);
 
-    // Make CSS path absolute so Puppeteer can render styles
+    // Compile template with data
+    const baseHtml = template(data);
+    
+    // Prepare paths
     const cssPath = path.join(process.cwd(), "templates", "styles.css");
+    const iconsDir = path.join(process.cwd(), "templates", "icons");
+    const fontsDir = path.join(process.cwd(), "templates", "fonts");
+    
+    // Create HTML with relative paths for preview (works when shared with others)
+    const htmlPreview = baseHtml
+      .replace('<link rel="stylesheet" href="../templates/styles.css" />', '<link rel="stylesheet" href="../templates/IGNORE_styles.css" />')
+      .replace(/src="\.\/icons\//g, 'src="../templates/icons/')
+      .replace(/src="icons\//g, 'src="../templates/icons/')
+      .replace(/url\(\.\.\/fonts\//g, 'url(../templates/fonts/');
+    
+    // Create HTML with absolute paths for PDF generation (works with Puppeteer)
     const cssLink = `<link rel="stylesheet" href="file://${cssPath}" />`;
-    const html = template(data).replace(
-      '<link rel="stylesheet" href="../templates/styles.css" />',
-      cssLink
-    );
+    const htmlPdf = baseHtml
+      .replace('<link rel="stylesheet" href="../templates/styles.css" />', cssLink)
+      .replace(/src="\.\/icons\//g, `src="file:///${iconsDir.replace(/\\/g, '/')}/`)
+      .replace(/src="icons\//g, `src="file:///${iconsDir.replace(/\\/g, '/')}/`)
+      .replace(/url\(\.\.\/fonts\//g, `url(file:///${fontsDir.replace(/\\/g, '/')}/`);
 
     // 3️⃣ Create timestamp and file name
     // 🧾 Derive patient-based filename (e.g., Jane-Doe-Nov-6-2025-0432-PM.pdf)
@@ -61,7 +76,7 @@ export async function generatePDF(jsonPath) {
 
     const patientSlug = `${firstName || "Patient"}-${lastName || "Unknown"}`;
     const previewPath = path.join(previewsDir, `${patientSlug}-preview.html`);
-    fs.writeFileSync(previewPath, html);
+    fs.writeFileSync(previewPath, htmlPreview);
 
     console.log(`💾 Preview saved: ${previewPath}`);
 
@@ -85,7 +100,7 @@ export async function generatePDF(jsonPath) {
     // 4️⃣ Use Puppeteer to generate PDF
     const browser = await puppeteer.launch({ headless: true });
     const page = await browser.newPage();
-    await page.setContent(html, { waitUntil: "networkidle0" });
+    await page.setContent(htmlPdf, { waitUntil: "networkidle0" });
     await page.pdf({
       path: outputPath,
       format: "A4",
