@@ -1515,13 +1515,19 @@
       font-family: "Visuelt Pro", "Inter", sans-serif;
       font-size: 0.85rem;
       color: var(--gray);
-      padding: 1rem 0;
-      margin-top: 3rem;
+      padding: 1rem 0 2rem 0;
+      margin-top: 1rem;
       user-select: none;
     }
 
     footer.report-footer p {
       margin: 0.25rem 0;
+    }
+
+    /* Reduce bottom margin for last section */
+    section.testing-consultations {
+      margin-top: 50px;
+      margin-bottom: 1rem;
     }
   </style>
 </head>
@@ -1614,7 +1620,7 @@
                 <span>I/II</span>
               </div>
               <div class="diagnosis-stat-value">
-                <div class="diagnosis-stat-main">Stage I/II</div>
+                <div class="diagnosis-stat-main">{{tumors.[0].stage}}</div>
               </div>
             </div>
           </div>
@@ -1628,7 +1634,7 @@
               </div>
               <div class="diagnosis-stat-value">
                 <div class="diagnosis-stat-main">Nottingham</div>
-                <div class="diagnosis-stat-sub">Grade 2</div>
+                <div class="diagnosis-stat-sub">{{tumors.[0].grade}}</div>
               </div>
             </div>
           </div>
@@ -1637,8 +1643,7 @@
             <div class="diagnosis-stat-label">Hormone Receptor Status</div>
             <div class="diagnosis-stat-content">
               <div class="diagnosis-stat-value">
-                <div class="diagnosis-stat-main"><span class="diagnosis-stat-checkmark">+</span> ER Positive</div>
-                <div class="diagnosis-stat-main"><span class="diagnosis-stat-checkmark">+</span> PR Positive</div>
+                <div class="diagnosis-stat-main">{{tumors.[0].hormoneReceptorStatus}}</div>
               </div>
             </div>
           </div>
@@ -1651,8 +1656,7 @@
                 <span>-</span>
               </div>
               <div class="diagnosis-stat-value">
-                <div class="diagnosis-stat-main">HER2</div>
-                <div class="diagnosis-stat-sub">Negative</div>
+                <div class="diagnosis-stat-main">{{tumors.[0].her2Status}}</div>
               </div>
             </div>
           </div>
@@ -1674,7 +1678,7 @@
               <div class="tumor-detail-row">
                 <div class="tumor-detail-left">
                   <div class="tumor-detail-label">Cancer Type</div>
-                  <div class="tumor-detail-value">Invasive Ductal Carcinoma</div>
+                  <div class="tumor-detail-value">{{cancer_type}}</div>
                 </div>
                 <div class="tumor-explanation-box">
                   <p style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 14px; font-weight: 400; color: #8B8991; line-height: 1.6; margin: 0;">Invasive ductal carcinoma (IDC) is the <strong style="color: #1F1D2C;">most common type of breast cancer.</strong> In simple terms, it started in the milk ducts (DCIS) and has now grown slightly outside of the ducts (IDC).</p>
@@ -1684,7 +1688,7 @@
               <div class="tumor-detail-row">
                 <div class="tumor-detail-left">
                   <div class="tumor-detail-label">Location</div>
-                  <div class="tumor-detail-value">Left breast (8mm)</div>
+                  <div class="tumor-detail-value">{{location}} ({{size_cm}}cm)</div>
                 </div>
                 <div class="tumor-explanation-box">
                   <p style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 14px; font-weight: 400; color: #8B8991; line-height: 1.6; margin: 0;"><strong style="color: #1F1D2C;">The tumor is small</strong>—less than a centimeter, or about the size of a dime. <strong style="color: #1F1D2C;">The initial tests show no signs of spread to the lymph nodes</strong>, which is often a positive sign for successful outcome for women who have a similar cancer profile.</p>
@@ -1694,7 +1698,7 @@
               <div class="tumor-detail-row">
                 <div class="tumor-detail-left">
                   <div class="tumor-detail-label">Stage</div>
-                  <div class="tumor-detail-value">Clinical stage I/II</div>
+                  <div class="tumor-detail-value">{{stage}}</div>
                 </div>
             
               </div>
@@ -1702,7 +1706,7 @@
               <div class="tumor-detail-row">
                 <div class="tumor-detail-left">
                   <div class="tumor-detail-label">Grade</div>
-                  <div class="tumor-detail-value">Nottingham grade 2</div>
+                  <div class="tumor-detail-value">{{grade}}</div>
                 </div>
                 <div class="tumor-explanation-box">
                   <p style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 14px; font-weight: 400; color: #8B8991; line-height: 1.6; margin: 0;">The Nottingham Grade is a grading system used to describe how much the cancer cells look like normal cells and how quickly they are growing. Grade 2 is considered <strong style="color: #1F1D2C;">intermediate</strong>—not the slowest, but also not the fastest or most aggressive.</p>
@@ -1712,7 +1716,7 @@
               <div class="tumor-detail-row">
                 <div class="tumor-detail-left">
                   <div class="tumor-detail-label">Hormone Receptor Status</div>
-                  <div class="tumor-detail-value">Estrogen positive, Progesterone positive</div>
+                  <div class="tumor-detail-value">{{hormoneReceptorStatus}}</div>
                 </div>
                 <div class="tumor-explanation-box">
                   <p style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 14px; font-weight: 400; color: #8B8991; line-height: 1.6; margin: 0;">Your cancer is <strong style="color: #1F1D2C;">hormone receptor positive</strong>, which means it is <strong style="color: #1F1D2C;">fueled by hormones</strong>. You can think of these hormones as "food" for the cancer cells. This means the primary, highly effective long-term treatment will be <strong style="color: #1F1D2C;">anti-hormone pills</strong> (endocrine therapy) to "starve" the cancer.</p>
@@ -1722,7 +1726,7 @@
               <div class="tumor-detail-row">
                 <div class="tumor-detail-left">
                   <div class="tumor-detail-label">HER2 Status</div>
-                  <div class="tumor-detail-value">HER2 negative</div>
+                  <div class="tumor-detail-value">{{her2Status}}</div>
                 </div>
                 <div class="tumor-explanation-box">
                   <p style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 14px; font-weight: 400; color: #8B8991; line-height: 1.6; margin: 0;">Patients with HER2 negative status <strong style="color: #1F1D2C;">do not overproduce</strong> the HER2 protein and typically do not need the specific, targeted medications designed for HER2-positive cancer.</p>
@@ -1822,109 +1826,87 @@
       </div>
 
       {{!-- Testing Items List --}}
+      {{#each report.sections}}
+        {{#if (eq this.id "testing_and_consultations")}}
+          {{!-- New schema: completed tests --}}
+          {{#if this.completed.tests}}
+      <div class="testing-items-wrapper">
+        <h3 class="testing-items-title">{{#if this.completed.tests_title}}{{this.completed.tests_title}}{{else}}Completed Tests{{/if}}</h3>
+        
+        <div class="testing-items-list">
+          {{#each this.completed.tests}}
+          <div class="testing-item">
+            <div class="testing-item-content">
+              <div class="testing-item-icon">
+                <img src="./icons/black-checkmark.svg" alt="{{this.status}}" />
+              </div>
+              <div class="testing-item-title">{{this.name}}</div>
+            </div>
+            <div class="testing-item-right">
+              <div class="testing-item-badge">{{this.status}}</div>
+              {{#if this.date}}
+              <div class="testing-item-date">{{this.date}}</div>
+              {{/if}}
+            </div>
+          </div>
+          {{/each}}
+        </div>
+      </div>
+          {{/if}}
+
+          {{!-- New schema: completed consultations --}}
+          {{#if this.completed.consultations}}
+      <div class="testing-items-wrapper">
+        <h3 class="testing-items-title">{{#if this.completed.consultations_title}}{{this.completed.consultations_title}}{{else}}Completed Referrals{{/if}}</h3>
+        
+        <div class="testing-items-list">
+          {{#each this.completed.consultations}}
+          <div class="testing-item">
+            <div class="testing-item-content">
+              <div class="testing-item-icon">
+                <img src="./icons/black-checkmark.svg" alt="{{this.status}}" />
+              </div>
+              <div class="testing-item-title">{{this.name}}</div>
+            </div>
+            <div class="testing-item-right">
+              <div class="testing-item-badge">{{this.status}}</div>
+              {{#if this.date}}
+              <div class="testing-item-date">{{this.date}}</div>
+              {{/if}}
+            </div>
+          </div>
+          {{/each}}
+        </div>
+      </div>
+          {{/if}}
+        {{/if}}
+
+        {{!-- Fallback: Old schema support (next_steps) --}}
+        {{#if (eq this.id "next_steps")}}
       <div class="testing-items-wrapper">
         <h3 class="testing-items-title">Completed Tests</h3>
         
         <div class="testing-items-list">
+          {{#each this.items}}
           <div class="testing-item">
             <div class="testing-item-content">
               <div class="testing-item-icon">
-                <img src="./icons/black-checkmark.svg" alt="Completed" />
+                <img src="./icons/black-checkmark.svg" alt="{{this.status}}" />
               </div>
-              <div class="testing-item-title">Bilateral mammogram</div>
+              <div class="testing-item-title">{{this.name}}</div>
             </div>
             <div class="testing-item-right">
-              <div class="testing-item-badge">Completed</div>
-              <div class="testing-item-date">9/23/24</div>
+              <div class="testing-item-badge">{{this.status}}</div>
+              {{#if this.date}}
+              <div class="testing-item-date">{{this.date}}</div>
+              {{/if}}
             </div>
           </div>
-
-          <div class="testing-item">
-            <div class="testing-item-content">
-              <div class="testing-item-icon">
-                <img src="./icons/black-checkmark.svg" alt="Completed" />
-              </div>
-              <div class="testing-item-title">Ultrasound - left breast</div>
-            </div>
-            <div class="testing-item-right">
-              <div class="testing-item-badge">Completed</div>
-              <div class="testing-item-date">11/12/24</div>
-            </div>
-          </div>
-
-          <div class="testing-item">
-            <div class="testing-item-content">
-              <div class="testing-item-icon">
-                <img src="./icons/black-checkmark.svg" alt="Completed" />
-              </div>
-              <div class="testing-item-title">Axillary ultrasound</div>
-            </div>
-            <div class="testing-item-right">
-              <div class="testing-item-badge">Completed</div>
-              <div class="testing-item-date">11/12/24</div>
-            </div>
-          </div>
-
-          <div class="testing-item">
-            <div class="testing-item-content">
-              <div class="testing-item-icon">
-                <img src="./icons/black-checkmark.svg" alt="Completed" />
-              </div>
-              <div class="testing-item-title">Breast core needle biopsy</div>
-            </div>
-            <div class="testing-item-right">
-              <div class="testing-item-badge">Completed</div>
-              <div class="testing-item-date">11/27/24</div>
-            </div>
-          </div>
-
-          <div class="testing-item">
-            <div class="testing-item-content">
-              <div class="testing-item-icon">
-                <img src="./icons/black-checkmark.svg" alt="Completed" />
-              </div>
-              <div class="testing-item-title">Pathology testing for ER/PR/HER2 status</div>
-            </div>
-            <div class="testing-item-right">
-              <div class="testing-item-badge">Completed</div>
-              <div class="testing-item-date">11/27/24</div>
-            </div>
-          </div>
+          {{/each}}
         </div>
       </div>
-
-      {{!-- Completed Referrals --}}
-      <div class="testing-items-wrapper">
-        <h3 class="testing-items-title">Completed Referrals</h3>
-        
-        <div class="testing-items-list">
-          <div class="testing-item">
-            <div class="testing-item-content">
-              <div class="testing-item-icon">
-                <img src="./icons/black-checkmark.svg" alt="Completed" />
-              </div>
-              <div class="testing-item-title">Referral to Medical Oncology</div>
-            </div>
-            <div class="testing-item-right">
-              <div class="testing-item-badge">Scheduled</div>
-              <div class="testing-item-date">12/17/24</div>
-            </div>
-          </div>
-
-          <div class="testing-item">
-            <div class="testing-item-content">
-              <div class="testing-item-icon">
-                <img src="./icons/black-checkmark.svg" alt="Completed" />
-              </div>
-              <div class="testing-item-title">Referral to Surgery</div>
-            </div>
-            <div class="testing-item-right">
-              <div class="testing-item-badge">Scheduled</div>
-              <div class="testing-item-date">1/27/25</div>
-            </div>
-          </div>
-        </div>
-      </div>
+        {{/if}}
+      {{/each}}
 
       {{!-- Divider --}}
       <div class="testing-divider"></div>
@@ -2105,91 +2087,104 @@
       </div>
 
       {{!-- Treatment Cards Section --}}
+      {{#each report.sections}}
+        {{#if (eq this.id "treatment_planning")}}
+          
+          {{!-- New schema: treatments_considered.medical_oncology --}}
+          {{#if this.treatments_considered.medical_oncology}}
+      <div class="treatment-cards-section">
+        <h3 class="treatment-category-title">{{#if this.treatments_considered.medical_oncology.title}}{{this.treatments_considered.medical_oncology.title}}{{else}}Medical Oncology{{/if}}</h3>
+        {{#if this.treatments_considered.medical_oncology.description}}
+        <p style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 16px; color: #8B8991; margin-bottom: 1.5rem;">{{this.treatments_considered.medical_oncology.description}}</p>
+        {{/if}}
+        
+        {{#each this.treatments_considered.medical_oncology.treatments}}
+        <div class="treatment-card">
+          <div class="treatment-card-header">
+            <div class="treatment-badge {{#if (eq this.likelihood "highly_likely")}}{{else}}{{#if (eq this.likelihood "most_likely")}}{{else}}outlined{{/if}}{{/if}}">
+              {{#if (eq this.likelihood "most_likely")}}Most Likely{{/if}}
+              {{#if (eq this.likelihood "highly_likely")}}Highly Likely{{/if}}
+              {{#if (eq this.likelihood "likely")}}Likely{{/if}}
+              {{#if (eq this.likelihood "possible")}}Possible{{/if}}
+              {{#if (eq this.likelihood "unlikely")}}Unlikely{{/if}}
+            </div>
+            <h4 class="treatment-name">{{this.name}}</h4>
+            <p class="treatment-intro">{{#if this.why}}{{this.why}}{{else}}{{this.description}}{{/if}}</p>
+          </div>
+        </div>
+        {{/each}}
+      </div>
+          {{/if}}
+
+          {{!-- New schema: treatments_considered.surgical_oncology --}}
+          {{#if this.treatments_considered.surgical_oncology}}
+      <div class="treatment-cards-section" style="margin-top: 3rem;">
+        <h3 class="treatment-category-title">{{#if this.treatments_considered.surgical_oncology.title}}{{this.treatments_considered.surgical_oncology.title}}{{else}}Surgical Oncology{{/if}}</h3>
+        {{#if this.treatments_considered.surgical_oncology.description}}
+        <p style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 16px; color: #8B8991; margin-bottom: 1.5rem;">{{this.treatments_considered.surgical_oncology.description}}</p>
+        {{/if}}
+        
+        {{#each this.treatments_considered.surgical_oncology.treatments}}
+        <div class="treatment-card">
+          <div class="treatment-card-header">
+            <div class="treatment-badge {{#if (eq this.likelihood "highly_likely")}}{{else}}{{#if (eq this.likelihood "most_likely")}}{{else}}outlined{{/if}}{{/if}}">
+              {{#if (eq this.likelihood "most_likely")}}Most Likely{{/if}}
+              {{#if (eq this.likelihood "highly_likely")}}Highly Likely{{/if}}
+              {{#if (eq this.likelihood "likely")}}Likely{{/if}}
+              {{#if (eq this.likelihood "possible")}}Possible{{/if}}
+            </div>
+            <h4 class="treatment-name">{{this.name}}</h4>
+            <p class="treatment-intro">{{#if this.why}}{{this.why}}{{else}}{{this.description}}{{/if}}</p>
+          </div>
+        </div>
+        {{/each}}
+      </div>
+          {{/if}}
+
+          {{!-- New schema: treatments_considered.radiation_oncology --}}
+          {{#if this.treatments_considered.radiation_oncology}}
+      <div class="treatment-cards-section" style="margin-top: 3rem;">
+        <h3 class="treatment-category-title">{{#if this.treatments_considered.radiation_oncology.title}}{{this.treatments_considered.radiation_oncology.title}}{{else}}Radiation Oncology{{/if}}</h3>
+        {{#if this.treatments_considered.radiation_oncology.description}}
+        <p style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 16px; color: #8B8991; margin-bottom: 1.5rem;">{{this.treatments_considered.radiation_oncology.description}}</p>
+        {{/if}}
+        
+        {{#each this.treatments_considered.radiation_oncology.treatments}}
+        <div class="treatment-card">
+          <div class="treatment-card-header">
+            <div class="treatment-badge {{#if (eq this.likelihood "highly_likely")}}{{else}}{{#if (eq this.likelihood "most_likely")}}{{else}}outlined{{/if}}{{/if}}">
+              {{#if (eq this.likelihood "most_likely")}}Most Likely{{/if}}
+              {{#if (eq this.likelihood "highly_likely")}}Highly Likely{{/if}}
+              {{#if (eq this.likelihood "likely")}}Likely{{/if}}
+              {{#if (eq this.likelihood "possible")}}Possible{{/if}}
+            </div>
+            <h4 class="treatment-name">{{this.name}}</h4>
+            <p class="treatment-intro">{{#if this.why}}{{this.why}}{{else}}{{this.description}}{{/if}}</p>
+          </div>
+        </div>
+        {{/each}}
+      </div>
+          {{/if}}
+
+          {{!-- Fallback: Old schema support (flat treatments array) --}}
+          {{#if this.treatments}}
       <div class="treatment-cards-section">
         <h3 class="treatment-category-title">Medical Oncology</h3>
         
+        {{#each this.treatments}}
         <div class="treatment-card">
           <div class="treatment-card-header">
-            <div class="treatment-badge">Highly Likely</div>
-            <h4 class="treatment-name">Endocrine therapy (hormone therapy)</h4>
-            <p class="treatment-intro">This is most likely first treatment given that you are hormone receptor positive (ER+ and PR+). Blocking estrogen and stopping the cancer spreading is the priority.</p>
-          </div>
-          
-          <div class="treatment-separator"></div>
-          
-          <div class="treatment-details">
-            <div class="treatment-detail-section">
-              <h4>Medications</h4>
-              <ul>
-                <li>Aromatase inhibitors (letrozole, anastrozole, exemestane) or selective estrogen receptor modulators like tamoxifen — pills that block estrogen</li>
-                <li>Often combined with CDK4/6 inhibitors (palbociclib, ribociclib, abemaciclib) — targeted drugs that stop cancer cells from dividing</li>
-              </ul>
-            </div>
-            <div class="treatment-detail-section">
-              <h4>Side Effects</h4>
-              <p>Generally well-tolerated with manageable side effects like hot flashes and joint pain</p>
-            </div>
-            <div class="treatment-detail-section">
-              <h4>Treatment Length</h4>
-              <p>4–6 weeks</p>
-            </div>
+            <div class="treatment-badge {{#if (eq this.likelihood "highly_likely")}}{{else}}outlined{{/if}}">{{#if (eq this.likelihood "highly_likely")}}Highly Likely{{else}}Might be considered{{/if}}</div>
+            <h4 class="treatment-name">{{this.name}}</h4>
+            <p class="treatment-intro">{{this.description}}</p>
           </div>
         </div>
-
-        <div class="treatment-card">
-          <div class="treatment-card-header">
-            <div class="treatment-badge outlined">Might be considered</div>
-            <h4 class="treatment-name">Ovarian suppression</h4>
-            <p class="treatment-intro">For premenopausal patients, ovarian suppression may be added to endocrine therapy as an alternative to chemotherapy depending on the Oncotype DX score result.</p>
-          </div>
-          
-          <div class="treatment-separator"></div>
-          
-          <div class="treatment-details">
-            <div class="treatment-detail-section">
-              <h4>Medications</h4>
-              <ul>
-                <li>This is often given via monthly injections to temporarily or permanently stop ovarian function, significantly improving treatment effectiveness.</li>
-              </ul>
-            </div>
-            <div class="treatment-detail-section">
-              <h4>Side Effects</h4>
-              <p>Usually causes fewer side effects than traditional chemotherapy</p>
-            </div>
-            <div class="treatment-detail-section">
-              <h4>Treatment Length</h4>
-              <p>2–5 weeks (administered at the same time as Hormone Therapy)</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="treatment-card">
-          <div class="treatment-card-header">
-            <div class="treatment-badge outlined">Might be considered</div>
-            <h4 class="treatment-name">Chemotherapy</h4>
-            <p class="treatment-intro">This might be considered a part of your therapy regimen and will be dependent on the Oncotype DX score.</p>
-          </div>
-          
-          <div class="treatment-separator"></div>
-          
-          <div class="treatment-details">
-            <div class="treatment-detail-section">
-              <h4>Medications</h4>
-              <ul>
-                <li>...</li>
-              </ul>
-            </div>
-            <div class="treatment-detail-section">
-              <h4>Side Effects</h4>
-              <p>...</p>
-            </div>
-            <div class="treatment-detail-section">
-              <h4>Treatment Length</h4>
-              <p>...</p>
-            </div>
-          </div>
-        </div>
+        {{/each}}
       </div>
+          {{/if}}
+
+        {{/if}}
+      {{/each}}
 
       {{!-- Meaning Section --}}
       <div class="meaning-section">
@@ -2362,255 +2357,41 @@
       <div class="records-layout" style="display: flex; gap: 4rem;">
         {{!-- Left Column: Records Overview + Records Received --}}
         <div style="flex: 0 0 62%;">
+          {{#each report.sections}}
+            {{#if (eq this.id "records_overview")}}
           <div style="background: #FFFFFF; border: 1px solid #C7BEFA; border-radius: 12px; padding: 24px 28px; margin-bottom: 2rem; display: grid; grid-template-columns: auto 1fr; column-gap: 3rem; row-gap: 16px;">
             <span style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 16px; font-weight: 400; color: #1F1D2C;">Patient Name</span>
-            <span style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 16px; font-weight: 400; color: #1F1D2C;">Jane Doe</span>
+            <span style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 16px; font-weight: 400; color: #1F1D2C;">{{this.fields.patient_name}}</span>
             
             <span style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 16px; font-weight: 400; color: #1F1D2C;">Date of Review</span>
-            <span style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 16px; font-weight: 400; color: #1F1D2C;">11/03/2025</span>
+            <span style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 16px; font-weight: 400; color: #1F1D2C;">{{this.fields.date_of_review}}</span>
             
             <span style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 16px; font-weight: 400; color: #1F1D2C;">Prepared by</span>
-            <span style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 16px; font-weight: 400; color: #1F1D2C;">Defiant Health</span>
+            <span style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 16px; font-weight: 400; color: #1F1D2C;">{{this.fields.prepared_by}}</span>
             
             <span style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 16px; font-weight: 400; color: #1F1D2C;">Sources</span>
-            <span style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 16px; font-weight: 400; color: #1F1D2C;">Medical records shared with Defiant Health as of 11/02/2025</span>
+            <span style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 16px; font-weight: 400; color: #1F1D2C;">{{this.fields.sources_summary}}</span>
           </div>
 
           {{!-- Records Received (in left column) --}}
           <h4 style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 16px; font-weight: 600; color: #1F1D2C; margin: 0 0 0.75rem 0;">Records Received</h4>
           
           <div style="display: flex; flex-direction: column; gap: 10px;">
+            {{#each this.records_received}}
             <div style="display: flex; justify-content: space-between; align-items: center; padding: 16px 20px; background: #F5F4FF; border-radius: 12px;">
               <div style="display: flex; align-items: center; gap: 12px;">
                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M9.99935 18.3337C14.6017 18.3337 18.3327 14.6027 18.3327 10.0003C18.3327 5.39795 14.6017 1.66699 9.99935 1.66699C5.39698 1.66699 1.66602 5.39795 1.66602 10.0003C1.66602 14.6027 5.39698 18.3337 9.99935 18.3337Z" stroke="#38284E" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
                   <path d="M7.5 9.99967L9.16667 11.6663L12.5 8.33301" stroke="#38284E" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
-                <span class="record-item-name">Bilateral mammogram</span>
+                <span class="record-item-name">{{this.name}}</span>
               </div>
-              <span class="record-item-date">9/23/24</span>
+              <span class="record-item-date">{{this.date_received}}</span>
             </div>
-            
-            <div style="display: flex; justify-content: space-between; align-items: center; padding: 16px 20px; background: #F5F4FF; border-radius: 12px;">
-              <div style="display: flex; align-items: center; gap: 12px;">
-                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M9.99935 18.3337C14.6017 18.3337 18.3327 14.6027 18.3327 10.0003C18.3327 5.39795 14.6017 1.66699 9.99935 1.66699C5.39698 1.66699 1.66602 5.39795 1.66602 10.0003C1.66602 14.6027 5.39698 18.3337 9.99935 18.3337Z" stroke="#38284E" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
-                  <path d="M7.5 9.99967L9.16667 11.6663L12.5 8.33301" stroke="#38284E" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-                <span class="record-item-name">MM Telehealth Consult (Left Breast Biopsy Results)</span>
-              </div>
-              <span class="record-item-date">9/23/24</span>
-            </div>
-            
-            <div style="display: flex; justify-content: space-between; align-items: center; padding: 16px 20px; background: #F5F4FF; border-radius: 12px;">
-              <div style="display: flex; align-items: center; gap: 12px;">
-                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M9.99935 18.3337C14.6017 18.3337 18.3327 14.6027 18.3327 10.0003C18.3327 5.39795 14.6017 1.66699 9.99935 1.66699C5.39698 1.66699 1.66602 5.39795 1.66602 10.0003C1.66602 14.6027 5.39698 18.3337 9.99935 18.3337Z" stroke="#38284E" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
-                  <path d="M7.5 9.99967L9.16667 11.6663L12.5 8.33301" stroke="#38284E" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-                <span class="record-item-name">Anatomic Pathology (Left Breast Core Biopsy)</span>
-              </div>
-              <span class="record-item-date">9/23/24</span>
-            </div>
-            
-            <div style="display: flex; justify-content: space-between; align-items: center; padding: 16px 20px; background: #F5F4FF; border-radius: 12px;">
-              <div style="display: flex; align-items: center; gap: 12px;">
-                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M9.99935 18.3337C14.6017 18.3337 18.3327 14.6027 18.3327 10.0003C18.3327 5.39795 14.6017 1.66699 9.99935 1.66699C5.39698 1.66699 1.66602 5.39795 1.66602 10.0003C1.66602 14.6027 5.39698 18.3337 9.99935 18.3337Z" stroke="#38284E" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
-                  <path d="M7.5 9.99967L9.16667 11.6663L12.5 8.33301" stroke="#38284E" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-                <span class="record-item-name">Mammography (Post Clip Uni/Left)</span>
-              </div>
-              <span class="record-item-date">9/23/24</span>
-            </div>
-            
-            <div style="display: flex; justify-content: space-between; align-items: center; padding: 16px 20px; background: #F5F4FF; border-radius: 12px;">
-              <div style="display: flex; align-items: center; gap: 12px;">
-                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M9.99935 18.3337C14.6017 18.3337 18.3327 14.6027 18.3327 10.0003C18.3327 5.39795 14.6017 1.66699 9.99935 1.66699C5.39698 1.66699 1.66602 5.39795 1.66602 10.0003C1.66602 14.6027 5.39698 18.3337 9.99935 18.3337Z" stroke="#38284E" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
-                  <path d="M7.5 9.99967L9.16667 11.6663L12.5 8.33301" stroke="#38284E" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-                <span class="record-item-name">Biopsy, Breast, w/ Ultrasound Guidance (Proc) (Left Breast)</span>
-              </div>
-              <span class="record-item-date">9/23/24</span>
-            </div>
-            
-            <div style="display: flex; justify-content: space-between; align-items: center; padding: 16px 20px; background: #F5F4FF; border-radius: 12px;">
-              <div style="display: flex; align-items: center; gap: 12px;">
-                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M9.99935 18.3337C14.6017 18.3337 18.3327 14.6027 18.3327 10.0003C18.3327 5.39795 14.6017 1.66699 9.99935 1.66699C5.39698 1.66699 1.66602 5.39795 1.66602 10.0003C1.66602 14.6027 5.39698 18.3337 9.99935 18.3337Z" stroke="#38284E" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
-                  <path d="M7.5 9.99967L9.16667 11.6663L12.5 8.33301" stroke="#38284E" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-                <span class="record-item-name">Mammography, Diagnostic, Digital, Unilateral (Left Breast)</span>
-              </div>
-              <span class="record-item-date">9/23/24</span>
-            </div>
-            
-            <div style="display: flex; justify-content: space-between; align-items: center; padding: 16px 20px; background: #F5F4FF; border-radius: 12px;">
-              <div style="display: flex; align-items: center; gap: 12px;">
-                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M9.99935 18.3337C14.6017 18.3337 18.3327 14.6027 18.3327 10.0003C18.3327 5.39795 14.6017 1.66699 9.99935 1.66699C5.39698 1.66699 1.66602 5.39795 1.66602 10.0003C1.66602 14.6027 5.39698 18.3337 9.99935 18.3337Z" stroke="#38284E" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
-                  <path d="M7.5 9.99967L9.16667 11.6663L12.5 8.33301" stroke="#38284E" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-                <span class="record-item-name">Mammography (Unilat Left - Diagnostic)</span>
-              </div>
-              <span class="record-item-date">9/23/24</span>
-            </div>
-            
-            <div style="display: flex; justify-content: space-between; align-items: center; padding: 16px 20px; background: #F5F4FF; border-radius: 12px;">
-              <div style="display: flex; align-items: center; gap: 12px;">
-                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M9.99935 18.3337C14.6017 18.3337 18.3327 14.6027 18.3327 10.0003C18.3327 5.39795 14.6017 1.66699 9.99935 1.66699C5.39698 1.66699 1.66602 5.39795 1.66602 10.0003C1.66602 14.6027 5.39698 18.3337 9.99935 18.3337Z" stroke="#38284E" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
-                  <path d="M7.5 9.99967L9.16667 11.6663L12.5 8.33301" stroke="#38284E" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-                <span class="record-item-name">Ultrasound, Breast (Left)</span>
-              </div>
-              <span class="record-item-date">9/24/24</span>
-            </div>
-            
-            <div style="display: flex; justify-content: space-between; align-items: center; padding: 16px 20px; background: #F5F4FF; border-radius: 12px;">
-              <div style="display: flex; align-items: center; gap: 12px;">
-                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M9.99935 18.3337C14.6017 18.3337 18.3327 14.6027 18.3327 10.0003C18.3327 5.39795 14.6017 1.66699 9.99935 1.66699C5.39698 1.66699 1.66602 5.39795 1.66602 10.0003C1.66602 14.6027 5.39698 18.3337 9.99935 18.3337Z" stroke="#38284E" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
-                  <path d="M7.5 9.99967L9.16667 11.6663L12.5 8.33301" stroke="#38284E" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-                <span class="record-item-name">MRI Breast (Left)</span>
-              </div>
-              <span class="record-item-date">9/25/24</span>
-            </div>
-            
-            <div style="display: flex; justify-content: space-between; align-items: center; padding: 16px 20px; background: #F5F4FF; border-radius: 12px;">
-              <div style="display: flex; align-items: center; gap: 12px;">
-                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M9.99935 18.3337C14.6017 18.3337 18.3327 14.6027 18.3327 10.0003C18.3327 5.39795 14.6017 1.66699 9.99935 1.66699C5.39698 1.66699 1.66602 5.39795 1.66602 10.0003C1.66602 14.6027 5.39698 18.3337 9.99935 18.3337Z" stroke="#38284E" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
-                  <path d="M7.5 9.99967L9.16667 11.6663L12.5 8.33301" stroke="#38284E" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-                <span class="record-item-name">Surgical Consultation (Left Breast)</span>
-              </div>
-              <span class="record-item-date">9/26/24</span>
-            </div>
-            
-            <div style="display: flex; justify-content: space-between; align-items: center; padding: 16px 20px; background: #F5F4FF; border-radius: 12px;">
-              <div style="display: flex; align-items: center; gap: 12px;">
-                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M9.99935 18.3337C14.6017 18.3337 18.3327 14.6027 18.3327 10.0003C18.3327 5.39795 14.6017 1.66699 9.99935 1.66699C5.39698 1.66699 1.66602 5.39795 1.66602 10.0003C1.66602 14.6027 5.39698 18.3337 9.99935 18.3337Z" stroke="#38284E" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
-                  <path d="M7.5 9.99967L9.16667 11.6663L12.5 8.33301" stroke="#38284E" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-                <span class="record-item-name">Nuclear Medicine Scan (Breast)</span>
-              </div>
-              <span class="record-item-date">9/27/24</span>
-            </div>
-            
-            <div style="display: flex; justify-content: space-between; align-items: center; padding: 16px 20px; background: #F5F4FF; border-radius: 12px;">
-              <div style="display: flex; align-items: center; gap: 12px;">
-                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M9.99935 18.3337C14.6017 18.3337 18.3327 14.6027 18.3327 10.0003C18.3327 5.39795 14.6017 1.66699 9.99935 1.66699C5.39698 1.66699 1.66602 5.39795 1.66602 10.0003C1.66602 14.6027 5.39698 18.3337 9.99935 18.3337Z" stroke="#38284E" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
-                  <path d="M7.5 9.99967L9.16667 11.6663L12.5 8.33301" stroke="#38284E" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-                <span class="record-item-name">Genetic Counseling (Breast Cancer Risk)</span>
-              </div>
-              <span class="record-item-date">9/28/24</span>
-            </div>
-            
-            <div style="display: flex; justify-content: space-between; align-items: center; padding: 16px 20px; background: #F5F4FF; border-radius: 12px;">
-              <div style="display: flex; align-items: center; gap: 12px;">
-                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M9.99935 18.3337C14.6017 18.3337 18.3327 14.6027 18.3327 10.0003C18.3327 5.39795 14.6017 1.66699 9.99935 1.66699C5.39698 1.66699 1.66602 5.39795 1.66602 10.0003C1.66602 14.6027 5.39698 18.3337 9.99935 18.3337Z" stroke="#38284E" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
-                  <path d="M7.5 9.99967L9.16667 11.6663L12.5 8.33301" stroke="#38284E" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-                <span class="record-item-name">Follow-up Appointment (Breast Health)</span>
-              </div>
-              <span class="record-item-date">9/29/24</span>
-            </div>
-            
-            <div style="display: flex; justify-content: space-between; align-items: center; padding: 16px 20px; background: #F5F4FF; border-radius: 12px;">
-              <div style="display: flex; align-items: center; gap: 12px;">
-                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M9.99935 18.3337C14.6017 18.3337 18.3327 14.6027 18.3327 10.0003C18.3327 5.39795 14.6017 1.66699 9.99935 1.66699C5.39698 1.66699 1.66602 5.39795 1.66602 10.0003C1.66602 14.6027 5.39698 18.3337 9.99935 18.3337Z" stroke="#38284E" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
-                  <path d="M7.5 9.99967L9.16667 11.6663L12.5 8.33301" stroke="#38284E" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-                <span class="record-item-name">CT Scan (Chest, Unilateral)</span>
-              </div>
-              <span class="record-item-date">9/30/24</span>
-            </div>
-            
-            <div style="display: flex; justify-content: space-between; align-items: center; padding: 16px 20px; background: #F5F4FF; border-radius: 12px;">
-              <div style="display: flex; align-items: center; gap: 12px;">
-                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M9.99935 18.3337C14.6017 18.3337 18.3327 14.6027 18.3327 10.0003C18.3327 5.39795 14.6017 1.66699 9.99935 1.66699C5.39698 1.66699 1.66602 5.39795 1.66602 10.0003C1.66602 14.6027 5.39698 18.3337 9.99935 18.3337Z" stroke="#38284E" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
-                  <path d="M7.5 9.99967L9.16667 11.6663L12.5 8.33301" stroke="#38284E" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-                <span class="record-item-name">Core Needle Biopsy (Right Breast)</span>
-              </div>
-              <span class="record-item-date">10/1/24</span>
-            </div>
-            
-            <div style="display: flex; justify-content: space-between; align-items: center; padding: 16px 20px; background: #F5F4FF; border-radius: 12px;">
-              <div style="display: flex; align-items: center; gap: 12px;">
-                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M9.99935 18.3337C14.6017 18.3337 18.3327 14.6027 18.3327 10.0003C18.3327 5.39795 14.6017 1.66699 9.99935 1.66699C5.39698 1.66699 1.66602 5.39795 1.66602 10.0003C1.66602 14.6027 5.39698 18.3337 9.99935 18.3337Z" stroke="#38284E" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
-                  <path d="M7.5 9.99967L9.16667 11.6663L12.5 8.33301" stroke="#38284E" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-                <span class="record-item-name">Mammography, Screening, Digital, Bilateral</span>
-              </div>
-              <span class="record-item-date">10/2/24</span>
-            </div>
-            
-            <div style="display: flex; justify-content: space-between; align-items: center; padding: 16px 20px; background: #F5F4FF; border-radius: 12px;">
-              <div style="display: flex; align-items: center; gap: 12px;">
-                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M9.99935 18.3337C14.6017 18.3337 18.3327 14.6027 18.3327 10.0003C18.3327 5.39795 14.6017 1.66699 9.99935 1.66699C5.39698 1.66699 1.66602 5.39795 1.66602 10.0003C1.66602 14.6027 5.39698 18.3337 9.99935 18.3337Z" stroke="#38284E" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
-                  <path d="M7.5 9.99967L9.16667 11.6663L12.5 8.33301" stroke="#38284E" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-                <span class="record-item-name">Ductogram (Right Breast)</span>
-              </div>
-              <span class="record-item-date">10/3/24</span>
-            </div>
-            
-            <div style="display: flex; justify-content: space-between; align-items: center; padding: 16px 20px; background: #F5F4FF; border-radius: 12px;">
-              <div style="display: flex; align-items: center; gap: 12px;">
-                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M9.99935 18.3337C14.6017 18.3337 18.3327 14.6027 18.3327 10.0003C18.3327 5.39795 14.6017 1.66699 9.99935 1.66699C5.39698 1.66699 1.66602 5.39795 1.66602 10.0003C1.66602 14.6027 5.39698 18.3337 9.99935 18.3337Z" stroke="#38284E" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
-                  <path d="M7.5 9.99967L9.16667 11.6663L12.5 8.33301" stroke="#38284E" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-                <span class="record-item-name">Breast MRI with Contrast (Bilateral)</span>
-              </div>
-              <span class="record-item-date">10/4/24</span>
-            </div>
-            
-            <div style="display: flex; justify-content: space-between; align-items: center; padding: 16px 20px; background: #F5F4FF; border-radius: 12px;">
-              <div style="display: flex; align-items: center; gap: 12px;">
-                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M9.99935 18.3337C14.6017 18.3337 18.3327 14.6027 18.3327 10.0003C18.3327 5.39795 14.6017 1.66699 9.99935 1.66699C5.39698 1.66699 1.66602 5.39795 1.66602 10.0003C1.66602 14.6027 5.39698 18.3337 9.99935 18.3337Z" stroke="#38284E" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
-                  <path d="M7.5 9.99967L9.16667 11.6663L12.5 8.33301" stroke="#38284E" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-                <span class="record-item-name">Clinical Breast Exam (Follow-up)</span>
-              </div>
-              <span class="record-item-date">10/5/24</span>
-            </div>
-            
-            <div style="display: flex; justify-content: space-between; align-items: center; padding: 16px 20px; background: #F5F4FF; border-radius: 12px;">
-              <div style="display: flex; align-items: center; gap: 12px;">
-                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M9.99935 18.3337C14.6017 18.3337 18.3327 14.6027 18.3327 10.0003C18.3327 5.39795 14.6017 1.66699 9.99935 1.66699C5.39698 1.66699 1.66602 5.39795 1.66602 10.0003C1.66602 14.6027 5.39698 18.3337 9.99935 18.3337Z" stroke="#38284E" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
-                  <path d="M7.5 9.99967L9.16667 11.6663L12.5 8.33301" stroke="#38284E" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-                <span class="record-item-name">Ultrasound-Guided Aspiration (Right Breast)</span>
-              </div>
-              <span class="record-item-date">10/6/24</span>
-            </div>
-            
-            <div style="display: flex; justify-content: space-between; align-items: center; padding: 16px 20px; background: #F5F4FF; border-radius: 12px;">
-              <div style="display: flex; align-items: center; gap: 12px;">
-                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M9.99935 18.3337C14.6017 18.3337 18.3327 14.6027 18.3327 10.0003C18.3327 5.39795 14.6017 1.66699 9.99935 1.66699C5.39698 1.66699 1.66602 5.39795 1.66602 10.0003C1.66602 14.6027 5.39698 18.3337 9.99935 18.3337Z" stroke="#38284E" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
-                  <path d="M7.5 9.99967L9.16667 11.6663L12.5 8.33301" stroke="#38284E" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-                <span class="record-item-name">Oncology Referral (Breast Cancer)</span>
-              </div>
-              <span class="record-item-date">10/7/24</span>
-            </div>
+            {{/each}}
           </div>
+            {{/if}}
+          {{/each}}
         </div>
 
         {{!-- Right Column: Limitations --}}

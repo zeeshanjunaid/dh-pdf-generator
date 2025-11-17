@@ -1,0 +1,252 @@
+{
+  "report": {
+    "meta": {
+      "report_id": "sample-report-002",
+      "generated_at": "2025-11-15T14:30:00Z",
+      "patient_id": "TS-SAMPLE-002",
+      "version": "v1.0-sample"
+    },
+    "sections": [
+      {
+        "id": "note_from_defiant",
+        "fields": {
+          "provider_name": "Defiant Health Team",
+          "provider_title": "Breast Health Specialists",
+          "provider_photo_url": "/images/provider-team.jpg",
+          "provider_email": "care@defianthealth.com"
+        },
+        "emotional_state": {
+          "ts_question_id": "how_are_you_feeling_today",
+          "ts_response_id": 4,
+          "ts_response_label": "I'm feeling overwhelmed but ready to understand my diagnosis better."
+        },
+        "matched_message": {
+          "template_id": "note_idc_general_support",
+          "subject": "We're here with you every step of the way",
+          "body": "We created this report to help you feel informed and supported as you learn more about your diagnosis. Bring it to your appointments, and use it as a guide when preparing questions or thinking about next steps."
+        }
+      },
+
+      {
+        "id": "records_overview",
+        "fields": {
+          "patient_name": "Maria Smith",
+          "date_of_review": "2025-11-14",
+          "prepared_by": "Defiant Health",
+          "sources_summary": "Medical records shared with Defiant Health as of 2025-11-13."
+        },
+        "records_received": [
+          {
+            "record_id": "R10",
+            "name": "Breast Clinic Visit Note",
+            "date_received": "2025-01-08",
+            "source": "Health system",
+            "category": "clinical_note",
+            "ts_file_id": "TS_FILE_R10"
+          },
+          {
+            "record_id": "R11",
+            "name": "Ultrasound Report (Right Breast)",
+            "date_received": "2024-12-29",
+            "source": "Health system",
+            "category": "imaging",
+            "ts_file_id": "TS_FILE_R11"
+          }
+        ]
+      },
+
+      {
+        "id": "diagnosis_summary",
+        "fields": {
+          "primary_diagnosis": "Invasive Lobular Carcinoma",
+          "date_of_diagnosis": "2024-12-20",
+          "diagnosis_summary": "Your diagnosis is an early-stage, hormone receptor–positive breast cancer. This type of breast cancer is often treatable with a combination of surgery, endocrine therapy, and other individualized treatment options."
+        },
+        "tumors": [
+          {
+            "title": "Tumor 1",
+            "cancer_type": "Invasive Lobular Carcinoma",
+            "location": "Right breast (12mm)",
+            "size_cm": 1.2,
+            "stage": "Clinical stage I",
+            "grade": "Nottingham grade 1",
+            "hormoneReceptorStatus": "Estrogen positive, Progesterone positive",
+            "her2Status": "HER2 negative",
+            "laterality": "Right",
+            "notes": "The tumor is small, with no enlarged lymph nodes seen on imaging."
+          }
+        ],
+        "whatThisMeans": {
+          "goodNews": "Your tumor is still small and imaging shows no concerning lymph nodes.",
+          "newOptions": "Hormone receptor–positive cancers respond well to endocrine therapy.",
+          "treatmentFocus": "Your plan will focus on removing the tumor and lowering the risk of recurrence.",
+          "otherConsiderations": "Your care team may recommend an OncotypeDX test to help personalize your treatment plan."
+        }
+      },
+
+      {
+        "id": "testing_and_consultations",
+        "progressJourney": {
+          "current_stage": "Diagnostic Testing",
+          "stages": [
+            {
+              "name": "Diagnostic Testing",
+              "status": "In Progress"
+            },
+            {
+              "name": "Consultations",
+              "status": "Not Started"
+            }
+          ]
+        },
+        "completed": {
+          "title": "Testing and Consultations Completed To-Date",
+          "description": "These are the tests and evaluations documented in your medical records.",
+          "source": [
+            {
+              "name": "Telehealth Note",
+              "date": "2025-01-02"
+            }
+          ],
+          "tests": [
+            {
+              "name": "Screening mammogram",
+              "date": "2024-10-15",
+              "explanation": "Baseline imaging that first detected a small area that needed further evaluation.",
+              "status": "Complete"
+            },
+            {
+              "name": "Ultrasound – right breast",
+              "date": "2024-12-20",
+              "explanation": "Ultrasound was used to evaluate the area found on the mammogram.",
+              "status": "Complete"
+            }
+          ],
+          "consultations": [
+            {
+              "name": "Initial Breast Surgeon Consultation",
+              "date": "2025-01-05",
+              "explanation": "Introduced surgical options and next steps.",
+              "status": "Complete"
+            }
+          ]
+        },
+        "needed": {
+          "title": "Potential Tests and Consultation Options",
+          "description": "Based on current guidelines, these options may be considered.",
+          "source": [
+            {
+              "name": "Dana-Farber Clinical Pathways",
+              "date": "2025-02-01"
+            }
+          ],
+          "tests": [
+            {
+              "name": "Breast MRI",
+              "explanation": "May be used to evaluate the full extent of lobular carcinoma.",
+              "status": "Might be recommended"
+            }
+          ],
+          "consultations": [
+            {
+              "name": "Medical Oncology Consultation",
+              "explanation": "To discuss endocrine therapy recommendations.",
+              "status": "Likely"
+            }
+          ]
+        }
+      },
+
+      {
+        "id": "treatment_planning",
+        "overall_goals": {
+          "typical": {
+            "title": "Typical Treatment Goals for Cancers Like Yours",
+            "stage": "Stage I, ER+/PR+, HER2-",
+            "goals": [
+              "Completely remove the tumor.",
+              "Prevent recurrence using evidence-based treatments.",
+              "Use therapies with the best outcomes and lowest side effects."
+            ]
+          },
+          "personal": {
+            "ts_question_id": "what_matters_to_you_in_treatment",
+            "raw_response": "Staying active and maintaining my quality of life.",
+            "mapped_goal": "Quality of life",
+            "mapped_goal_id": "goal_quality_life"
+          }
+        },
+        "treatments_considered": {
+          "summary": "Treatment planning brings together your diagnostic results and your personal goals.",
+          "as_of_date": "2025-11-14",
+          "source": "Dana-Farber Clinical Pathways",
+          "source_link": "https://pathways.dana-farber.org",
+          "medical_oncology": {
+            "title": "Medical Oncology",
+            "description": "Focuses on systemic treatments like endocrine therapy.",
+            "treatments": [
+              {
+                "name": "Endocrine Therapy",
+                "why": "Hormone receptor positive cancers respond extremely well to endocrine therapy",
+                "likelihood": "highly_likely"
+              }
+            ]
+          },
+          "surgical_oncology": {
+            "title": "Surgical Oncology",
+            "description": "Removes the tumor and evaluates lymph nodes.",
+            "treatments": [
+              {
+                "name": "Lumpectomy",
+                "why": "Breast-conserving surgery with clear margins",
+                "likelihood": "highly_likely"
+              }
+            ]
+          },
+          "radiation_oncology": {
+            "title": "Radiation Oncology",
+            "description": "Often recommended after lumpectomy.",
+            "treatments": [
+              {
+                "name": "Radiation Therapy",
+                "why": "To reduce risk of local recurrence",
+                "likelihood": "likely"
+              }
+            ]
+          }
+        }
+      },
+
+      {
+        "id": "oncologist_questions",
+        "categories": [
+          {
+            "name": "Medical Oncology",
+            "groups": [
+              {
+                "title": "Treatment Planning (Systemic Therapy)",
+                "questions": [
+                  {
+                    "text": "Will I need an OncotypeDX test to help guide my treatment plan?"
+                  },
+                  {
+                    "text": "Based on my tumor size and receptor status, which treatments are most effective?"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+
+      {
+        "id": "footer",
+        "fields": {
+          "disclaimer": "This decision aid helps you understand your medical information and is not a substitute for medical care.",
+          "contact_info": "support@defianthealth.com",
+          "organization": "Defiant Health"
+        }
+      }
+    ]
+  }
+}

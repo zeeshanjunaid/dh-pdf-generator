@@ -32,11 +32,12 @@ export async function generatePDF(jsonPath) {
     const fontsDir = path.join(process.cwd(), "templates", "fonts");
     
     // Create HTML with relative paths for preview (works when shared with others)
+    // Preview is in previews/Patient-Name/ so need ../../ to get to root
     const htmlPreview = baseHtml
-      .replace('<link rel="stylesheet" href="../templates/styles.css" />', '<link rel="stylesheet" href="../templates/IGNORE_styles.css" />')
-      .replace(/src="\.\/icons\//g, 'src="../templates/icons/')
-      .replace(/src="icons\//g, 'src="../templates/icons/')
-      .replace(/url\(\.\.\/fonts\//g, 'url(../templates/fonts/');
+      .replace('<link rel="stylesheet" href="../templates/styles.css" />', '<link rel="stylesheet" href="../../templates/IGNORE_styles.css" />')
+      .replace(/src="\.\/icons\//g, 'src="../../templates/icons/')
+      .replace(/src="icons\//g, 'src="../../templates/icons/')
+      .replace(/url\(\.\.\/fonts\//g, 'url(../../templates/fonts/');
     
     // Create HTML with absolute paths for PDF generation (works with Puppeteer)
     // Convert Windows paths to proper file:// URLs
@@ -75,15 +76,26 @@ export async function generatePDF(jsonPath) {
     fs.mkdirSync(outputDir, { recursive: true });
     const outputPath = path.join(outputDir, fileName);
 
-    // ✨ Save HTML preview in a dedicated folder
+    // ✨ Save HTML preview and JSON data in a dedicated folder per patient
     const previewsDir = path.join(process.cwd(), "previews");
     fs.mkdirSync(previewsDir, { recursive: true });
 
     const patientSlug = `${firstName || "Patient"}-${lastName || "Unknown"}`;
-    const previewPath = path.join(previewsDir, `${patientSlug}-preview.html`);
+    
+    // Create patient-specific subfolder
+    const patientDir = path.join(previewsDir, patientSlug);
+    fs.mkdirSync(patientDir, { recursive: true });
+    
+    // Save HTML preview
+    const previewPath = path.join(patientDir, `${patientSlug}-preview.html`);
     fs.writeFileSync(previewPath, htmlPreview);
+    
+    // Save patient's JSON data file
+    const patientJsonPath = path.join(patientDir, `${patientSlug}-data.json`);
+    fs.writeFileSync(patientJsonPath, JSON.stringify(data, null, 2));
 
     console.log(`💾 Preview saved: ${previewPath}`);
+    console.log(`📄 Patient data saved: ${patientJsonPath}`);
 
     // Save a separate HTML file for PDF generation with absolute paths
     const pdfHtmlPath = path.join(previewsDir, `${patientSlug}-pdf-temp.html`);
