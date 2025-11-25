@@ -57,12 +57,18 @@
           {
             "title": "Tumor 1",
             "cancer_type": "Invasive Ductal Carcinoma",
+            "cancer_type_explanation": "Invasive ductal carcinoma (IDC) is the <strong>most common type of breast cancer.</strong> In simple terms, it started in the milk ducts (DCIS) and has now grown slightly outside of the ducts (IDC).",
             "location": "Left breast",
             "size_cm": 0.9,
+            "location_explanation": "<strong>The tumor is small</strong>—less than a centimeter, or about the size of a dime. <strong>The initial tests show no signs of spread to the lymph nodes</strong>, which is often a positive sign for successful outcome for women who have a similar cancer profile.",
             "stage": "Stage I",
+            "stage_explanation": "Stage I breast cancer is considered early-stage cancer. This means the tumor is small and has not spread to lymph nodes or other parts of the body, which is associated with a good prognosis.",
             "grade": "Grade 2",
+            "grade_explanation": "The Nottingham Grade is a grading system used to describe how much the cancer cells look like normal cells and how quickly they are growing. Grade 2 is considered <strong>intermediate</strong>—not the slowest, but also not the fastest or most aggressive.",
             "hormoneReceptorStatus": "ER+/PR+, HER2-",
+            "hormone_receptor_status_explanation": "Your cancer is <strong>hormone receptor positive</strong>, which means it is <strong>fueled by hormones</strong>. You can think of these hormones as \"food\" for the cancer cells. This means the primary, highly effective long-term treatment will be <strong>anti-hormone pills</strong> (endocrine therapy) to \"starve\" the cancer.",
             "her2Status": "ER+/PR+, HER2-",
+            "her2_status_explanation": "Patients with HER2 negative status <strong>do not overproduce</strong> the HER2 protein and typically do not need the specific, targeted medications designed for HER2-positive cancer.",
             "laterality": "left",
             "source": {
               "type": "pathology",

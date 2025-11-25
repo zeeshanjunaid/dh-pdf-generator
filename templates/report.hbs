@@ -1680,19 +1680,23 @@
                   <div class="tumor-detail-label">Cancer Type</div>
                   <div class="tumor-detail-value">{{cancer_type}}</div>
                 </div>
+                {{#if cancer_type_explanation}}
                 <div class="tumor-explanation-box">
-                  <p style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 14px; font-weight: 400; color: #8B8991; line-height: 1.6; margin: 0;">Invasive ductal carcinoma (IDC) is the <strong style="color: #1F1D2C;">most common type of breast cancer.</strong> In simple terms, it started in the milk ducts (DCIS) and has now grown slightly outside of the ducts (IDC).</p>
+                  <p style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 14px; font-weight: 400; color: #8B8991; line-height: 1.6; margin: 0;">{{{cancer_type_explanation}}}</p>
                 </div>
+                {{/if}}
               </div>
 
               <div class="tumor-detail-row">
                 <div class="tumor-detail-left">
                   <div class="tumor-detail-label">Location</div>
-                  <div class="tumor-detail-value">{{location}} ({{size_cm}}cm)</div>
+                  <div class="tumor-detail-value">{{location}}{{#if size_cm}} ({{size_cm}}cm){{/if}}</div>
                 </div>
+                {{#if location_explanation}}
                 <div class="tumor-explanation-box">
-                  <p style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 14px; font-weight: 400; color: #8B8991; line-height: 1.6; margin: 0;"><strong style="color: #1F1D2C;">The tumor is small</strong>—less than a centimeter, or about the size of a dime. <strong style="color: #1F1D2C;">The initial tests show no signs of spread to the lymph nodes</strong>, which is often a positive sign for successful outcome for women who have a similar cancer profile.</p>
+                  <p style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 14px; font-weight: 400; color: #8B8991; line-height: 1.6; margin: 0;">{{{location_explanation}}}</p>
                 </div>
+                {{/if}}
               </div>
 
               <div class="tumor-detail-row">
@@ -1700,7 +1704,11 @@
                   <div class="tumor-detail-label">Stage</div>
                   <div class="tumor-detail-value">{{stage}}</div>
                 </div>
-            
+                {{#if stage_explanation}}
+                <div class="tumor-explanation-box">
+                  <p style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 14px; font-weight: 400; color: #8B8991; line-height: 1.6; margin: 0;">{{{stage_explanation}}}</p>
+                </div>
+                {{/if}}
               </div>
 
               <div class="tumor-detail-row">
@@ -1708,9 +1716,11 @@
                   <div class="tumor-detail-label">Grade</div>
                   <div class="tumor-detail-value">{{grade}}</div>
                 </div>
+                {{#if grade_explanation}}
                 <div class="tumor-explanation-box">
-                  <p style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 14px; font-weight: 400; color: #8B8991; line-height: 1.6; margin: 0;">The Nottingham Grade is a grading system used to describe how much the cancer cells look like normal cells and how quickly they are growing. Grade 2 is considered <strong style="color: #1F1D2C;">intermediate</strong>—not the slowest, but also not the fastest or most aggressive.</p>
+                  <p style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 14px; font-weight: 400; color: #8B8991; line-height: 1.6; margin: 0;">{{{grade_explanation}}}</p>
                 </div>
+                {{/if}}
               </div>
 
               <div class="tumor-detail-row">
@@ -1718,9 +1728,11 @@
                   <div class="tumor-detail-label">Hormone Receptor Status</div>
                   <div class="tumor-detail-value">{{hormoneReceptorStatus}}</div>
                 </div>
+                {{#if hormone_receptor_status_explanation}}
                 <div class="tumor-explanation-box">
-                  <p style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 14px; font-weight: 400; color: #8B8991; line-height: 1.6; margin: 0;">Your cancer is <strong style="color: #1F1D2C;">hormone receptor positive</strong>, which means it is <strong style="color: #1F1D2C;">fueled by hormones</strong>. You can think of these hormones as "food" for the cancer cells. This means the primary, highly effective long-term treatment will be <strong style="color: #1F1D2C;">anti-hormone pills</strong> (endocrine therapy) to "starve" the cancer.</p>
+                  <p style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 14px; font-weight: 400; color: #8B8991; line-height: 1.6; margin: 0;">{{{hormone_receptor_status_explanation}}}</p>
                 </div>
+                {{/if}}
               </div>
 
               <div class="tumor-detail-row">
@@ -1728,10 +1740,124 @@
                   <div class="tumor-detail-label">HER2 Status</div>
                   <div class="tumor-detail-value">{{her2Status}}</div>
                 </div>
+                {{#if her2_status_explanation}}
                 <div class="tumor-explanation-box">
-                  <p style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 14px; font-weight: 400; color: #8B8991; line-height: 1.6; margin: 0;">Patients with HER2 negative status <strong style="color: #1F1D2C;">do not overproduce</strong> the HER2 protein and typically do not need the specific, targeted medications designed for HER2-positive cancer.</p>
+                  <p style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 14px; font-weight: 400; color: #8B8991; line-height: 1.6; margin: 0;">{{{her2_status_explanation}}}</p>
                 </div>
+                {{/if}}
               </div>
+
+              {{#if er_status}}
+              <div class="tumor-detail-row">
+                <div class="tumor-detail-left">
+                  <div class="tumor-detail-label">ER Status</div>
+                  <div class="tumor-detail-value">{{er_status}}</div>
+                </div>
+                {{#if er_status_explanation}}
+                <div class="tumor-explanation-box">
+                  <p style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 14px; font-weight: 400; color: #8B8991; line-height: 1.6; margin: 0;">{{{er_status_explanation}}}</p>
+                </div>
+                {{/if}}
+              </div>
+              {{/if}}
+
+              {{#if pr_status}}
+              <div class="tumor-detail-row">
+                <div class="tumor-detail-left">
+                  <div class="tumor-detail-label">PR Status</div>
+                  <div class="tumor-detail-value">{{pr_status}}</div>
+                </div>
+                {{#if pr_status_explanation}}
+                <div class="tumor-explanation-box">
+                  <p style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 14px; font-weight: 400; color: #8B8991; line-height: 1.6; margin: 0;">{{{pr_status_explanation}}}</p>
+                </div>
+                {{/if}}
+              </div>
+              {{/if}}
+
+              {{#if ihc_result}}
+              <div class="tumor-detail-row">
+                <div class="tumor-detail-left">
+                  <div class="tumor-detail-label">IHC Result</div>
+                  <div class="tumor-detail-value">{{ihc_result}}</div>
+                </div>
+                {{#if ihc_result_explanation}}
+                <div class="tumor-explanation-box">
+                  <p style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 14px; font-weight: 400; color: #8B8991; line-height: 1.6; margin: 0;">{{{ihc_result_explanation}}}</p>
+                </div>
+                {{/if}}
+              </div>
+              {{/if}}
+
+              {{#if fish_ish_result}}
+              <div class="tumor-detail-row">
+                <div class="tumor-detail-left">
+                  <div class="tumor-detail-label">FISH/ISH Result</div>
+                  <div class="tumor-detail-value">{{fish_ish_result}}</div>
+                </div>
+                {{#if fish_ish_result_explanation}}
+                <div class="tumor-explanation-box">
+                  <p style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 14px; font-weight: 400; color: #8B8991; line-height: 1.6; margin: 0;">{{{fish_ish_result_explanation}}}</p>
+                </div>
+                {{/if}}
+              </div>
+              {{/if}}
+
+              {{#if brca_status}}
+              <div class="tumor-detail-row">
+                <div class="tumor-detail-left">
+                  <div class="tumor-detail-label">BRCA Status</div>
+                  <div class="tumor-detail-value">{{brca_status}}{{#if brca_variant}} - {{brca_variant}}{{/if}}</div>
+                </div>
+                {{#if brca_status_explanation}}
+                <div class="tumor-explanation-box">
+                  <p style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 14px; font-weight: 400; color: #8B8991; line-height: 1.6; margin: 0;">{{{brca_status_explanation}}}</p>
+                </div>
+                {{/if}}
+              </div>
+              {{/if}}
+
+              {{#if pdl1_cps_score}}
+              <div class="tumor-detail-row">
+                <div class="tumor-detail-left">
+                  <div class="tumor-detail-label">PD-L1 CPS Score</div>
+                  <div class="tumor-detail-value">{{pdl1_cps_score}}{{#if pdl1_interpretation}} ({{pdl1_interpretation}}){{/if}}</div>
+                </div>
+                {{#if pdl1_explanation}}
+                <div class="tumor-explanation-box">
+                  <p style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 14px; font-weight: 400; color: #8B8991; line-height: 1.6; margin: 0;">{{{pdl1_explanation}}}</p>
+                </div>
+                {{/if}}
+              </div>
+              {{/if}}
+
+              {{#if tnbc_status}}
+              <div class="tumor-detail-row">
+                <div class="tumor-detail-left">
+                  <div class="tumor-detail-label">TNBC Status</div>
+                  <div class="tumor-detail-value">{{tnbc_status}}</div>
+                </div>
+                {{#if tnbc_status_explanation}}
+                <div class="tumor-explanation-box">
+                  <p style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 14px; font-weight: 400; color: #8B8991; line-height: 1.6; margin: 0;">{{{tnbc_status_explanation}}}</p>
+                </div>
+                {{/if}}
+              </div>
+              {{/if}}
+
+              {{#if ibc_status}}
+              <div class="tumor-detail-row">
+                <div class="tumor-detail-left">
+                  <div class="tumor-detail-label">IBC Status</div>
+                  <div class="tumor-detail-value">{{ibc_status}}</div>
+                </div>
+                {{#if ibc_status_explanation}}
+                <div class="tumor-explanation-box">
+                  <p style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 14px; font-weight: 400; color: #8B8991; line-height: 1.6; margin: 0;">{{{ibc_status_explanation}}}</p>
+                </div>
+                {{/if}}
+              </div>
+              {{/if}}
             </div>
           {{/each}}
         </div>
