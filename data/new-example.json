@@ -1,0 +1,444 @@
+{
+  "pdf_folder_id": "1aVppCR0z9RwrZSj1xLJySQu7UitfjtOq",
+  "number_of_cancerous_tumors_confirmed_by_biopsy": "2",
+  "number_of_cancerous_lymph_nodes_confirmed_by_biopsy": "0",
+  "report": {
+    "meta": {
+      "report_id": "new-example-001",
+      "generated_at": "2025-11-29T00:00:00Z",
+      "patient_id": "NEW-EXAMPLE-001",
+      "version": "v1.0"
+    },
+    "sections": [
+      {
+        "id": "note_from_defiant",
+        "fields": {
+          "provider_name": "Defiant Health Team",
+          "provider_title": "Breast Health Specialists",
+          "provider_email": "care@defianthealth.com"
+        }
+      },
+      {
+        "id": "records_overview",
+        "fields": {
+          "patient_name": "New Example Patient",
+          "date_of_review": "2025-11-29",
+          "prepared_by": "Defiant Health",
+          "sources_summary": "Medical records shared with Defiant Health as of 2025-11-29."
+        },
+        "records_received": []
+      },
+      {
+        "id": "diagnosis_summary",
+        "fields": {
+          "primary_diagnosis": "Invasive Lobular Carcinoma",
+          "date_of_diagnosis": "2025-10-07"
+        }
+      }
+    ]
+  },
+  "brca_status": {
+    "raw_value": "Negative",
+    "source": "Past visits _ Kaiser Permanente4.pdf",
+    "source_page": "12",
+    "service_date": "2025-09-25"
+  },
+  "brca_type": {
+    "raw_value": "germline",
+    "source": "Past visits _ Kaiser Permanente4.pdf",
+    "source_page": "12",
+    "service_date": "2025-09-25"
+  },
+  "brca_lab": {
+    "raw_value": "Invitae",
+    "source": "Past visits _ Kaiser Permanente4.pdf",
+    "source_page": "12",
+    "service_date": "2025-09-25"
+  },
+  "brca_variant": {
+    "raw_value": "",
+    "source": "",
+    "source_page": "",
+    "service_date": ""
+  },
+  "pdl1_cps_score": {
+    "raw_value": "",
+    "source": "",
+    "source_page": "",
+    "service_date": ""
+  },
+  "pdl1_interpretation": {
+    "raw_value": "",
+    "source": "",
+    "source_page": "",
+    "service_date": ""
+  },
+  "pdl1_threshold_used": {
+    "raw_value": "",
+    "source": "",
+    "source_page": "",
+    "service_date": ""
+  },
+  "pdl1_assay": {
+    "raw_value": "",
+    "source": "",
+    "source_page": "",
+    "service_date": ""
+  },
+  "tumors": [
+    {
+      "cancer_type": {
+        "raw_value": "Invasive lobular carcinoma",
+        "source": "Test Results _ Medical Record _ Kaiser Permanente9.pdf",
+        "source_page": "3",
+        "service_date": "2025-10-07"
+      },
+      "location_of_tumor": {
+        "raw_value": "Right breast, 11 o'clock (Site B)",
+        "source": "Test Results _ Medical Record _ Kaiser Permanente3.pdf",
+        "source_page": "5",
+        "service_date": "2025-08-20"
+      },
+      "stage": {
+        "raw_value": "Stage IIB",
+        "source": "Test Results _ Medical Record _ Kaiser Permanente9.pdf",
+        "source_page": "3",
+        "service_date": "2025-10-07"
+      },
+      "stage_type": {
+        "raw_value": "Pathologic anatomic",
+        "source": "Test Results _ Medical Record _ Kaiser Permanente9.pdf",
+        "source_page": "3",
+        "service_date": "2025-10-07"
+      },
+      "size": {
+        "raw_value": "6.5",
+        "source": "Test Results _ Medical Record _ Kaiser Permanente9.pdf",
+        "source_page": "3",
+        "service_date": "2025-10-07"
+      },
+      "largest_size_imaging_cm": {
+        "raw_value": "1.4",
+        "source": "Test Results _ Medical Record _ Kaiser Permanente2.pdf",
+        "source_page": "2",
+        "service_date": "2025-08-14"
+      },
+      "largest_size_biopsy_cm": {
+        "raw_value": "6.5",
+        "source": "Test Results _ Medical Record _ Kaiser Permanente9.pdf",
+        "source_page": "3",
+        "service_date": "2025-10-07"
+      },
+      "overall_grade": {
+        "raw_value": "Grade 1",
+        "source": "Test Results _ Medical Record _ Kaiser Permanente9.pdf",
+        "source_page": "3",
+        "service_date": "2025-10-07"
+      },
+      "tubule_formation_score": {
+        "raw_value": "3",
+        "source": "Test Results _ Medical Record _ Kaiser Permanente9.pdf",
+        "source_page": "3",
+        "service_date": "2025-10-07"
+      },
+      "nuclear_pleomorphism_score": {
+        "raw_value": "1",
+        "source": "Test Results _ Medical Record _ Kaiser Permanente9.pdf",
+        "source_page": "3",
+        "service_date": "2025-10-07"
+      },
+      "mitotic_count_score": {
+        "raw_value": "1",
+        "source": "Test Results _ Medical Record _ Kaiser Permanente9.pdf",
+        "source_page": "3",
+        "service_date": "2025-10-07"
+      },
+      "erpr_status": {
+        "raw_value": "ER Positive, PR Positive",
+        "source": "Test Results _ Medical Record _ Kaiser Permanente3.pdf",
+        "source_page": "2",
+        "service_date": "2025-08-20"
+      },
+      "er_status": {
+        "raw_value": "Positive",
+        "source": "Test Results _ Medical Record _ Kaiser Permanente3.pdf",
+        "source_page": "2",
+        "service_date": "2025-08-20"
+      },
+      "pr_status": {
+        "raw_value": "Positive",
+        "source": "Test Results _ Medical Record _ Kaiser Permanente3.pdf",
+        "source_page": "2",
+        "service_date": "2025-08-20"
+      },
+      "her2_status": {
+        "raw_value": "HER2 negative",
+        "source": "Test Results _ Medical Record _ Kaiser Permanente3.pdf",
+        "source_page": "2",
+        "service_date": "2025-08-20"
+      },
+      "ihc_result": {
+        "raw_value": "Negative (0, absent or incomplete)",
+        "source": "Test Results _ Medical Record _ Kaiser Permanente3.pdf",
+        "source_page": "2",
+        "service_date": "2025-08-20"
+      },
+      "fish_ish_result": {
+        "raw_value": "",
+        "source": "",
+        "source_page": "",
+        "service_date": ""
+      }
+    },
+    {
+      "cancer_type": {
+        "raw_value": "Ductal carcinoma in situ",
+        "source": "Test Results _ Medical Record _ Kaiser Permanente9.pdf",
+        "source_page": "2",
+        "service_date": "2025-10-07"
+      },
+      "location_of_tumor": {
+        "raw_value": "Right breast, central to nipple, posterior depth (Site A)",
+        "source": "Test Results _ Medical Record _ Kaiser Permanente3.pdf",
+        "source_page": "4",
+        "service_date": "2025-08-20"
+      },
+      "stage": {
+        "raw_value": "Stage 0",
+        "source": "Test Results _ Medical Record _ Kaiser Permanente9.pdf",
+        "source_page": "3",
+        "service_date": "2025-10-07"
+      },
+      "stage_type": {
+        "raw_value": "Pathologic anatomic",
+        "source": "Test Results _ Medical Record _ Kaiser Permanente9.pdf",
+        "source_page": "3",
+        "service_date": "2025-10-07"
+      },
+      "size": {
+        "raw_value": "5.8",
+        "source": "Test Results _ Medical Record _ Kaiser Permanente2.pdf",
+        "source_page": "2",
+        "service_date": "2025-08-14"
+      },
+      "largest_size_imaging_cm": {
+        "raw_value": "5.8",
+        "source": "Test Results _ Medical Record _ Kaiser Permanente2.pdf",
+        "source_page": "2",
+        "service_date": "2025-08-14"
+      },
+      "largest_size_biopsy_cm": {
+        "raw_value": "",
+        "source": "",
+        "source_page": "",
+        "service_date": ""
+      },
+      "overall_grade": {
+        "raw_value": "Grade 2",
+        "source": "Test Results _ Medical Record _ Kaiser Permanente9.pdf",
+        "source_page": "3",
+        "service_date": "2025-10-07"
+      },
+      "tubule_formation_score": {
+        "raw_value": "",
+        "source": "",
+        "source_page": "",
+        "service_date": ""
+      },
+      "nuclear_pleomorphism_score": {
+        "raw_value": "",
+        "source": "",
+        "source_page": "",
+        "service_date": ""
+      },
+      "mitotic_count_score": {
+        "raw_value": "",
+        "source": "",
+        "source_page": "",
+        "service_date": ""
+      },
+      "erpr_status": {
+        "raw_value": "ER Positive, PR Unknown",
+        "source": "Test Results _ Medical Record _ Kaiser Permanente3.pdf",
+        "source_page": "3",
+        "service_date": "2025-08-20"
+      },
+      "er_status": {
+        "raw_value": "Positive",
+        "source": "Test Results _ Medical Record _ Kaiser Permanente3.pdf",
+        "source_page": "3",
+        "service_date": "2025-08-20"
+      },
+      "pr_status": {
+        "raw_value": "Unknown",
+        "source": "",
+        "source_page": "",
+        "service_date": ""
+      },
+      "her2_status": {
+        "raw_value": "Unknown",
+        "source": "",
+        "source_page": "",
+        "service_date": ""
+      },
+      "ihc_result": {
+        "raw_value": "",
+        "source": "",
+        "source_page": "",
+        "service_date": ""
+      },
+      "fish_ish_result": {
+        "raw_value": "",
+        "source": "",
+        "source_page": "",
+        "service_date": ""
+      }
+    }
+  ],
+  "diagnosis_summary": {
+    "cancer_type": {
+      "raw_value": "Invasive lobular carcinoma",
+      "source": "Test Results _ Medical Record _ Kaiser Permanente9.pdf",
+      "source_page": "3",
+      "service_date": "2025-10-07"
+    },
+    "location_of_tumors": {
+      "raw_value": "Right breast",
+      "source": "Test Results _ Medical Record _ Kaiser Permanente9.pdf",
+      "source_page": "2",
+      "service_date": "2025-10-07"
+    },
+    "size": {
+      "raw_value": "6.5, 5.8",
+      "source": "Test Results _ Medical Record _ Kaiser Permanente9.pdf",
+      "source_page": "3",
+      "service_date": "2025-10-07"
+    },
+    "largest_size_imaging": {
+      "raw_value": "5.8",
+      "source": "Test Results _ Medical Record _ Kaiser Permanente2.pdf",
+      "source_page": "2",
+      "service_date": "2025-08-14"
+    },
+    "largest_size_biopsy": {
+      "raw_value": "6.5",
+      "source": "Test Results _ Medical Record _ Kaiser Permanente9.pdf",
+      "source_page": "3",
+      "service_date": "2025-10-07"
+    },
+    "stage": {
+      "raw_value": "Stage IIB",
+      "source": "Test Results _ Medical Record _ Kaiser Permanente9.pdf",
+      "source_page": "3",
+      "service_date": "2025-10-07"
+    },
+    "stage_type": {
+      "raw_value": "Pathologic anatomic",
+      "source": "Test Results _ Medical Record _ Kaiser Permanente9.pdf",
+      "source_page": "3",
+      "service_date": "2025-10-07"
+    },
+    "staging_stated_or_inferred": {
+      "raw_value": "Inferred",
+      "source": "Test Results _ Medical Record _ Kaiser Permanente9.pdf",
+      "source_page": "3",
+      "service_date": "2025-10-07"
+    },
+    "overall_grade": {
+      "raw_value": "Grade 1",
+      "source": "Test Results _ Medical Record _ Kaiser Permanente9.pdf",
+      "source_page": "3",
+      "service_date": "2025-10-07"
+    },
+    "er_status": {
+      "raw_value": "Positive",
+      "source": "Test Results _ Medical Record _ Kaiser Permanente3.pdf",
+      "source_page": "2",
+      "service_date": "2025-08-20"
+    },
+    "pr_status": {
+      "raw_value": "Positive",
+      "source": "Test Results _ Medical Record _ Kaiser Permanente3.pdf",
+      "source_page": "2",
+      "service_date": "2025-08-20"
+    },
+    "erpr_status": {
+      "raw_value": "ER Positive, PR Positive",
+      "source": "Test Results _ Medical Record _ Kaiser Permanente3.pdf",
+      "source_page": "2",
+      "service_date": "2025-08-20"
+    },
+    "hormone_receptor_status": {
+      "raw_value": "HR positive",
+      "source": "Test Results _ Medical Record _ Kaiser Permanente3.pdf",
+      "source_page": "2",
+      "service_date": "2025-08-20"
+    },
+    "her2_status": {
+      "raw_value": "HER2 negative",
+      "source": "Test Results _ Medical Record _ Kaiser Permanente3.pdf",
+      "source_page": "2",
+      "service_date": "2025-08-20"
+    },
+    "brca_status": {
+      "raw_value": "Negative",
+      "source": "Past visits _ Kaiser Permanente4.pdf",
+      "source_page": "12",
+      "service_date": "2025-09-25"
+    },
+    "brca_type": {
+      "raw_value": "germline",
+      "source": "Past visits _ Kaiser Permanente4.pdf",
+      "source_page": "12",
+      "service_date": "2025-09-25"
+    },
+    "brca_lab": {
+      "raw_value": "Invitae",
+      "source": "Past visits _ Kaiser Permanente4.pdf",
+      "source_page": "12",
+      "service_date": "2025-09-25"
+    },
+    "brca_variant": {
+      "raw_value": "",
+      "source": "",
+      "source_page": "",
+      "service_date": ""
+    },
+    "pdl1_cps_score": {
+      "raw_value": "",
+      "source": "",
+      "source_page": "",
+      "service_date": ""
+    },
+    "pdl1_interpretation": {
+      "raw_value": "",
+      "source": "",
+      "source_page": "",
+      "service_date": ""
+    },
+    "pdl1_threshold_used": {
+      "raw_value": "",
+      "source": "",
+      "source_page": "",
+      "service_date": ""
+    },
+    "pdl1_assay": {
+      "raw_value": "",
+      "source": "",
+      "source_page": "",
+      "service_date": ""
+    },
+    "ibc_status": {
+      "raw_value": "Not IBC",
+      "source": "Past visits _ Kaiser Permanente4.pdf",
+      "source_page": "5",
+      "service_date": "2025-09-26"
+    },
+    "tnbc_status": {
+      "raw_value": "Not TNBC",
+      "source": "Test Results _ Medical Record _ Kaiser Permanente3.pdf",
+      "source_page": "2",
+      "service_date": "2025-08-20"
+    }
+  }
+}
