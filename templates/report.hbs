@@ -1751,10 +1751,34 @@
                 </div>
               </div>
 
+              {{#if largest_size_imaging_cm.raw_value}}
+              <div class="tumor-detail-row">
+                <div class="tumor-detail-left">
+                  <div class="tumor-detail-label">Largest Size (Imaging)</div>
+                  <div class="tumor-detail-value">{{largest_size_imaging_cm.raw_value}} cm</div>
+                </div>
+                <div class="tumor-explanation-box">
+                  <p style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 14px; font-weight: 400; color: #8B8991; line-height: 1.6; margin: 0;">Size measured by imaging (ultrasound, MRI, etc.)</p>
+                </div>
+              </div>
+              {{/if}}
+
+              {{#if largest_size_biopsy_cm.raw_value}}
+              <div class="tumor-detail-row">
+                <div class="tumor-detail-left">
+                  <div class="tumor-detail-label">Largest Size (Biopsy)</div>
+                  <div class="tumor-detail-value">{{largest_size_biopsy_cm.raw_value}} cm</div>
+                </div>
+                <div class="tumor-explanation-box">
+                  <p style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 14px; font-weight: 400; color: #8B8991; line-height: 1.6; margin: 0;">Size measured from pathology/biopsy specimen</p>
+                </div>
+              </div>
+              {{/if}}
+
               <div class="tumor-detail-row">
                 <div class="tumor-detail-left">
                   <div class="tumor-detail-label">Stage</div>
-                  <div class="tumor-detail-value">{{#if stage.raw_value}}{{stage.raw_value}}{{else}}Text not available in JSON{{/if}}</div>
+                  <div class="tumor-detail-value">{{#if stage.raw_value}}{{stage.raw_value}}{{else}}Text not available in JSON{{/if}}{{#if stage_type.raw_value}} ({{stage_type.raw_value}}){{/if}}</div>
                 </div>
                 <div class="tumor-explanation-box">
                   <p style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 14px; font-weight: 400; color: #8B8991; line-height: 1.6; margin: 0;">{{#if stage_explanation}}{{{stage_explanation}}}{{else}}Text not available in JSON{{/if}}</p>
@@ -1770,6 +1794,18 @@
                   <p style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 14px; font-weight: 400; color: #8B8991; line-height: 1.6; margin: 0;">{{#if grade_explanation}}{{{grade_explanation}}}{{else}}Text not available in JSON{{/if}}</p>
                 </div>
               </div>
+
+              {{#if tubule_formation_score.raw_value}}
+              <div class="tumor-detail-row">
+                <div class="tumor-detail-left">
+                  <div class="tumor-detail-label">Grade Breakdown</div>
+                  <div class="tumor-detail-value">Tubule: {{tubule_formation_score.raw_value}}{{#if nuclear_pleomorphism_score.raw_value}}, Nuclear: {{nuclear_pleomorphism_score.raw_value}}{{/if}}{{#if mitotic_count_score.raw_value}}, Mitotic: {{mitotic_count_score.raw_value}}{{/if}}</div>
+                </div>
+                <div class="tumor-explanation-box">
+                  <p style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 14px; font-weight: 400; color: #8B8991; line-height: 1.6; margin: 0;">Nottingham grade is calculated from tubule formation, nuclear pleomorphism, and mitotic count scores (each 1-3)</p>
+                </div>
+              </div>
+              {{/if}}
 
               <div class="tumor-detail-row">
                 <div class="tumor-detail-left">
@@ -1892,10 +1928,10 @@
             <div class="tumor-detail-row">
               <div class="tumor-detail-left">
                 <div class="tumor-detail-label">PD-L1 CPS Score</div>
-                <div class="tumor-detail-value">{{@root.pdl1_cps_score.raw_value}}{{#if @root.pdl1_interpretation.raw_value}} ({{@root.pdl1_interpretation.raw_value}}){{/if}}</div>
+                <div class="tumor-detail-value">{{@root.pdl1_cps_score.raw_value}}{{#if @root.pdl1_interpretation.raw_value}} ({{@root.pdl1_interpretation.raw_value}}){{/if}}{{#if @root.pdl1_threshold_used.raw_value}} - Threshold: {{@root.pdl1_threshold_used.raw_value}}{{/if}}</div>
               </div>
               <div class="tumor-explanation-box">
-                <p style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 14px; font-weight: 400; color: #8B8991; line-height: 1.6; margin: 0;">Text not available in JSON</p>
+                <p style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 14px; font-weight: 400; color: #8B8991; line-height: 1.6; margin: 0;">{{#if @root.pdl1_assay.raw_value}}Assay: {{@root.pdl1_assay.raw_value}}{{else}}Text not available in JSON{{/if}}</p>
               </div>
             </div>
             {{/if}}
