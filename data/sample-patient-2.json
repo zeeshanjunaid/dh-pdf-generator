@@ -1,0 +1,364 @@
+{
+  "pdf_folder_id": "2bXqqDS1z0SwrZTk2yMzySRu8VjugkuPr",
+  "number_of_cancerous_tumors_confirmed_by_biopsy": "1",
+  "number_of_cancerous_lymph_nodes_confirmed_by_biopsy": "2",
+  "report": {
+    "meta": {
+      "report_id": "sample-patient-002",
+      "generated_at": "2025-12-01T00:00:00Z",
+      "patient_id": "SP-002",
+      "version": "v1.0"
+    },
+    "sections": [
+      {
+        "id": "note_from_defiant",
+        "fields": {
+          "provider_name": "Defiant Health Team",
+          "provider_title": "Breast Health Specialists",
+          "provider_email": "care@defianthealth.com"
+        }
+      },
+      {
+        "id": "records_overview",
+        "fields": {
+          "patient_name": "Sarah Mitchell",
+          "date_of_review": "2025-12-01",
+          "prepared_by": "Defiant Health",
+          "sources_summary": "Medical records shared with Defiant Health as of 2025-12-01."
+        },
+        "records_received": []
+      },
+      {
+        "id": "diagnosis_summary",
+        "fields": {
+          "primary_diagnosis": "Invasive Ductal Carcinoma",
+          "date_of_diagnosis": "2025-11-15"
+        }
+      }
+    ]
+  },
+  "brca_status": {
+    "raw_value": "Positive",
+    "source": "Genetic Testing Report - Myriad.pdf",
+    "source_page": "3",
+    "service_date": "2025-11-10"
+  },
+  "brca_type": {
+    "raw_value": "BRCA1",
+    "source": "Genetic Testing Report - Myriad.pdf",
+    "source_page": "3",
+    "service_date": "2025-11-10"
+  },
+  "brca_lab": {
+    "raw_value": "Myriad Genetics",
+    "source": "Genetic Testing Report - Myriad.pdf",
+    "source_page": "1",
+    "service_date": "2025-11-10"
+  },
+  "brca_variant": {
+    "raw_value": "185delAG",
+    "source": "Genetic Testing Report - Myriad.pdf",
+    "source_page": "3",
+    "service_date": "2025-11-10"
+  },
+  "pdl1_cps_score": {
+    "raw_value": "45",
+    "source": "Pathology Report - UCLA Medical.pdf",
+    "source_page": "5",
+    "service_date": "2025-11-18"
+  },
+  "pdl1_interpretation": {
+    "raw_value": "Positive",
+    "source": "Pathology Report - UCLA Medical.pdf",
+    "source_page": "5",
+    "service_date": "2025-11-18"
+  },
+  "pdl1_threshold_used": {
+    "raw_value": "≥10",
+    "source": "Pathology Report - UCLA Medical.pdf",
+    "source_page": "5",
+    "service_date": "2025-11-18"
+  },
+  "pdl1_assay": {
+    "raw_value": "Ventana SP142",
+    "source": "Pathology Report - UCLA Medical.pdf",
+    "source_page": "5",
+    "service_date": "2025-11-18"
+  },
+  "tumors": [
+    {
+      "cancer_type": {
+        "raw_value": "Invasive ductal carcinoma",
+        "source": "Pathology Report - UCLA Medical.pdf",
+        "source_page": "2",
+        "service_date": "2025-11-15"
+      },
+      "location_of_tumor": {
+        "raw_value": "Left breast, upper outer quadrant, 2 o'clock",
+        "source": "Breast MRI Report.pdf",
+        "source_page": "3",
+        "service_date": "2025-11-12"
+      },
+      "stage": {
+        "raw_value": "Stage IIIA",
+        "source": "Oncology Consultation Notes.pdf",
+        "source_page": "2",
+        "service_date": "2025-11-20"
+      },
+      "stage_type": {
+        "raw_value": "Clinical",
+        "source": "Oncology Consultation Notes.pdf",
+        "source_page": "2",
+        "service_date": "2025-11-20"
+      },
+      "size": {
+        "raw_value": "3.2",
+        "source": "Pathology Report - UCLA Medical.pdf",
+        "source_page": "2",
+        "service_date": "2025-11-15"
+      },
+      "largest_size_imaging_cm": {
+        "raw_value": "2.8",
+        "source": "Breast MRI Report.pdf",
+        "source_page": "2",
+        "service_date": "2025-11-12"
+      },
+      "largest_size_biopsy_cm": {
+        "raw_value": "3.2",
+        "source": "Pathology Report - UCLA Medical.pdf",
+        "source_page": "2",
+        "service_date": "2025-11-15"
+      },
+      "overall_grade": {
+        "raw_value": "Grade 3",
+        "source": "Pathology Report - UCLA Medical.pdf",
+        "source_page": "3",
+        "service_date": "2025-11-15"
+      },
+      "tubule_formation_score": {
+        "raw_value": "3",
+        "source": "Pathology Report - UCLA Medical.pdf",
+        "source_page": "3",
+        "service_date": "2025-11-15"
+      },
+      "nuclear_pleomorphism_score": {
+        "raw_value": "3",
+        "source": "Pathology Report - UCLA Medical.pdf",
+        "source_page": "3",
+        "service_date": "2025-11-15"
+      },
+      "mitotic_count_score": {
+        "raw_value": "3",
+        "source": "Pathology Report - UCLA Medical.pdf",
+        "source_page": "3",
+        "service_date": "2025-11-15"
+      },
+      "erpr_status": {
+        "raw_value": "ER Negative, PR Negative",
+        "source": "Pathology Report - UCLA Medical.pdf",
+        "source_page": "4",
+        "service_date": "2025-11-15"
+      },
+      "er_status": {
+        "raw_value": "Negative",
+        "source": "Pathology Report - UCLA Medical.pdf",
+        "source_page": "4",
+        "service_date": "2025-11-15"
+      },
+      "pr_status": {
+        "raw_value": "Negative",
+        "source": "Pathology Report - UCLA Medical.pdf",
+        "source_page": "4",
+        "service_date": "2025-11-15"
+      },
+      "her2_status": {
+        "raw_value": "HER2 negative",
+        "source": "Pathology Report - UCLA Medical.pdf",
+        "source_page": "4",
+        "service_date": "2025-11-15"
+      },
+      "ihc_result": {
+        "raw_value": "1+ (Negative)",
+        "source": "Pathology Report - UCLA Medical.pdf",
+        "source_page": "4",
+        "service_date": "2025-11-15"
+      },
+      "fish_ish_result": {
+        "raw_value": "Not amplified",
+        "source": "HER2 FISH Report.pdf",
+        "source_page": "1",
+        "service_date": "2025-11-17"
+      }
+    }
+  ],
+  "diagnosis_summary": {
+    "cancer_type": {
+      "raw_value": "Invasive ductal carcinoma",
+      "source": "Pathology Report - UCLA Medical.pdf",
+      "source_page": "2",
+      "service_date": "2025-11-15"
+    },
+    "location_of_tumors": {
+      "raw_value": "Left breast",
+      "source": "Breast MRI Report.pdf",
+      "source_page": "3",
+      "service_date": "2025-11-12"
+    },
+    "size": {
+      "raw_value": "3.2",
+      "source": "Pathology Report - UCLA Medical.pdf",
+      "source_page": "2",
+      "service_date": "2025-11-15"
+    },
+    "largest_size_imaging": {
+      "raw_value": "2.8",
+      "source": "Breast MRI Report.pdf",
+      "source_page": "2",
+      "service_date": "2025-11-12"
+    },
+    "largest_size_biopsy": {
+      "raw_value": "3.2",
+      "source": "Pathology Report - UCLA Medical.pdf",
+      "source_page": "2",
+      "service_date": "2025-11-15"
+    },
+    "stage": {
+      "raw_value": "Stage IIIA",
+      "source": "Oncology Consultation Notes.pdf",
+      "source_page": "2",
+      "service_date": "2025-11-20"
+    },
+    "stage_type": {
+      "raw_value": "Clinical",
+      "source": "Oncology Consultation Notes.pdf",
+      "source_page": "2",
+      "service_date": "2025-11-20"
+    },
+    "staging_stated_or_inferred": {
+      "raw_value": "Stated",
+      "source": "Oncology Consultation Notes.pdf",
+      "source_page": "2",
+      "service_date": "2025-11-20"
+    },
+    "overall_grade": {
+      "raw_value": "Grade 3",
+      "source": "Pathology Report - UCLA Medical.pdf",
+      "source_page": "3",
+      "service_date": "2025-11-15"
+    },
+    "grade_number": {
+      "raw_value": "3",
+      "source": "Pathology Report - UCLA Medical.pdf",
+      "source_page": "3",
+      "service_date": "2025-11-15"
+    },
+    "stage_indicator": {
+      "raw_value": "IIA",
+      "source": "Oncology Consultation Notes.pdf",
+      "source_page": "2",
+      "service_date": "2025-11-20"
+    },
+    "er_status": {
+      "raw_value": "Negative",
+      "source": "Pathology Report - UCLA Medical.pdf",
+      "source_page": "4",
+      "service_date": "2025-11-15"
+    },
+    "pr_status": {
+      "raw_value": "Negative",
+      "source": "Pathology Report - UCLA Medical.pdf",
+      "source_page": "4",
+      "service_date": "2025-11-15"
+    },
+    "erpr_status": {
+      "raw_value": "ER Negative, PR Negative",
+      "source": "Pathology Report - UCLA Medical.pdf",
+      "source_page": "4",
+      "service_date": "2025-11-15"
+    },
+    "hormone_receptor_status": {
+      "raw_value": "HR negative",
+      "source": "Pathology Report - UCLA Medical.pdf",
+      "source_page": "4",
+      "service_date": "2025-11-15"
+    },
+    "her2_status": {
+      "raw_value": "HER2 negative",
+      "source": "Pathology Report - UCLA Medical.pdf",
+      "source_page": "4",
+      "service_date": "2025-11-15"
+    },
+    "her2_indicator": {
+      "raw_value": "-",
+      "source": "Pathology Report - UCLA Medical.pdf",
+      "source_page": "4",
+      "service_date": "2025-11-15"
+    },
+    "her2_status_short": {
+      "raw_value": "Negative",
+      "source": "Pathology Report - UCLA Medical.pdf",
+      "source_page": "4",
+      "service_date": "2025-11-15"
+    },
+    "brca_status": {
+      "raw_value": "Positive",
+      "source": "Genetic Testing Report - Myriad.pdf",
+      "source_page": "3",
+      "service_date": "2025-11-10"
+    },
+    "brca_type": {
+      "raw_value": "BRCA1",
+      "source": "Genetic Testing Report - Myriad.pdf",
+      "source_page": "3",
+      "service_date": "2025-11-10"
+    },
+    "brca_lab": {
+      "raw_value": "Myriad Genetics",
+      "source": "Genetic Testing Report - Myriad.pdf",
+      "source_page": "1",
+      "service_date": "2025-11-10"
+    },
+    "brca_variant": {
+      "raw_value": "185delAG",
+      "source": "Genetic Testing Report - Myriad.pdf",
+      "source_page": "3",
+      "service_date": "2025-11-10"
+    },
+    "pdl1_cps_score": {
+      "raw_value": "45",
+      "source": "Pathology Report - UCLA Medical.pdf",
+      "source_page": "5",
+      "service_date": "2025-11-18"
+    },
+    "pdl1_interpretation": {
+      "raw_value": "Positive",
+      "source": "Pathology Report - UCLA Medical.pdf",
+      "source_page": "5",
+      "service_date": "2025-11-18"
+    },
+    "pdl1_threshold_used": {
+      "raw_value": "≥10",
+      "source": "Pathology Report - UCLA Medical.pdf",
+      "source_page": "5",
+      "service_date": "2025-11-18"
+    },
+    "pdl1_assay": {
+      "raw_value": "Ventana SP142",
+      "source": "Pathology Report - UCLA Medical.pdf",
+      "source_page": "5",
+      "service_date": "2025-11-18"
+    },
+    "ibc_status": {
+      "raw_value": "Not IBC",
+      "source": "Oncology Consultation Notes.pdf",
+      "source_page": "3",
+      "service_date": "2025-11-20"
+    },
+    "tnbc_status": {
+      "raw_value": "TNBC",
+      "source": "Pathology Report - UCLA Medical.pdf",
+      "source_page": "4",
+      "service_date": "2025-11-15"
+    }
+  }
+}

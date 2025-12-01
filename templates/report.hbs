@@ -1648,7 +1648,7 @@
                     stroke-dasharray="125 195" stroke-linecap="round"
                     transform="rotate(135 36 36)"/>
                   <!-- Center text -->
-                  <text x="36" y="40" text-anchor="middle" fill="white" font-family="Visuelt Pro, Inter, sans-serif" font-size="15" font-weight="500">I/II</text>
+                  <text x="36" y="40" text-anchor="middle" fill="white" font-family="Visuelt Pro, Inter, sans-serif" font-size="15" font-weight="500">{{#if @root.diagnosis_summary.stage_indicator.raw_value}}{{@root.diagnosis_summary.stage_indicator.raw_value}}{{else}}--{{/if}}</text>
                 </svg>
               </div>
               <div class="diagnosis-stat-value">
@@ -1671,7 +1671,7 @@
                     stroke-dasharray="86 195" stroke-linecap="round"
                     transform="rotate(135 36 36)"/>
                   <!-- Center text -->
-                  <text x="36" y="42" text-anchor="middle" fill="white" font-family="Visuelt Pro, Inter, sans-serif" font-size="20" font-weight="500">2</text>
+                  <text x="36" y="42" text-anchor="middle" fill="white" font-family="Visuelt Pro, Inter, sans-serif" font-size="20" font-weight="500">{{#if @root.diagnosis_summary.grade_number.raw_value}}{{@root.diagnosis_summary.grade_number.raw_value}}{{else}}--{{/if}}</text>
                 </svg>
               </div>
               <div class="diagnosis-stat-value">
@@ -1686,8 +1686,8 @@
             <div class="diagnosis-stat-content">
               <div class="diagnosis-stat-value">
                 <div class="diagnosis-stat-hr">
-                  <span class="hr-item"><span class="hr-plus">+</span> ER Positive</span>
-                  <span class="hr-item"><span class="hr-plus">+</span> PR Positive</span>
+                  <span class="hr-item"><span class="hr-plus">{{#ifEq @root.diagnosis_summary.er_status.raw_value "Positive"}}+{{else}}-{{/ifEq}}</span> ER {{#if @root.diagnosis_summary.er_status.raw_value}}{{@root.diagnosis_summary.er_status.raw_value}}{{else}}Text not available in JSON{{/if}}</span>
+                  <span class="hr-item"><span class="hr-plus">{{#ifEq @root.diagnosis_summary.pr_status.raw_value "Positive"}}+{{else}}-{{/ifEq}}</span> PR {{#if @root.diagnosis_summary.pr_status.raw_value}}{{@root.diagnosis_summary.pr_status.raw_value}}{{else}}Text not available in JSON{{/if}}</span>
                 </div>
               </div>
             </div>
@@ -1707,12 +1707,12 @@
                     stroke-dasharray="148 195" stroke-linecap="round"
                     transform="rotate(135 36 36)"/>
                   <!-- Center text -->
-                  <text x="36" y="43" text-anchor="middle" fill="white" font-family="Visuelt Pro, Inter, sans-serif" font-size="24" font-weight="500">-</text>
+                  <text x="36" y="43" text-anchor="middle" fill="white" font-family="Visuelt Pro, Inter, sans-serif" font-size="24" font-weight="500">{{#if @root.diagnosis_summary.her2_indicator.raw_value}}{{@root.diagnosis_summary.her2_indicator.raw_value}}{{else}}-{{/if}}</text>
                 </svg>
               </div>
               <div class="diagnosis-stat-value">
                 <div class="diagnosis-stat-main">HER2</div>
-                <div class="diagnosis-stat-sub">Negative</div>
+                <div class="diagnosis-stat-sub">{{#if @root.diagnosis_summary.her2_status_short.raw_value}}{{@root.diagnosis_summary.her2_status_short.raw_value}}{{else}}Text not available{{/if}}</div>
               </div>
             </div>
           </div>
@@ -1726,7 +1726,7 @@
           <h3>Diagnosis by Tumor</h3>
           {{#each @root.tumors}}
             <div class="tumor-section-header">
-              <h4>Tumor {{@index}}</h4>
+              <h4>Tumor {{inc @index}}</h4>
               <h4>Explanation</h4>
             </div>
             

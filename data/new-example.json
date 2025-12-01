@@ -350,6 +350,18 @@
       "source_page": "3",
       "service_date": "2025-10-07"
     },
+    "grade_number": {
+      "raw_value": "1",
+      "source": "Test Results _ Medical Record _ Kaiser Permanente9.pdf",
+      "source_page": "3",
+      "service_date": "2025-10-07"
+    },
+    "stage_indicator": {
+      "raw_value": "IIB",
+      "source": "Test Results _ Medical Record _ Kaiser Permanente9.pdf",
+      "source_page": "3",
+      "service_date": "2025-10-07"
+    },
     "er_status": {
       "raw_value": "Positive",
       "source": "Test Results _ Medical Record _ Kaiser Permanente3.pdf",
@@ -376,6 +388,18 @@
     },
     "her2_status": {
       "raw_value": "HER2 negative",
+      "source": "Test Results _ Medical Record _ Kaiser Permanente3.pdf",
+      "source_page": "2",
+      "service_date": "2025-08-20"
+    },
+    "her2_indicator": {
+      "raw_value": "-",
+      "source": "Test Results _ Medical Record _ Kaiser Permanente3.pdf",
+      "source_page": "2",
+      "service_date": "2025-08-20"
+    },
+    "her2_status_short": {
+      "raw_value": "Negative",
       "source": "Test Results _ Medical Record _ Kaiser Permanente3.pdf",
       "source_page": "2",
       "service_date": "2025-08-20"

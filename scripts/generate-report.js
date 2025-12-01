@@ -9,6 +9,16 @@ console.log("🧩 generate-report.js loaded from:", import.meta.url);
 // Register a simple equality helper for section filtering
 Handlebars.registerHelper("eq", (a, b) => a === b);
 
+// Register block equality helper for conditional rendering
+Handlebars.registerHelper("ifEq", function(a, b, options) {
+  return a === b ? options.fn(this) : options.inverse(this);
+});
+
+// Register increment helper for index + 1
+Handlebars.registerHelper("inc", function(value) {
+  return parseInt(value) + 1;
+});
+
 // ============================
 // 🔧 Helper Function: Generate PDF
 // ============================

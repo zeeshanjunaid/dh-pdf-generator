@@ -1,0 +1,364 @@
+{
+  "pdf_folder_id": "1aVppCR0z9RwrZSj1xLJySQu7UitfjtOq",
+  "number_of_cancerous_tumors_confirmed_by_biopsy": "1",
+  "number_of_cancerous_lymph_nodes_confirmed_by_biopsy": "0",
+  "report": {
+    "meta": {
+      "report_id": "sample-patient-004",
+      "generated_at": "2025-12-01T00:00:00Z",
+      "patient_id": "SP-004",
+      "version": "v1.0"
+    },
+    "sections": [
+      {
+        "id": "note_from_defiant",
+        "fields": {
+          "provider_name": "Defiant Health Team",
+          "provider_title": "Breast Health Specialists",
+          "provider_email": "care@defianthealth.com"
+        }
+      },
+      {
+        "id": "records_overview",
+        "fields": {
+          "patient_name": "Emily Watson",
+          "date_of_review": "2025-12-01",
+          "prepared_by": "Defiant Health",
+          "sources_summary": "Medical records shared with Defiant Health as of 2025-12-01."
+        },
+        "records_received": []
+      },
+      {
+        "id": "diagnosis_summary",
+        "fields": {
+          "primary_diagnosis": "Invasive Ductal Carcinoma",
+          "date_of_diagnosis": "2025-11-10"
+        }
+      }
+    ]
+  },
+  "brca_status": {
+    "raw_value": "Negative",
+    "source": "Genetic Testing Report - Ambry Genetics.pdf",
+    "source_page": "4",
+    "service_date": "2025-11-18"
+  },
+  "brca_type": {
+    "raw_value": "germline",
+    "source": "Genetic Testing Report - Ambry Genetics.pdf",
+    "source_page": "4",
+    "service_date": "2025-11-18"
+  },
+  "brca_lab": {
+    "raw_value": "Ambry Genetics",
+    "source": "Genetic Testing Report - Ambry Genetics.pdf",
+    "source_page": "1",
+    "service_date": "2025-11-18"
+  },
+  "brca_variant": {
+    "raw_value": "",
+    "source": "",
+    "source_page": "",
+    "service_date": ""
+  },
+  "pdl1_cps_score": {
+    "raw_value": "",
+    "source": "",
+    "source_page": "",
+    "service_date": ""
+  },
+  "pdl1_interpretation": {
+    "raw_value": "",
+    "source": "",
+    "source_page": "",
+    "service_date": ""
+  },
+  "pdl1_threshold_used": {
+    "raw_value": "",
+    "source": "",
+    "source_page": "",
+    "service_date": ""
+  },
+  "pdl1_assay": {
+    "raw_value": "",
+    "source": "",
+    "source_page": "",
+    "service_date": ""
+  },
+  "tumors": [
+    {
+      "cancer_type": {
+        "raw_value": "Invasive ductal carcinoma",
+        "source": "Pathology Report - Mayo Clinic.pdf",
+        "source_page": "2",
+        "service_date": "2025-11-10"
+      },
+      "location_of_tumor": {
+        "raw_value": "Left breast, lower inner quadrant, 7 o'clock",
+        "source": "Pathology Report - Mayo Clinic.pdf",
+        "source_page": "2",
+        "service_date": "2025-11-10"
+      },
+      "stage": {
+        "raw_value": "Stage IA",
+        "source": "Oncology Report - Mayo Clinic.pdf",
+        "source_page": "3",
+        "service_date": "2025-11-12"
+      },
+      "stage_type": {
+        "raw_value": "Pathologic",
+        "source": "Oncology Report - Mayo Clinic.pdf",
+        "source_page": "3",
+        "service_date": "2025-11-12"
+      },
+      "size": {
+        "raw_value": "1.4",
+        "source": "Pathology Report - Mayo Clinic.pdf",
+        "source_page": "2",
+        "service_date": "2025-11-10"
+      },
+      "largest_size_imaging_cm": {
+        "raw_value": "1.2",
+        "source": "Mammography Report.pdf",
+        "source_page": "3",
+        "service_date": "2025-11-05"
+      },
+      "largest_size_biopsy_cm": {
+        "raw_value": "1.4",
+        "source": "Pathology Report - Mayo Clinic.pdf",
+        "source_page": "2",
+        "service_date": "2025-11-10"
+      },
+      "overall_grade": {
+        "raw_value": "Grade 1",
+        "source": "Pathology Report - Mayo Clinic.pdf",
+        "source_page": "3",
+        "service_date": "2025-11-10"
+      },
+      "tubule_formation_score": {
+        "raw_value": "2",
+        "source": "Pathology Report - Mayo Clinic.pdf",
+        "source_page": "3",
+        "service_date": "2025-11-10"
+      },
+      "nuclear_pleomorphism_score": {
+        "raw_value": "1",
+        "source": "Pathology Report - Mayo Clinic.pdf",
+        "source_page": "3",
+        "service_date": "2025-11-10"
+      },
+      "mitotic_count_score": {
+        "raw_value": "1",
+        "source": "Pathology Report - Mayo Clinic.pdf",
+        "source_page": "3",
+        "service_date": "2025-11-10"
+      },
+      "erpr_status": {
+        "raw_value": "ER Positive, PR Positive",
+        "source": "Pathology Report - Mayo Clinic.pdf",
+        "source_page": "4",
+        "service_date": "2025-11-10"
+      },
+      "er_status": {
+        "raw_value": "Positive",
+        "source": "Pathology Report - Mayo Clinic.pdf",
+        "source_page": "4",
+        "service_date": "2025-11-10"
+      },
+      "pr_status": {
+        "raw_value": "Positive",
+        "source": "Pathology Report - Mayo Clinic.pdf",
+        "source_page": "4",
+        "service_date": "2025-11-10"
+      },
+      "her2_status": {
+        "raw_value": "HER2 negative",
+        "source": "Pathology Report - Mayo Clinic.pdf",
+        "source_page": "4",
+        "service_date": "2025-11-10"
+      },
+      "ihc_result": {
+        "raw_value": "1+ (negative)",
+        "source": "Pathology Report - Mayo Clinic.pdf",
+        "source_page": "4",
+        "service_date": "2025-11-10"
+      },
+      "fish_ish_result": {
+        "raw_value": "",
+        "source": "",
+        "source_page": "",
+        "service_date": ""
+      }
+    }
+  ],
+  "diagnosis_summary": {
+    "cancer_type": {
+      "raw_value": "Invasive ductal carcinoma",
+      "source": "Pathology Report - Mayo Clinic.pdf",
+      "source_page": "2",
+      "service_date": "2025-11-10"
+    },
+    "location_of_tumors": {
+      "raw_value": "Left breast",
+      "source": "Pathology Report - Mayo Clinic.pdf",
+      "source_page": "2",
+      "service_date": "2025-11-10"
+    },
+    "size": {
+      "raw_value": "1.4",
+      "source": "Pathology Report - Mayo Clinic.pdf",
+      "source_page": "2",
+      "service_date": "2025-11-10"
+    },
+    "largest_size_imaging": {
+      "raw_value": "1.2",
+      "source": "Mammography Report.pdf",
+      "source_page": "3",
+      "service_date": "2025-11-05"
+    },
+    "largest_size_biopsy": {
+      "raw_value": "1.4",
+      "source": "Pathology Report - Mayo Clinic.pdf",
+      "source_page": "2",
+      "service_date": "2025-11-10"
+    },
+    "stage": {
+      "raw_value": "Stage IA",
+      "source": "Oncology Report - Mayo Clinic.pdf",
+      "source_page": "3",
+      "service_date": "2025-11-12"
+    },
+    "stage_type": {
+      "raw_value": "Pathologic",
+      "source": "Oncology Report - Mayo Clinic.pdf",
+      "source_page": "3",
+      "service_date": "2025-11-12"
+    },
+    "stage_indicator": {
+      "raw_value": "IA",
+      "source": "Oncology Report - Mayo Clinic.pdf",
+      "source_page": "3",
+      "service_date": "2025-11-12"
+    },
+    "staging_stated_or_inferred": {
+      "raw_value": "Stated",
+      "source": "Oncology Report - Mayo Clinic.pdf",
+      "source_page": "3",
+      "service_date": "2025-11-12"
+    },
+    "overall_grade": {
+      "raw_value": "Grade 1",
+      "source": "Pathology Report - Mayo Clinic.pdf",
+      "source_page": "3",
+      "service_date": "2025-11-10"
+    },
+    "grade_number": {
+      "raw_value": "1",
+      "source": "Pathology Report - Mayo Clinic.pdf",
+      "source_page": "3",
+      "service_date": "2025-11-10"
+    },
+    "er_status": {
+      "raw_value": "Positive",
+      "source": "Pathology Report - Mayo Clinic.pdf",
+      "source_page": "4",
+      "service_date": "2025-11-10"
+    },
+    "pr_status": {
+      "raw_value": "Positive",
+      "source": "Pathology Report - Mayo Clinic.pdf",
+      "source_page": "4",
+      "service_date": "2025-11-10"
+    },
+    "erpr_status": {
+      "raw_value": "ER Positive, PR Positive",
+      "source": "Pathology Report - Mayo Clinic.pdf",
+      "source_page": "4",
+      "service_date": "2025-11-10"
+    },
+    "hormone_receptor_status": {
+      "raw_value": "HR positive",
+      "source": "Pathology Report - Mayo Clinic.pdf",
+      "source_page": "4",
+      "service_date": "2025-11-10"
+    },
+    "her2_status": {
+      "raw_value": "HER2 negative",
+      "source": "Pathology Report - Mayo Clinic.pdf",
+      "source_page": "4",
+      "service_date": "2025-11-10"
+    },
+    "her2_indicator": {
+      "raw_value": "-",
+      "source": "Pathology Report - Mayo Clinic.pdf",
+      "source_page": "4",
+      "service_date": "2025-11-10"
+    },
+    "her2_status_short": {
+      "raw_value": "Negative",
+      "source": "Pathology Report - Mayo Clinic.pdf",
+      "source_page": "4",
+      "service_date": "2025-11-10"
+    },
+    "brca_status": {
+      "raw_value": "Negative",
+      "source": "Genetic Testing Report - Ambry Genetics.pdf",
+      "source_page": "4",
+      "service_date": "2025-11-18"
+    },
+    "brca_type": {
+      "raw_value": "germline",
+      "source": "Genetic Testing Report - Ambry Genetics.pdf",
+      "source_page": "4",
+      "service_date": "2025-11-18"
+    },
+    "brca_lab": {
+      "raw_value": "Ambry Genetics",
+      "source": "Genetic Testing Report - Ambry Genetics.pdf",
+      "source_page": "1",
+      "service_date": "2025-11-18"
+    },
+    "brca_variant": {
+      "raw_value": "",
+      "source": "",
+      "source_page": "",
+      "service_date": ""
+    },
+    "pdl1_cps_score": {
+      "raw_value": "",
+      "source": "",
+      "source_page": "",
+      "service_date": ""
+    },
+    "pdl1_interpretation": {
+      "raw_value": "",
+      "source": "",
+      "source_page": "",
+      "service_date": ""
+    },
+    "pdl1_threshold_used": {
+      "raw_value": "",
+      "source": "",
+      "source_page": "",
+      "service_date": ""
+    },
+    "pdl1_assay": {
+      "raw_value": "",
+      "source": "",
+      "source_page": "",
+      "service_date": ""
+    },
+    "ibc_status": {
+      "raw_value": "Not IBC",
+      "source": "Oncology Report - Mayo Clinic.pdf",
+      "source_page": "3",
+      "service_date": "2025-11-12"
+    },
+    "tnbc_status": {
+      "raw_value": "Not TNBC",
+      "source": "Pathology Report - Mayo Clinic.pdf",
+      "source_page": "4",
+      "service_date": "2025-11-10"
+    }
+  }
+}
