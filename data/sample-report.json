@@ -1,0 +1,571 @@
+{
+  "general_info": {
+    "humanReadableId": {
+      "value": "1540FD",
+      "source": "",
+      "source_page": "",
+      "service_date": ""
+    },
+    "fname": {
+      "value": "April",
+      "source": "",
+      "source_page": "",
+      "service_date": ""
+    },
+    "lname": {
+      "value": "Chavez Willis",
+      "source": "",
+      "source_page": "",
+      "service_date": ""
+    },
+    "dateOfBirth": {
+      "value": "1975-08-29T00:00:00.000Z",
+      "source": "",
+      "source_page": "",
+      "service_date": ""
+    },
+    "age": {
+      "value": 50,
+      "source": "",
+      "source_page": "",
+      "service_date": ""
+    },
+    "feelingNow": {
+      "value": "I'm really scared about what comes next",
+      "source": "",
+      "source_page": "",
+      "service_date": ""
+    },
+    "feeling_category": {
+      "value": "scared",
+      "source": "",
+      "source_page": "",
+      "service_date": ""
+    },
+    "intro_letter_title": {
+      "value": "YOU'RE NOT ALONE",
+      "source": "",
+      "source_page": "",
+      "service_date": ""
+    },
+    "intro_letter_body": {
+      "value": "Dear April,\n\nWe understand how frightening this moment can feel — the fear of the unknown, the worry about what comes next, or what this means for your health and future. Feeling scared is a natural reaction to receiving news like this.We’ve created this report to help guide you through the information step-by-step, so you can feel more grounded, less overwhelmed, and more confident as you talk with your medical team about your options.\n\nWith care and respect,\nYour Defiant Health Team\ncare@defianthealth.com",
+      "source": "",
+      "source_page": "",
+      "service_date": ""
+    }
+  },
+
+  "diagnosis": {
+    "cancer_type": {
+      "value": "Invasive Lobular Carcinoma (ILC) ",
+      "explanation": "Cancer from lobules (milk-producing area of breast) spreading into surrounding breast tissue.",
+      "source": "Test Results _ Medical Record _ Kaiser Permanente9.pdf",
+      "source_page": 2,
+      "service_date": "2025-10-14T00:00:00.000Z"
+    },
+    "location_of_tumors": {
+      "value": "Right breast, 11 o'clock, Right breast, central to nipple, posterior depth",
+      "explanation": "The location of a breast tumor is important to help your medical team assess the likelihood of lymph node involvement and guide surgical treatment. ",
+      "source": "Test Results _ Medical Record _ Kaiser Permanente3.pdf",
+      "source_page": 5,
+      "service_date": "2025-08-22T00:00:00.000Z"
+    },
+    "size": {
+      "value": "65 mm, 5.8 cm area",
+      "explanation": "The size of the tumor is important in guiding treatment. Different sized tumors may require different approaches. Additionally, knowing the initial size allows doctors to compare images taken after treatment to determine whether the tumor has shrunk or is responding to treatment.",
+      "source": "Test Results _ Medical Record _ Kaiser Permanente9.pdf",
+      "source_page": 3,
+      "service_date": "2025-10-14T00:00:00.000Z"
+    },
+    "largest_size_imaging": {
+      "value": "",
+      "explanation": "",
+      "source": "Test Results _ Medical Record _ Kaiser Permanente2.pdf",
+      "source_page": 2,
+      "service_date": "2025-08-14T00:00:00.000Z"
+    },
+    "largest_size_biopsy": {
+      "value": "",
+      "explanation": "",
+      "source": "Test Results _ Medical Record _ Kaiser Permanente9.pdf",
+      "source_page": 3,
+      "service_date": "2025-10-14T00:00:00.000Z"
+    },
+    "stage": {
+      "value": "Stage IIB ",
+      "explanation": "Tumor larger than 5 cm or multiple lymph nodes affected.",
+      "source": "Test Results _ Medical Record _ Kaiser Permanente9.pdf",
+      "source_page": 3,
+      "service_date": "2025-10-14T00:00:00.000Z"
+    },
+    "stage_type": {
+      "value": "Pathologic anatomic",
+      "explanation": "A precise assessment of stage done after surgery that includes surgical and microscopic findings for tumor size, lymph node involvement, and metastasis. ",
+      "source": "Test Results _ Medical Record _ Kaiser Permanente9.pdf",
+      "source_page": 3,
+      "service_date": "2025-10-14T00:00:00.000Z"
+    },
+    "staging_stated_or_inferred": {
+      "value": "",
+      "explanation": "",
+      "source": "Test Results _ Medical Record _ Kaiser Permanente9.pdf",
+      "source_page": 3,
+      "service_date": "2025-10-14T00:00:00.000Z"
+    },
+    "overall_grade": {
+      "value": "Grade 1",
+      "explanation": "A grade 1 (out of 3) from the Nottingham grading system indicates slow-growing cells that look nearly normal under microscope.",
+      "source": "Test Results _ Medical Record _ Kaiser Permanente9.pdf",
+      "source_page": 3,
+      "service_date": "2025-10-14T00:00:00.000Z"
+    },
+    "er_status": {
+      "value": "",
+      "explanation": "",
+      "source": "Test Results _ Medical Record _ Kaiser Permanente3.pdf",
+      "source_page": 2,
+      "service_date": "2025-08-22T00:00:00.000Z"
+    },
+    "pr_status": {
+      "value": "",
+      "explanation": "",
+      "source": "Test Results _ Medical Record _ Kaiser Permanente3.pdf",
+      "source_page": 2,
+      "service_date": "2025-08-22T00:00:00.000Z"
+    },
+    "erpr_status": {
+      "value": "ER positive, PR positive",
+      "explanation": "Cancers that are estrogen (ER) or progesterone (PR) positive are commonly referred to as hormone-receptor (HR) positive. For cancers similar to yours that are HR-positive, endocrine therapy (hormone-blocking treatments) is often used as a treatment option for slowing or stopping cancer growth in cancers like yours.",
+      "source": "Test Results _ Medical Record _ Kaiser Permanente3.pdf",
+      "source_page": 2,
+      "service_date": "2025-08-22T00:00:00.000Z"
+    },
+    "hormone_receptor_status": {
+      "value": "HR positive",
+      "explanation": "Hormone receptor–positive breast cancer",
+      "source": "Test Results _ Medical Record _ Kaiser Permanente3.pdf",
+      "source_page": 2,
+      "service_date": "2025-08-22T00:00:00.000Z"
+    },
+    "her2_status": {
+      "value": "HER2 negative",
+      "explanation": "HER2-negative breast cancer is a type of breast cancer where the cancer cells have no levels of the HER2 protein (human epidermal growth factor receptor 2) on the surface of the cell. Cancers that are not HER2 positive tend to be less aggressive and are not treated with HER2 targeted therapy. ",
+      "source": "Test Results _ Medical Record _ Kaiser Permanente3.pdf",
+      "source_page": 2,
+      "service_date": "2025-08-22T00:00:00.000Z"
+    },
+    "ihc_result": {
+      "value": "",
+      "explanation": "",
+      "source": "",
+      "source_page": "",
+      "service_date": ""
+    },
+    "fish_ish_result": {
+      "value": "",
+      "explanation": "",
+      "source": "",
+      "source_page": "",
+      "service_date": ""
+    },
+    "brca_status": {
+      "value": "Negative",
+      "explanation": "No harmful BRCA mutations detected.",
+      "source": "Past visits _ Kaiser Permanente5.pdf",
+      "source_page": 13,
+      "service_date": "2025-10-15T00:00:00.000Z"
+    },
+    "brca_type": {
+      "value": "",
+      "explanation": "",
+      "source": "Past visits _ Kaiser Permanente5.pdf",
+      "source_page": 13,
+      "service_date": "2025-10-15T00:00:00.000Z"
+    },
+    "brca_lab": {
+      "value": "",
+      "explanation": "",
+      "source": "Past visits _ Kaiser Permanente5.pdf",
+      "source_page": 13,
+      "service_date": "2025-10-15T00:00:00.000Z"
+    },
+    "brca_variant": {
+      "value": "",
+      "explanation": "",
+      "source": "",
+      "source_page": "",
+      "service_date": ""
+    },
+    "pdl1_cps_score": {
+      "value": "",
+      "explanation": "",
+      "source": "",
+      "source_page": "",
+      "service_date": ""
+    },
+    "pdl1_interpretation": {
+      "value": "",
+      "explanation": "",
+      "source": "",
+      "source_page": "",
+      "service_date": ""
+    },
+    "pdl1_threshold_used": {
+      "value": "",
+      "explanation": "",
+      "source": "",
+      "source_page": "",
+      "service_date": ""
+    },
+    "pdl1_assay": {
+      "value": "",
+      "explanation": "",
+      "source": "",
+      "source_page": "",
+      "service_date": ""
+    }
+  },
+
+  "tumor_metadata": {
+    "number_of_cancerous_tumors_confirmed_by_biopsy": {
+    "value": 2,
+    "explanation": "",
+    "source": "",
+    "source_page": "",
+    "service_date": ""
+    },
+    "number_of_cancerous_lymph_nodes_confirmed_by_biopsy": {
+    "value": 0,
+    "explanation": "",
+    "source": "",
+    "source_page": "",
+    "service_date": ""
+    }
+  },
+  "tumors": [
+    {
+    "tumor_number": 1,
+    "fields": {
+        "cancer_type": {
+        "value": "Invasive Lobular Carcinoma (ILC) ",
+        "explanation": "Cancer from lobules (milk-producing area of breast) spreading into surrounding breast tissue.",
+        "source": "Test Results _ Medical Record _ Kaiser Permanente9.pdf",
+        "source_page": 3,
+        "service_date": "2025-10-07T00:00:00.000Z"
+        },
+        "location_of_tumor": {
+        "value": "Right breast, 11 o'clock (Site B)",
+        "explanation": "The location of a breast tumor is important to help your medical team assess the likelihood of lymph node involvement and guide surgical treatment. ",
+        "source": "Test Results _ Medical Record _ Kaiser Permanente3.pdf",
+        "source_page": 5,
+        "service_date": "2025-08-20T00:00:00.000Z"
+        },
+        "stage": {
+        "value": "Stage IIB ",
+        "explanation": "Tumor larger than 5 cm or multiple lymph nodes affected.",
+        "source": "Test Results _ Medical Record _ Kaiser Permanente9.pdf",
+        "source_page": 3,
+        "service_date": "2025-10-07T00:00:00.000Z"
+        },
+        "stage_type": {
+        "value": "Pathologic anatomic",
+        "explanation": "A precise assessment of stage done after surgery that includes surgical and microscopic findings for tumor size, lymph node involvement, and metastasis. ",
+        "source": "Test Results _ Medical Record _ Kaiser Permanente9.pdf",
+        "source_page": 3,
+        "service_date": "2025-10-07T00:00:00.000Z"
+        },
+        "size": {
+        "value": 6.5,
+        "explanation": "The size of the tumor is important in guiding treatment. Different sized tumors may require different approaches. Additionally, knowing the initial size allows doctors to compare images taken after treatment to determine whether the tumor has shrunk or is responding to treatment.",
+        "source": "Test Results _ Medical Record _ Kaiser Permanente9.pdf",
+        "source_page": 3,
+        "service_date": "2025-10-07T00:00:00.000Z"
+        },
+        "largest_size_imaging_cm": {
+        "value": "",
+        "explanation": "",
+        "source": "Test Results _ Medical Record _ Kaiser Permanente2.pdf",
+        "source_page": 2,
+        "service_date": "2025-08-14T00:00:00.000Z"
+        },
+        "largest_size_biopsy_cm": {
+        "value": "",
+        "explanation": "",
+        "source": "Test Results _ Medical Record _ Kaiser Permanente9.pdf",
+        "source_page": 3,
+        "service_date": "2025-10-07T00:00:00.000Z"
+        },
+        "overall_grade": {
+        "value": "Grade 1",
+        "explanation": "A grade 1 (out of 3) from the Nottingham grading system indicates slow-growing cells that look nearly normal under microscope.",
+        "source": "Test Results _ Medical Record _ Kaiser Permanente9.pdf",
+        "source_page": 3,
+        "service_date": "2025-10-07T00:00:00.000Z"
+        },
+        "tubule_formation_score": {
+        "value": "",
+        "explanation": "",
+        "source": "Test Results _ Medical Record _ Kaiser Permanente9.pdf",
+        "source_page": 3,
+        "service_date": "2025-10-07T00:00:00.000Z"
+        },
+        "nuclear_pleomorphism_score": {
+        "value": "",
+        "explanation": "",
+        "source": "Test Results _ Medical Record _ Kaiser Permanente9.pdf",
+        "source_page": 3,
+        "service_date": "2025-10-07T00:00:00.000Z"
+        },
+        "mitotic_count_score": {
+        "value": "",
+        "explanation": "",
+        "source": "Test Results _ Medical Record _ Kaiser Permanente9.pdf",
+        "source_page": 3,
+        "service_date": "2025-10-07T00:00:00.000Z"
+        },
+        "erpr_status": {
+        "value": "ER positive, PR positive",
+        "explanation": "Cancers that are estrogen (ER) or progesterone (PR) positive are commonly referred to as hormone-receptor (HR) positive. For cancers similar to yours that are HR-positive, endocrine therapy (hormone-blocking treatments) is often used as a treatment option for slowing or stopping cancer growth in cancers like yours.",
+        "source": "Test Results _ Medical Record _ Kaiser Permanente3.pdf",
+        "source_page": 2,
+        "service_date": "2025-08-20T00:00:00.000Z"
+        },
+        "er_status": {
+        "value": "",
+        "explanation": "",
+        "source": "Test Results _ Medical Record _ Kaiser Permanente3.pdf",
+        "source_page": 2,
+        "service_date": "2025-08-20T00:00:00.000Z"
+        },
+        "pr_status": {
+        "value": "",
+        "explanation": "",
+        "source": "Test Results _ Medical Record _ Kaiser Permanente3.pdf",
+        "source_page": 2,
+        "service_date": "2025-08-20T00:00:00.000Z"
+        },
+        "her2_status": {
+        "value": "HER2 negative",
+        "explanation": "HER2-negative breast cancer is a type of breast cancer where the cancer cells have no levels of the HER2 protein (human epidermal growth factor receptor 2) on the surface of the cell. Cancers that are not HER2 positive tend to be less aggressive and are not treated with HER2 targeted therapy. ",
+        "source": "Test Results _ Medical Record _ Kaiser Permanente3.pdf",
+        "source_page": 2,
+        "service_date": "2025-08-20T00:00:00.000Z"
+        },
+        "ihc_result": {
+        "value": "",
+        "explanation": "",
+        "source": "Test Results _ Medical Record _ Kaiser Permanente3.pdf",
+        "source_page": 2,
+        "service_date": "2025-08-20T00:00:00.000Z"
+        },
+        "fish_ish_result": {
+        "value": "",
+        "explanation": "",
+        "source": "",
+        "source_page": "",
+        "service_date": ""
+        }
+    }
+    },
+    {
+    "tumor_number": 2,
+    "fields": {
+        "cancer_type": {
+        "value": "Ductal Carcinoma In Situ (DCIS) ",
+        "explanation": "Abnormal cells in milk duct lining (tubes that carry milk to the nipple), haven't spread.",
+        "source": "Test Results _ Medical Record _ Kaiser Permanente9.pdf",
+        "source_page": 2,
+        "service_date": "2025-10-07T00:00:00.000Z"
+        },
+        "location_of_tumor": {
+        "value": "Right breast, central to nipple, posterior depth (Site A)",
+        "explanation": "The location of a breast tumor is important to help your medical team assess the likelihood of lymph node involvement and guide surgical treatment. ",
+        "source": "Test Results _ Medical Record _ Kaiser Permanente3.pdf",
+        "source_page": 4,
+        "service_date": "2025-08-20T00:00:00.000Z"
+        },
+        "stage": {
+        "value": "Stage 0 ",
+        "explanation": "Abnormal cells present but haven't invaded surrounding breast tissue.",
+        "source": "Test Results _ Medical Record _ Kaiser Permanente9.pdf",
+        "source_page": 3,
+        "service_date": "2025-10-07T00:00:00.000Z"
+        },
+        "stage_type": {
+        "value": "Pathologic anatomic",
+        "explanation": "A precise assessment of stage done after surgery that includes surgical and microscopic findings for tumor size, lymph node involvement, and metastasis. ",
+        "source": "Test Results _ Medical Record _ Kaiser Permanente9.pdf",
+        "source_page": 3,
+        "service_date": "2025-10-07T00:00:00.000Z"
+        },
+        "size": {
+        "value": "5.8",
+        "explanation": "The size of the tumor is important in guiding treatment. Different sized tumors may require different approaches. Additionally, knowing the initial size allows doctors to compare images taken after treatment to determine whether the tumor has shrunk or is responding to treatment.",
+        "source": "Test Results _ Medical Record _ Kaiser Permanente2.pdf",
+        "source_page": 2,
+        "service_date": "2025-08-14T00:00:00.000Z"
+        },
+        "largest_size_imaging_cm": {
+        "value": "",
+        "explanation": "",
+        "source": "Test Results _ Medical Record _ Kaiser Permanente2.pdf",
+        "source_page": 2,
+        "service_date": "2025-08-14T00:00:00.000Z"
+        },
+        "largest_size_biopsy_cm": {
+        "value": "",
+        "explanation": "",
+        "source": "",
+        "source_page": "",
+        "service_date": ""
+        },
+        "overall_grade": {
+        "value": "Grade 2",
+        "explanation": "A grade 2 (out of 3) from the Nottingham grading system indicates abnormal cells growing at moderate pace, intermediate risk.",
+        "source": "Test Results _ Medical Record _ Kaiser Permanente9.pdf",
+        "source_page": 3,
+        "service_date": "2025-10-07T00:00:00.000Z"
+        },
+        "tubule_formation_score": {
+        "value": "",
+        "explanation": "",
+        "source": "",
+        "source_page": "",
+        "service_date": ""
+        },
+        "nuclear_pleomorphism_score": {
+        "value": "",
+        "explanation": "",
+        "source": "",
+        "source_page": "",
+        "service_date": ""
+        },
+        "mitotic_count_score": {
+        "value": "",
+        "explanation": "",
+        "source": "",
+        "source_page": "",
+        "service_date": ""
+        },
+        "erpr_status": {
+        "value": "Unknown",
+        "explanation": "At the time of this report, a hormone receptor status is not yet available from your medical records. ",
+        "source": "Test Results _ Medical Record _ Kaiser Permanente3.pdf",
+        "source_page": 3,
+        "service_date": "2025-08-20T00:00:00.000Z"
+        },
+        "er_status": {
+        "value": "",
+        "explanation": "",
+        "source": "Test Results _ Medical Record _ Kaiser Permanente3.pdf",
+        "source_page": 3,
+        "service_date": "2025-08-20T00:00:00.000Z"
+        },
+        "pr_status": {
+        "value": "",
+        "explanation": "",
+        "source": "",
+        "source_page": "",
+        "service_date": ""
+        },
+        "her2_status": {
+        "value": "Unknown",
+        "explanation": "At the time of this report, a HER2 receptor status is not yet available from your medical records. ",
+        "source": "",
+        "source_page": "",
+        "service_date": ""
+        },
+        "ihc_result": {
+        "value": "",
+        "explanation": "",
+        "source": "",
+        "source_page": "",
+        "service_date": ""
+        },
+        "fish_ish_result": {
+        "value": "",
+        "explanation": "",
+        "source": "",
+        "source_page": "",
+        "service_date": ""
+        }
+    }
+    }
+  ],
+
+  "records_reviewed": [
+    {
+      "name": "Test Results _ Medical Record _ Kaiser Permanente.pdf",
+      "type": "Mammogram Report",
+      "service_date": "2025-08-12T00:00:00.000Z",
+      "pages": 4,
+      "source_url": "Test Results _ Medical Record _ Kaiser Permanente.pdf",
+      "notes": "Bilateral screening mammogram."
+    },
+    {
+      "name": "Test Results _ Medical Record _ Kaiser Permanente2.pdf",
+      "type": "Mammogram Report",
+      "service_date": "2025-08-14T00:00:00.000Z",
+      "pages": 4,
+      "source_url": "Test Results _ Medical Record _ Kaiser Permanente2.pdf",
+      "notes": "Diagnostic mammogram of right breast."
+    },
+    {
+      "name": "Test Results _ Medical Record _ Kaiser Permanente3.pdf",
+      "type": "Pathology Report",
+      "service_date": "2025-08-20T00:00:00.000Z",
+      "pages": 7,
+      "source_url": "Test Results _ Medical Record _ Kaiser Permanente3.pdf",
+      "notes": "Surgical pathology from stereotactic biopsy."
+    },
+    {
+      "name": "Past visits _ Kaiser Permanente4.pdf",
+      "type": "Consultation Note",
+      "service_date": "2025-09-26T00:00:00.000Z",
+      "pages": 13,
+      "source_url": "Past visits _ Kaiser Permanente4.pdf",
+      "notes": "General Surgery and Plastic Surgery consultation notes."
+    },
+    {
+      "name": "Test Results _ Medical Record _ Kaiser Permanente5.pdf",
+      "type": "Biopsy Report",
+      "service_date": "2025-08-20T00:00:00.000Z",
+      "pages": 8,
+      "source_url": "Test Results _ Medical Record _ Kaiser Permanente5.pdf",
+      "notes": "Stereotactic guided breast biopsy procedure note."
+    },
+    {
+      "name": "Test Results _ Medical Record _ Kaiser Permanente7.pdf",
+      "type": "Other",
+      "service_date": "2025-10-07T00:00:00.000Z",
+      "pages": 2,
+      "source_url": "Test Results _ Medical Record _ Kaiser Permanente7.pdf",
+      "notes": "Anesthesia procedure record."
+    },
+    {
+      "name": "Test Results _ Medical Record _ Kaiser Permanente8.pdf",
+      "type": "Genetic Testing Report",
+      "service_date": "2025-10-07T00:00:00.000Z",
+      "pages": 1,
+      "source_url": "Test Results _ Medical Record _ Kaiser Permanente8.pdf",
+      "notes": "Breast Cancer Recurrence Score."
+    },
+    {
+      "name": "Test Results _ Medical Record _ Kaiser Permanente9.pdf",
+      "type": "Pathology Report",
+      "service_date": "2025-10-07T00:00:00.000Z",
+      "pages": 6,
+      "source_url": "Test Results _ Medical Record _ Kaiser Permanente9.pdf",
+      "notes": "Surgical pathology from mastectomy and sentinel lymph node biopsy."
+    },
+    {
+      "name": "Past visits _ Kaiser Permanente.3pdf.pdf",
+      "type": "Surgical Note",
+      "service_date": "2025-09-02T00:00:00.000Z",
+      "pages": 2,
+      "source_url": "Past visits _ Kaiser Permanente.3pdf.pdf",
+      "notes": "Telehealth follow-up appointment with General Surgery."
+    }
+  ]
+}

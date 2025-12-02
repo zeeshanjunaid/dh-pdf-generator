@@ -19,6 +19,51 @@ Handlebars.registerHelper("inc", function(value) {
   return parseInt(value) + 1;
 });
 
+// Register formatDate helper to format ISO dates
+Handlebars.registerHelper("formatDate", function(dateString) {
+  if (!dateString) return "";
+  try {
+    const date = new Date(dateString);
+    if (isNaN(date.getTime())) return dateString;
+    return date.toISOString().split('T')[0]; // Returns YYYY-MM-DD
+  } catch (e) {
+    return dateString;
+  }
+});
+
+// Extract stage indicator (e.g., "Stage IIB" -> "IIB", "Stage IA" -> "IA")
+Handlebars.registerHelper("extractStageIndicator", function(stageValue) {
+  if (!stageValue) return "--";
+  // Remove "Stage " prefix and trim
+  const indicator = stageValue.replace(/Stage\s*/i, "").trim();
+  return indicator || "--";
+});
+
+// Extract grade number (e.g., "Grade 2" -> "2", "Grade 1" -> "1")
+Handlebars.registerHelper("extractGradeNumber", function(gradeValue) {
+  if (!gradeValue) return "--";
+  // Extract the number from "Grade X"
+  const match = gradeValue.match(/Grade\s*(\d+)/i);
+  return match ? match[1] : "--";
+});
+
+// Format date nicely (e.g., "2025-10-14T00:00:00.000Z" -> "October 14, 2025")
+Handlebars.registerHelper("formatDateNice", function(dateString) {
+  if (!dateString) return "";
+  try {
+    const date = new Date(dateString);
+    if (isNaN(date.getTime())) return dateString;
+    return date.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
+  } catch (e) {
+    return dateString;
+  }
+});
+
+// Get current date formatted
+Handlebars.registerHelper("currentDate", function() {
+  return new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
+});
+
 // ============================
 // 🔧 Helper Function: Generate PDF
 // ============================
@@ -64,10 +109,18 @@ export async function generatePDF(jsonPath) {
 
     // 3️⃣ Create timestamp and file name
     // 🧾 Derive patient-based filename (e.g., Jane-Doe-Nov-6-2025-0432-PM.pdf)
-    const patientName =
-      data?.report?.sections?.find((s) => s.id === "records_overview")?.fields
-        ?.patient_name || "Unknown Patient";
-    const [firstName, lastName] = patientName.trim().split(" ");
+    // Support both new format (general_info) and old format (report.sections)
+    let patientName = "Unknown Patient";
+    if (data?.general_info?.fname?.value || data?.general_info?.lname?.value) {
+      const fname = data.general_info.fname?.value || "";
+      const lname = data.general_info.lname?.value || "";
+      patientName = `${fname} ${lname}`.trim() || "Unknown Patient";
+    } else if (data?.report?.sections) {
+      patientName = data.report.sections.find((s) => s.id === "records_overview")?.fields?.patient_name || "Unknown Patient";
+    }
+    const nameParts = patientName.trim().split(" ");
+    const firstName = nameParts[0] || "Unknown";
+    const lastName = nameParts.slice(1).join("-") || "Patient";
 
     const now = new Date();
     const formatted = now

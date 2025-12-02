@@ -1560,7 +1560,7 @@
       <div class="doc-icon">📄</div>
       <div>
         <h1>Your Path Forward Report</h1>
-        <p class="subtitle">{{report.sections.[1].fields.patient_name}} • October 21 2025</p>
+        <p class="subtitle">{{#if general_info.fname.value}}{{general_info.fname.value}} {{general_info.lname.value}}{{else}}Patient{{/if}}{{#if general_info.age.value}} • Age {{general_info.age.value}}{{/if}} • {{currentDate}}</p>
       </div>
     </div>
     <button class="export-btn">
@@ -1581,33 +1581,49 @@
   </nav>
 
   <main class="report-body">
-    {{!-- Loop through all report sections --}}
+    {{!-- ✳️ A NOTE FROM DEFIANT (Outside loop - uses new format) --}}
+    <section id="note_from_defiant" class="section note-from-defiant">
+      <img src="./icons/heart.svg" alt="" class="heart-icon" />
+      <h2 class="section-title">{{#if general_info.intro_letter_title.value}}{{general_info.intro_letter_title.value}}{{else}}You're Not Alone{{/if}}</h2>
+      
+      <p class="greeting">Dear {{#if general_info.fname.value}}{{general_info.fname.value}}{{else}}Patient{{/if}},</p>
+      
+      {{#if general_info.intro_letter_body.value}}
+      {{!-- Parse the intro letter body which may contain newlines --}}
+      <p class="message-text">We understand how frightening this moment can feel — the fear of the unknown, the worry about what comes next, or what this means for your health and future. Feeling scared is a natural reaction to receiving news like this.</p>
+      
+      <p class="message-text">We've created this report to help guide you through the information step-by-step, so you can feel more grounded, less overwhelmed, and more confident as you talk with your medical team about your options.</p>
+      {{else}}
+      <p class="message-text">We know this diagnosis has turned your world upside down, and feeling shocked right now is completely normal. You don't have to understand everything all at once — that's what we're here for.</p>
+      
+      <p class="message-text">In the pages ahead, we'll walk you through your diagnosis step by step, breaking down what it means and what comes next in a way that makes sense. Take your time with this information, and know that we're with you every step of the way.</p>
+      {{/if}}
+      
+      <p class="signature"><em>With care and respect,</em></p>
+      <p class="team-name">The Defiant Health Team</p>
+      <p class="contact-link"><a href="mailto:care@defianthealth.com">care@defianthealth.com</a></p>
+    </section>
+
+    {{!-- Loop through all report sections (for old format compatibility) --}}
     {{#each report.sections}}
 
-      {{!-- ✳️ A NOTE FROM DEFIANT --}}
+      {{!-- ✳️ A NOTE FROM DEFIANT (old format) --}}
       {{#if (eq id "note_from_defiant")}}
-      <section id="{{id}}" class="section note-from-defiant">
-        <img src="./icons/heart.svg" alt="" class="heart-icon" />
-        <h2 class="section-title">You're Not Alone</h2>
-        
-        <p class="greeting">Dear {{../report.sections.[1].fields.patient_name}},</p>
-        
-        <p class="message-text">We know this diagnosis has turned your world upside down, and feeling shocked right now is completely normal. You don't have to understand everything all at once — that's what we're here for.</p>
-        
-        <p class="message-text">In the pages ahead, we'll walk you through your diagnosis step by step, breaking down what it means and what comes next in a way that makes sense. Take your time with this information, and know that we're with you every step of the way.</p>
-        
-        <p class="signature"><em>With care and respect,</em></p>
-        <p class="team-name">The Defiant Health Team</p>
-        <p class="contact-link"><a href="mailto:care@defianthealth.com">care@defianthealth.com</a></p>
-      </section>
+      {{!-- Skip - already rendered above --}}
       {{/if}}
 
 
 
-      {{!-- ✳️ DIAGNOSIS SUMMARY --}}
+      {{!-- ✳️ DIAGNOSIS SUMMARY (old format - keep for backwards compatibility) --}}
       {{#if (eq id "diagnosis_summary")}}
-      <section id="{{id}}" class="section diagnosis-summary">
-        <div class="diagnosis-label-tab">YOUR DIAGNOSIS</div>
+      {{!-- This section is now rendered outside the loop below --}}
+      {{/if}}
+
+    {{/each}}
+
+    {{!-- ✳️ DIAGNOSIS SUMMARY (outside loop - works with new JSON format) --}}
+    <section id="diagnosis_summary" class="section diagnosis-summary">
+      <div class="diagnosis-label-tab">YOUR DIAGNOSIS</div>
         
         <div class="diagnosis-header">
           <img src="./icons/stethoscope.png" alt="" class="stethoscope-icon" />
@@ -1619,7 +1635,7 @@
           <div class="diagnosis-meta-left">
             <h4 class="diagnosis-meta-title">Diagnosis Overview</h4>
             <p class="diagnosis-sources">
-              Sources: Medical records shared with Defiant Health as of 11/02/2025, Telehealth Consult (12/23/2024), Anatomic Pathology (12/1/24)
+              Sources: Medical records shared with Defiant Health as of {{currentDate}}{{#if records_reviewed.[0]}}, {{records_reviewed.[0].type}} ({{formatDate records_reviewed.[0].service_date}}){{/if}}{{#if records_reviewed.[1]}}, {{records_reviewed.[1].type}} ({{formatDate records_reviewed.[1].service_date}}){{/if}}
             </p>
           </div>
           <div class="diagnosis-meta-right">
@@ -1633,7 +1649,7 @@
         {{!-- Purple Overview Box --}}
         <div class="diagnosis-overview-box-wrapper">
           <div class="diagnosis-overview-box">
-          {{#if @root.diagnosis_summary}}
+          {{#if @root.diagnosis}}
           <div class="diagnosis-stat">
             <div class="diagnosis-stat-label">Overall Stage</div>
             <div class="diagnosis-stat-content">
@@ -1648,11 +1664,11 @@
                     stroke-dasharray="125 195" stroke-linecap="round"
                     transform="rotate(135 36 36)"/>
                   <!-- Center text -->
-                  <text x="36" y="40" text-anchor="middle" fill="white" font-family="Visuelt Pro, Inter, sans-serif" font-size="15" font-weight="500">{{#if @root.diagnosis_summary.stage_indicator.raw_value}}{{@root.diagnosis_summary.stage_indicator.raw_value}}{{else}}--{{/if}}</text>
+                  <text x="36" y="40" text-anchor="middle" fill="white" font-family="Visuelt Pro, Inter, sans-serif" font-size="15" font-weight="500">{{#if @root.diagnosis.stage.value}}{{extractStageIndicator @root.diagnosis.stage.value}}{{else}}--{{/if}}</text>
                 </svg>
               </div>
               <div class="diagnosis-stat-value">
-                <div class="diagnosis-stat-main">{{#if @root.diagnosis_summary.stage.raw_value}}{{@root.diagnosis_summary.stage.raw_value}}{{else}}Text not available in JSON{{/if}}</div>
+                <div class="diagnosis-stat-main">{{#if @root.diagnosis.stage.value}}{{@root.diagnosis.stage.value}}{{else}}Text not available in JSON{{/if}}</div>
               </div>
             </div>
           </div>
@@ -1671,12 +1687,12 @@
                     stroke-dasharray="86 195" stroke-linecap="round"
                     transform="rotate(135 36 36)"/>
                   <!-- Center text -->
-                  <text x="36" y="42" text-anchor="middle" fill="white" font-family="Visuelt Pro, Inter, sans-serif" font-size="20" font-weight="500">{{#if @root.diagnosis_summary.grade_number.raw_value}}{{@root.diagnosis_summary.grade_number.raw_value}}{{else}}--{{/if}}</text>
+                  <text x="36" y="42" text-anchor="middle" fill="white" font-family="Visuelt Pro, Inter, sans-serif" font-size="20" font-weight="500">{{#if @root.diagnosis.overall_grade.value}}{{extractGradeNumber @root.diagnosis.overall_grade.value}}{{else}}--{{/if}}</text>
                 </svg>
               </div>
               <div class="diagnosis-stat-value">
                 <div class="diagnosis-stat-main">Nottingham</div>
-                <div class="diagnosis-stat-sub">{{#if @root.diagnosis_summary.overall_grade.raw_value}}{{@root.diagnosis_summary.overall_grade.raw_value}}{{else}}Text not available in JSON{{/if}}</div>
+                <div class="diagnosis-stat-sub">{{#if @root.diagnosis.overall_grade.value}}{{@root.diagnosis.overall_grade.value}}{{else}}Text not available in JSON{{/if}}</div>
               </div>
             </div>
           </div>
@@ -1686,8 +1702,12 @@
             <div class="diagnosis-stat-content">
               <div class="diagnosis-stat-value">
                 <div class="diagnosis-stat-hr">
-                  <span class="hr-item"><span class="hr-plus">{{#ifEq @root.diagnosis_summary.er_status.raw_value "Positive"}}+{{else}}-{{/ifEq}}</span> ER {{#if @root.diagnosis_summary.er_status.raw_value}}{{@root.diagnosis_summary.er_status.raw_value}}{{else}}Text not available in JSON{{/if}}</span>
-                  <span class="hr-item"><span class="hr-plus">{{#ifEq @root.diagnosis_summary.pr_status.raw_value "Positive"}}+{{else}}-{{/ifEq}}</span> PR {{#if @root.diagnosis_summary.pr_status.raw_value}}{{@root.diagnosis_summary.pr_status.raw_value}}{{else}}Text not available in JSON{{/if}}</span>
+                  {{#if @root.diagnosis.erpr_status.value}}
+                  <span class="hr-item">{{@root.diagnosis.erpr_status.value}}</span>
+                  {{else}}
+                  <span class="hr-item"><span class="hr-plus">{{#ifEq @root.diagnosis.er_status.value "Positive"}}+{{else}}-{{/ifEq}}</span> ER {{#if @root.diagnosis.er_status.value}}{{@root.diagnosis.er_status.value}}{{else}}--{{/if}}</span>
+                  <span class="hr-item"><span class="hr-plus">{{#ifEq @root.diagnosis.pr_status.value "Positive"}}+{{else}}-{{/ifEq}}</span> PR {{#if @root.diagnosis.pr_status.value}}{{@root.diagnosis.pr_status.value}}{{else}}--{{/if}}</span>
+                  {{/if}}
                 </div>
               </div>
             </div>
@@ -1707,12 +1727,12 @@
                     stroke-dasharray="148 195" stroke-linecap="round"
                     transform="rotate(135 36 36)"/>
                   <!-- Center text -->
-                  <text x="36" y="43" text-anchor="middle" fill="white" font-family="Visuelt Pro, Inter, sans-serif" font-size="24" font-weight="500">{{#if @root.diagnosis_summary.her2_indicator.raw_value}}{{@root.diagnosis_summary.her2_indicator.raw_value}}{{else}}-{{/if}}</text>
+                  <text x="36" y="43" text-anchor="middle" fill="white" font-family="Visuelt Pro, Inter, sans-serif" font-size="24" font-weight="500">{{#if @root.diagnosis.her2_status.value}}-{{else}}-{{/if}}</text>
                 </svg>
               </div>
               <div class="diagnosis-stat-value">
                 <div class="diagnosis-stat-main">HER2</div>
-                <div class="diagnosis-stat-sub">{{#if @root.diagnosis_summary.her2_status_short.raw_value}}{{@root.diagnosis_summary.her2_status_short.raw_value}}{{else}}Text not available{{/if}}</div>
+                <div class="diagnosis-stat-sub">{{#if @root.diagnosis.her2_status.value}}{{@root.diagnosis.her2_status.value}}{{else}}Text not available{{/if}}</div>
               </div>
             </div>
           </div>
@@ -1723,7 +1743,12 @@
         {{!-- Tumor Details --}}
         {{#if @root.tumors}}
         <div class="tumor-section">
-          <h3>Diagnosis by Tumor</h3>
+          <h3>Diagnosis by Tumor{{#if @root.tumor_metadata.number_of_cancerous_tumors_confirmed_by_biopsy.value}} ({{@root.tumor_metadata.number_of_cancerous_tumors_confirmed_by_biopsy.value}} confirmed){{/if}}</h3>
+          {{#if @root.tumor_metadata.number_of_cancerous_lymph_nodes_confirmed_by_biopsy.value}}
+          <p style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 14px; color: #8B8991; margin-bottom: 1rem;">Lymph nodes with cancer: {{@root.tumor_metadata.number_of_cancerous_lymph_nodes_confirmed_by_biopsy.value}}</p>
+          {{else}}
+          <p style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 14px; color: #8B8991; margin-bottom: 1rem;">Lymph nodes with cancer: 0 (none detected)</p>
+          {{/if}}
           {{#each @root.tumors}}
             <div class="tumor-section-header">
               <h4>Tumor {{inc @index}}</h4>
@@ -1734,28 +1759,28 @@
               <div class="tumor-detail-row">
                 <div class="tumor-detail-left">
                   <div class="tumor-detail-label">Cancer Type</div>
-                  <div class="tumor-detail-value">{{#if cancer_type.raw_value}}{{cancer_type.raw_value}}{{else}}Text not available in JSON{{/if}}</div>
+                  <div class="tumor-detail-value">{{#if fields.cancer_type.value}}{{fields.cancer_type.value}}{{else}}Text not available in JSON{{/if}}</div>
                 </div>
                 <div class="tumor-explanation-box">
-                  <p style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 14px; font-weight: 400; color: #8B8991; line-height: 1.6; margin: 0;">{{#if cancer_type_explanation}}{{{cancer_type_explanation}}}{{else}}Text not available in JSON{{/if}}</p>
+                  <p style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 14px; font-weight: 400; color: #8B8991; line-height: 1.6; margin: 0;">{{#if fields.cancer_type.explanation}}{{{fields.cancer_type.explanation}}}{{else}}Text not available in JSON{{/if}}</p>
                 </div>
               </div>
 
               <div class="tumor-detail-row">
                 <div class="tumor-detail-left">
                   <div class="tumor-detail-label">Location</div>
-                  <div class="tumor-detail-value">{{#if location_of_tumor.raw_value}}{{location_of_tumor.raw_value}}{{else}}Text not available in JSON{{/if}}{{#if size.raw_value}} ({{size.raw_value}}cm){{/if}}</div>
+                  <div class="tumor-detail-value">{{#if fields.location_of_tumor.value}}{{fields.location_of_tumor.value}}{{else}}Text not available in JSON{{/if}}{{#if fields.size.value}} ({{fields.size.value}} cm){{/if}}</div>
                 </div>
                 <div class="tumor-explanation-box">
-                  <p style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 14px; font-weight: 400; color: #8B8991; line-height: 1.6; margin: 0;">{{#if location_explanation}}{{{location_explanation}}}{{else}}Text not available in JSON{{/if}}</p>
+                  <p style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 14px; font-weight: 400; color: #8B8991; line-height: 1.6; margin: 0;">{{#if fields.location_of_tumor.explanation}}{{{fields.location_of_tumor.explanation}}}{{else}}Text not available in JSON{{/if}}</p>
                 </div>
               </div>
 
-              {{#if largest_size_imaging_cm.raw_value}}
+              {{#if fields.largest_size_imaging_cm.value}}
               <div class="tumor-detail-row">
                 <div class="tumor-detail-left">
                   <div class="tumor-detail-label">Largest Size (Imaging)</div>
-                  <div class="tumor-detail-value">{{largest_size_imaging_cm.raw_value}} cm</div>
+                  <div class="tumor-detail-value">{{fields.largest_size_imaging_cm.value}} cm</div>
                 </div>
                 <div class="tumor-explanation-box">
                   <p style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 14px; font-weight: 400; color: #8B8991; line-height: 1.6; margin: 0;">Size measured by imaging (ultrasound, MRI, etc.)</p>
@@ -1763,11 +1788,11 @@
               </div>
               {{/if}}
 
-              {{#if largest_size_biopsy_cm.raw_value}}
+              {{#if fields.largest_size_biopsy_cm.value}}
               <div class="tumor-detail-row">
                 <div class="tumor-detail-left">
                   <div class="tumor-detail-label">Largest Size (Biopsy)</div>
-                  <div class="tumor-detail-value">{{largest_size_biopsy_cm.raw_value}} cm</div>
+                  <div class="tumor-detail-value">{{fields.largest_size_biopsy_cm.value}} cm</div>
                 </div>
                 <div class="tumor-explanation-box">
                   <p style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 14px; font-weight: 400; color: #8B8991; line-height: 1.6; margin: 0;">Size measured from pathology/biopsy specimen</p>
@@ -1778,28 +1803,28 @@
               <div class="tumor-detail-row">
                 <div class="tumor-detail-left">
                   <div class="tumor-detail-label">Stage</div>
-                  <div class="tumor-detail-value">{{#if stage.raw_value}}{{stage.raw_value}}{{else}}Text not available in JSON{{/if}}{{#if stage_type.raw_value}} ({{stage_type.raw_value}}){{/if}}</div>
+                  <div class="tumor-detail-value">{{#if fields.stage.value}}{{fields.stage.value}}{{else}}Text not available in JSON{{/if}}{{#if fields.stage_type.value}} ({{fields.stage_type.value}}){{/if}}</div>
                 </div>
                 <div class="tumor-explanation-box">
-                  <p style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 14px; font-weight: 400; color: #8B8991; line-height: 1.6; margin: 0;">{{#if stage_explanation}}{{{stage_explanation}}}{{else}}Text not available in JSON{{/if}}</p>
+                  <p style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 14px; font-weight: 400; color: #8B8991; line-height: 1.6; margin: 0;">{{#if fields.stage.explanation}}{{{fields.stage.explanation}}}{{else}}Text not available in JSON{{/if}}</p>
                 </div>
               </div>
 
               <div class="tumor-detail-row">
                 <div class="tumor-detail-left">
                   <div class="tumor-detail-label">Grade</div>
-                  <div class="tumor-detail-value">{{#if overall_grade.raw_value}}{{overall_grade.raw_value}}{{else}}Text not available in JSON{{/if}}</div>
+                  <div class="tumor-detail-value">{{#if fields.overall_grade.value}}{{fields.overall_grade.value}}{{else}}Text not available in JSON{{/if}}</div>
                 </div>
                 <div class="tumor-explanation-box">
-                  <p style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 14px; font-weight: 400; color: #8B8991; line-height: 1.6; margin: 0;">{{#if grade_explanation}}{{{grade_explanation}}}{{else}}Text not available in JSON{{/if}}</p>
+                  <p style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 14px; font-weight: 400; color: #8B8991; line-height: 1.6; margin: 0;">{{#if fields.overall_grade.explanation}}{{{fields.overall_grade.explanation}}}{{else}}Text not available in JSON{{/if}}</p>
                 </div>
               </div>
 
-              {{#if tubule_formation_score.raw_value}}
+              {{#if fields.tubule_formation_score.value}}
               <div class="tumor-detail-row">
                 <div class="tumor-detail-left">
                   <div class="tumor-detail-label">Grade Breakdown</div>
-                  <div class="tumor-detail-value">Tubule: {{tubule_formation_score.raw_value}}{{#if nuclear_pleomorphism_score.raw_value}}, Nuclear: {{nuclear_pleomorphism_score.raw_value}}{{/if}}{{#if mitotic_count_score.raw_value}}, Mitotic: {{mitotic_count_score.raw_value}}{{/if}}</div>
+                  <div class="tumor-detail-value">Tubule: {{fields.tubule_formation_score.value}}{{#if fields.nuclear_pleomorphism_score.value}}, Nuclear: {{fields.nuclear_pleomorphism_score.value}}{{/if}}{{#if fields.mitotic_count_score.value}}, Mitotic: {{fields.mitotic_count_score.value}}{{/if}}</div>
                 </div>
                 <div class="tumor-explanation-box">
                   <p style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 14px; font-weight: 400; color: #8B8991; line-height: 1.6; margin: 0;">Nottingham grade is calculated from tubule formation, nuclear pleomorphism, and mitotic count scores (each 1-3)</p>
@@ -1810,67 +1835,67 @@
               <div class="tumor-detail-row">
                 <div class="tumor-detail-left">
                   <div class="tumor-detail-label">ER/PR Status</div>
-                  <div class="tumor-detail-value">{{#if erpr_status.raw_value}}{{erpr_status.raw_value}}{{else}}Text not available in JSON{{/if}}</div>
+                  <div class="tumor-detail-value">{{#if fields.erpr_status.value}}{{fields.erpr_status.value}}{{else}}Text not available in JSON{{/if}}</div>
                 </div>
                 <div class="tumor-explanation-box">
-                  <p style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 14px; font-weight: 400; color: #8B8991; line-height: 1.6; margin: 0;">{{#if hormone_receptor_status_explanation}}{{{hormone_receptor_status_explanation}}}{{else}}Text not available in JSON{{/if}}</p>
+                  <p style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 14px; font-weight: 400; color: #8B8991; line-height: 1.6; margin: 0;">{{#if fields.erpr_status.explanation}}{{{fields.erpr_status.explanation}}}{{else}}Text not available in JSON{{/if}}</p>
                 </div>
               </div>
 
               <div class="tumor-detail-row">
                 <div class="tumor-detail-left">
                   <div class="tumor-detail-label">HER2 Status</div>
-                  <div class="tumor-detail-value">{{#if her2_status.raw_value}}{{her2_status.raw_value}}{{else}}Text not available in JSON{{/if}}</div>
+                  <div class="tumor-detail-value">{{#if fields.her2_status.value}}{{fields.her2_status.value}}{{else}}Text not available in JSON{{/if}}</div>
                 </div>
                 <div class="tumor-explanation-box">
-                  <p style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 14px; font-weight: 400; color: #8B8991; line-height: 1.6; margin: 0;">{{#if her2_status_explanation}}{{{her2_status_explanation}}}{{else}}Text not available in JSON{{/if}}</p>
+                  <p style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 14px; font-weight: 400; color: #8B8991; line-height: 1.6; margin: 0;">{{#if fields.her2_status.explanation}}{{{fields.her2_status.explanation}}}{{else}}Text not available in JSON{{/if}}</p>
                 </div>
               </div>
 
-              {{#if er_status.raw_value}}
+              {{#if fields.er_status.value}}
               <div class="tumor-detail-row">
                 <div class="tumor-detail-left">
                   <div class="tumor-detail-label">ER Status</div>
-                  <div class="tumor-detail-value">{{er_status.raw_value}}</div>
+                  <div class="tumor-detail-value">{{fields.er_status.value}}</div>
                 </div>
                 <div class="tumor-explanation-box">
-                  <p style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 14px; font-weight: 400; color: #8B8991; line-height: 1.6; margin: 0;">{{#if er_status_explanation}}{{{er_status_explanation}}}{{else}}Text not available in JSON{{/if}}</p>
+                  <p style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 14px; font-weight: 400; color: #8B8991; line-height: 1.6; margin: 0;">{{#if fields.er_status.explanation}}{{{fields.er_status.explanation}}}{{else}}Text not available in JSON{{/if}}</p>
                 </div>
               </div>
               {{/if}}
 
-              {{#if pr_status.raw_value}}
+              {{#if fields.pr_status.value}}
               <div class="tumor-detail-row">
                 <div class="tumor-detail-left">
                   <div class="tumor-detail-label">PR Status</div>
-                  <div class="tumor-detail-value">{{pr_status.raw_value}}</div>
+                  <div class="tumor-detail-value">{{fields.pr_status.value}}</div>
                 </div>
                 <div class="tumor-explanation-box">
-                  <p style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 14px; font-weight: 400; color: #8B8991; line-height: 1.6; margin: 0;">{{#if pr_status_explanation}}{{{pr_status_explanation}}}{{else}}Text not available in JSON{{/if}}</p>
+                  <p style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 14px; font-weight: 400; color: #8B8991; line-height: 1.6; margin: 0;">{{#if fields.pr_status.explanation}}{{{fields.pr_status.explanation}}}{{else}}Text not available in JSON{{/if}}</p>
                 </div>
               </div>
               {{/if}}
 
-              {{#if ihc_result.raw_value}}
+              {{#if fields.ihc_result.value}}
               <div class="tumor-detail-row">
                 <div class="tumor-detail-left">
                   <div class="tumor-detail-label">IHC Result</div>
-                  <div class="tumor-detail-value">{{ihc_result.raw_value}}</div>
+                  <div class="tumor-detail-value">{{fields.ihc_result.value}}</div>
                 </div>
                 <div class="tumor-explanation-box">
-                  <p style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 14px; font-weight: 400; color: #8B8991; line-height: 1.6; margin: 0;">{{#if ihc_result_explanation}}{{{ihc_result_explanation}}}{{else}}Text not available in JSON{{/if}}</p>
+                  <p style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 14px; font-weight: 400; color: #8B8991; line-height: 1.6; margin: 0;">{{#if fields.ihc_result.explanation}}{{{fields.ihc_result.explanation}}}{{else}}Text not available in JSON{{/if}}</p>
                 </div>
               </div>
               {{/if}}
 
-              {{#if fish_ish_result.raw_value}}
+              {{#if fields.fish_ish_result.value}}
               <div class="tumor-detail-row">
                 <div class="tumor-detail-left">
                   <div class="tumor-detail-label">FISH/ISH Result</div>
-                  <div class="tumor-detail-value">{{fish_ish_result.raw_value}}</div>
+                  <div class="tumor-detail-value">{{fields.fish_ish_result.value}}</div>
                 </div>
                 <div class="tumor-explanation-box">
-                  <p style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 14px; font-weight: 400; color: #8B8991; line-height: 1.6; margin: 0;">{{#if fish_ish_result_explanation}}{{{fish_ish_result_explanation}}}{{else}}Text not available in JSON{{/if}}</p>
+                  <p style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 14px; font-weight: 400; color: #8B8991; line-height: 1.6; margin: 0;">{{#if fields.fish_ish_result.explanation}}{{{fields.fish_ish_result.explanation}}}{{else}}Text not available in JSON{{/if}}</p>
                 </div>
               </div>
               {{/if}}
@@ -1879,7 +1904,63 @@
         </div>
         {{/if}}
 
-        {{#if whatThisMeans}}
+        {{!-- Global Diagnosis Fields --}}
+        {{#if @root.diagnosis}}
+        <div class="tumor-section" style="margin-top: 2rem;">
+          <h3>Additional Genetic and Biomarker Testing</h3>
+          <div class="tumor-details-container">
+            {{#if @root.diagnosis.brca_status.value}}
+            <div class="tumor-detail-row">
+              <div class="tumor-detail-left">
+                <div class="tumor-detail-label">BRCA Status</div>
+                <div class="tumor-detail-value">{{@root.diagnosis.brca_status.value}}{{#if @root.diagnosis.brca_type.value}} ({{@root.diagnosis.brca_type.value}}){{/if}}{{#if @root.diagnosis.brca_lab.value}} - {{@root.diagnosis.brca_lab.value}}{{/if}}</div>
+              </div>
+              <div class="tumor-explanation-box">
+                <p style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 14px; font-weight: 400; color: #8B8991; line-height: 1.6; margin: 0;">{{#if @root.diagnosis.brca_status.explanation}}{{@root.diagnosis.brca_status.explanation}}{{else}}Text not available in JSON{{/if}}</p>
+              </div>
+            </div>
+            {{/if}}
+
+            {{#if @root.diagnosis.pdl1_cps_score.value}}
+            <div class="tumor-detail-row">
+              <div class="tumor-detail-left">
+                <div class="tumor-detail-label">PD-L1 CPS Score</div>
+                <div class="tumor-detail-value">{{@root.diagnosis.pdl1_cps_score.value}}{{#if @root.diagnosis.pdl1_interpretation.value}} ({{@root.diagnosis.pdl1_interpretation.value}}){{/if}}{{#if @root.diagnosis.pdl1_threshold_used.value}} - Threshold: {{@root.diagnosis.pdl1_threshold_used.value}}{{/if}}</div>
+              </div>
+              <div class="tumor-explanation-box">
+                <p style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 14px; font-weight: 400; color: #8B8991; line-height: 1.6; margin: 0;">{{#if @root.diagnosis.pdl1_assay.value}}Assay: {{@root.diagnosis.pdl1_assay.value}}{{else}}Text not available in JSON{{/if}}</p>
+              </div>
+            </div>
+            {{/if}}
+
+            {{#if @root.diagnosis.tnbc_status.value}}
+            <div class="tumor-detail-row">
+              <div class="tumor-detail-left">
+                <div class="tumor-detail-label">TNBC Status</div>
+                <div class="tumor-detail-value">{{@root.diagnosis.tnbc_status.value}}</div>
+              </div>
+              <div class="tumor-explanation-box">
+                <p style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 14px; font-weight: 400; color: #8B8991; line-height: 1.6; margin: 0;">Text not available in JSON</p>
+              </div>
+            </div>
+            {{/if}}
+
+            {{#if @root.diagnosis.ibc_status.value}}
+            <div class="tumor-detail-row">
+              <div class="tumor-detail-left">
+                <div class="tumor-detail-label">IBC Status</div>
+                <div class="tumor-detail-value">{{@root.diagnosis.ibc_status.value}}</div>
+              </div>
+              <div class="tumor-explanation-box">
+                <p style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 14px; font-weight: 400; color: #8B8991; line-height: 1.6; margin: 0;">Text not available in JSON</p>
+              </div>
+            </div>
+            {{/if}}
+          </div>
+        </div>
+        {{/if}}
+
+        {{!-- Diagnosis Summary - Static section (at the end) --}}
         <div class="meaning-section">
           <h3>Diagnosis Summary</h3>
           <p style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 42px; font-weight: 500; color: white; line-height: 1.3; margin: 1.5rem 0;">
@@ -1890,82 +1971,28 @@
           <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-top: 4rem;">
             <div>
               <img src="icons/eclipse.svg" alt="" style="width: 59px; height: 59px;">
+              {{#ifEq @root.diagnosis.hormone_receptor_status.value "HR positive"}}
               <h4 style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 1.1rem; font-weight: 600; color: white; margin-bottom: 0.75rem;">Receptive to Endocrine Therapy</h4>
-              <p style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 0.95rem; font-weight: 400; color: #D6D0CD; line-height: 1.5;">Because your cancer is hormone receptor positive (responds to estrogen), endocrine therapy (hormone-blocking treatments) can be very effective at slowing.</p>
+              <p style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 0.95rem; font-weight: 400; color: #D6D0CD; line-height: 1.5;">Because your cancer is {{@root.diagnosis.hormone_receptor_status.value}} (responds to hormones), endocrine therapy (hormone-blocking treatments) can be very effective at slowing cancer growth.</p>
+              {{else}}
+              <h4 style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 1.1rem; font-weight: 600; color: white; margin-bottom: 0.75rem;">Your Hormone Status</h4>
+              <p style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 0.95rem; font-weight: 400; color: #D6D0CD; line-height: 1.5;">Your cancer is {{#if @root.diagnosis.erpr_status.value}}{{@root.diagnosis.erpr_status.value}}{{else}}being evaluated for hormone receptor status{{/if}}. Your oncologist will discuss treatment options based on this status.</p>
+              {{/ifEq}}
             </div>
             <div>
               <img src="icons/eclipse.svg" alt="" style="width: 59px; height: 59px;">
-              <h4 style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 1.1rem; font-weight: 600; color: white; margin-bottom: 0.75rem;">New Treatments Available</h4>
-              <p style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 0.95rem; font-weight: 400; color: #D6D0CD; line-height: 1.5;">Recent research shows that people with HER2-low breast cancer may benefit from newer targeted treatments like antibody-drug conjugates (medicines that deliver chemotherapy directly to cancer cells).</p>
+              <h4 style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 1.1rem; font-weight: 600; color: white; margin-bottom: 0.75rem;">HER2 Status: {{#if @root.diagnosis.her2_status.value}}{{@root.diagnosis.her2_status.value}}{{else}}Pending{{/if}}</h4>
+              <p style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 0.95rem; font-weight: 400; color: #D6D0CD; line-height: 1.5;">{{#if @root.diagnosis.her2_status.explanation}}{{@root.diagnosis.her2_status.explanation}}{{else}}HER2 status helps determine if targeted therapies may be beneficial for your treatment.{{/if}}</p>
             </div>
             <div>
               <img src="icons/eclipse.svg" alt="" style="width: 59px; height: 59px;">
-              <h4 style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 1.1rem; font-weight: 600; color: white; margin-bottom: 0.75rem;">Focus on curing cancer</h4>
-              <p style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 0.95rem; font-weight: 400; color: #D6D0CD; line-height: 1.5;">For this type of cancer, the focus is on removing the tumor with clear, healthy margins, preventing the cancer from returning, and using effective treatments while minimizing side effects.</p>
+              <h4 style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 1.1rem; font-weight: 600; color: white; margin-bottom: 0.75rem;">Focus on Treatment</h4>
+              <p style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 0.95rem; font-weight: 400; color: #D6D0CD; line-height: 1.5;">For {{#if @root.diagnosis.cancer_type.value}}{{@root.diagnosis.cancer_type.value}}{{else}}your type of cancer{{/if}}, the focus is on removing the tumor with clear, healthy margins, preventing the cancer from returning, and using effective treatments while minimizing side effects.</p>
             </div>
           </div>
         </div>
-        {{/if}}
 
-        {{!-- Global Diagnosis Fields --}}
-        {{#if @root.brca_status}}
-        <div class="tumor-section" style="margin-top: 2rem;">
-          <h3>Additional Genetic and Biomarker Testing</h3>
-          <div class="tumor-details-container">
-            {{#if @root.brca_status.raw_value}}
-            <div class="tumor-detail-row">
-              <div class="tumor-detail-left">
-                <div class="tumor-detail-label">BRCA Status</div>
-                <div class="tumor-detail-value">{{@root.brca_status.raw_value}}{{#if @root.brca_type.raw_value}} ({{@root.brca_type.raw_value}}){{/if}}{{#if @root.brca_lab.raw_value}} - {{@root.brca_lab.raw_value}}{{/if}}</div>
-              </div>
-              <div class="tumor-explanation-box">
-                <p style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 14px; font-weight: 400; color: #8B8991; line-height: 1.6; margin: 0;">Text not available in JSON</p>
-              </div>
-            </div>
-            {{/if}}
-
-            {{#if @root.pdl1_cps_score.raw_value}}
-            <div class="tumor-detail-row">
-              <div class="tumor-detail-left">
-                <div class="tumor-detail-label">PD-L1 CPS Score</div>
-                <div class="tumor-detail-value">{{@root.pdl1_cps_score.raw_value}}{{#if @root.pdl1_interpretation.raw_value}} ({{@root.pdl1_interpretation.raw_value}}){{/if}}{{#if @root.pdl1_threshold_used.raw_value}} - Threshold: {{@root.pdl1_threshold_used.raw_value}}{{/if}}</div>
-              </div>
-              <div class="tumor-explanation-box">
-                <p style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 14px; font-weight: 400; color: #8B8991; line-height: 1.6; margin: 0;">{{#if @root.pdl1_assay.raw_value}}Assay: {{@root.pdl1_assay.raw_value}}{{else}}Text not available in JSON{{/if}}</p>
-              </div>
-            </div>
-            {{/if}}
-
-            {{#if @root.diagnosis_summary.tnbc_status.raw_value}}
-            <div class="tumor-detail-row">
-              <div class="tumor-detail-left">
-                <div class="tumor-detail-label">TNBC Status</div>
-                <div class="tumor-detail-value">{{@root.diagnosis_summary.tnbc_status.raw_value}}</div>
-              </div>
-              <div class="tumor-explanation-box">
-                <p style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 14px; font-weight: 400; color: #8B8991; line-height: 1.6; margin: 0;">Text not available in JSON</p>
-              </div>
-            </div>
-            {{/if}}
-
-            {{#if @root.diagnosis_summary.ibc_status.raw_value}}
-            <div class="tumor-detail-row">
-              <div class="tumor-detail-left">
-                <div class="tumor-detail-label">IBC Status</div>
-                <div class="tumor-detail-value">{{@root.diagnosis_summary.ibc_status.raw_value}}</div>
-              </div>
-              <div class="tumor-explanation-box">
-                <p style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 14px; font-weight: 400; color: #8B8991; line-height: 1.6; margin: 0;">Text not available in JSON</p>
-              </div>
-            </div>
-            {{/if}}
-          </div>
-        </div>
-        {{/if}}
       </section>
-      {{/if}}
-
-    {{/each}}
 
     {{!-- ✳️ TESTING AND CONSULTATIONS --}}
     <section class="section testing-consultations">
@@ -2012,18 +2039,83 @@
         <div class="diagnosis-meta-left">
           <h4 class="diagnosis-meta-title">Testing and consultations completed to-date</h4>
           <p class="diagnosis-sources">
-            According to your medical records, the following tests and scans have been completed so far in the process of getting diagnosed for breast cancer.
+            According to your medical records, the following tests and scans have been completed so far in the process of getting diagnosed for {{#if diagnosis.cancer_type.value}}{{diagnosis.cancer_type.value}}{{else}}breast cancer{{/if}}.
           </p>
         </div>
         <div class="diagnosis-meta-right">
           <h4 class="diagnosis-meta-title">Sources</h4>
           <p class="diagnosis-sources">
-            Sources: Telehealth Consult, 12/23/2024
+            Sources: {{#each records_reviewed}}{{#if @first}}{{this.type}}, {{formatDate this.service_date}}{{/if}}{{/each}}
           </p>
         </div>
       </div>
 
-      {{!-- Testing Items List --}}
+      {{!-- Testing Items List from records_reviewed (new JSON format) --}}
+      {{#if records_reviewed}}
+      <div class="testing-items-wrapper">
+        <h3 class="testing-items-title">Completed Tests</h3>
+        
+        <div class="testing-items-list">
+          {{#each records_reviewed}}
+          {{#unless (eq this.type "Consultation Note")}}
+          {{#unless (eq this.type "Surgical Note")}}
+          <div class="testing-item">
+            <div class="testing-item-content">
+              <div class="testing-item-icon">
+                <img src="./icons/black-checkmark.svg" alt="Complete" />
+              </div>
+              <div class="testing-item-title">{{this.type}}{{#if this.notes}} - {{this.notes}}{{/if}}</div>
+            </div>
+            <div class="testing-item-right">
+              <div class="testing-item-badge">Complete</div>
+              <div class="testing-item-date">{{formatDate this.service_date}}</div>
+            </div>
+          </div>
+          {{/unless}}
+          {{/unless}}
+          {{/each}}
+        </div>
+      </div>
+
+      <div class="testing-items-wrapper">
+        <h3 class="testing-items-title">Completed Referrals</h3>
+        
+        <div class="testing-items-list">
+          {{#each records_reviewed}}
+          {{#if (eq this.type "Consultation Note")}}
+          <div class="testing-item">
+            <div class="testing-item-content">
+              <div class="testing-item-icon">
+                <img src="./icons/black-checkmark.svg" alt="Complete" />
+              </div>
+              <div class="testing-item-title">{{this.notes}}</div>
+            </div>
+            <div class="testing-item-right">
+              <div class="testing-item-badge">Complete</div>
+              <div class="testing-item-date">{{formatDate this.service_date}}</div>
+            </div>
+          </div>
+          {{/if}}
+          {{#if (eq this.type "Surgical Note")}}
+          <div class="testing-item">
+            <div class="testing-item-content">
+              <div class="testing-item-icon">
+                <img src="./icons/black-checkmark.svg" alt="Complete" />
+              </div>
+              <div class="testing-item-title">{{this.notes}}</div>
+            </div>
+            <div class="testing-item-right">
+              <div class="testing-item-badge">Complete</div>
+              <div class="testing-item-date">{{formatDate this.service_date}}</div>
+            </div>
+          </div>
+          {{/if}}
+          {{/each}}
+        </div>
+      </div>
+      {{/if}}
+
+      {{!-- Testing Items List (old format - report.sections) --}}
       {{#each report.sections}}
         {{#if (eq this.id "testing_and_consultations")}}
           {{!-- New schema: completed tests --}}
@@ -2219,7 +2311,7 @@
       {{!-- Treatment Goals Section --}}
       <div class="treatment-goals-section">
         <h3 class="treatment-goals-title">Typical treatment goals for cancers like yours</h3>
-        <p class="treatment-goals-intro">For <span class="treatment-goals-highlight">stage I breast cancer,</span> the main goals are to:</p>
+        <p class="treatment-goals-intro">For <span class="treatment-goals-highlight">{{#if diagnosis.stage.value}}{{diagnosis.stage.value}}{{else}}your{{/if}} {{#if diagnosis.cancer_type.value}}{{diagnosis.cancer_type.value}}{{else}}breast cancer{{/if}},</span> the main goals are to:</p>
         
         <div class="treatment-goals-grid">
           <div class="treatment-goal-box">

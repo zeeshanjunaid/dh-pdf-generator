@@ -1,0 +1,321 @@
+{
+  "general_info": {
+    "humanReadableId": {
+      "value": "TEST01",
+      "source": "",
+      "source_page": "",
+      "service_date": ""
+    },
+    "fname": {
+      "value": "Sarah",
+      "source": "",
+      "source_page": "",
+      "service_date": ""
+    },
+    "lname": {
+      "value": "Thompson",
+      "source": "",
+      "source_page": "",
+      "service_date": ""
+    },
+    "dateOfBirth": {
+      "value": "1982-03-15T00:00:00.000Z",
+      "source": "",
+      "source_page": "",
+      "service_date": ""
+    },
+    "age": {
+      "value": 43,
+      "source": "",
+      "source_page": "",
+      "service_date": ""
+    },
+    "feelingNow": {
+      "value": "I want to understand my options",
+      "source": "",
+      "source_page": "",
+      "service_date": ""
+    },
+    "feeling_category": {
+      "value": "curious",
+      "source": "",
+      "source_page": "",
+      "service_date": ""
+    },
+    "intro_letter_title": {
+      "value": "WE'RE HERE FOR YOU",
+      "source": "",
+      "source_page": "",
+      "service_date": ""
+    },
+    "intro_letter_body": {
+      "value": "Dear Sarah,\n\nWe understand you want clarity about your situation. Knowledge is power, and we're here to help you understand every aspect of your diagnosis so you can make informed decisions.\n\nWith care and respect,\nYour Defiant Health Team",
+      "source": "",
+      "source_page": "",
+      "service_date": ""
+    }
+  },
+
+  "diagnosis": {
+    "cancer_type": {
+      "value": "Invasive Ductal Carcinoma (IDC)",
+      "explanation": "The most common type of breast cancer, starting in the milk ducts and spreading to surrounding tissue.",
+      "source": "City Hospital Pathology Report.pdf",
+      "source_page": 1,
+      "service_date": "2025-11-01T00:00:00.000Z"
+    },
+    "location_of_tumors": {
+      "value": "Left breast, 2 o'clock position",
+      "explanation": "Location helps guide surgical planning and assess lymph node involvement.",
+      "source": "City Hospital Pathology Report.pdf",
+      "source_page": 2,
+      "service_date": "2025-11-01T00:00:00.000Z"
+    },
+    "size": {
+      "value": "2.3 cm",
+      "explanation": "Tumor size is a key factor in staging and treatment planning.",
+      "source": "City Hospital Pathology Report.pdf",
+      "source_page": 2,
+      "service_date": "2025-11-01T00:00:00.000Z"
+    },
+    "stage": {
+      "value": "Stage IA",
+      "explanation": "Early stage cancer, tumor is 2cm or smaller and has not spread to lymph nodes.",
+      "source": "City Hospital Pathology Report.pdf",
+      "source_page": 3,
+      "service_date": "2025-11-01T00:00:00.000Z"
+    },
+    "stage_type": {
+      "value": "Clinical",
+      "explanation": "Based on physical exam and imaging before surgery.",
+      "source": "City Hospital Pathology Report.pdf",
+      "source_page": 3,
+      "service_date": "2025-11-01T00:00:00.000Z"
+    },
+    "overall_grade": {
+      "value": "Grade 2",
+      "explanation": "Moderately differentiated cells - growing faster than grade 1 but slower than grade 3.",
+      "source": "City Hospital Pathology Report.pdf",
+      "source_page": 3,
+      "service_date": "2025-11-01T00:00:00.000Z"
+    },
+    "er_status": {
+      "value": "Negative",
+      "explanation": "",
+      "source": "City Hospital Pathology Report.pdf",
+      "source_page": 4,
+      "service_date": "2025-11-01T00:00:00.000Z"
+    },
+    "pr_status": {
+      "value": "Negative",
+      "explanation": "",
+      "source": "City Hospital Pathology Report.pdf",
+      "source_page": 4,
+      "service_date": "2025-11-01T00:00:00.000Z"
+    },
+    "erpr_status": {
+      "value": "ER negative, PR negative",
+      "explanation": "Hormone receptor negative cancers do not respond to hormone therapy but may respond well to chemotherapy.",
+      "source": "City Hospital Pathology Report.pdf",
+      "source_page": 4,
+      "service_date": "2025-11-01T00:00:00.000Z"
+    },
+    "hormone_receptor_status": {
+      "value": "HR negative",
+      "explanation": "Hormone receptor–negative breast cancer",
+      "source": "City Hospital Pathology Report.pdf",
+      "source_page": 4,
+      "service_date": "2025-11-01T00:00:00.000Z"
+    },
+    "her2_status": {
+      "value": "HER2 positive",
+      "explanation": "HER2-positive breast cancer has higher levels of HER2 protein, which can be targeted with specific therapies like Herceptin.",
+      "source": "City Hospital Pathology Report.pdf",
+      "source_page": 4,
+      "service_date": "2025-11-01T00:00:00.000Z"
+    },
+    "ihc_result": {
+      "value": "3+",
+      "explanation": "Strong positive HER2 result by immunohistochemistry.",
+      "source": "City Hospital Pathology Report.pdf",
+      "source_page": 5,
+      "service_date": "2025-11-01T00:00:00.000Z"
+    },
+    "brca_status": {
+      "value": "Positive",
+      "explanation": "BRCA mutation detected, which may influence treatment options and family screening recommendations.",
+      "source": "Genetic Testing Results.pdf",
+      "source_page": 1,
+      "service_date": "2025-11-10T00:00:00.000Z"
+    },
+    "brca_type": {
+      "value": "BRCA1",
+      "explanation": "",
+      "source": "Genetic Testing Results.pdf",
+      "source_page": 1,
+      "service_date": "2025-11-10T00:00:00.000Z"
+    }
+  },
+
+  "tumor_metadata": {
+    "number_of_cancerous_tumors_confirmed_by_biopsy": {
+      "value": 1,
+      "explanation": "",
+      "source": "",
+      "source_page": "",
+      "service_date": ""
+    },
+    "number_of_cancerous_lymph_nodes_confirmed_by_biopsy": {
+      "value": 0,
+      "explanation": "",
+      "source": "",
+      "source_page": "",
+      "service_date": ""
+    }
+  },
+
+  "tumors": [
+    {
+      "tumor_number": 1,
+      "fields": {
+        "cancer_type": {
+          "value": "Invasive Ductal Carcinoma (IDC)",
+          "explanation": "The most common type of breast cancer, starting in the milk ducts and spreading to surrounding tissue.",
+          "source": "City Hospital Pathology Report.pdf",
+          "source_page": 1,
+          "service_date": "2025-11-01T00:00:00.000Z"
+        },
+        "location_of_tumor": {
+          "value": "Left breast, 2 o'clock position",
+          "explanation": "Upper outer quadrant of the left breast.",
+          "source": "City Hospital Pathology Report.pdf",
+          "source_page": 2,
+          "service_date": "2025-11-01T00:00:00.000Z"
+        },
+        "stage": {
+          "value": "Stage IA",
+          "explanation": "Early stage - tumor 2cm or smaller, no lymph node involvement.",
+          "source": "City Hospital Pathology Report.pdf",
+          "source_page": 3,
+          "service_date": "2025-11-01T00:00:00.000Z"
+        },
+        "stage_type": {
+          "value": "Clinical",
+          "explanation": "Staging based on physical exam and imaging prior to surgery.",
+          "source": "City Hospital Pathology Report.pdf",
+          "source_page": 3,
+          "service_date": "2025-11-01T00:00:00.000Z"
+        },
+        "size": {
+          "value": 2.3,
+          "explanation": "Measured at 2.3 centimeters on imaging.",
+          "source": "City Hospital Pathology Report.pdf",
+          "source_page": 2,
+          "service_date": "2025-11-01T00:00:00.000Z"
+        },
+        "overall_grade": {
+          "value": "Grade 2",
+          "explanation": "Moderately differentiated - cells look somewhat abnormal and are growing at a moderate rate.",
+          "source": "City Hospital Pathology Report.pdf",
+          "source_page": 3,
+          "service_date": "2025-11-01T00:00:00.000Z"
+        },
+        "tubule_formation_score": {
+          "value": "2",
+          "explanation": "",
+          "source": "City Hospital Pathology Report.pdf",
+          "source_page": 3,
+          "service_date": "2025-11-01T00:00:00.000Z"
+        },
+        "nuclear_pleomorphism_score": {
+          "value": "2",
+          "explanation": "",
+          "source": "City Hospital Pathology Report.pdf",
+          "source_page": 3,
+          "service_date": "2025-11-01T00:00:00.000Z"
+        },
+        "mitotic_count_score": {
+          "value": "2",
+          "explanation": "",
+          "source": "City Hospital Pathology Report.pdf",
+          "source_page": 3,
+          "service_date": "2025-11-01T00:00:00.000Z"
+        },
+        "erpr_status": {
+          "value": "ER negative, PR negative",
+          "explanation": "This cancer does not respond to hormone therapy but may respond well to chemotherapy and targeted therapies.",
+          "source": "City Hospital Pathology Report.pdf",
+          "source_page": 4,
+          "service_date": "2025-11-01T00:00:00.000Z"
+        },
+        "er_status": {
+          "value": "Negative",
+          "explanation": "Cancer cells do not have estrogen receptors.",
+          "source": "City Hospital Pathology Report.pdf",
+          "source_page": 4,
+          "service_date": "2025-11-01T00:00:00.000Z"
+        },
+        "pr_status": {
+          "value": "Negative",
+          "explanation": "Cancer cells do not have progesterone receptors.",
+          "source": "City Hospital Pathology Report.pdf",
+          "source_page": 4,
+          "service_date": "2025-11-01T00:00:00.000Z"
+        },
+        "her2_status": {
+          "value": "HER2 positive",
+          "explanation": "Cancer cells have high levels of HER2 protein, making them candidates for targeted therapy like trastuzumab (Herceptin).",
+          "source": "City Hospital Pathology Report.pdf",
+          "source_page": 4,
+          "service_date": "2025-11-01T00:00:00.000Z"
+        },
+        "ihc_result": {
+          "value": "3+",
+          "explanation": "Strong positive staining for HER2 protein.",
+          "source": "City Hospital Pathology Report.pdf",
+          "source_page": 5,
+          "service_date": "2025-11-01T00:00:00.000Z"
+        }
+      }
+    }
+  ],
+
+  "records_reviewed": [
+    {
+      "name": "City Hospital Pathology Report",
+      "type": "Pathology Report",
+      "service_date": "2025-11-01T00:00:00.000Z",
+      "notes": "Biopsy results"
+    },
+    {
+      "name": "Breast MRI",
+      "type": "MRI",
+      "service_date": "2025-10-28T00:00:00.000Z",
+      "notes": "Diagnostic imaging"
+    },
+    {
+      "name": "Mammogram",
+      "type": "Mammogram",
+      "service_date": "2025-10-25T00:00:00.000Z",
+      "notes": "Screening mammogram"
+    },
+    {
+      "name": "Genetic Testing Results",
+      "type": "Genetic Test",
+      "service_date": "2025-11-10T00:00:00.000Z",
+      "notes": "BRCA panel"
+    },
+    {
+      "name": "Oncology Consultation",
+      "type": "Consultation Note",
+      "service_date": "2025-11-15T00:00:00.000Z",
+      "notes": "Initial oncology visit"
+    },
+    {
+      "name": "Breast Surgery Consultation",
+      "type": "Surgical Note",
+      "service_date": "2025-11-18T00:00:00.000Z",
+      "notes": "Surgical options discussion"
+    }
+  ]
+}
