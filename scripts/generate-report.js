@@ -64,6 +64,269 @@ Handlebars.registerHelper("currentDate", function() {
   return new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
 });
 
+// Parse flexible date formats (handles both ISO and JS Date.toString() formats)
+Handlebars.registerHelper("parseDate", function(dateString) {
+  if (!dateString) return "";
+  try {
+    const date = new Date(dateString);
+    if (isNaN(date.getTime())) return dateString;
+    return date.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+  } catch (e) {
+    return dateString;
+  }
+});
+
+// Filter tests by status (for testing_and_consultations)
+Handlebars.registerHelper("filterByStatus", function(tests, status, options) {
+  if (!tests || !Array.isArray(tests)) return options.inverse(this);
+  const filtered = tests.filter(t => t.status && t.status.toLowerCase() === status.toLowerCase());
+  if (filtered.length === 0) return options.inverse(this);
+  return filtered.map(t => options.fn(t)).join('');
+});
+
+// Check if any tests exist with a specific status
+Handlebars.registerHelper("hasTestsWithStatus", function(tests, status, options) {
+  if (!tests || !Array.isArray(tests)) return options.inverse(this);
+  const hasTests = tests.some(t => t.status && t.status.toLowerCase() === status.toLowerCase());
+  return hasTests ? options.fn(this) : options.inverse(this);
+});
+
+// Get record title (prefer patient_facing_title over document_name over name)
+Handlebars.registerHelper("getRecordTitle", function(record) {
+  return record?.patient_facing_title || record?.document_name || record?.name || 'Unknown Record';
+});
+
+// Check if object has a value property with content
+Handlebars.registerHelper("hasValue", function(obj, options) {
+  if (!obj || !obj.value || obj.value === '') return options.inverse(this);
+  return options.fn(this);
+});
+
+// Filter tests by status and category (tests vs referrals), sorted by date (oldest first)
+Handlebars.registerHelper("filterTestsByTypeAndStatus", function(tests, isReferral, status, options) {
+  if (!tests || !Array.isArray(tests)) return options.inverse(this);
+  
+  const referralKeywords = ['referral', 'consultation'];
+  
+  const filtered = tests.filter(t => {
+    // Check status match
+    if (!t.status || t.status.toLowerCase() !== status.toLowerCase()) return false;
+    
+    // Check if it's a referral or test
+    const testName = (t.test_name || '').toLowerCase();
+    const isTestReferral = referralKeywords.some(keyword => testName.includes(keyword));
+    
+    return isReferral ? isTestReferral : !isTestReferral;
+  });
+  
+  if (filtered.length === 0) return options.inverse(this);
+  
+  // Sort by date (oldest first)
+  filtered.sort((a, b) => {
+    const dateA = new Date(a.test_date || a.service_date || a.referral_date || 0);
+    const dateB = new Date(b.test_date || b.service_date || b.referral_date || 0);
+    return dateA - dateB;
+  });
+  
+  return filtered.map(t => options.fn(t)).join('');
+});
+
+// Check if any tests exist with specific type and status (for completed/scheduled tests)
+Handlebars.registerHelper("hasTestsOfType", function(tests, isReferral, status, options) {
+  if (!tests || !Array.isArray(tests)) return options.inverse(this);
+  
+  const referralKeywords = ['referral', 'consultation'];
+  
+  const hasTests = tests.some(t => {
+    if (!t.status || t.status.toLowerCase() !== status.toLowerCase()) return false;
+    const testName = (t.test_name || '').toLowerCase();
+    const isTestReferral = referralKeywords.some(keyword => testName.includes(keyword));
+    return isReferral ? isTestReferral : !isTestReferral;
+  });
+  
+  return hasTests ? options.fn(this) : options.inverse(this);
+});
+
+// Check if any tests exist with likelihood (for "may consider" sections)
+Handlebars.registerHelper("hasTestsWithLikelihood", function(tests, isReferral, options) {
+  if (!tests || !Array.isArray(tests)) return options.inverse(this);
+  
+  const referralKeywords = ['referral', 'consultation'];
+  
+  const hasTests = tests.some(t => {
+    const likelihood = (t.likelihood || '').trim();
+    if (!likelihood || likelihood.toLowerCase() === 'completed') return false;
+    
+    const testName = (t.test_name || '').toLowerCase();
+    const isTestReferral = referralKeywords.some(keyword => testName.includes(keyword));
+    return isReferral ? isTestReferral : !isTestReferral;
+  });
+  
+  return hasTests ? options.fn(this) : options.inverse(this);
+});
+
+// Filter tests by type (tests vs referrals) with likelihood, sorted by likelihood (highest risk first)
+// Shows tests where likelihood is not blank and not "Completed"
+Handlebars.registerHelper("filterByLikelihood", function(tests, isReferral, options) {
+  if (!tests || !Array.isArray(tests)) return options.inverse(this);
+  
+  const referralKeywords = ['referral', 'consultation'];
+  
+  const filtered = tests.filter(t => {
+    // Filter criteria: likelihood != blank AND likelihood != "Completed"
+    const likelihood = (t.likelihood || '').trim();
+    if (!likelihood || likelihood.toLowerCase() === 'completed') return false;
+    
+    // Check if it's a referral or test
+    const testName = (t.test_name || '').toLowerCase();
+    const isTestReferral = referralKeywords.some(keyword => testName.includes(keyword));
+    
+    return isReferral ? isTestReferral : !isTestReferral;
+  });
+  
+  if (filtered.length === 0) return options.inverse(this);
+  
+  // Sort by likelihood (highest risk first)
+  // Priority: "Highly Likely" > any other likelihood text
+  filtered.sort((a, b) => {
+    const likelihoodA = (a.likelihood || '').toLowerCase();
+    const likelihoodB = (b.likelihood || '').toLowerCase();
+    
+    // Highly Likely comes first
+    if (likelihoodA.includes('highly likely') && !likelihoodB.includes('highly likely')) return -1;
+    if (!likelihoodA.includes('highly likely') && likelihoodB.includes('highly likely')) return 1;
+    
+    return 0; // Keep original order if same priority
+  });
+  
+  return filtered.map(t => options.fn(t)).join('');
+});
+
+// Sort array by date field (oldest first)
+Handlebars.registerHelper("sortByDate", function(array, dateField, options) {
+  if (!array || !Array.isArray(array)) return options.inverse(this);
+  
+  const sorted = [...array].sort((a, b) => {
+    const dateA = new Date(a[dateField] || 0);
+    const dateB = new Date(b[dateField] || 0);
+    return dateA - dateB;
+  });
+  
+  return sorted.map(item => options.fn(item)).join('');
+});
+
+// Calculate percentage for stage circle based on stage value
+Handlebars.registerHelper("getStagePercent", function(stageValue) {
+  if (!stageValue) return 15;
+  const stage = stageValue.toLowerCase();
+  
+  // Stage 0, I, IA, IB = Early = 15%
+  if (stage.includes('stage 0') || stage === 'stage i' || stage.includes('stage ia') || stage.includes('stage ib')) {
+    return 15;
+  }
+  // Stage II, IIA, IIB = Intermediate = 30%
+  if (stage.includes('stage ii')) {
+    return 30;
+  }
+  // Stage III, IIIA, IIIB, IIIC = Advanced = 45%
+  if (stage.includes('stage iii')) {
+    return 45;
+  }
+  // Stage IV = Metastatic = 60%
+  if (stage.includes('stage iv')) {
+    return 60;
+  }
+  return 15; // Default
+});
+
+// Calculate percentage for grade circle based on grade value
+Handlebars.registerHelper("getGradePercent", function(gradeValue) {
+  if (!gradeValue) return 15;
+  const grade = gradeValue.toLowerCase();
+  
+  // Grade 1 = Low = 15%
+  if (grade.includes('grade 1')) {
+    return 15;
+  }
+  // Grade 2 = Intermediate = 30%
+  if (grade.includes('grade 2')) {
+    return 30;
+  }
+  // Grade 3 = High = 45%
+  if (grade.includes('grade 3')) {
+    return 45;
+  }
+  // Grade X = Unknown = 15%
+  if (grade.includes('grade x')) {
+    return 15;
+  }
+  return 15; // Default
+});
+
+// Calculate percentage for HER2 circle based on HER2 status
+Handlebars.registerHelper("getHER2Percent", function(her2Value) {
+  if (!her2Value) return 15;
+  const her2 = her2Value.toLowerCase();
+  
+  // HER2 negative = Baseline = 15%
+  if (her2.includes('negative')) {
+    return 15;
+  }
+  // HER2 ultralow = Slight expression = 25%
+  if (her2.includes('ultralow')) {
+    return 25;
+  }
+  // HER2 low = Low expression = 35%
+  if (her2.includes('low') && !her2.includes('ultralow')) {
+    return 35;
+  }
+  // HER2 positive = High expression = 45%
+  if (her2.includes('positive')) {
+    return 45;
+  }
+  // Unknown = Not available = 15%
+  if (her2.includes('unknown')) {
+    return 15;
+  }
+  return 15; // Default
+});
+
+// Helper to filter summaries by match_value against patient's stage
+Handlebars.registerHelper("filterSummaries", function(summaries, patientStage, options) {
+  if (!summaries || summaries.length === 0) return '';
+  if (!patientStage) patientStage = '';
+  
+  // Filter summaries that match the patient's stage
+  const matching = summaries.filter(s => {
+    if (!s.match_value) return true; // Show if no match_value specified
+    return patientStage.toLowerCase().includes(s.match_value.toLowerCase()) ||
+           s.match_value.toLowerCase().includes(patientStage.toLowerCase());
+  });
+  
+  // If no matches found, show all summaries
+  const toDisplay = matching.length > 0 ? matching : summaries;
+  
+  return toDisplay.map(summary => options.fn(summary)).join('');
+});
+
+// Parse ER status from combined erpr_status value
+Handlebars.registerHelper("getERStatus", function(erprValue) {
+  if (!erprValue) return { status: 'Unknown', symbol: '-' };
+  const value = erprValue.toLowerCase();
+  if (value.includes('er positive')) return { status: 'Positive', symbol: '+' };
+  if (value.includes('er negative')) return { status: 'Negative', symbol: '-' };
+  return { status: 'Unknown', symbol: '-' };
+});
+
+// Parse PR status from combined erpr_status value
+Handlebars.registerHelper("getPRStatus", function(erprValue) {
+  if (!erprValue) return { status: 'Unknown', symbol: '-' };
+  const value = erprValue.toLowerCase();
+  if (value.includes('pr positive')) return { status: 'Positive', symbol: '+' };
+  if (value.includes('pr negative')) return { status: 'Negative', symbol: '-' };
+  return { status: 'Unknown', symbol: '-' };
+});
+
 // ============================
 // 🔧 Helper Function: Generate PDF
 // ============================
