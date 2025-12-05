@@ -92,6 +92,13 @@ Handlebars.registerHelper("splitLines", function(str, delimiter) {
   return text.split(/[\r\n]+/).map(item => item.trim()).filter(item => item.length > 0);
 });
 
+// Strip bullet points (• or -) from the beginning of strings
+Handlebars.registerHelper("stripBullet", function(str) {
+  if (!str) return "";
+  // Remove bullet point (•), dash (-), or asterisk (*) followed by optional spaces from the start
+  return String(str).replace(/^[•\-\*]\s*/, "").trim();
+});
+
 // Group questions by section and topic
 Handlebars.registerHelper("groupQuestions", function(items) {
   if (!items || !Array.isArray(items)) return [];

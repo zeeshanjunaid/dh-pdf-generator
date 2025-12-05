@@ -2657,12 +2657,12 @@
                     {{/each}}
                   </ul>
                 {{else}}
-                  {{!-- Surgical/Radiation: split by newline and show as bullets --}}
+                  {{!-- Surgical/Radiation: split by newline and show as bullets, strip existing bullets --}}
                   <ul style="margin: 0; padding: 0; list-style: none;">
                     {{#each (splitLines column_2_value)}}
                     <li style="position: relative; padding-left: 20px; margin-bottom: 8px;">
                       <span style="position: absolute; left: 0; top: 0; color: #FFC34D; font-size: 16px;">•</span>
-                      <span class="treatment-detail-text">{{this}}</span>
+                      <span class="treatment-detail-text">{{stripBullet this}}</span>
                     </li>
                     {{/each}}
                   </ul>

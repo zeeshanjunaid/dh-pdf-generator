@@ -8,6 +8,7 @@ import Handlebars from "handlebars";
 import puppeteer from "puppeteer";
 import open from "open";
 import chalk from "chalk";
+import { registerHelpers } from "./handlebars-helpers.js";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -20,7 +21,7 @@ const OUTPUT_DIR = path.join(__dirname, "../output");
 const PREVIEW_DIR = path.join(__dirname, "../previews");
 
 // Register Handlebars helpers
-Handlebars.registerHelper("eq", (a, b) => a === b);
+registerHelpers(Handlebars);
 
 let isGenerating = false;
 let previewUrl = null;
