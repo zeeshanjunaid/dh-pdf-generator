@@ -1421,7 +1421,8 @@
       background: #F8F8F8;
       border-radius: 12px;
       padding: 32px;
-      margin-bottom: 24px;
+      margin-bottom: 48px;
+      page-break-inside: avoid;
     }
 
     .treatment-card-header {
@@ -1447,7 +1448,7 @@
 
     .treatment-name {
       font-family: "Visuelt Pro", "Inter", sans-serif;
-      font-size: 20px;
+      font-size: 18px;
       font-weight: 600;
       color: #1F1D2C;
       margin: 0 0 12px 0;
@@ -1508,6 +1509,46 @@
 
     .treatment-detail-section li::marker {
       color: #FFC34D;
+    }
+
+    /* Treatment Grid and Rows */
+    .treatment-details-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+    }
+
+    .treatment-detail-column {
+      background: transparent;
+    }
+
+    .treatment-detail-header {
+      font-family: "Visuelt Pro", "Inter", sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      color: #1F1D2C;
+      margin: 0 0 16px 0;
+      text-transform: none;
+    }
+
+    .treatment-detail-text {
+      font-family: "Visuelt Pro", "Inter", sans-serif;
+      font-size: 14px;
+      font-weight: 400;
+      color: #8B8991;
+      margin: 0;
+      line-height: 1.6;
+    }
+
+    .treatment-row {
+      border-bottom: 1px solid #D1D1D1;
+      padding: 16px 0;
+      page-break-inside: avoid;
+    }
+
+    .treatment-row:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
     }
 
     /* Oncologist Questions */
@@ -1635,6 +1676,12 @@
       <h2 class="section-title">{{#if general_info.intro_letter_title.value}}{{general_info.intro_letter_title.value}}{{else}}You're Not Alone{{/if}}</h2>
       
       <p class="greeting">Dear {{#if general_info.fname.value}}{{general_info.fname.value}}{{else}}Patient{{/if}},</p>
+      
+      {{#if general_info.feelingNow.value}}
+      <p style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 1.05rem; font-weight: 400; color: #6B7FFF; font-style: italic; margin: 1.5rem 0; padding-left: 1rem; border-left: 3px solid #C7BEFA;">
+        "{{general_info.feelingNow.value}}"
+      </p>
+      {{/if}}
       
       {{#if general_info.intro_letter_body.value}}
       {{!-- Parse the intro letter body which may contain newlines --}}
@@ -1770,7 +1817,10 @@
         {{!-- Tumor Details --}}
         {{#if @root.tumors}}
         <div class="tumor-section">
-          <h3>Diagnosis by Tumor{{#if @root.tumor_metadata.number_of_cancerous_tumors_confirmed_by_biopsy.value}} ({{@root.tumor_metadata.number_of_cancerous_tumors_confirmed_by_biopsy.value}} confirmed){{/if}}</h3>
+          <h3>Diagnosis by Tumor{{#if @root.tumor_metadata.number_of_cancerous_tumors_confirmed_by_biopsy.value}} ({{@root.tumor_metadata.number_of_cancerous_tumors_confirmed_by_biopsy.value}} confirmed){{/if}}{{#if @root.diagnosis.multifocal.value}}{{#ifEq @root.diagnosis.multifocal.value "Yes"}} - Multifocal{{/ifEq}}{{/if}}</h3>
+          {{#if @root.diagnosis.stage_type.value}}
+          <p style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 14px; color: #8B8991; margin-bottom: 0.5rem;">Stage Type: {{@root.diagnosis.stage_type.value}}{{#if @root.diagnosis.stage_type.explanation}} - {{@root.diagnosis.stage_type.explanation}}{{/if}}</p>
+          {{/if}}
           {{#if @root.tumor_metadata.number_of_cancerous_lymph_nodes_confirmed_by_biopsy.value}}
           <p style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 14px; color: #8B8991; margin-bottom: 1rem;">Lymph nodes with cancer: {{@root.tumor_metadata.number_of_cancerous_lymph_nodes_confirmed_by_biopsy.value}}</p>
           {{else}}
@@ -1940,7 +1990,7 @@
             <div class="tumor-detail-row">
               <div class="tumor-detail-left">
                 <div class="tumor-detail-label">BRCA Status</div>
-                <div class="tumor-detail-value">{{@root.diagnosis.brca_status.value}}{{#if @root.diagnosis.brca_type.value}} ({{@root.diagnosis.brca_type.value}}){{/if}}{{#if @root.diagnosis.brca_lab.value}} - {{@root.diagnosis.brca_lab.value}}{{/if}}</div>
+                <div class="tumor-detail-value">{{@root.diagnosis.brca_status.value}}{{#if @root.diagnosis.brca_type.value}} ({{@root.diagnosis.brca_type.value}}){{/if}}{{#if @root.diagnosis.brca_variant.value}} - Variant: {{@root.diagnosis.brca_variant.value}}{{/if}}{{#if @root.diagnosis.brca_lab.value}} - {{@root.diagnosis.brca_lab.value}}{{/if}}</div>
               </div>
               <div class="tumor-explanation-box">
                 <p style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 14px; font-weight: 400; color: #8B8991; line-height: 1.6; margin: 0;">{{#if @root.diagnosis.brca_status.explanation}}{{@root.diagnosis.brca_status.explanation}}{{else}}Text not available in JSON{{/if}}</p>
@@ -1967,7 +2017,7 @@
                 <div class="tumor-detail-value">{{@root.diagnosis.tnbc_status.value}}</div>
               </div>
               <div class="tumor-explanation-box">
-                <p style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 14px; font-weight: 400; color: #8B8991; line-height: 1.6; margin: 0;">Text not available in JSON</p>
+                <p style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 14px; font-weight: 400; color: #8B8991; line-height: 1.6; margin: 0;">{{#if @root.diagnosis.tnbc_status.explanation}}{{@root.diagnosis.tnbc_status.explanation}}{{else}}Text not available in JSON{{/if}}</p>
               </div>
             </div>
             {{/if}}
@@ -1979,7 +2029,7 @@
                 <div class="tumor-detail-value">{{@root.diagnosis.ibc_status.value}}</div>
               </div>
               <div class="tumor-explanation-box">
-                <p style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 14px; font-weight: 400; color: #8B8991; line-height: 1.6; margin: 0;">Text not available in JSON</p>
+                <p style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 14px; font-weight: 400; color: #8B8991; line-height: 1.6; margin: 0;">{{#if @root.diagnosis.ibc_status.explanation}}{{@root.diagnosis.ibc_status.explanation}}{{else}}Text not available in JSON{{/if}}</p>
               </div>
             </div>
             {{/if}}
@@ -2011,7 +2061,7 @@
       </section>
 
     {{!-- ✳️ TESTING AND CONSULTATIONS --}}
-    <section class="section testing-consultations">
+    <section id="next_steps" class="section testing-consultations">
       <div class="testing-label-tab">TESTING AND CONSULTATIONS</div>
       
       <div class="diagnosis-header">
@@ -2023,31 +2073,54 @@
       {{!-- Progress Bar --}}
       <div class="progress-bar-wrapper">
         <div class="progress-bar-track">
-          <div class="progress-step-icon completed">
+          <div class="progress-step-icon {{#if (eq testing_and_consultations.meta.diagnostic_testing.value 'completed')}}completed{{else if (eq testing_and_consultations.meta.diagnostic_testing.value 'in progress')}}current{{else}}pending{{/if}}">
+            {{#if (eq testing_and_consultations.meta.diagnostic_testing.value 'completed')}}
             <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
               <circle cx="10" cy="10" r="10" fill="#C7BEFA"/>
               <path d="M6 10L9 13L14 7" stroke="#38284E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
+            {{/if}}
           </div>
           
           <div class="progress-connector"></div>
           
-          <div class="progress-step-icon current"></div>
+          <div class="progress-step-icon {{#if (eq testing_and_consultations.meta.staging_testing.value 'completed')}}completed{{else if (eq testing_and_consultations.meta.staging_testing.value 'in progress')}}current{{else}}pending{{/if}}">
+            {{#if (eq testing_and_consultations.meta.staging_testing.value 'completed')}}
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="10" cy="10" r="10" fill="#C7BEFA"/>
+              <path d="M6 10L9 13L14 7" stroke="#38284E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            {{/if}}
+          </div>
           
           <div class="progress-connector"></div>
           
-          <div class="progress-step-icon pending"></div>
+          <div class="progress-step-icon {{#if (eq testing_and_consultations.meta.planning.value 'completed')}}completed{{else if (eq testing_and_consultations.meta.planning.value 'in progress')}}current{{else}}pending{{/if}}">
+            {{#if (eq testing_and_consultations.meta.planning.value 'completed')}}
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="10" cy="10" r="10" fill="#C7BEFA"/>
+              <path d="M6 10L9 13L14 7" stroke="#38284E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            {{/if}}
+          </div>
           
           <div class="progress-connector"></div>
           
-          <div class="progress-step-icon pending"></div>
+          <div class="progress-step-icon {{#if (eq testing_and_consultations.meta.treatment.value 'completed')}}completed{{else if (eq testing_and_consultations.meta.treatment.value 'in progress')}}current{{else}}pending{{/if}}">
+            {{#if (eq testing_and_consultations.meta.treatment.value 'completed')}}
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="10" cy="10" r="10" fill="#C7BEFA"/>
+              <path d="M6 10L9 13L14 7" stroke="#38284E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            {{/if}}
+          </div>
         </div>
         
         <div class="progress-bar-labels">
-          <div class="progress-step-label completed">Diagnostic Testing</div>
-          <div class="progress-step-label current">Staging Testing</div>
-          <div class="progress-step-label pending">Planning</div>
-          <div class="progress-step-label pending">Treatment</div>
+          <div class="progress-step-label {{#if (eq testing_and_consultations.meta.diagnostic_testing.value 'completed')}}completed{{else if (eq testing_and_consultations.meta.diagnostic_testing.value 'in progress')}}current{{else}}pending{{/if}}">{{testing_and_consultations.meta.diagnostic_testing.label}}</div>
+          <div class="progress-step-label {{#if (eq testing_and_consultations.meta.staging_testing.value 'completed')}}completed{{else if (eq testing_and_consultations.meta.staging_testing.value 'in progress')}}current{{else}}pending{{/if}}">{{testing_and_consultations.meta.staging_testing.label}}</div>
+          <div class="progress-step-label {{#if (eq testing_and_consultations.meta.planning.value 'completed')}}completed{{else if (eq testing_and_consultations.meta.planning.value 'in progress')}}current{{else}}pending{{/if}}">{{testing_and_consultations.meta.planning.label}}</div>
+          <div class="progress-step-label {{#if (eq testing_and_consultations.meta.treatment.value 'completed')}}completed{{else if (eq testing_and_consultations.meta.treatment.value 'in progress')}}current{{else}}pending{{/if}}">{{testing_and_consultations.meta.treatment.label}}</div>
         </div>
       </div>
 
@@ -2429,7 +2502,7 @@
     </section>
 
     {{!-- ✳️ TREATMENT PLANNING --}}
-    <section class="section testing-consultations">
+    <section id="treatment_planning" class="section testing-consultations">
       <div class="testing-label-tab" style="background-color: #FFC34D;">TREATMENT PLANNING</div>
       
       <div class="diagnosis-header">
@@ -2519,105 +2592,92 @@
         </div>
       </div>
 
-      {{!-- Treatment Cards Section --}}
-      {{#each report.sections}}
-        {{#if (eq this.id "treatment_planning")}}
+      {{!-- Treatment Section --}}
+      {{#groupTreatments treatments}}
+      <div class="treatment-cards-section" {{#unless @first}}style="margin-top: 3rem;"{{/unless}}>
+        <h3 class="treatment-category-title">{{section_name}}</h3>
+        
+        {{#each tables}}
+        <div class="treatment-card">
+          {{!-- Badge --}}
+          {{#if rows.[0].likelihood}}
+          <div class="treatment-badge {{#if (eq rows.[0].likelihood 'Highly Likely')}}{{else if (eq rows.[0].likelihood 'Patient Choice')}}patient-choice{{else}}outlined{{/if}}">
+            {{rows.[0].likelihood}}
+          </div>
+          {{/if}}
           
-          {{!-- New schema: treatments_considered.medical_oncology --}}
-          {{#if this.treatments_considered.medical_oncology}}
-      <div class="treatment-cards-section">
-        <h3 class="treatment-category-title">{{#if this.treatments_considered.medical_oncology.title}}{{this.treatments_considered.medical_oncology.title}}{{else}}Medical Oncology{{/if}}</h3>
-        {{#if this.treatments_considered.medical_oncology.description}}
-        <p style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 16px; color: #8B8991; margin-bottom: 1.5rem;">{{this.treatments_considered.medical_oncology.description}}</p>
-        {{/if}}
-        
-        {{#each this.treatments_considered.medical_oncology.treatments}}
-        <div class="treatment-card">
-          <div class="treatment-card-header">
-            <div class="treatment-badge {{#if (eq this.likelihood "highly_likely")}}{{else}}{{#if (eq this.likelihood "most_likely")}}{{else}}outlined{{/if}}{{/if}}">
-              {{#if (eq this.likelihood "most_likely")}}Most Likely{{/if}}
-              {{#if (eq this.likelihood "highly_likely")}}Highly Likely{{/if}}
-              {{#if (eq this.likelihood "likely")}}Likely{{/if}}
-              {{#if (eq this.likelihood "possible")}}Possible{{/if}}
-              {{#if (eq this.likelihood "unlikely")}}Unlikely{{/if}}
+          {{!-- Title and Description --}}
+          <h4 class="treatment-name">{{title}}</h4>
+          {{#if description}}
+          <p class="treatment-intro">{{description}}</p>
+          {{/if}}
+
+          {{!-- Yellow separator line --}}
+          <div style="height: 2px; background: #FFC34D; margin: 24px 0;"></div>
+
+          {{!-- Column headers --}}
+          <div class="treatment-details-grid">
+            <div class="treatment-detail-column">
+              <h5 class="treatment-detail-header">{{#ifEq ../section "1 - Medical Oncology"}}Medications{{else}}Possible Procedures{{/ifEq}}</h5>
             </div>
-            <h4 class="treatment-name">{{this.name}}</h4>
-            <p class="treatment-intro">{{#if this.why}}{{this.why}}{{else}}{{this.description}}{{/if}}</p>
-          </div>
-        </div>
-        {{/each}}
-      </div>
-          {{/if}}
-
-          {{!-- New schema: treatments_considered.surgical_oncology --}}
-          {{#if this.treatments_considered.surgical_oncology}}
-      <div class="treatment-cards-section" style="margin-top: 3rem;">
-        <h3 class="treatment-category-title">{{#if this.treatments_considered.surgical_oncology.title}}{{this.treatments_considered.surgical_oncology.title}}{{else}}Surgical Oncology{{/if}}</h3>
-        {{#if this.treatments_considered.surgical_oncology.description}}
-        <p style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 16px; color: #8B8991; margin-bottom: 1.5rem;">{{this.treatments_considered.surgical_oncology.description}}</p>
-        {{/if}}
-        
-        {{#each this.treatments_considered.surgical_oncology.treatments}}
-        <div class="treatment-card">
-          <div class="treatment-card-header">
-            <div class="treatment-badge {{#if (eq this.likelihood "highly_likely")}}{{else}}{{#if (eq this.likelihood "most_likely")}}{{else}}outlined{{/if}}{{/if}}">
-              {{#if (eq this.likelihood "most_likely")}}Most Likely{{/if}}
-              {{#if (eq this.likelihood "highly_likely")}}Highly Likely{{/if}}
-              {{#if (eq this.likelihood "likely")}}Likely{{/if}}
-              {{#if (eq this.likelihood "possible")}}Possible{{/if}}
+            <div class="treatment-detail-column">
+              <h5 class="treatment-detail-header">{{#ifEq ../section "1 - Medical Oncology"}}Side Effects{{else}}What to expect{{/ifEq}}</h5>
             </div>
-            <h4 class="treatment-name">{{this.name}}</h4>
-            <p class="treatment-intro">{{#if this.why}}{{this.why}}{{else}}{{this.description}}{{/if}}</p>
-          </div>
-        </div>
-        {{/each}}
-      </div>
-          {{/if}}
-
-          {{!-- New schema: treatments_considered.radiation_oncology --}}
-          {{#if this.treatments_considered.radiation_oncology}}
-      <div class="treatment-cards-section" style="margin-top: 3rem;">
-        <h3 class="treatment-category-title">{{#if this.treatments_considered.radiation_oncology.title}}{{this.treatments_considered.radiation_oncology.title}}{{else}}Radiation Oncology{{/if}}</h3>
-        {{#if this.treatments_considered.radiation_oncology.description}}
-        <p style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 16px; color: #8B8991; margin-bottom: 1.5rem;">{{this.treatments_considered.radiation_oncology.description}}</p>
-        {{/if}}
-        
-        {{#each this.treatments_considered.radiation_oncology.treatments}}
-        <div class="treatment-card">
-          <div class="treatment-card-header">
-            <div class="treatment-badge {{#if (eq this.likelihood "highly_likely")}}{{else}}{{#if (eq this.likelihood "most_likely")}}{{else}}outlined{{/if}}{{/if}}">
-              {{#if (eq this.likelihood "most_likely")}}Most Likely{{/if}}
-              {{#if (eq this.likelihood "highly_likely")}}Highly Likely{{/if}}
-              {{#if (eq this.likelihood "likely")}}Likely{{/if}}
-              {{#if (eq this.likelihood "possible")}}Possible{{/if}}
+            <div class="treatment-detail-column">
+              <h5 class="treatment-detail-header">{{#ifEq ../section "1 - Medical Oncology"}}Treatment Length{{else}}Timing{{/ifEq}}</h5>
             </div>
-            <h4 class="treatment-name">{{this.name}}</h4>
-            <p class="treatment-intro">{{#if this.why}}{{this.why}}{{else}}{{this.description}}{{/if}}</p>
           </div>
+
+          {{!-- Dark grey separator line --}}
+          <div style="height: 1px; background: #D1D1D1;"></div>
+
+          {{!-- Treatment rows with grey separators --}}
+          {{#each rows}}
+          <div class="treatment-row">
+            <div class="treatment-details-grid">
+              <div class="treatment-detail-column">
+                {{#ifEq ../../section "1 - Medical Oncology"}}
+                  {{!-- Medical: inline row_type with column_1_value --}}
+                  <p class="treatment-detail-text">{{#if row_type}}<strong style="font-weight: 600; color: #1F1D2C;">{{row_type}}:</strong> {{/if}}{{column_1_value}}</p>
+                {{else}}
+                  {{!-- Surgical/Radiation: row_type bold on separate line, then column_1_value --}}
+                  {{#if row_type}}<p class="treatment-detail-text" style="font-weight: 600; color: #1F1D2C; margin-bottom: 8px;">{{row_type}}</p>{{/if}}
+                  <p class="treatment-detail-text">{{column_1_value}}</p>
+                {{/ifEq}}
+              </div>
+              <div class="treatment-detail-column">
+                {{#ifEq ../../section "1 - Medical Oncology"}}
+                  {{!-- Medical: split by comma and show as bullets --}}
+                  <ul style="margin: 0; padding: 0; list-style: none;">
+                    {{#each (splitLines column_2_value ",")}}
+                    <li style="position: relative; padding-left: 20px; margin-bottom: 8px;">
+                      <span style="position: absolute; left: 0; top: 0; color: #FFC34D; font-size: 16px;">•</span>
+                      <span class="treatment-detail-text">{{this}}</span>
+                    </li>
+                    {{/each}}
+                  </ul>
+                {{else}}
+                  {{!-- Surgical/Radiation: split by newline and show as bullets --}}
+                  <ul style="margin: 0; padding: 0; list-style: none;">
+                    {{#each (splitLines column_2_value)}}
+                    <li style="position: relative; padding-left: 20px; margin-bottom: 8px;">
+                      <span style="position: absolute; left: 0; top: 0; color: #FFC34D; font-size: 16px;">•</span>
+                      <span class="treatment-detail-text">{{this}}</span>
+                    </li>
+                    {{/each}}
+                  </ul>
+                {{/ifEq}}
+              </div>
+              <div class="treatment-detail-column">
+                <p class="treatment-detail-text">{{column_3_value}}</p>
+              </div>
+            </div>
+          </div>
+          {{/each}}
         </div>
         {{/each}}
       </div>
-          {{/if}}
-
-          {{!-- Fallback: Old schema support (flat treatments array) --}}
-          {{#if this.treatments}}
-      <div class="treatment-cards-section">
-        <h3 class="treatment-category-title">Medical Oncology</h3>
-        
-        {{#each this.treatments}}
-        <div class="treatment-card">
-          <div class="treatment-card-header">
-            <div class="treatment-badge {{#if (eq this.likelihood "highly_likely")}}{{else}}outlined{{/if}}">{{#if (eq this.likelihood "highly_likely")}}Highly Likely{{else}}Might be considered{{/if}}</div>
-            <h4 class="treatment-name">{{this.name}}</h4>
-            <p class="treatment-intro">{{this.description}}</p>
-          </div>
-        </div>
-        {{/each}}
-      </div>
-          {{/if}}
-
-        {{/if}}
-      {{/each}}
+      {{/groupTreatments}}
 
       {{!-- Meaning Section --}}
       {{!-- Treatment Planning Summary - Dynamic section --}}
@@ -2643,7 +2703,7 @@
     </section>
 
     {{!-- ✳️ VISIT PREP --}}
-    <section class="section testing-consultations">
+    <section id="care_team" class="section testing-consultations">
       <div class="testing-label-tab" style="background-color: #E4EECE;">VISIT PREP</div>
       
       <div class="diagnosis-header">
@@ -2651,107 +2711,43 @@
         <h3 class="diagnosis-subtitle">Helpful discussion points with your specialist team</h3>
       </div>
 
-      {{!-- Questions for Medical Oncologist --}}
-      <div style="margin-top: 3rem;">
-        <h3 style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 18px; font-weight: 600; color: #1F1D2C; margin: 0 0 1.5rem 0;">Questions for the Medical Oncologist</h3>
-        
-        <p style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 16px; font-weight: 400; color: #8B8991; line-height: 1.6; margin: 0 0 1rem 0;">
-          The Medical Oncologist will focus on treatments that include systemic (drug) therapy and overall risk of the cancer coming back after treatment.
-        </p>
+      {{!-- Questions Sections - Dynamically rendered from JSON --}}
+      {{#if questions}}
+        {{#each (groupQuestions questions.items)}}
+          {{#unless @first}}
+            {{!-- Divider between sections --}}
+            <div class="testing-divider" style="margin: 3rem 0;"></div>
+          {{/unless}}
 
-        <h4 style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 16px; font-weight: 600; color: #1F1D2C; margin: 2rem 0 1rem 0;">Treatment Planning (Systemic Therapy)</h4>
+          <div style="margin-top: 3rem;">
+            <h3 style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 18px; font-weight: 600; color: #1F1D2C; margin: 0 0 1.5rem 0;">{{section}}</h3>
+            
+            <p style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 16px; font-weight: 400; color: #8B8991; line-height: 1.6; margin: 0 0 1rem 0;">
+              {{#ifEq section "Questions For Your Medical Oncologist"}}
+                The Medical Oncologist will focus on treatments that include systemic (drug) therapy and overall risk of the cancer coming back after treatment.
+              {{/ifEq}}
+              {{#ifEq section "Questions For Your Surgical Oncologist"}}
+                The Surgical Oncologist will focus on the definitive removal of the tumor and staging the axilla.
+              {{/ifEq}}
+              {{#ifEq section "Questions For Your Radiation Oncologist"}}
+                The Radiation Oncologist will discuss post-operative radiation if you choose a lumpectomy.
+              {{/ifEq}}
+            </p>
 
-        <ul style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 16px; font-weight: 400; color: #8B8991; line-height: 1.6; margin: 0; padding-left: 1.25rem; list-style-position: outside;">
-          <li style="margin-bottom: 12px;">
-            <strong style="font-weight: 600; color: #8B8991;">OncotypeDX:</strong> "Given my specific tumor status ($\text{HR}+/\text{HER}2-$), how soon can the OncotypeDX test be ordered, and when can we expect the results? How will this single score determine my need for chemotherapy?"
-          </li>
-          <li style="margin-bottom: 12px;">
-            <strong style="font-weight: 600; color: #8B8991;">Hormone Replacement Therapy (HRT):</strong> "I am currently taking an Estrogen Patch and Progesterone Pill. Since my cancer is hormone receptor positive, what is the immediate risk of continuing this, and when exactly should I be taking?"
-          </li>
-          <li style="margin-bottom: 12px;">
-            <strong style="font-weight: 600; color: #8B8991;">Endocrine Therapy:</strong> "What specific anti-hormone medication (e.g., Tamoxifen or an Aromatase Inhibitor) do you recommend, and how many years will I need to take it? What are the most common side effects of this medication?"
-          </li>
-          <li style="margin-bottom: 12px;">
-            <strong style="font-weight: 600; color: #8B8991;">Prophylactic Options:</strong> "If my OncotypeDX score is high, what chemotherapy regimen would you recommend, and how many cycles would that involve?"
-          </li>
-        </ul>
+            {{#each topics}}
+              <h4 style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 16px; font-weight: 600; color: #1F1D2C; margin: {{#if @first}}2rem{{else}}2.5rem{{/if}} 0 1rem 0;">{{name}}</h4>
 
-        <h4 style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 16px; font-weight: 600; color: #1F1D2C; margin: 2.5rem 0 1rem 0;">Quality of Life & Support</h4>
-
-        <ul style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 16px; font-weight: 400; color: #8B8991; line-height: 1.6; margin: 0; padding-left: 1.25rem; list-style-position: outside;">
-          <li style="margin-bottom: 12px;">
-            <strong style="font-weight: 600; color: #8B8991;">Fertility:</strong> "Since I am premenopausal and my treatment will include endocrine therapy, what is the impact on my future fertility, and should I meet with the fertility counselor immediately?"
-          </li>
-          <li style="margin-bottom: 12px;">
-            <strong style="font-weight: 600; color: #8B8991;">Side Effects:</strong> "What is the likelihood of experiencing specific side effects, like hair loss, weight changes, or joint pain, with the systemic treatment you anticipate prescribing?"
-          </li>
-          <li style="margin-bottom: 12px;">
-            <strong style="font-weight: 600; color: #8B8991;">Symptom Management:</strong> "What support services or medications are available here at the clinic for managing fatigue, hot flashes, or any emotional concerns related to my diagnosis and treatment?"
-          </li>
-        </ul>
-      </div>
-
-      {{!-- Divider --}}
-      <div class="testing-divider" style="margin: 3rem 0;"></div>
-
-      {{!-- Questions for Surgical Oncologist --}}
-      <div style="margin-top: 3rem;">
-        <h3 style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 18px; font-weight: 600; color: #1F1D2C; margin: 0 0 1.5rem 0;">Questions for the Surgical Oncologist</h3>
-        
-        <p style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 16px; font-weight: 400; color: #8B8991; line-height: 1.6; margin: 0 0 1rem 0;">
-          The Surgical Oncologist will focus on the definitive removal of the tumor and staging the axilla.
-        </p>
-
-        <h4 style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 16px; font-weight: 600; color: #1F1D2C; margin: 2rem 0 1rem 0;">Treatment Planning (Local Therapy)</h4>
-
-        <ul style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 16px; font-weight: 400; color: #8B8991; line-height: 1.6; margin: 0; padding-left: 1.25rem; list-style-position: outside;">
-          <li style="margin-bottom: 12px;">
-            <strong style="font-weight: 600; color: #8B8991;">Surgical Options:</strong> "Given my tumor size (8 mm) and clear margins, am I a good candidate for Breast-Conserving Surgery (Lumpectomy)? What factors would require me to have a mastectomy instead?"
-          </li>
-          <li style="margin-bottom: 12px;">
-            <strong style="font-weight: 600; color: #8B8991;">Axillary Staging:</strong> "My initial ultrasound was negative for lymph node involvement. Will I still need a Sentinel Lymph Node Biopsy (SLNB) during the surgery, and what happens if cancer is found in those nodes?"
-          </li>
-          <li style="margin-bottom: 12px;">
-            <strong style="font-weight: 600; color: #8B8991;">Margin Status:</strong> "What is your goal for clear margins, and what is the chance I would need a second surgery to clear them (a re-excision)?"
-          </li>
-        </ul>
-
-        <h4 style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 16px; font-weight: 600; color: #1F1D2C; margin: 2.5rem 0 1rem 0;">Quality of Life & Daily Life</h4>
-
-        <ul style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 16px; font-weight: 400; color: #8B8991; line-height: 1.6; margin: 0; padding-left: 1.25rem; list-style-position: outside;">
-          <li style="margin-bottom: 12px;">
-            <strong style="font-weight: 600; color: #8B8991;">Recovery:</strong> "What is the typical recovery time after a lumpectomy or mastectomy? When can I resume normal activities like running and walking my dog (as noted in my history)?"
-          </li>
-          <li style="margin-bottom: 12px;">
-            <strong style="font-weight: 600; color: #8B8991;">Aesthetics:</strong> "What will the breast look like after surgery, and will a plastic surgeon be involved in my care?"
-          </li>
-          <li style="margin-bottom: 12px;">
-            <strong style="font-weight: 600; color: #8B8991;">Support:</strong> "Who is the best point person on your team (e.g., a nurse navigator) for scheduling, pre-op instructions, and answering questions right after surgery?"
-          </li>
-        </ul>
-      </div>
-
-      {{!-- Divider --}}
-      <div class="testing-divider" style="margin: 3rem 0;"></div>
-
-      {{!-- Questions for Radiation Oncologist --}}
-      <div style="margin-top: 3rem;">
-        <h3 style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 18px; font-weight: 600; color: #1F1D2C; margin-bottom: 1.5rem;">Questions for the Radiation Oncologist (Pending Referral)</h3>
-        <p style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 16px; font-weight: 400; color: #8B8991; margin-bottom: 1rem; line-height: 1.6;">The Radiation Oncologist will discuss post-operative radiation if you choose a lumpectomy.</p>
-        
-        <h4 style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 16px; font-weight: 600; color: #1F1D2C; margin-top: 2rem; margin-bottom: 1rem;">Treatment Planning (Radiation)</h4>
-        <ul style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 16px; font-weight: 400; color: #8B8991; padding-left: 1.25rem; list-style-position: outside; line-height: 1.6;">
-          <li style="margin-bottom: 12px;"><strong style="font-weight: 600; color: #8B8991;">Need for Radiation:</strong> "If I choose a Lumpectom and SNLB, will I definitively need radiation therapy? If so, what is the goal of the radiation (e.g., reducing local recurrence)?"</li>
-          <li style="margin-bottom: 12px;"><strong style="font-weight: 600; color: #8B8991;">Radiation Schedule:</strong> "What is the typical course of treatment (e.g., 6 weeks of standard radiation, or a shorter course like hypofractionated), and how is that decision made?"</li>
-          <li style="margin-bottom: 12px;"><strong style="font-weight: 600; color: #8B8991;">Side Effects:</strong> "What are the most common short-term side effects (skin changes, fatigue) and long-term risks (lung or heart exposure) associated with the specific radiation plan you would recommend for me?"</li>
-        </ul>
-
-        <h4 style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 16px; font-weight: 600; color: #1F1D2C; margin-top: 2.5rem; margin-bottom: 1rem;">Daily Life & Support</h4>
-        <ul style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 16px; font-weight: 400; color: #8B8991; padding-left: 1.25rem; list-style-position: outside; line-height: 1.6;">
-          <li style="margin-bottom: 12px;"><strong style="font-weight: 600; color: #8B8991;">Logistics:</strong> "What daily commitment does treatment require? Can I drive myself to and from my daily radiation appointments?"</li>
-          <li style="margin-bottom: 12px;"><strong style="font-weight: 600; color: #8B8991;">Support:</strong> "Does your center offer resources or support to help manage the fatigue that often comes with daily radiation?"</li>
-        </ul>
-      </div>
+              <ul style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 16px; font-weight: 400; color: #8B8991; line-height: 1.6; margin: 0; padding-left: 1.25rem; list-style-position: outside;">
+                {{#each questions}}
+                  <li style="margin-bottom: 12px;">
+                    <strong style="font-weight: 600; color: #8B8991;">{{subtopic}}:</strong> "{{question}}"
+                  </li>
+                {{/each}}
+              </ul>
+            {{/each}}
+          </div>
+        {{/each}}
+      {{/if}}
     </section>
 
     {{!-- ✳️ DISCLAIMER SECTION --}}
@@ -2793,6 +2789,11 @@
             
             <span style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 16px; font-weight: 400; color: #1F1D2C;">Date of Review</span>
             <span style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 16px; font-weight: 400; color: #1F1D2C;">{{#if general_info.recordsAsOfDate.value}}{{parseDate general_info.recordsAsOfDate.value}}{{else}}{{currentDate}}{{/if}}</span>
+            
+            {{#if general_info.tsRecordsUploadDate.value}}
+            <span style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 16px; font-weight: 400; color: #1F1D2C;">Records Uploaded</span>
+            <span style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 16px; font-weight: 400; color: #1F1D2C;">{{parseDate general_info.tsRecordsUploadDate.value}}</span>
+            {{/if}}
             
             <span style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 16px; font-weight: 400; color: #1F1D2C;">Prepared by</span>
             <span style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 16px; font-weight: 400; color: #1F1D2C;">Defiant Health</span>

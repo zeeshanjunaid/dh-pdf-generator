@@ -1,0 +1,1427 @@
+{
+  "patient_id": "1540FD",
+  "pdf_folder_id": "1aVppCR0z9RwrZSj1xLJySQu7UitfjtOq",
+  "generated_at": "2025-12-05T03:43:12.103Z",
+  "general_info": {
+    "humanReadableId": {
+      "value": "2847JR",
+      "source": "",
+      "source_page": "",
+      "service_date": ""
+    },
+    "fname": {
+      "value": "Jennifer",
+      "source": "",
+      "source_page": "",
+      "service_date": ""
+    },
+    "lname": {
+      "value": "Rodriguez",
+      "source": "",
+      "source_page": "",
+      "service_date": ""
+    },
+    "dateOfBirth": {
+      "value": "Thu Aug 28 1975 17:00:00 GMT-0700 (Pacific Daylight Time)",
+      "source": "",
+      "source_page": "",
+      "service_date": ""
+    },
+    "age": {
+      "value": 38,
+      "source": "",
+      "source_page": "",
+      "service_date": ""
+    },
+    "feelingNow": {
+      "value": "I feel overwhelmed but ready to fight",
+      "source": "",
+      "source_page": "",
+      "service_date": ""
+    },
+    "feeling_category": {
+      "value": "determined",
+      "source": "",
+      "source_page": "",
+      "service_date": ""
+    },
+    "intro_letter_title": {
+      "value": "YOU ARE STRONGER THAN YOU THINK",
+      "source": "",
+      "source_page": "",
+      "service_date": ""
+    },
+    "intro_letter_body": {
+      "value": "Dear Jennifer,\n\nWe understand how frightening this moment can feel — the fear of the unknown, the worry about what comes next, or what this means for your health and future. Feeling scared is a natural reaction to receiving news like this.We’ve created this report to help guide you through the information step-by-step, so you can feel more grounded, less overwhelmed, and more confident as you talk with your medical team about your options.\n\nWith care and respect,\nYour Defiant Health Team\ncare@defianthealth.com",
+      "source": "",
+      "source_page": "",
+      "service_date": ""
+    },
+    "tsRecordsUploadDate": {
+      "value": "Wed Dec 03 2025 12:07:01 GMT-0800 (Pacific Standard Time)",
+      "source": "",
+      "source_page": "",
+      "service_date": ""
+    },
+    "driveRecordsUploadDate": {
+      "value": "Wed Dec 03 2025 16:37:07 GMT-0800 (Pacific Standard Time)",
+      "source": "",
+      "source_page": "",
+      "service_date": ""
+    },
+    "recordsAsOfDate": {
+      "value": "Wed Dec 03 2025 16:37:07 GMT-0800 (Pacific Standard Time)",
+      "source": "",
+      "source_page": "",
+      "service_date": ""
+    }
+  },
+  "diagnosis": {
+    "cancer_type": {
+      "value": "Invasive Ductal Carcinoma (IDC)",
+      "explanation": "Cancer from lobules (milk-producing area of breast) spreading into surrounding breast tissue.",
+      "source": "Test Results _ Medical Record _ Kaiser Permanente9.pdf",
+      "source_page": 2,
+      "service_date": "2025-10-14T00:00:00.000Z"
+    },
+    "location_of_tumors": {
+      "value": "Right breast, 11 o'clock, Right breast, central to nipple, posterior depth",
+      "explanation": "The location of a breast tumor is important to help your medical team assess the likelihood of lymph node involvement and guide surgical treatment.",
+      "source": "Test Results _ Medical Record _ Kaiser Permanente3.pdf",
+      "source_page": 5,
+      "service_date": "2025-08-22T00:00:00.000Z"
+    },
+    "size": {
+      "value": "65 mm, 5.8 cm area",
+      "explanation": "The size of the tumor is important in guiding treatment. Different sized tumors may require different approaches. Additionally, knowing the initial size allows doctors to compare images taken after treatment to determine whether the tumor has shrunk or is responding to treatment.",
+      "source": "Test Results _ Medical Record _ Kaiser Permanente9.pdf",
+      "source_page": 3,
+      "service_date": "2025-10-14T00:00:00.000Z"
+    },
+    "largest_size_imaging": {
+      "value": "",
+      "explanation": "",
+      "source": "Test Results _ Medical Record _ Kaiser Permanente2.pdf",
+      "source_page": 2,
+      "service_date": "2025-08-14T00:00:00.000Z"
+    },
+    "largest_size_biopsy": {
+      "value": "",
+      "explanation": "",
+      "source": "Test Results _ Medical Record _ Kaiser Permanente9.pdf",
+      "source_page": 3,
+      "service_date": "2025-10-14T00:00:00.000Z"
+    },
+    "stage": {
+      "value": "Stage IIIA",
+      "explanation": "Tumor larger than 5 cm or multiple lymph nodes affected.",
+      "source": "Test Results _ Medical Record _ Kaiser Permanente9.pdf",
+      "source_page": 3,
+      "service_date": "2025-10-14T00:00:00.000Z"
+    },
+    "stage_type": {
+      "value": "Pathologic anatomic",
+      "explanation": "A precise assessment of stage done after surgery that includes surgical and microscopic findings for tumor size, lymph node involvement, and metastasis.",
+      "source": "Test Results _ Medical Record _ Kaiser Permanente9.pdf",
+      "source_page": 3,
+      "service_date": "2025-10-14T00:00:00.000Z"
+    },
+    "staging_stated_or_inferred": {
+      "value": "",
+      "explanation": "",
+      "source": "Test Results _ Medical Record _ Kaiser Permanente9.pdf",
+      "source_page": 3,
+      "service_date": "2025-10-14T00:00:00.000Z"
+    },
+    "overall_grade": {
+      "value": "Grade 3",
+      "explanation": "A Grade 3 (out of 3) from the Nottingham grading system indicates slow-growing cells that look nearly normal under microscope.",
+      "source": "Test Results _ Medical Record _ Kaiser Permanente9.pdf",
+      "source_page": 3,
+      "service_date": "2025-10-14T00:00:00.000Z"
+    },
+    "er_status": {
+      "value": "",
+      "explanation": "",
+      "source": "Test Results _ Medical Record _ Kaiser Permanente3.pdf",
+      "source_page": 2,
+      "service_date": "2025-08-22T00:00:00.000Z"
+    },
+    "pr_status": {
+      "value": "",
+      "explanation": "",
+      "source": "Test Results _ Medical Record _ Kaiser Permanente3.pdf",
+      "source_page": 2,
+      "service_date": "2025-08-22T00:00:00.000Z"
+    },
+    "erpr_status": {
+      "value": "ER positive, PR positive",
+      "explanation": "Cancers that are estrogen (ER) or progesterone (PR) positive are commonly referred to as hormone-receptor (HR) positive. For cancers similar to yours that are HR-positive, endocrine therapy (hormone-blocking treatments) is often used as a treatment option for slowing or stopping cancer growth in cancers like yours.",
+      "source": "Test Results _ Medical Record _ Kaiser Permanente3.pdf",
+      "source_page": 2,
+      "service_date": "2025-08-22T00:00:00.000Z"
+    },
+    "hormone_receptor_status": {
+      "value": "HR positive",
+      "explanation": "Hormone receptor–positive breast cancer",
+      "source": "Test Results _ Medical Record _ Kaiser Permanente3.pdf",
+      "source_page": 2,
+      "service_date": "2025-08-22T00:00:00.000Z"
+    },
+    "her2_status": {
+      "value": "HER2 negative",
+      "explanation": "HER2-negative breast cancer is a type of breast cancer where the cancer cells have no levels of the HER2 protein (human epidermal growth factor receptor 2) on the surface of the cell. Cancers that are not HER2 positive tend to be less aggressive and are not treated with HER2 targeted therapy.",
+      "source": "Test Results _ Medical Record _ Kaiser Permanente3.pdf",
+      "source_page": 2,
+      "service_date": "2025-08-22T00:00:00.000Z"
+    },
+    "ihc_result": {
+      "value": "",
+      "explanation": "",
+      "source": "",
+      "source_page": "",
+      "service_date": ""
+    },
+    "fish_ish_result": {
+      "value": "",
+      "explanation": "",
+      "source": "",
+      "source_page": "",
+      "service_date": ""
+    },
+    "brca_status": {
+      "value": "Negative",
+      "explanation": "No harmful BRCA mutations detected.",
+      "source": "Past visits _ Kaiser Permanente5.pdf",
+      "source_page": 13,
+      "service_date": "2025-10-15T00:00:00.000Z"
+    },
+    "brca_type": {
+      "value": "",
+      "explanation": "",
+      "source": "Past visits _ Kaiser Permanente5.pdf",
+      "source_page": 13,
+      "service_date": "2025-10-15T00:00:00.000Z"
+    },
+    "brca_lab": {
+      "value": "",
+      "explanation": "",
+      "source": "Past visits _ Kaiser Permanente5.pdf",
+      "source_page": 13,
+      "service_date": "2025-10-15T00:00:00.000Z"
+    },
+    "brca_variant": {
+      "value": "",
+      "explanation": "",
+      "source": "",
+      "source_page": "",
+      "service_date": ""
+    },
+    "t_category": {
+      "value": "PT3",
+      "explanation": "Large tumor (>5 cm).",
+      "source": "Test Results _ Medical Record _ Kaiser Permanente9.pdf",
+      "source_page": 3,
+      "service_date": "2025-10-14T00:00:00.000Z"
+    },
+    "n_category": {
+      "value": "PN0",
+      "explanation": "No cancer found in lymph nodes.",
+      "source": "Test Results _ Medical Record _ Kaiser Permanente9.pdf",
+      "source_page": 3,
+      "service_date": "2025-10-14T00:00:00.000Z"
+    },
+    "pdl1_cps_score": {
+      "value": "",
+      "explanation": "PD-L1 expression is high (CPS ≥10)",
+      "source": "",
+      "source_page": "",
+      "service_date": ""
+    },
+    "pdl1_interpretation": {
+      "value": "",
+      "explanation": "",
+      "source": "",
+      "source_page": "",
+      "service_date": ""
+    },
+    "pdl1_threshold_used": {
+      "value": "",
+      "explanation": "",
+      "source": "",
+      "source_page": "",
+      "service_date": ""
+    },
+    "pdl1_assay": {
+      "value": "",
+      "explanation": "",
+      "source": "",
+      "source_page": "",
+      "service_date": ""
+    },
+    "tnbc_status": {
+      "value": "Not TNBC",
+      "explanation": "Not triple-negative breast cancer",
+      "source": "Test Results _ Medical Record _ Kaiser Permanente3.pdf",
+      "source_page": 2,
+      "service_date": "2025-08-22T00:00:00.000Z"
+    },
+    "ibc_status": {
+      "value": "Not IBC",
+      "explanation": "No evidence of inflammatory breast cancer is present.",
+      "source": "Past visits _ Kaiser Permanente5.pdf",
+      "source_page": 6,
+      "service_date": "2025-10-15T00:00:00.000Z"
+    },
+    "multifocal": {
+      "value": "Yes",
+      "explanation": "Derived from tumor count",
+      "source": "",
+      "source_page": "",
+      "service_date": ""
+    }
+  },
+  "tumor_metadata": {
+    "number_of_cancerous_tumors_confirmed_by_biopsy": {
+      "value": 2,
+      "explanation": "",
+      "source": "",
+      "source_page": "",
+      "service_date": ""
+    },
+    "number_of_cancerous_lymph_nodes_confirmed_by_biopsy": {
+      "value": 0,
+      "explanation": "",
+      "source": "",
+      "source_page": "",
+      "service_date": ""
+    }
+  },
+  "tumors": [
+    {
+      "tumor_number": 1,
+      "fields": {
+        "cancer_type": {
+          "value": "Invasive Ductal Carcinoma (IDC) ",
+          "explanation": "Cancer from lobules (milk-producing area of breast) spreading into surrounding breast tissue.",
+          "source": "Test Results _ Medical Record _ Kaiser Permanente9.pdf",
+          "source_page": 3,
+          "service_date": "2025-10-07T00:00:00.000Z"
+        },
+        "location_of_tumor": {
+          "value": "Right breast, 11 o'clock (Site B)",
+          "explanation": "The location of a breast tumor is important to help your medical team assess the likelihood of lymph node involvement and guide surgical treatment. ",
+          "source": "Test Results _ Medical Record _ Kaiser Permanente3.pdf",
+          "source_page": 5,
+          "service_date": "2025-08-20T00:00:00.000Z"
+        },
+        "stage": {
+          "value": "Stage IIIA ",
+          "explanation": "Tumor larger than 5 cm or multiple lymph nodes affected.",
+          "source": "Test Results _ Medical Record _ Kaiser Permanente9.pdf",
+          "source_page": 3,
+          "service_date": "2025-10-07T00:00:00.000Z"
+        },
+        "stage_type": {
+          "value": "Pathologic anatomic",
+          "explanation": "A precise assessment of stage done after surgery that includes surgical and microscopic findings for tumor size, lymph node involvement, and metastasis. ",
+          "source": "Test Results _ Medical Record _ Kaiser Permanente9.pdf",
+          "source_page": 3,
+          "service_date": "2025-10-07T00:00:00.000Z"
+        },
+        "size": {
+          "value": 6.5,
+          "explanation": "The size of the tumor is important in guiding treatment. Different sized tumors may require different approaches. Additionally, knowing the initial size allows doctors to compare images taken after treatment to determine whether the tumor has shrunk or is responding to treatment.",
+          "source": "Test Results _ Medical Record _ Kaiser Permanente9.pdf",
+          "source_page": 3,
+          "service_date": "2025-10-07T00:00:00.000Z"
+        },
+        "largest_size_imaging_cm": {
+          "value": "",
+          "explanation": "",
+          "source": "Test Results _ Medical Record _ Kaiser Permanente2.pdf",
+          "source_page": 2,
+          "service_date": "2025-08-14T00:00:00.000Z"
+        },
+        "largest_size_biopsy_cm": {
+          "value": "",
+          "explanation": "",
+          "source": "Test Results _ Medical Record _ Kaiser Permanente9.pdf",
+          "source_page": 3,
+          "service_date": "2025-10-07T00:00:00.000Z"
+        },
+        "overall_grade": {
+          "value": "Grade 3",
+          "explanation": "A Grade 3 (out of 3) from the Nottingham grading system indicates slow-growing cells that look nearly normal under microscope.",
+          "source": "Test Results _ Medical Record _ Kaiser Permanente9.pdf",
+          "source_page": 3,
+          "service_date": "2025-10-07T00:00:00.000Z"
+        },
+        "tubule_formation_score": {
+          "value": "",
+          "explanation": "",
+          "source": "Test Results _ Medical Record _ Kaiser Permanente9.pdf",
+          "source_page": 3,
+          "service_date": "2025-10-07T00:00:00.000Z"
+        },
+        "nuclear_pleomorphism_score": {
+          "value": "",
+          "explanation": "",
+          "source": "Test Results _ Medical Record _ Kaiser Permanente9.pdf",
+          "source_page": 3,
+          "service_date": "2025-10-07T00:00:00.000Z"
+        },
+        "mitotic_count_score": {
+          "value": "",
+          "explanation": "",
+          "source": "Test Results _ Medical Record _ Kaiser Permanente9.pdf",
+          "source_page": 3,
+          "service_date": "2025-10-07T00:00:00.000Z"
+        },
+        "erpr_status": {
+          "value": "ER positive, PR positive",
+          "explanation": "Cancers that are estrogen (ER) or progesterone (PR) positive are commonly referred to as hormone-receptor (HR) positive. For cancers similar to yours that are HR-positive, endocrine therapy (hormone-blocking treatments) is often used as a treatment option for slowing or stopping cancer growth in cancers like yours.",
+          "source": "Test Results _ Medical Record _ Kaiser Permanente3.pdf",
+          "source_page": 2,
+          "service_date": "2025-08-20T00:00:00.000Z"
+        },
+        "er_status": {
+          "value": "",
+          "explanation": "",
+          "source": "Test Results _ Medical Record _ Kaiser Permanente3.pdf",
+          "source_page": 2,
+          "service_date": "2025-08-20T00:00:00.000Z"
+        },
+        "pr_status": {
+          "value": "",
+          "explanation": "",
+          "source": "Test Results _ Medical Record _ Kaiser Permanente3.pdf",
+          "source_page": 2,
+          "service_date": "2025-08-20T00:00:00.000Z"
+        },
+        "her2_status": {
+          "value": "HER2 negative",
+          "explanation": "HER2-negative breast cancer is a type of breast cancer where the cancer cells have no levels of the HER2 protein (human epidermal growth factor receptor 2) on the surface of the cell. Cancers that are not HER2 positive tend to be less aggressive and are not treated with HER2 targeted therapy. ",
+          "source": "Test Results _ Medical Record _ Kaiser Permanente3.pdf",
+          "source_page": 2,
+          "service_date": "2025-08-20T00:00:00.000Z"
+        },
+        "ihc_result": {
+          "value": "",
+          "explanation": "",
+          "source": "Test Results _ Medical Record _ Kaiser Permanente3.pdf",
+          "source_page": 2,
+          "service_date": "2025-08-20T00:00:00.000Z"
+        },
+        "fish_ish_result": {
+          "value": "",
+          "explanation": "",
+          "source": "",
+          "source_page": "",
+          "service_date": ""
+        }
+      }
+    },
+    {
+      "tumor_number": 2,
+      "fields": {
+        "cancer_type": {
+          "value": "Ductal Carcinoma In Situ (DCIS) ",
+          "explanation": "Abnormal cells in milk duct lining (tubes that carry milk to the nipple), haven't spread.",
+          "source": "Test Results _ Medical Record _ Kaiser Permanente9.pdf",
+          "source_page": 2,
+          "service_date": "2025-10-07T00:00:00.000Z"
+        },
+        "location_of_tumor": {
+          "value": "Right breast, central to nipple, posterior depth (Site A)",
+          "explanation": "The location of a breast tumor is important to help your medical team assess the likelihood of lymph node involvement and guide surgical treatment. ",
+          "source": "Test Results _ Medical Record _ Kaiser Permanente3.pdf",
+          "source_page": 4,
+          "service_date": "2025-08-20T00:00:00.000Z"
+        },
+        "stage": {
+          "value": "Stage 0 ",
+          "explanation": "Abnormal cells present but haven't invaded surrounding breast tissue.",
+          "source": "Test Results _ Medical Record _ Kaiser Permanente9.pdf",
+          "source_page": 3,
+          "service_date": "2025-10-07T00:00:00.000Z"
+        },
+        "stage_type": {
+          "value": "Pathologic anatomic",
+          "explanation": "A precise assessment of stage done after surgery that includes surgical and microscopic findings for tumor size, lymph node involvement, and metastasis. ",
+          "source": "Test Results _ Medical Record _ Kaiser Permanente9.pdf",
+          "source_page": 3,
+          "service_date": "2025-10-07T00:00:00.000Z"
+        },
+        "size": {
+          "value": "5.8",
+          "explanation": "The size of the tumor is important in guiding treatment. Different sized tumors may require different approaches. Additionally, knowing the initial size allows doctors to compare images taken after treatment to determine whether the tumor has shrunk or is responding to treatment.",
+          "source": "Test Results _ Medical Record _ Kaiser Permanente2.pdf",
+          "source_page": 2,
+          "service_date": "2025-08-14T00:00:00.000Z"
+        },
+        "largest_size_imaging_cm": {
+          "value": "",
+          "explanation": "",
+          "source": "Test Results _ Medical Record _ Kaiser Permanente2.pdf",
+          "source_page": 2,
+          "service_date": "2025-08-14T00:00:00.000Z"
+        },
+        "largest_size_biopsy_cm": {
+          "value": "",
+          "explanation": "",
+          "source": "",
+          "source_page": "",
+          "service_date": ""
+        },
+        "overall_grade": {
+          "value": "Grade 2",
+          "explanation": "A grade 2 (out of 3) from the Nottingham grading system indicates abnormal cells growing at moderate pace, intermediate risk.",
+          "source": "Test Results _ Medical Record _ Kaiser Permanente9.pdf",
+          "source_page": 3,
+          "service_date": "2025-10-07T00:00:00.000Z"
+        },
+        "tubule_formation_score": {
+          "value": "",
+          "explanation": "",
+          "source": "",
+          "source_page": "",
+          "service_date": ""
+        },
+        "nuclear_pleomorphism_score": {
+          "value": "",
+          "explanation": "",
+          "source": "",
+          "source_page": "",
+          "service_date": ""
+        },
+        "mitotic_count_score": {
+          "value": "",
+          "explanation": "",
+          "source": "",
+          "source_page": "",
+          "service_date": ""
+        },
+        "erpr_status": {
+          "value": "Unknown",
+          "explanation": "At the time of this report, a hormone receptor status is not yet available from your medical records. ",
+          "source": "Test Results _ Medical Record _ Kaiser Permanente3.pdf",
+          "source_page": 3,
+          "service_date": "2025-08-20T00:00:00.000Z"
+        },
+        "er_status": {
+          "value": "",
+          "explanation": "",
+          "source": "Test Results _ Medical Record _ Kaiser Permanente3.pdf",
+          "source_page": 3,
+          "service_date": "2025-08-20T00:00:00.000Z"
+        },
+        "pr_status": {
+          "value": "",
+          "explanation": "",
+          "source": "",
+          "source_page": "",
+          "service_date": ""
+        },
+        "her2_status": {
+          "value": "Unknown",
+          "explanation": "At the time of this report, a HER2 receptor status is not yet available from your medical records. ",
+          "source": "",
+          "source_page": "",
+          "service_date": ""
+        },
+        "ihc_result": {
+          "value": "",
+          "explanation": "",
+          "source": "",
+          "source_page": "",
+          "service_date": ""
+        },
+        "fish_ish_result": {
+          "value": "",
+          "explanation": "",
+          "source": "",
+          "source_page": "",
+          "service_date": ""
+        }
+      }
+    }
+  ],
+  "testing_and_consultations": {
+    "patient_id": "1540FD",
+    "generated_at": "2025-12-05T03:43:09.324Z",
+    "pdf_folder_id": "1aVppCR0z9RwrZSj1xLJySQu7UitfjtOq",
+    "diagnostic_testing": "completed",
+    "staging_testing": "completed",
+    "planning": "completed",
+    "treatment": "in progress",
+    "tests_sources": "Past visits _ Kaiser Permanente.3pdf.pdf, Past visits _ Kaiser Permanente1.pdf, Past visits _ Kaiser Permanente2.pdf, Past visits _ Kaiser Permanente4.pdf, Past visits _ Kaiser Permanente5.pdf, Past visits _ Kaiser Permanente7.pdf, Test Results _ Medical Record _ Kaiser Permanente.pdf, Test Results _ Medical Record _ Kaiser Permanente2.pdf, Test Results _ Medical Record _ Kaiser Permanente3.pdf, Test Results _ Medical Record _ Kaiser Permanente4.pdf, Test Results _ Medical Record _ Kaiser Permanente6.pdf, Test Results _ Medical Record _ Kaiser Permanente8.pdf, Test Results _ Medical Record _ Kaiser Permanente9.pdf",
+    "tests": [
+      {
+        "test_name": "Screening mammogram",
+        "patient_facing_label": "Screening mammogram",
+        "explanation": "A routine X-ray exam of the breasts used to check for signs of cancer in women who have no symptoms.",
+        "likelihood": "",
+        "status": "completed",
+        "test_date": "2025-08-06T00:00:00.000Z",
+        "referral_date": "",
+        "source": "Test Results _ Medical Record _ Kaiser Permanente.pdf",
+        "source_page": 1,
+        "service_date": "2025-08-06T00:00:00.000Z"
+      },
+      {
+        "test_name": "Diagnostic mammogram",
+        "patient_facing_label": "Diagnostic mammogram",
+        "explanation": "A more detailed X-ray of the breast used to investigate suspicious changes found on a screening mammogram.",
+        "likelihood": "Completed",
+        "status": "completed",
+        "test_date": "2025-08-14T00:00:00.000Z",
+        "referral_date": "",
+        "source": "Test Results _ Medical Record _ Kaiser Permanente2.pdf",
+        "source_page": 1,
+        "service_date": "2025-08-14T00:00:00.000Z"
+      },
+      {
+        "test_name": "Diagnostic ultrasound",
+        "patient_facing_label": "Diagnostic ultrasound",
+        "explanation": "This test uses sound waves to create pictures of the inside of the breast. It helps distinguish between fluid-filled cysts and solid masses and gives more detail about an area seen on a mammogram or felt on exam.",
+        "likelihood": "Highly Likely",
+        "status": "not started",
+        "test_date": "",
+        "referral_date": "",
+        "source": "",
+        "source_page": "",
+        "service_date": ""
+      },
+      {
+        "test_name": "Axillary ultrasound",
+        "patient_facing_label": "Axillary ultrasound",
+        "explanation": "An axillary ultrasound looks at the lymph nodes under the arm using sound waves. It helps check whether any lymph nodes appear enlarged or suspicious, which can guide whether a biopsy is needed.",
+        "likelihood": "",
+        "status": "not started",
+        "test_date": "",
+        "referral_date": "",
+        "source": "",
+        "source_page": "",
+        "service_date": ""
+      },
+      {
+        "test_name": "Breast MRI",
+        "patient_facing_label": "Breast MRI",
+        "explanation": "A breast MRI uses magnets—not radiation—to take very detailed pictures of the breast. It is often used to look more closely at the extent of cancer, evaluate dense breast tissue, or plan surgery.",
+        "likelihood": "Highly Likely",
+        "status": "not started",
+        "test_date": "",
+        "referral_date": "",
+        "source": "",
+        "source_page": "",
+        "service_date": ""
+      },
+      {
+        "test_name": "CT scan of chest, abdomen, pelvis and Bone scan",
+        "patient_facing_label": "CT scan of chest, abdomen, pelvis and Bone scan",
+        "explanation": "A CT scan uses X-rays to create detailed pictures of the inside of the body, and a bone scan uses a small amount of tracer to look for changes in the bones. Together, they help detect whether breast cancer has spread beyond the breast and lymph nodes.",
+        "likelihood": "",
+        "status": "not started",
+        "test_date": "",
+        "referral_date": "",
+        "source": "",
+        "source_page": "",
+        "service_date": ""
+      },
+      {
+        "test_name": "PET/CT scan",
+        "patient_facing_label": "PET/CT scan",
+        "explanation": "A PET/CT combines a CT scan’s images with the PET scan’s ability to find active cancer cells using a small amount of radioactive sugar. It helps doctors look for cancer that may have spread to other parts of the body and evaluate how the cancer is behaving.",
+        "likelihood": "",
+        "status": "not started",
+        "test_date": "",
+        "referral_date": "",
+        "source": "",
+        "source_page": "",
+        "service_date": ""
+      },
+      {
+        "test_name": "Echocardiogram (heart ultrasound)",
+        "patient_facing_label": "Echocardiogram (heart ultrasound)",
+        "explanation": "An echocardiogram uses sound waves to show how the heart is pumping. It is often done before certain breast cancer treatments—especially some chemotherapies or HER2-targeted therapies—to make sure the heart is healthy.",
+        "likelihood": "",
+        "status": "not started",
+        "test_date": "",
+        "referral_date": "",
+        "source": "",
+        "source_page": "",
+        "service_date": ""
+      },
+      {
+        "test_name": "ER histochemistry",
+        "patient_facing_label": "Estrogen Receptor (ER) Test",
+        "explanation": "A test to see if the breast cancer cells have receptors for the hormone estrogen, which can help guide treatment.",
+        "likelihood": "Completed",
+        "status": "completed",
+        "test_date": "2025-08-20T00:00:00.000Z",
+        "referral_date": "",
+        "source": "Test Results _ Medical Record _ Kaiser Permanente3.pdf",
+        "source_page": 2,
+        "service_date": "2025-08-20T00:00:00.000Z"
+      },
+      {
+        "test_name": "PR histochemistry",
+        "patient_facing_label": "Progesterone Receptor (PR) Test",
+        "explanation": "A test to see if the breast cancer cells have receptors for the hormone progesterone, which can help guide treatment.",
+        "likelihood": "Completed",
+        "status": "completed",
+        "test_date": "2025-08-20T00:00:00.000Z",
+        "referral_date": "",
+        "source": "Test Results _ Medical Record _ Kaiser Permanente3.pdf",
+        "source_page": 2,
+        "service_date": "2025-08-20T00:00:00.000Z"
+      },
+      {
+        "test_name": "HER2 histochemistry",
+        "patient_facing_label": "HER2 Test",
+        "explanation": "A test to look for the HER2 protein, which can promote the growth of cancer cells.",
+        "likelihood": "Completed",
+        "status": "completed",
+        "test_date": "2025-08-20T00:00:00.000Z",
+        "referral_date": "",
+        "source": "Test Results _ Medical Record _ Kaiser Permanente3.pdf",
+        "source_page": 2,
+        "service_date": "2025-08-20T00:00:00.000Z"
+      },
+      {
+        "test_name": "PD-L1 histochemistry",
+        "patient_facing_label": "PD-L1 histochemistry",
+        "explanation": "This test checks whether the tumor expresses PD-L1, a protein that can make cancer cells harder for the immune system to recognize. It helps determine whether immunotherapy may be an effective part of treatment.",
+        "likelihood": "",
+        "status": "not started",
+        "test_date": "",
+        "referral_date": "",
+        "source": "",
+        "source_page": "",
+        "service_date": ""
+      },
+      {
+        "test_name": "OncotypeDX",
+        "patient_facing_label": "Oncotype DX Score",
+        "explanation": "A genomic test that analyzes the activity of a group of genes in breast cancer tissue to help predict the risk of recurrence and benefit from chemotherapy.",
+        "likelihood": "Completed",
+        "status": "completed",
+        "test_date": "2025-10-07T00:00:00.000Z",
+        "referral_date": "",
+        "source": "Test Results _ Medical Record _ Kaiser Permanente8.pdf",
+        "source_page": 1,
+        "service_date": "2025-10-07T00:00:00.000Z"
+      },
+      {
+        "test_name": "Mammaprint",
+        "patient_facing_label": "Mammaprint",
+        "explanation": "",
+        "likelihood": "",
+        "status": "not started",
+        "test_date": "",
+        "referral_date": "",
+        "source": "",
+        "source_page": "",
+        "service_date": ""
+      },
+      {
+        "test_name": "NGS (Next generation sequencing) or liquid biopsy (ctDNA)",
+        "patient_facing_label": "NGS (Next generation sequencing) or liquid biopsy (ctDNA)",
+        "explanation": "NGS tests the tumor’s DNA (from tissue or a blood sample) to identify specific genetic changes in the cancer. It helps determine if targeted treatments might work and can uncover mutations that influence treatment planning.",
+        "likelihood": "",
+        "status": "not started",
+        "test_date": "",
+        "referral_date": "",
+        "source": "",
+        "source_page": "",
+        "service_date": ""
+      },
+      {
+        "test_name": "Germline genetic testing including breast cancer mutations",
+        "patient_facing_label": "Genetic Testing",
+        "explanation": "A test to check for inherited gene mutations that may increase the risk of developing cancer.",
+        "likelihood": "Completed",
+        "status": "completed",
+        "test_date": "2025-09-02T00:00:00.000Z",
+        "referral_date": "",
+        "source": "Past visits _ Kaiser Permanente.3pdf.pdf",
+        "source_page": 1,
+        "service_date": "2025-09-02T00:00:00.000Z"
+      },
+      {
+        "test_name": "Blood test: CBC, CMP, TSH, Hep B",
+        "patient_facing_label": "Blood test: CBC, CMP, TSH, Hep B",
+        "explanation": "These routine blood tests check blood counts, liver and kidney function, thyroid levels, and prior exposure to hepatitis B. They help ensure treatments can be given safely and identify any issues that need to be addressed before starting therapy.",
+        "likelihood": "",
+        "status": "not started",
+        "test_date": "",
+        "referral_date": "",
+        "source": "",
+        "source_page": "",
+        "service_date": ""
+      },
+      {
+        "test_name": "Blood test: Ca15-3 or Ca27.29",
+        "patient_facing_label": "Blood test: Ca15-3 or Ca27.29",
+        "explanation": "These are tumor marker blood tests that measure proteins sometimes released by breast cancer cells. They aren’t used to diagnose cancer, but in some cases they can help track the cancer over time or monitor response to treatment.",
+        "likelihood": "",
+        "status": "not started",
+        "test_date": "",
+        "referral_date": "",
+        "source": "",
+        "source_page": "",
+        "service_date": ""
+      },
+      {
+        "test_name": "List other tests completed not otherwise covered in this list above",
+        "patient_facing_label": "Stereotactic guided biopsy",
+        "explanation": "A procedure that uses a special mammography machine to guide a needle to a specific area of the breast to remove a tissue sample.",
+        "likelihood": "",
+        "status": "completed",
+        "test_date": "2025-08-20T00:00:00.000Z",
+        "referral_date": "",
+        "source": "Test Results _ Medical Record _ Kaiser Permanente4.pdf",
+        "source_page": 1,
+        "service_date": "2025-08-20T00:00:00.000Z"
+      },
+      {
+        "test_name": "List other tests completed not otherwise covered in this list above",
+        "patient_facing_label": "Biopsy Pathology Report",
+        "explanation": "A laboratory analysis of the tissue removed during the biopsy to diagnosis the specific type of breast cancer.",
+        "likelihood": "",
+        "status": "completed",
+        "test_date": "2025-08-20T00:00:00.000Z",
+        "referral_date": "",
+        "source": "Test Results _ Medical Record _ Kaiser Permanente3.pdf",
+        "source_page": 1,
+        "service_date": "2025-08-20T00:00:00.000Z"
+      },
+      {
+        "test_name": "List other tests completed not otherwise covered in this list above",
+        "patient_facing_label": "Sentinel Node Injection",
+        "explanation": "An injection of a radioactive tracer to help identify the sentinel lymph node(s) during surgery.",
+        "likelihood": "",
+        "status": "completed",
+        "test_date": "2025-10-06T00:00:00.000Z",
+        "referral_date": "",
+        "source": "Test Results _ Medical Record _ Kaiser Permanente6.pdf",
+        "source_page": 1,
+        "service_date": "2025-10-06T00:00:00.000Z"
+      },
+      {
+        "test_name": "List other tests completed not otherwise covered in this list above",
+        "patient_facing_label": "Mastectomy Pathology Report",
+        "explanation": "A laboratory analysis of the tissue removed during the mastectomy to confirm the diagnosis and check surgical margins.",
+        "likelihood": "",
+        "status": "completed",
+        "test_date": "2025-10-07T00:00:00.000Z",
+        "referral_date": "",
+        "source": "Test Results _ Medical Record _ Kaiser Permanente9.pdf",
+        "source_page": 1,
+        "service_date": "2025-10-07T00:00:00.000Z"
+      },
+      {
+        "test_name": "Referral for fertility counseling",
+        "patient_facing_label": "Referral for fertility counseling",
+        "explanation": "Fertility specialists help you understand how breast cancer treatments—like chemotherapy, hormonal therapy, or surgery—may affect future fertility. You may meet with a reproductive endocrinologist, fertility nurse, or reproductive counselor. Their focus is to explain options such as egg or embryo freezing and help you make decisions that match your personal goals before treatment begins.",
+        "likelihood": "",
+        "status": "not started",
+        "test_date": "",
+        "referral_date": "",
+        "source": "",
+        "source_page": "",
+        "service_date": ""
+      },
+      {
+        "test_name": "Referral for genetic counseling",
+        "patient_facing_label": "Referral for genetic counseling",
+        "explanation": "Genetic counselors are trained professionals who explain whether your cancer might be linked to an inherited genetic change, such as BRCA1 or BRCA2. You might see a certified genetic counselor, a genetics nurse, or a medical geneticist. Their role is to help you understand testing options, what your results mean for treatment choices, and how they may affect family members.",
+        "likelihood": "",
+        "status": "not started",
+        "test_date": "",
+        "referral_date": "",
+        "source": "",
+        "source_page": "",
+        "service_date": ""
+      },
+      {
+        "test_name": "Referral to medical oncology",
+        "patient_facing_label": "Referral to Medical Oncology",
+        "explanation": "A referral to a doctor who specializes in treating cancer with medication, such as chemotherapy or hormone therapy.",
+        "likelihood": "Highly Likely",
+        "status": "scheduled",
+        "test_date": "",
+        "referral_date": "2025-10-15T00:00:00.000Z",
+        "source": "Past visits _ Kaiser Permanente5.pdf",
+        "source_page": 2,
+        "service_date": "2025-10-15T00:00:00.000Z"
+      },
+      {
+        "test_name": "Referral to a breast surgeon",
+        "patient_facing_label": "Consultation with Breast Surgeon (Dr. Smith)",
+        "explanation": "A meeting with a surgeon specializing in breast cancer to discuss surgical treatment options.",
+        "likelihood": "Completed",
+        "status": "completed",
+        "test_date": "",
+        "referral_date": "",
+        "source": "Past visits _ Kaiser Permanente1.pdf",
+        "source_page": 1,
+        "service_date": "2025-08-25T00:00:00.000Z"
+      },
+      {
+        "test_name": "Referral to a breast surgeon",
+        "patient_facing_label": "Consultation with Plastic Surgeon",
+        "explanation": "A meeting with a plastic surgeon to discuss options for breast reconstruction.",
+        "likelihood": "Completed",
+        "status": "completed",
+        "test_date": "",
+        "referral_date": "2025-08-25T00:00:00.000Z",
+        "source": "Past visits _ Kaiser Permanente2.pdf",
+        "source_page": 1,
+        "service_date": "2025-08-28T00:00:00.000Z"
+      },
+      {
+        "test_name": "Referral to a breast surgeon",
+        "patient_facing_label": "Pre-operative Consultation with Breast Surgeon (Dr. Patel)",
+        "explanation": "A meeting with the surgeon to plan and prepare for the upcoming breast surgery.",
+        "likelihood": "Completed",
+        "status": "completed",
+        "test_date": "",
+        "referral_date": "2025-09-02T00:00:00.000Z",
+        "source": "Past visits _ Kaiser Permanente4.pdf",
+        "source_page": 1,
+        "service_date": "2025-09-26T00:00:00.000Z"
+      },
+      {
+        "test_name": "Referral to a breast surgeon",
+        "patient_facing_label": "Plastic Surgery Follow Up",
+        "explanation": "A follow-up appointment to check healing and recovery after breast reconstruction surgery.",
+        "likelihood": "Completed",
+        "status": "completed",
+        "test_date": "",
+        "referral_date": "",
+        "source": "Past visits _ Kaiser Permanente7.pdf",
+        "source_page": 1,
+        "service_date": "2025-10-23T00:00:00.000Z"
+      },
+      {
+        "test_name": "Referral to a radiation oncologist",
+        "patient_facing_label": "Referral to a radiation oncologist",
+        "explanation": "Radiation oncologists are doctors who design and deliver radiation therapy to treat breast cancer. You may be referred to a radiation oncologist along with radiation therapists and specialized nurses who help guide the process. They focus on targeting radiation precisely to the breast or nearby lymph nodes to reduce the risk of cancer returning after surgery.",
+        "likelihood": "",
+        "status": "not started",
+        "test_date": "",
+        "referral_date": "",
+        "source": "",
+        "source_page": "",
+        "service_date": ""
+      }
+    ]
+  },
+  "records_reviewed": [
+    {
+      "document_name": "Test Results _ Medical Record _ Kaiser Permanente.pdf",
+      "patient_facing_title": "Bilateral screening mammogram",
+      "type": "Mammogram Report",
+      "service_date": "2025-08-06T00:00:00.000Z",
+      "pages": 4,
+      "source_url": "Test Results _ Medical Record _ Kaiser Permanente.pdf",
+      "notes": "Includes initial findings requiring additional imaging."
+    },
+    {
+      "document_name": "Test Results _ Medical Record _ Kaiser Permanente2.pdf",
+      "patient_facing_title": "Right diagnostic mammogram",
+      "type": "Mammogram Report",
+      "service_date": "2025-08-14T00:00:00.000Z",
+      "pages": 4,
+      "source_url": "Test Results _ Medical Record _ Kaiser Permanente2.pdf",
+      "notes": "Follow-up imaging identifying suspicious calcifications."
+    },
+    {
+      "document_name": "Test Results _ Medical Record _ Kaiser Permanente3.pdf",
+      "patient_facing_title": "Biopsy pathology report",
+      "type": "Pathology Report",
+      "service_date": "2025-08-20T00:00:00.000Z",
+      "pages": 7,
+      "source_url": "Test Results _ Medical Record _ Kaiser Permanente3.pdf",
+      "notes": "Pathology results from stereotactic biopsy."
+    },
+    {
+      "document_name": "Test Results _ Medical Record _ Kaiser Permanente4.pdf",
+      "patient_facing_title": "Right breast stereotactic biopsy procedure",
+      "type": "Biopsy Report",
+      "service_date": "2025-08-20T00:00:00.000Z",
+      "pages": 7,
+      "source_url": "Test Results _ Medical Record _ Kaiser Permanente4.pdf",
+      "notes": "Procedural report for the biopsy performed."
+    },
+    {
+      "document_name": "Test Results _ Medical Record _ Kaiser Permanente5.pdf",
+      "patient_facing_title": "Right breast biopsy and mammogram details",
+      "type": "Biopsy Report",
+      "service_date": "2025-08-20T00:00:00.000Z",
+      "pages": 8,
+      "source_url": "Test Results _ Medical Record _ Kaiser Permanente5.pdf",
+      "notes": "Includes both biopsy procedure details and associated imaging info."
+    },
+    {
+      "document_name": "Past visits _ Kaiser Permanente1.pdf",
+      "patient_facing_title": "General Surgery consultation",
+      "type": "Consultation Note",
+      "service_date": "2025-08-25T00:00:00.000Z",
+      "pages": 6,
+      "source_url": "Past visits _ Kaiser Permanente1.pdf",
+      "notes": "Initial consultation with Dr. Smith discussing diagnosis and options."
+    },
+    {
+      "document_name": "Past visits _ Kaiser Permanente2.pdf",
+      "patient_facing_title": "Plastic Surgery consultation",
+      "type": "Consultation Note",
+      "service_date": "2025-08-28T00:00:00.000Z",
+      "pages": 6,
+      "source_url": "Past visits _ Kaiser Permanente2.pdf",
+      "notes": "Consultation with Dr. Iyer regarding reconstruction."
+    },
+    {
+      "document_name": "Past visits _ Kaiser Permanente.3pdf.pdf",
+      "patient_facing_title": "General Surgery telephone visit",
+      "type": "Consultation Note",
+      "service_date": "2025-09-02T00:00:00.000Z",
+      "pages": 2,
+      "source_url": "Past visits _ Kaiser Permanente.3pdf.pdf",
+      "notes": "Telephone follow-up discussing surgical plan."
+    },
+    {
+      "document_name": "Past visits _ Kaiser Permanente4.pdf",
+      "patient_facing_title": "Pre-operative surgery visit",
+      "type": "Consultation Note",
+      "service_date": "2025-09-26T00:00:00.000Z",
+      "pages": 13,
+      "source_url": "Past visits _ Kaiser Permanente4.pdf",
+      "notes": "Pre-op history and physical with Dr. Patel."
+    },
+    {
+      "document_name": "Test Results _ Medical Record _ Kaiser Permanente6.pdf",
+      "patient_facing_title": "Sentinel node radioactive tracer injection",
+      "type": "Other",
+      "service_date": "2025-10-06T00:00:00.000Z",
+      "pages": 1,
+      "source_url": "Test Results _ Medical Record _ Kaiser Permanente6.pdf",
+      "notes": "Nuclear medicine procedure prior to surgery."
+    },
+    {
+      "document_name": "Test Results _ Medical Record _ Kaiser Permanente7.pdf",
+      "patient_facing_title": "Anesthesia procedure record",
+      "type": "Other",
+      "service_date": "2025-10-07T00:00:00.000Z",
+      "pages": 2,
+      "source_url": "Test Results _ Medical Record _ Kaiser Permanente7.pdf",
+      "notes": "Anesthesia record for the mastectomy procedure."
+    },
+    {
+      "document_name": "Test Results _ Medical Record _ Kaiser Permanente9.pdf",
+      "patient_facing_title": "Mastectomy pathology report",
+      "type": "Pathology Report",
+      "service_date": "2025-10-07T00:00:00.000Z",
+      "pages": 6,
+      "source_url": "Test Results _ Medical Record _ Kaiser Permanente9.pdf",
+      "notes": "Final pathology results from the mastectomy and lymph node biopsy."
+    },
+    {
+      "document_name": "Test Results _ Medical Record _ Kaiser Permanente8.pdf",
+      "patient_facing_title": "Breast Cancer Recurrence Score",
+      "type": "Genetic Testing Report",
+      "service_date": "2025-10-07T00:00:00.000Z",
+      "pages": 1,
+      "source_url": "Test Results _ Medical Record _ Kaiser Permanente8.pdf",
+      "notes": "Oncotype DX or similar recurrence score analysis."
+    },
+    {
+      "document_name": "Past visits _ Kaiser Permanente5.pdf",
+      "patient_facing_title": "Post-operative surgery visit",
+      "type": "Consultation Note",
+      "service_date": "2025-10-15T00:00:00.000Z",
+      "pages": 14,
+      "source_url": "Past visits _ Kaiser Permanente5.pdf",
+      "notes": "Post-op follow-up with Dr. Patel."
+    },
+    {
+      "document_name": "Past visits _ Kaiser Permanente6.pdf",
+      "patient_facing_title": "Plastic Surgery follow-up",
+      "type": "Consultation Note",
+      "service_date": "2025-10-17T00:00:00.000Z",
+      "pages": 1,
+      "source_url": "Past visits _ Kaiser Permanente6.pdf",
+      "notes": "Follow-up with Dr. Iyer regarding reconstruction."
+    },
+    {
+      "document_name": "Past visits _ Kaiser Permanente7.pdf",
+      "patient_facing_title": "Plastic Surgery post-op visit",
+      "type": "Consultation Note",
+      "service_date": "2025-10-23T00:00:00.000Z",
+      "pages": 2,
+      "source_url": "Past visits _ Kaiser Permanente7.pdf",
+      "notes": "Follow-up with PA Vallero."
+    }
+  ],
+  "treatments": [
+    {
+      "treatment_section": "1 - Medical Oncology",
+      "table_title": "Endocrine Therapy",
+      "table_description": "This treatment lowers or blocks estrogen which helps slow or stop the cancer.",
+      "row_type": "SERMs",
+      "row_order": 10,
+      "column_1_value": "Selective estrogen receptor modulator (tamoxifen)",
+      "column_2_value": "Hot flashes, vaginal discharge, small risk of blood clots",
+      "column_3_value": "Usually 5 years, in some cases up to 10 years",
+      "likelihood": "Highly Likely"
+    },
+    {
+      "treatment_section": "1 - Medical Oncology",
+      "table_title": "Endocrine Therapy",
+      "table_description": "This treatment lowers or blocks estrogen which helps slow or stop the cancer.",
+      "row_type": "Ovarian suppression",
+      "row_order": 20,
+      "column_1_value": "Ovarian suppression (leuprolide, goserelin) -- usually combined with tamoxifen in premenopausal women",
+      "column_2_value": "Hot flashes, mood changes, soreness at the injection site",
+      "column_3_value": "Usually 5 years",
+      "likelihood": ""
+    },
+    {
+      "treatment_section": "1 - Medical Oncology",
+      "table_title": "Endocrine Therapy",
+      "table_description": "This treatment lowers or blocks estrogen which helps slow or stop the cancer.",
+      "row_type": "Aromatase inhibitors",
+      "row_order": 30,
+      "column_1_value": "Aromatase inhibitors (letrozole, anastrozole, exemestane)",
+      "column_2_value": "Joint pain or stiffness, bone thinning, hot flashes",
+      "column_3_value": "Usually 5 years, in some cases up to 10 years",
+      "likelihood": ""
+    },
+    {
+      "treatment_section": "1 - Medical Oncology",
+      "table_title": "Endocrine Therapy",
+      "table_description": "This treatment lowers or blocks estrogen which helps slow or stop the cancer.",
+      "row_type": "SERDs",
+      "row_order": 40,
+      "column_1_value": "Selective estrogen receptor degrader (fulvestrant, elacestrant, imlunestrant) - rarely used as the first treatment",
+      "column_2_value": "Injection discomfort, nausea, tiredness",
+      "column_3_value": "Varies; injections often monthly",
+      "likelihood": ""
+    },
+    {
+      "treatment_section": "1 - Medical Oncology",
+      "table_title": "Targeted Therapy",
+      "table_description": "Targeted therapy goes after specific molecules or pathways to attack cancer cells more precisely while sparing more healthy tissue.",
+      "row_type": "CDK4/6 inhibitors",
+      "row_order": 10,
+      "column_1_value": "CDK4/6 inhibitors (palbociclib, ribociclib, abemaciclib) – usually combined with endocrine therapy",
+      "column_2_value": "Low white blood cells, fatigue, diarrhea",
+      "column_3_value": "Usually 2 or more years",
+      "likelihood": "Highly Likely"
+    },
+    {
+      "treatment_section": "1 - Medical Oncology",
+      "table_title": "Chemotherapy",
+      "table_description": "These are strong medicines that kill fast-growing cancer cells. It may be given before surgery (to shrink the tumor) or after surgery (to lower the chance of the cancer coming back).",
+      "row_type": "Anthracyclines",
+      "row_order": 10,
+      "column_1_value": "Anthracyclines (doxorubicin, epirubicin) - Commonly used for HER2 positive, triple negative cancers, and high risk HR positive, HER2 negative cancers. Rarely used in patients with certain heart conditions.",
+      "column_2_value": "Nausea, fatigue, hair loss",
+      "column_3_value": "Usually 3–5 months",
+      "likelihood": "Might be considered"
+    },
+    {
+      "treatment_section": "1 - Medical Oncology",
+      "table_title": "Chemotherapy",
+      "table_description": "These are strong medicines that kill fast-growing cancer cells. It may be given before surgery (to shrink the tumor) or after surgery (to lower the chance of the cancer coming back).",
+      "row_type": "Taxanes",
+      "row_order": 20,
+      "column_1_value": "Taxanes (paclitaxel, docetaxel) -  Often given after anthracyclines or used alone.",
+      "column_2_value": "Numbness or tingling in hands/feet, hair loss, muscle or joint aches",
+      "column_3_value": "Usually 3–5 months",
+      "likelihood": ""
+    },
+    {
+      "treatment_section": "1 - Medical Oncology",
+      "table_title": "Chemotherapy",
+      "table_description": "These are strong medicines that kill fast-growing cancer cells. It may be given before surgery (to shrink the tumor) or after surgery (to lower the chance of the cancer coming back).",
+      "row_type": "Cyclophosphamide",
+      "row_order": 30,
+      "column_1_value": "Cyclophosphamide - Commonly paired with anthracyclines or with the docetaxel.",
+      "column_2_value": "Nause, fatigue, lower white blood counts",
+      "column_3_value": "Usually 3–5 months",
+      "likelihood": ""
+    },
+    {
+      "treatment_section": "2 - Surgical Oncology",
+      "table_title": "Surgery",
+      "table_description": "Surgery removes the cancer from the breast and nearby lymph nodes. In many cases, people with your type of cancer can choose between a lumpectomy and a mastectomy, and your team will help explain how each option affects follow-up treatments like radiation.",
+      "row_type": "Lumpectomy",
+      "row_order": 10,
+      "column_1_value": "Lumpectomy or breast-conserving therapy (BCS) - Often an option for women with small, early stage tumors as an alternative to mastectomy. Usually followed by radiation therapy.",
+      "column_2_value": "Mild soreness for a few days",
+      "column_3_value": "May be the first step in treatment or done after chemotherapy",
+      "likelihood": "Patient Choice"
+    },
+    {
+      "treatment_section": "2 - Surgical Oncology",
+      "table_title": "Surgery",
+      "table_description": "Surgery removes the cancer from the breast and nearby lymph nodes. In many cases, people with your type of cancer can choose between a lumpectomy and a mastectomy, and your team will help explain how each option affects follow-up treatments like radiation.",
+      "row_type": "Mastectomy",
+      "row_order": 20,
+      "column_1_value": "Mastectomy - Full removal of the breast(s) might be recommended for larger cancers, multiple tumors, or personal preference. Radiation may still be needed in some cases.",
+      "column_2_value": "Longer recovery than lumpectomy\nPossible drain tubes for several days\nTightness or numbness in chest area",
+      "column_3_value": "May be the first step in treatment or done after chemotherapy",
+      "likelihood": ""
+    },
+    {
+      "treatment_section": "2 - Surgical Oncology",
+      "table_title": "Surgery",
+      "table_description": "Surgery removes the cancer from the breast and nearby lymph nodes. In many cases, people with your type of cancer can choose between a lumpectomy and a mastectomy, and your team will help explain how each option affects follow-up treatments like radiation.",
+      "row_type": "Breast reconstruction",
+      "row_order": 40,
+      "column_1_value": "Optional: Breast Reconstruction - Usually done by a plastic surgeon, either at the same time as mastectomy or later.",
+      "column_2_value": "Implants usually shorter recovery; tissue-based reconstruction is longer",
+      "column_3_value": "Can be done at the same time as a mastectomy or delayed",
+      "likelihood": ""
+    },
+    {
+      "treatment_section": "3 - Radiation Oncology",
+      "table_title": "Radiation Therapy",
+      "table_description": "Radiation therapy uses high-energy beams to kill cancer cells. For people with cancer similar to you, radiation therapy is often recommended by doctors if a lumpectomy (Breast-Conserving Surgery) is chosen instead of a mastectomy.",
+      "row_type": "Breast or Chest Wall Radiation",
+      "row_order": 10,
+      "column_1_value": "Breast or chest wall radiation - Radiation aimed at the area where the cancer started—either the remaining breast after lumpectomy or the chest wall after mastectomy—to lower the chance of the cancer returning.",
+      "column_2_value": "Skin changes similar to a mild sunburn\nFatigue that often builds over time",
+      "column_3_value": "Usually starts 3–8 weeks after surgery: lasts 3-6 weeks",
+      "likelihood": "Might be considered"
+    },
+    {
+      "treatment_section": "3 - Radiation Oncology",
+      "table_title": "Radiation Therapy",
+      "table_description": "Radiation therapy uses high-energy beams to kill cancer cells. For people with cancer similar to you, radiation therapy is often recommended by doctors if a lumpectomy (Breast-Conserving Surgery) is chosen instead of a mastectomy.",
+      "row_type": "Regional Nodal Radiation",
+      "row_order": 20,
+      "column_1_value": "Regional nodal radiation - Targets nearby lymph node areas (such as under the arm or near the collarbone) when the cancer has spread to lymph nodes.",
+      "column_2_value": "Skin changes similar to a mild sunburn\nFatigue that often builds over time\nRisk of arm swelling (lymphedema)",
+      "column_3_value": "(Same as as above)",
+      "likelihood": ""
+    }
+  ],
+  "summaries": {
+    "diagnosis": [
+      {
+        "block_id": "summary_1_hormone_status",
+        "match_value": "Stage IIIA",
+        "title": "Hormone Receptor & HER2 Status",
+        "body": "You may hear a lot about Hormone Receptor Status & HER2 Status when it comes to your cancer care, as these are key inputs in determining your treatment plan. We will dive into greater detail on likely treatments down below."
+      },
+      {
+        "block_id": "summary_2_goals",
+        "match_value": "Stage IIIA",
+        "title": "Goals of Treatment",
+        "body": "Treatment goals can differ depending on your diagnosis (and your own personal goals). For Stage IIIA breast cancer, the clinical goals are to remove the tumor(s), evaluate nearby lymph nodes, and reduce the risk of the cancer returning."
+      },
+      {
+        "block_id": "summary_3_care_team",
+        "match_value": "Stage IIIA",
+        "title": "Your Care Team",
+        "body": "Finding the right oncology team is key — you want to make sure they feel right for you. You want doctors who listen, have the expertise, and treat you as a partner. Below, we'll introduce the types of providers you can expect to work with."
+      }
+    ],
+    "testing_and_consultations": [
+      {
+        "block_id": "testing_summary_1",
+        "match_value": "in_treatment",
+        "title": "Currently in: Treatment",
+        "body": "Even if you are already in treatment, your care team may still want additional testing in order to continue to personalize your care, monitor your health, and guide any future treatments."
+      },
+      {
+        "block_id": "testing_summary_2",
+        "match_value": "in_treatment",
+        "title": "Identify Your Support Needs",
+        "body": "Consider what help you might need during treatment — childcare, meals, rides, etc. If there are needs you identify that you don’t have support for, your care team can help connect you with resources."
+      },
+      {
+        "block_id": "testing_summary_3",
+        "match_value": "in_treatment",
+        "title": "Additional Testing",
+        "body": "These tests and consultations highlighted above can help continued to refine your specific diagnosis to better tailor your treatment — work with your care team to determine what's right for you."
+      }
+    ],
+    "treatment_planning": [
+      {
+        "block_id": "treatment_summary_1",
+        "match_value": "endocrine_therapy",
+        "title": "Endocrine Therapy (HR+)",
+        "body": "Because your cancer is hormone receptor positive (responds to estrogen), endocrine therapy can be one of the most effective treatments available for cancers like yours."
+      },
+      {
+        "block_id": "treatment_summary_2",
+        "match_value": "Stage IIIA",
+        "title": "Surgery is Likely Your First Step",
+        "body": "For Stage II breast cancers like yours, removing the tumor through lumpectomy or mastectomy is typically the first treatment to eliminate the cancer from your body."
+      },
+      {
+        "block_id": "treatment_summary_3",
+        "match_value": "",
+        "title": "Your Input Matters",
+        "body": "While your doctors recommend what's medically best, your goals should be part of the conversation. Write down your questions, and see our Visit Prep guide for key questions to ask, personalized to you."
+      }
+    ]
+  },
+  "questions": {
+    "meta": {
+      "most_likely": "Endocrine Therapy",
+      "most_likely_key": "endocrine_therapy",
+      "stage": "Stage IIIA",
+      "cancer_type": "Invasive Ductal Carcinoma (IDC)"
+    },
+    "items": [
+      {
+        "section": "Questions For Your Medical Oncologist",
+        "topic": "Treatment Planning",
+        "subtopic": "Treatment Sequence",
+        "question": "With Stage IIIA Invasive Ductal Carcinoma (IDC), what sequence of treatments do you recommend? Is this the standard of care, or is there flexibility to discuss options?",
+        "matched_logic": "Criteria \"always\" → included for all patients"
+      },
+      {
+        "section": "Questions For Your Medical Oncologist",
+        "topic": "Treatment Planning",
+        "subtopic": "Treatment Outcomes",
+        "question": "How will we know if the treatment is working? What signs or symptoms should I watch for that might indicate a problem?",
+        "matched_logic": "Criteria \"always\" → included for all patients"
+      },
+      {
+        "section": "Questions For Your Medical Oncologist",
+        "topic": "Treatment Planning",
+        "subtopic": "Endocrine Therapy",
+        "question": "Since Endocrine Therapy is highly likely, what specific medication regimen would you recommend for me, and why? What are the potential side effects?",
+        "matched_logic": "Criteria \"always\" → included for all patients"
+      },
+      {
+        "section": "Questions For Your Medical Oncologist",
+        "topic": "Treatment Planning",
+        "subtopic": "Symptom Management",
+        "question": "Are there ways to manage the side effects? If the side effects get too difficult to manage — can we stop early or adjust the treatment?",
+        "matched_logic": "Criteria \"always\" → included for all patients"
+      },
+      {
+        "section": "Questions For Your Medical Oncologist",
+        "topic": "Daily Life & Support",
+        "subtopic": "Treatment Timing",
+        "question": "How soon should I expect my treatment to begin? Is there any flexibility with my treatment schedule?",
+        "matched_logic": "Criteria \"always\" → included for all patients"
+      },
+      {
+        "section": "Questions For Your Medical Oncologist",
+        "topic": "Daily Life & Support",
+        "subtopic": "Daily Activity",
+        "question": "Walk me through what a typical week might look like for me once treatment begins. How will it affect my daily activities and routine? Will treatment impact my ability to work?",
+        "matched_logic": "Criteria \"always\" → included for all patients"
+      },
+      {
+        "section": "Questions For Your Medical Oncologist",
+        "topic": "Daily Life & Support",
+        "subtopic": "Support",
+        "question": "Should I plan to have a family member or friend come with me to my treatment sessions? Is this a nice-to-have or a necessity for all sessions?",
+        "matched_logic": "Criteria \"always\" → included for all patients"
+      },
+      {
+        "section": "Questions For Your Medical Oncologist",
+        "topic": "Daily Life & Support",
+        "subtopic": "Current Medications",
+        "question": "Are there certain medications I'm currently taking that I would need to stop before starting treatment?",
+        "matched_logic": "Criteria \"always\" → included for all patients"
+      },
+      {
+        "section": "Questions For Your Surgical Oncologist",
+        "topic": "Treatment Planning",
+        "subtopic": "Surgical Options",
+        "question": "Given my tumor size, am I a good candidate for breast-conserving surgery (lumpectomy)? What factors might require me to have a mastectomy instead? What are the pros and cons of each surgical option for me specifically?",
+        "matched_logic": "MATCH: logic=\"if surgery\" | surgeryPresent=true"
+      },
+      {
+        "section": "Questions For Your Surgical Oncologist",
+        "topic": "Treatment Planning",
+        "subtopic": "Specialist Involvement",
+        "question": "What will my breast look like after surgery? Will a plastic surgeon be involved in my care?",
+        "matched_logic": "MATCH: logic=\"if surgery\" | surgeryPresent=true"
+      },
+      {
+        "section": "Questions For Your Surgical Oncologist",
+        "topic": "Treatment Planning",
+        "subtopic": "Reconstruction",
+        "question": "What are my reconstruction options (implants, tissue flap, etc.)? If I don't want reconstruction, what is \"flat closure\"? What are the pros and cons of each reconstruction option?",
+        "matched_logic": "MATCH: logic=\"if surgery\" | surgeryPresent=true"
+      },
+      {
+        "section": "Questions For Your Surgical Oncologist",
+        "topic": "Daily Life & Support",
+        "subtopic": "Recovery",
+        "question": "What can I expect during recovery from surgery? How long will recovery take before I can return to normal activities? What physical limitations will I have?",
+        "matched_logic": "MATCH: logic=\"if surgery\" | surgeryPresent=true"
+      },
+      {
+        "section": "Questions For Your Surgical Oncologist",
+        "topic": "Daily Life & Support",
+        "subtopic": "Side Effects",
+        "question": "What are the possible side effects or complications (lymphedema, scarring, etc.)? Will I have pain after surgery, and how will it be managed?",
+        "matched_logic": "MATCH: logic=\"if surgery\" | surgeryPresent=true"
+      },
+      {
+        "section": "Questions For Your Surgical Oncologist",
+        "topic": "Daily Life & Support",
+        "subtopic": "Care Team Communication",
+        "question": "Who is the best point person on your team (e.g., a nurse navigator) for scheduling, pre-op instructions, and answering questions after surgery?",
+        "matched_logic": "MATCH: logic=\"if surgery\" | surgeryPresent=true"
+      },
+      {
+        "section": "Questions For Your Radiation Oncologist",
+        "topic": "Treatment Planning",
+        "subtopic": "Radiation Goals",
+        "question": "Why is radiation being recommended for my specific situation? Can you walk me through what that treatment looks like and why it’s a key piece of my care?",
+        "matched_logic": "MATCH: logic=\"if radiation\" | radiationPresent=true"
+      },
+      {
+        "section": "Questions For Your Radiation Oncologist",
+        "topic": "Treatment Planning",
+        "subtopic": "Timing & Schedule",
+        "question": "What is the typical course of treatment (e.g., 6 weeks of standard radiation, or a shorter course like hypofractionated), and how is that decision made?",
+        "matched_logic": "MATCH: logic=\"if radiation\" | radiationPresent=true"
+      },
+      {
+        "section": "Questions For Your Radiation Oncologist",
+        "topic": "Treatment Planning",
+        "subtopic": "Radiation Outcomes",
+        "question": "How will you know if the radiation is working? If it doesn’t appear to be working as intended, are there alternative radiation techniques or approaches for my diagnosis?",
+        "matched_logic": "MATCH: logic=\"if radiation\" | radiationPresent=true"
+      },
+      {
+        "section": "Questions For Your Radiation Oncologist",
+        "topic": "Daily Life & Support",
+        "subtopic": "Side Effects",
+        "question": "What are the most common short-term side effects (skin changes, fatigue) and long-term risks (lung or heart exposure) associated with the specific radiation plan you recommend for me?",
+        "matched_logic": "MATCH: logic=\"if radiation\" | radiationPresent=true"
+      },
+      {
+        "section": "Questions For Your Radiation Oncologist",
+        "topic": "Daily Life & Support",
+        "subtopic": "Impact on Daily Routine",
+        "question": "How will radiation affect my daily activities and work schedule? What daily commitment does treatment require? Can I drive myself to and from my radiation appointments?",
+        "matched_logic": "MATCH: logic=\"if radiation\" | radiationPresent=true"
+      },
+      {
+        "section": "Questions For Your Radiation Oncologist",
+        "topic": "Daily Life & Support",
+        "subtopic": "Care Team Communication",
+        "question": "When should I call your office if I'm having concerning side effects? What side effects are serious enough to call your after-hours number or go to the emergency room?",
+        "matched_logic": "MATCH: logic=\"if radiation\" | radiationPresent=true"
+      }
+    ]
+  }
+}
+
+

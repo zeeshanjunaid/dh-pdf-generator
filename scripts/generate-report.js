@@ -64,6 +64,69 @@ Handlebars.registerHelper("currentDate", function() {
   return new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
 });
 
+// Split string by delimiter and trim each item
+Handlebars.registerHelper("split", function(str, delimiter) {
+  if (!str) return [];
+  return str.split(delimiter).map(item => item.trim()).filter(item => item.length > 0);
+});
+
+// Split by newlines or comma, handling actual newline characters
+Handlebars.registerHelper("splitLines", function(str, delimiter) {
+  if (!str) return [];
+  
+  // Convert to string in case it's not
+  const text = String(str);
+  
+  // Handlebars passes an options hash as the last parameter, so check if delimiter is actually a string
+  // If delimiter is the options object, treat it as undefined
+  const actualDelimiter = (typeof delimiter === 'string') ? delimiter : undefined;
+  
+  // If delimiter is provided (e.g., comma for Medical), use it
+  if (actualDelimiter) {
+    return text.split(actualDelimiter).map(item => item.trim()).filter(item => item.length > 0);
+  }
+  
+  // Otherwise split by newlines (for Surgical/Radiation)
+  // JSON.parse converts \n in JSON strings to actual newline characters (char code 10)
+  // Split by any newline variant
+  return text.split(/[\r\n]+/).map(item => item.trim()).filter(item => item.length > 0);
+});
+
+// Group questions by section and topic
+Handlebars.registerHelper("groupQuestions", function(items) {
+  if (!items || !Array.isArray(items)) return [];
+  
+  const grouped = {};
+  
+  items.forEach(item => {
+    if (!grouped[item.section]) {
+      grouped[item.section] = {};
+    }
+    if (!grouped[item.section][item.topic]) {
+      grouped[item.section][item.topic] = [];
+    }
+    grouped[item.section][item.topic].push(item);
+  });
+  
+  // Convert to array format for template iteration
+  const result = [];
+  Object.keys(grouped).forEach(section => {
+    const topics = [];
+    Object.keys(grouped[section]).forEach(topic => {
+      topics.push({
+        name: topic,
+        questions: grouped[section][topic]
+      });
+    });
+    result.push({
+      section: section,
+      topics: topics
+    });
+  });
+  
+  return result;
+});
+
 // Parse flexible date formats (handles both ISO and JS Date.toString() formats)
 Handlebars.registerHelper("parseDate", function(dateString) {
   if (!dateString) return "";
@@ -325,6 +388,92 @@ Handlebars.registerHelper("getPRStatus", function(erprValue) {
   if (value.includes('pr positive')) return { status: 'Positive', symbol: '+' };
   if (value.includes('pr negative')) return { status: 'Negative', symbol: '-' };
   return { status: 'Unknown', symbol: '-' };
+});
+
+// Group treatments by treatment_section, then by table_title
+// Returns: [{section, section_name, tables: [{title, description, rows: [...]}]}]
+Handlebars.registerHelper("groupTreatments", function(treatments, options) {
+  if (!treatments || !Array.isArray(treatments) || treatments.length === 0) {
+    return options.inverse(this);
+  }
+  
+  const sections = {};
+  
+  treatments.forEach(treatment => {
+    const sectionKey = treatment.treatment_section || "Other";
+    const tableTitle = treatment.table_title || "Treatments";
+    
+    if (!sections[sectionKey]) {
+      sections[sectionKey] = {
+        section: sectionKey,
+        section_name: sectionKey.replace(/^\d+\s*-\s*/, ''), // Remove "1 - " prefix
+        tables: {}
+      };
+    }
+    
+    if (!sections[sectionKey].tables[tableTitle]) {
+      sections[sectionKey].tables[tableTitle] = {
+        title: tableTitle,
+        description: treatment.table_description || '',
+        rows: []
+      };
+    }
+    
+    sections[sectionKey].tables[tableTitle].rows.push(treatment);
+  });
+  
+  // Convert to arrays and sort
+  const sectionsArray = Object.values(sections).map(section => ({
+    ...section,
+    tables: Object.values(section.tables).map(table => ({
+      ...table,
+      rows: table.rows.sort((a, b) => (a.row_order || 0) - (b.row_order || 0))
+    }))
+  }));
+  
+  // Sort sections by key (1 - Medical, 2 - Surgical, 3 - Radiation)
+  sectionsArray.sort((a, b) => a.section.localeCompare(b.section));
+  
+  return sectionsArray.map(section => options.fn(section)).join('');
+});
+
+// Group questions by section and topic
+Handlebars.registerHelper("groupQuestionsBySection", function(questions, sectionName, options) {
+  if (!questions || !Array.isArray(questions) || questions.length === 0) {
+    return options.inverse(this);
+  }
+  
+  const filtered = questions.filter(q => q.section === sectionName);
+  
+  if (filtered.length === 0) return options.inverse(this);
+  
+  // Group by topic
+  const grouped = {};
+  filtered.forEach(q => {
+    const topic = q.topic || 'General';
+    if (!grouped[topic]) {
+      grouped[topic] = [];
+    }
+    grouped[topic].push(q);
+  });
+  
+  // Convert to array format
+  const topicsArray = Object.entries(grouped).map(([topic, questions]) => ({
+    topic,
+    questions
+  }));
+  
+  return topicsArray.map(topicGroup => options.fn(topicGroup)).join('');
+});
+
+// Check if any questions exist for a section
+Handlebars.registerHelper("hasQuestionsForSection", function(questions, sectionName, options) {
+  if (!questions || !Array.isArray(questions) || questions.length === 0) {
+    return options.inverse(this);
+  }
+  
+  const hasQuestions = questions.some(q => q.section === sectionName);
+  return hasQuestions ? options.fn(this) : options.inverse(this);
 });
 
 // ============================

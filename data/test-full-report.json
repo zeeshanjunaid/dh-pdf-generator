@@ -1,0 +1,1113 @@
+{
+  "patient_id": "8842BC",
+  "pdf_folder_id": "1bXqqDR0z9RwrZSj1xLJySQu7UitfjtOr",
+  "generated_at": "2025-12-05T10:30:15.002Z",
+  "general_info": {
+    "humanReadableId": {
+      "value": "8842BC",
+      "source": "",
+      "source_page": "",
+      "service_date": ""
+    },
+    "fname": {
+      "value": "Sarah",
+      "source": "",
+      "source_page": "",
+      "service_date": ""
+    },
+    "lname": {
+      "value": "Mitchell Thompson",
+      "source": "",
+      "source_page": "",
+      "service_date": ""
+    },
+    "dateOfBirth": {
+      "value": "Fri Jun 15 1982 08:00:00 GMT-0700 (Pacific Daylight Time)",
+      "source": "",
+      "source_page": "",
+      "service_date": ""
+    },
+    "age": {
+      "value": 43,
+      "source": "",
+      "source_page": "",
+      "service_date": ""
+    },
+    "feelingNow": {
+      "value": "I feel overwhelmed but trying to stay hopeful and informed about my options",
+      "source": "",
+      "source_page": "",
+      "service_date": ""
+    },
+    "feeling_category": {
+      "value": "hopeful",
+      "source": "",
+      "source_page": "",
+      "service_date": ""
+    },
+    "intro_letter_title": {
+      "value": "KNOWLEDGE IS POWER",
+      "source": "",
+      "source_page": "",
+      "service_date": ""
+    },
+    "intro_letter_body": {
+      "value": "Dear Sarah,\n\nWe know receiving a cancer diagnosis can feel overwhelming. The good news is that you're taking an important step by seeking information and understanding your diagnosis. Knowledge empowers you to make informed decisions alongside your medical team.\n\nThis report breaks down your specific diagnosis, test results, and treatment options in clear language. We've organized everything to help you feel more confident as you move forward.\n\nWith care and respect,\nYour Defiant Health Team\ncare@defianthealth.com",
+      "source": "",
+      "source_page": "",
+      "service_date": ""
+    },
+    "tsRecordsUploadDate": {
+      "value": "Mon Nov 18 2025 09:22:33 GMT-0800 (Pacific Standard Time)",
+      "source": "",
+      "source_page": "",
+      "service_date": ""
+    },
+    "driveRecordsUploadDate": {
+      "value": "Mon Nov 18 2025 14:15:42 GMT-0800 (Pacific Standard Time)",
+      "source": "",
+      "source_page": "",
+      "service_date": ""
+    },
+    "recordsAsOfDate": {
+      "value": "Mon Nov 18 2025 14:15:42 GMT-0800 (Pacific Standard Time)",
+      "source": "",
+      "source_page": "",
+      "service_date": ""
+    }
+  },
+  "diagnosis": {
+    "cancer_type": {
+      "value": "Invasive Ductal Carcinoma (IDC)",
+      "explanation": "Most common type of breast cancer, starting in milk ducts and spreading to surrounding tissue.",
+      "source": "Pathology Report - Memorial Medical Center.pdf",
+      "source_page": 1,
+      "service_date": "2025-09-22T00:00:00.000Z"
+    },
+    "location_of_tumors": {
+      "value": "Left breast, upper outer quadrant (2 o'clock position)",
+      "explanation": "The location of a breast tumor is important to help your medical team assess the likelihood of lymph node involvement and guide surgical treatment.",
+      "source": "Imaging Report - Memorial Medical Center.pdf",
+      "source_page": 2,
+      "service_date": "2025-09-10T00:00:00.000Z"
+    },
+    "size": {
+      "value": "3.2 cm",
+      "explanation": "The size of the tumor is important in guiding treatment. Different sized tumors may require different approaches. Additionally, knowing the initial size allows doctors to compare images taken after treatment to determine whether the tumor has shrunk or is responding to treatment.",
+      "source": "Pathology Report - Memorial Medical Center.pdf",
+      "source_page": 1,
+      "service_date": "2025-09-22T00:00:00.000Z"
+    },
+    "largest_size_imaging": {
+      "value": "3.5 cm",
+      "explanation": "",
+      "source": "Imaging Report - Memorial Medical Center.pdf",
+      "source_page": 2,
+      "service_date": "2025-09-10T00:00:00.000Z"
+    },
+    "largest_size_biopsy": {
+      "value": "3.2 cm",
+      "explanation": "",
+      "source": "Pathology Report - Memorial Medical Center.pdf",
+      "source_page": 1,
+      "service_date": "2025-09-22T00:00:00.000Z"
+    },
+    "stage": {
+      "value": "Stage IIIA",
+      "explanation": "Locally advanced breast cancer with lymph node involvement.",
+      "source": "Pathology Report - Memorial Medical Center.pdf",
+      "source_page": 3,
+      "service_date": "2025-09-22T00:00:00.000Z"
+    },
+    "stage_type": {
+      "value": "Clinical anatomic",
+      "explanation": "Stage determined by physical exam and imaging before surgery or treatment begins.",
+      "source": "Pathology Report - Memorial Medical Center.pdf",
+      "source_page": 3,
+      "service_date": "2025-09-22T00:00:00.000Z"
+    },
+    "staging_stated_or_inferred": {
+      "value": "Stated",
+      "explanation": "",
+      "source": "Pathology Report - Memorial Medical Center.pdf",
+      "source_page": 3,
+      "service_date": "2025-09-22T00:00:00.000Z"
+    },
+    "overall_grade": {
+      "value": "Grade 3",
+      "explanation": "A grade 3 (out of 3) from the Nottingham grading system indicates rapidly growing cells that look very different from normal cells.",
+      "source": "Pathology Report - Memorial Medical Center.pdf",
+      "source_page": 2,
+      "service_date": "2025-09-22T00:00:00.000Z"
+    },
+    "er_status": {
+      "value": "Positive",
+      "explanation": "Estrogen receptor positive means cancer cells have receptors for estrogen hormone.",
+      "source": "Pathology Report - Memorial Medical Center.pdf",
+      "source_page": 2,
+      "service_date": "2025-09-22T00:00:00.000Z"
+    },
+    "pr_status": {
+      "value": "Negative",
+      "explanation": "Progesterone receptor negative means cancer cells do not have receptors for progesterone.",
+      "source": "Pathology Report - Memorial Medical Center.pdf",
+      "source_page": 2,
+      "service_date": "2025-09-22T00:00:00.000Z"
+    },
+    "erpr_status": {
+      "value": "",
+      "explanation": "",
+      "source": "",
+      "source_page": "",
+      "service_date": ""
+    },
+    "hormone_receptor_status": {
+      "value": "HR positive",
+      "explanation": "Hormone receptor–positive breast cancer",
+      "source": "Pathology Report - Memorial Medical Center.pdf",
+      "source_page": 2,
+      "service_date": "2025-09-22T00:00:00.000Z"
+    },
+    "her2_status": {
+      "value": "HER2 positive",
+      "explanation": "HER2-positive breast cancer has high levels of HER2 protein, which promotes cancer growth. These cancers tend to grow faster but can be treated with targeted HER2 therapies.",
+      "source": "Pathology Report - Memorial Medical Center.pdf",
+      "source_page": 2,
+      "service_date": "2025-09-22T00:00:00.000Z"
+    },
+    "ihc_result": {
+      "value": "3+",
+      "explanation": "IHC (immunohistochemistry) score of 3+ indicates strong HER2 protein overexpression.",
+      "source": "Pathology Report - Memorial Medical Center.pdf",
+      "source_page": 2,
+      "service_date": "2025-09-22T00:00:00.000Z"
+    },
+    "fish_ish_result": {
+      "value": "Positive, HER2/CEP17 ratio 3.2",
+      "explanation": "FISH test confirms HER2 gene amplification, supporting HER2-positive status.",
+      "source": "Pathology Report - Memorial Medical Center.pdf",
+      "source_page": 3,
+      "service_date": "2025-09-22T00:00:00.000Z"
+    },
+    "brca_status": {
+      "value": "Positive",
+      "explanation": "Harmful BRCA1 mutation detected, increasing risk for breast and ovarian cancers.",
+      "source": "Genetic Testing - GeneDx Laboratory.pdf",
+      "source_page": 1,
+      "service_date": "2025-10-05T00:00:00.000Z"
+    },
+    "brca_type": {
+      "value": "BRCA1",
+      "explanation": "",
+      "source": "Genetic Testing - GeneDx Laboratory.pdf",
+      "source_page": 1,
+      "service_date": "2025-10-05T00:00:00.000Z"
+    },
+    "brca_lab": {
+      "value": "GeneDx Laboratory",
+      "explanation": "",
+      "source": "Genetic Testing - GeneDx Laboratory.pdf",
+      "source_page": 1,
+      "service_date": "2025-10-05T00:00:00.000Z"
+    },
+    "brca_variant": {
+      "value": "c.5266dupC (p.Gln1756Profs)",
+      "explanation": "",
+      "source": "Genetic Testing - GeneDx Laboratory.pdf",
+      "source_page": 1,
+      "service_date": "2025-10-05T00:00:00.000Z"
+    },
+    "t_category": {
+      "value": "T2",
+      "explanation": "Tumor between 2-5 cm in size.",
+      "source": "Pathology Report - Memorial Medical Center.pdf",
+      "source_page": 3,
+      "service_date": "2025-09-22T00:00:00.000Z"
+    },
+    "n_category": {
+      "value": "N2a",
+      "explanation": "Cancer spread to 4-9 axillary lymph nodes.",
+      "source": "Pathology Report - Memorial Medical Center.pdf",
+      "source_page": 3,
+      "service_date": "2025-09-22T00:00:00.000Z"
+    },
+    "pdl1_cps_score": {
+      "value": "15",
+      "explanation": "PD-L1 expression is high (CPS ≥10), suggesting potential benefit from immunotherapy.",
+      "source": "Biomarker Testing - Memorial Medical Center.pdf",
+      "source_page": 1,
+      "service_date": "2025-09-28T00:00:00.000Z"
+    },
+    "pdl1_interpretation": {
+      "value": "High expression",
+      "explanation": "",
+      "source": "Biomarker Testing - Memorial Medical Center.pdf",
+      "source_page": 1,
+      "service_date": "2025-09-28T00:00:00.000Z"
+    },
+    "pdl1_threshold_used": {
+      "value": "CPS ≥10",
+      "explanation": "",
+      "source": "Biomarker Testing - Memorial Medical Center.pdf",
+      "source_page": 1,
+      "service_date": "2025-09-28T00:00:00.000Z"
+    },
+    "pdl1_assay": {
+      "value": "22C3 pharmDx",
+      "explanation": "",
+      "source": "Biomarker Testing - Memorial Medical Center.pdf",
+      "source_page": 1,
+      "service_date": "2025-09-28T00:00:00.000Z"
+    },
+    "tnbc_status": {
+      "value": "Not TNBC",
+      "explanation": "Not triple-negative breast cancer - hormone receptor positive and HER2 positive.",
+      "source": "Pathology Report - Memorial Medical Center.pdf",
+      "source_page": 2,
+      "service_date": "2025-09-22T00:00:00.000Z"
+    },
+    "ibc_status": {
+      "value": "Not IBC",
+      "explanation": "No evidence of inflammatory breast cancer - no skin changes or rapid breast swelling observed.",
+      "source": "Clinical Notes - Dr. Anderson.pdf",
+      "source_page": 1,
+      "service_date": "2025-09-08T00:00:00.000Z"
+    },
+    "multifocal": {
+      "value": "No",
+      "explanation": "Single tumor identified",
+      "source": "",
+      "source_page": "",
+      "service_date": ""
+    }
+  },
+  "tumor_metadata": {
+    "number_of_cancerous_tumors_confirmed_by_biopsy": {
+      "value": 1,
+      "explanation": "",
+      "source": "",
+      "source_page": "",
+      "service_date": ""
+    },
+    "number_of_cancerous_lymph_nodes_confirmed_by_biopsy": {
+      "value": 5,
+      "explanation": "",
+      "source": "",
+      "source_page": "",
+      "service_date": ""
+    }
+  },
+  "tumors": [
+    {
+      "tumor_number": 1,
+      "fields": {
+        "cancer_type": {
+          "value": "Invasive Ductal Carcinoma (IDC)",
+          "explanation": "Most common type of breast cancer, starting in milk ducts and spreading to surrounding tissue.",
+          "source": "Pathology Report - Memorial Medical Center.pdf",
+          "source_page": 1,
+          "service_date": "2025-09-22T00:00:00.000Z"
+        },
+        "location_of_tumor": {
+          "value": "Left breast, upper outer quadrant (2 o'clock position)",
+          "explanation": "The location of a breast tumor is important to help your medical team assess the likelihood of lymph node involvement and guide surgical treatment.",
+          "source": "Imaging Report - Memorial Medical Center.pdf",
+          "source_page": 2,
+          "service_date": "2025-09-10T00:00:00.000Z"
+        },
+        "stage": {
+          "value": "Stage IIIA",
+          "explanation": "Locally advanced breast cancer with lymph node involvement.",
+          "source": "Pathology Report - Memorial Medical Center.pdf",
+          "source_page": 3,
+          "service_date": "2025-09-22T00:00:00.000Z"
+        },
+        "stage_type": {
+          "value": "Clinical anatomic",
+          "explanation": "Stage determined by physical exam and imaging before surgery or treatment begins.",
+          "source": "Pathology Report - Memorial Medical Center.pdf",
+          "source_page": 3,
+          "service_date": "2025-09-22T00:00:00.000Z"
+        },
+        "size": {
+          "value": 3.2,
+          "explanation": "The size of the tumor is important in guiding treatment. Different sized tumors may require different approaches.",
+          "source": "Pathology Report - Memorial Medical Center.pdf",
+          "source_page": 1,
+          "service_date": "2025-09-22T00:00:00.000Z"
+        },
+        "largest_size_imaging_cm": {
+          "value": "3.5",
+          "explanation": "Largest measurement from imaging studies (MRI/ultrasound).",
+          "source": "Imaging Report - Memorial Medical Center.pdf",
+          "source_page": 2,
+          "service_date": "2025-09-10T00:00:00.000Z"
+        },
+        "largest_size_biopsy_cm": {
+          "value": "3.2",
+          "explanation": "Size confirmed during biopsy procedure.",
+          "source": "Pathology Report - Memorial Medical Center.pdf",
+          "source_page": 1,
+          "service_date": "2025-09-22T00:00:00.000Z"
+        },
+        "overall_grade": {
+          "value": "Grade 3",
+          "explanation": "A grade 3 (out of 3) from the Nottingham grading system indicates rapidly growing cells that look very different from normal cells.",
+          "source": "Pathology Report - Memorial Medical Center.pdf",
+          "source_page": 2,
+          "service_date": "2025-09-22T00:00:00.000Z"
+        },
+        "tubule_formation_score": {
+          "value": "3",
+          "explanation": "Score of 3 indicates minimal tubule formation (poorly differentiated).",
+          "source": "Pathology Report - Memorial Medical Center.pdf",
+          "source_page": 2,
+          "service_date": "2025-09-22T00:00:00.000Z"
+        },
+        "nuclear_pleomorphism_score": {
+          "value": "3",
+          "explanation": "Score of 3 indicates marked variation in nuclear size and shape.",
+          "source": "Pathology Report - Memorial Medical Center.pdf",
+          "source_page": 2,
+          "service_date": "2025-09-22T00:00:00.000Z"
+        },
+        "mitotic_count_score": {
+          "value": "3",
+          "explanation": "Score of 3 indicates high mitotic activity (rapidly dividing cells).",
+          "source": "Pathology Report - Memorial Medical Center.pdf",
+          "source_page": 2,
+          "service_date": "2025-09-22T00:00:00.000Z"
+        },
+        "erpr_status": {
+          "value": "",
+          "explanation": "",
+          "source": "",
+          "source_page": "",
+          "service_date": ""
+        },
+        "er_status": {
+          "value": "Positive (95%)",
+          "explanation": "95% of tumor cells show estrogen receptor positivity.",
+          "source": "Pathology Report - Memorial Medical Center.pdf",
+          "source_page": 2,
+          "service_date": "2025-09-22T00:00:00.000Z"
+        },
+        "pr_status": {
+          "value": "Negative (5%)",
+          "explanation": "Only 5% of tumor cells show progesterone receptor positivity.",
+          "source": "Pathology Report - Memorial Medical Center.pdf",
+          "source_page": 2,
+          "service_date": "2025-09-22T00:00:00.000Z"
+        },
+        "her2_status": {
+          "value": "HER2 positive",
+          "explanation": "HER2-positive breast cancer has high levels of HER2 protein, which promotes cancer growth. These cancers can be treated with targeted HER2 therapies.",
+          "source": "Pathology Report - Memorial Medical Center.pdf",
+          "source_page": 2,
+          "service_date": "2025-09-22T00:00:00.000Z"
+        },
+        "ihc_result": {
+          "value": "3+",
+          "explanation": "IHC score of 3+ indicates strong HER2 protein overexpression.",
+          "source": "Pathology Report - Memorial Medical Center.pdf",
+          "source_page": 2,
+          "service_date": "2025-09-22T00:00:00.000Z"
+        },
+        "fish_ish_result": {
+          "value": "Positive, ratio 3.2",
+          "explanation": "FISH test confirms HER2 gene amplification.",
+          "source": "Pathology Report - Memorial Medical Center.pdf",
+          "source_page": 3,
+          "service_date": "2025-09-22T00:00:00.000Z"
+        }
+      }
+    }
+  ],
+  "testing_and_consultations": {
+    "patient_id": "8842BC",
+    "generated_at": "2025-12-05T10:30:15.002Z",
+    "pdf_folder_id": "1bXqqDR0z9RwrZSj1xLJySQu7UitfjtOr",
+    "meta": {
+      "diagnostic_testing": {
+        "label": "Diagnostic Testing",
+        "value": "completed"
+      },
+      "staging_testing": {
+        "label": "Staging Testing",
+        "value": "completed"
+      },
+      "planning": {
+        "label": "Planning",
+        "value": "in progress"
+      },
+      "treatment": {
+        "label": "Treatment",
+        "value": "not started"
+      },
+      "tests_sources": {
+        "label": "tests_sources",
+        "value": "Imaging Report - Memorial Medical Center.pdf, Pathology Report - Memorial Medical Center.pdf, Genetic Testing - GeneDx Laboratory.pdf, Biomarker Testing - Memorial Medical Center.pdf"
+      }
+    },
+    "tests": [
+      {
+        "test_name": "Screening mammogram",
+        "patient_facing_label": "Bilateral screening mammogram",
+        "explanation": "A screening mammogram is an X-ray of the breast used to detect breast cancer early in women who have no signs or symptoms of the disease.",
+        "likelihood": "",
+        "status": "completed",
+        "test_date": "2025-08-15T00:00:00.000Z",
+        "referral_date": "",
+        "source": "Imaging Report - Memorial Medical Center.pdf",
+        "source_page": 1,
+        "service_date": "2025-08-15T00:00:00.000Z"
+      },
+      {
+        "test_name": "Diagnostic mammogram",
+        "patient_facing_label": "Left diagnostic mammogram with tomosynthesis",
+        "explanation": "A diagnostic mammogram is a more detailed X-ray of the breast used to investigate suspicious changes found on a screening mammogram.",
+        "likelihood": "Completed",
+        "status": "completed",
+        "test_date": "2025-08-28T00:00:00.000Z",
+        "referral_date": "",
+        "source": "Imaging Report - Memorial Medical Center.pdf",
+        "source_page": 1,
+        "service_date": "2025-08-28T00:00:00.000Z"
+      },
+      {
+        "test_name": "Diagnostic ultrasound",
+        "patient_facing_label": "Left breast diagnostic ultrasound",
+        "explanation": "This test uses sound waves to create pictures of the inside of the breast. It helps distinguish between fluid-filled cysts and solid masses.",
+        "likelihood": "Completed",
+        "status": "completed",
+        "test_date": "2025-09-03T00:00:00.000Z",
+        "referral_date": "",
+        "source": "Imaging Report - Memorial Medical Center.pdf",
+        "source_page": 2,
+        "service_date": "2025-09-03T00:00:00.000Z"
+      },
+      {
+        "test_name": "Breast MRI",
+        "patient_facing_label": "Bilateral breast MRI with contrast",
+        "explanation": "A breast MRI uses magnets to take very detailed pictures of the breast. Often used to evaluate extent of cancer and check the other breast.",
+        "likelihood": "Completed",
+        "status": "completed",
+        "test_date": "2025-09-10T00:00:00.000Z",
+        "referral_date": "",
+        "source": "Imaging Report - Memorial Medical Center.pdf",
+        "source_page": 1,
+        "service_date": "2025-09-10T00:00:00.000Z"
+      },
+      {
+        "test_name": "CT scan of chest, abdomen, pelvis and Bone scan",
+        "patient_facing_label": "Staging CT scan (chest/abdomen/pelvis)",
+        "explanation": "CT scan creates detailed pictures to check if breast cancer has spread to other parts of the body such as lungs, liver, or bones.",
+        "likelihood": "Completed",
+        "status": "completed",
+        "test_date": "2025-09-18T00:00:00.000Z",
+        "referral_date": "",
+        "source": "Imaging Report - Memorial Medical Center.pdf",
+        "source_page": 1,
+        "service_date": "2025-09-18T00:00:00.000Z"
+      },
+      {
+        "test_name": "PET/CT scan",
+        "patient_facing_label": "Whole body PET/CT scan",
+        "explanation": "A PET/CT combines imaging with detection of active cancer cells using radioactive sugar. Helps detect cancer spread throughout the body.",
+        "likelihood": "Highly Likely",
+        "status": "not started",
+        "test_date": "",
+        "referral_date": "",
+        "source": "",
+        "source_page": "",
+        "service_date": ""
+      },
+      {
+        "test_name": "Echocardiogram",
+        "patient_facing_label": "Echocardiogram (heart function assessment)",
+        "explanation": "Ultrasound of the heart to check heart function before starting chemotherapy that may affect the heart.",
+        "likelihood": "Highly Likely",
+        "status": "scheduled",
+        "test_date": "2025-12-10T00:00:00.000Z",
+        "referral_date": "",
+        "source": "",
+        "source_page": "",
+        "service_date": ""
+      },
+      {
+        "test_name": "ER histochemistry",
+        "patient_facing_label": "Estrogen Receptor (ER) test: Positive",
+        "explanation": "Test determines if breast cancer cells have receptors for estrogen hormone. ER-positive cancers can be treated with hormone therapy.",
+        "likelihood": "Completed",
+        "status": "completed",
+        "test_date": "2025-09-22T00:00:00.000Z",
+        "referral_date": "",
+        "source": "Pathology Report - Memorial Medical Center.pdf",
+        "source_page": 2,
+        "service_date": "2025-09-22T00:00:00.000Z"
+      },
+      {
+        "test_name": "PR histochemistry",
+        "patient_facing_label": "Progesterone Receptor (PR) test: Negative",
+        "explanation": "Test determines if breast cancer cells have receptors for progesterone hormone.",
+        "likelihood": "Completed",
+        "status": "completed",
+        "test_date": "2025-09-22T00:00:00.000Z",
+        "referral_date": "",
+        "source": "Pathology Report - Memorial Medical Center.pdf",
+        "source_page": 2,
+        "service_date": "2025-09-22T00:00:00.000Z"
+      },
+      {
+        "test_name": "HER2 histochemistry",
+        "patient_facing_label": "HER2 test: Positive (IHC 3+, FISH confirmed)",
+        "explanation": "Test measures HER2 protein on cancer cells. HER2-positive cancers can be treated with targeted HER2 therapies like trastuzumab.",
+        "likelihood": "Completed",
+        "status": "completed",
+        "test_date": "2025-09-22T00:00:00.000Z",
+        "referral_date": "",
+        "source": "Pathology Report - Memorial Medical Center.pdf",
+        "source_page": 2,
+        "service_date": "2025-09-22T00:00:00.000Z"
+      },
+      {
+        "test_name": "PD-L1 histochemistry",
+        "patient_facing_label": "PD-L1 test: High expression (CPS 15)",
+        "explanation": "Test checks if tumor expresses PD-L1 protein. High levels may indicate potential benefit from immunotherapy treatments.",
+        "likelihood": "Completed",
+        "status": "completed",
+        "test_date": "2025-09-28T00:00:00.000Z",
+        "referral_date": "",
+        "source": "Biomarker Testing - Memorial Medical Center.pdf",
+        "source_page": 1,
+        "service_date": "2025-09-28T00:00:00.000Z"
+      },
+      {
+        "test_name": "OncotypeDX",
+        "patient_facing_label": "Oncotype DX Recurrence Score: Not performed (HER2+)",
+        "explanation": "Genomic test typically not needed for HER2-positive breast cancers as treatment is guided by HER2 status.",
+        "likelihood": "",
+        "status": "not started",
+        "test_date": "",
+        "referral_date": "",
+        "source": "",
+        "source_page": "",
+        "service_date": ""
+      },
+      {
+        "test_name": "Germline genetic testing including breast cancer mutations",
+        "patient_facing_label": "BRCA1/2 genetic testing: BRCA1 positive",
+        "explanation": "Testing found inherited BRCA1 gene mutation which increases risk of breast and ovarian cancers.",
+        "likelihood": "Completed",
+        "status": "completed",
+        "test_date": "2025-10-05T00:00:00.000Z",
+        "referral_date": "",
+        "source": "Genetic Testing - GeneDx Laboratory.pdf",
+        "source_page": 1,
+        "service_date": "2025-10-05T00:00:00.000Z"
+      },
+      {
+        "test_name": "Blood test: CBC, CMP, TSH, Hep B",
+        "patient_facing_label": "Pre-treatment blood work",
+        "explanation": "Routine blood tests to check blood counts, organ function before starting treatment.",
+        "likelihood": "Highly Likely",
+        "status": "scheduled",
+        "test_date": "2025-12-08T00:00:00.000Z",
+        "referral_date": "",
+        "source": "",
+        "source_page": "",
+        "service_date": ""
+      },
+      {
+        "test_name": "List other tests completed not otherwise covered in this list above",
+        "patient_facing_label": "Core needle biopsy of left breast mass",
+        "explanation": "Procedure to remove tissue sample from breast for pathology testing.",
+        "likelihood": "",
+        "status": "completed",
+        "test_date": "2025-09-05T00:00:00.000Z",
+        "referral_date": "",
+        "source": "Pathology Report - Memorial Medical Center.pdf",
+        "source_page": 1,
+        "service_date": "2025-09-05T00:00:00.000Z"
+      },
+      {
+        "test_name": "Referral for fertility counseling",
+        "patient_facing_label": "Fertility preservation consultation",
+        "explanation": "Meeting with fertility specialist to discuss egg/embryo freezing options before chemotherapy.",
+        "likelihood": "Highly Likely",
+        "status": "scheduled",
+        "test_date": "",
+        "referral_date": "2025-12-12T00:00:00.000Z",
+        "source": "",
+        "source_page": "",
+        "service_date": ""
+      },
+      {
+        "test_name": "Referral for genetic counseling",
+        "patient_facing_label": "Genetic counseling completed",
+        "explanation": "Met with genetic counselor to discuss BRCA1 results and family implications.",
+        "likelihood": "Completed",
+        "status": "completed",
+        "test_date": "2025-10-12T00:00:00.000Z",
+        "referral_date": "",
+        "source": "",
+        "source_page": "",
+        "service_date": ""
+      },
+      {
+        "test_name": "Referral to medical oncology",
+        "patient_facing_label": "Medical oncology consultation",
+        "explanation": "Met with medical oncologist to discuss chemotherapy and targeted therapy options.",
+        "likelihood": "Completed",
+        "status": "completed",
+        "test_date": "2025-11-05T00:00:00.000Z",
+        "referral_date": "",
+        "source": "",
+        "source_page": "",
+        "service_date": ""
+      },
+      {
+        "test_name": "Referral to a breast surgeon",
+        "patient_facing_label": "Breast surgery consultation",
+        "explanation": "Consultation with breast surgeon to discuss surgical options after neoadjuvant chemotherapy.",
+        "likelihood": "Highly Likely",
+        "status": "scheduled",
+        "test_date": "",
+        "referral_date": "2025-12-20T00:00:00.000Z",
+        "source": "",
+        "source_page": "",
+        "service_date": ""
+      },
+      {
+        "test_name": "Referral to a radiation oncologist",
+        "patient_facing_label": "Radiation oncology consultation",
+        "explanation": "Will meet with radiation oncologist after surgery to discuss radiation therapy.",
+        "likelihood": "Highly Likely",
+        "status": "not started",
+        "test_date": "",
+        "referral_date": "",
+        "source": "",
+        "source_page": "",
+        "service_date": ""
+      }
+    ]
+  },
+  "records_reviewed": [
+    {
+      "document_name": "Imaging Report - Memorial Medical Center.pdf",
+      "patient_facing_title": "Bilateral screening mammogram",
+      "type": "Mammogram Report",
+      "service_date": "2025-08-15T00:00:00.000Z",
+      "pages": 3,
+      "source_url": "Imaging Report - Memorial Medical Center.pdf",
+      "notes": "Initial screening detected abnormality in left breast."
+    },
+    {
+      "document_name": "Imaging Report - Memorial Medical Center.pdf",
+      "patient_facing_title": "Left diagnostic mammogram with tomosynthesis",
+      "type": "Mammogram Report",
+      "service_date": "2025-08-28T00:00:00.000Z",
+      "pages": 4,
+      "source_url": "Imaging Report - Memorial Medical Center.pdf",
+      "notes": "Follow-up imaging confirmed suspicious mass."
+    },
+    {
+      "document_name": "Imaging Report - Memorial Medical Center.pdf",
+      "patient_facing_title": "Left breast diagnostic ultrasound",
+      "type": "Ultrasound Report",
+      "service_date": "2025-09-03T00:00:00.000Z",
+      "pages": 2,
+      "source_url": "Imaging Report - Memorial Medical Center.pdf",
+      "notes": "Solid mass confirmed, biopsy recommended."
+    },
+    {
+      "document_name": "Pathology Report - Memorial Medical Center.pdf",
+      "patient_facing_title": "Core needle biopsy pathology",
+      "type": "Pathology Report",
+      "service_date": "2025-09-05T00:00:00.000Z",
+      "pages": 5,
+      "source_url": "Pathology Report - Memorial Medical Center.pdf",
+      "notes": "Confirmed invasive ductal carcinoma, HER2 positive."
+    },
+    {
+      "document_name": "Imaging Report - Memorial Medical Center.pdf",
+      "patient_facing_title": "Bilateral breast MRI with contrast",
+      "type": "MRI Report",
+      "service_date": "2025-09-10T00:00:00.000Z",
+      "pages": 6,
+      "source_url": "Imaging Report - Memorial Medical Center.pdf",
+      "notes": "Evaluated tumor extent and ruled out additional lesions."
+    },
+    {
+      "document_name": "Imaging Report - Memorial Medical Center.pdf",
+      "patient_facing_title": "Staging CT scan",
+      "type": "CT Report",
+      "service_date": "2025-09-18T00:00:00.000Z",
+      "pages": 4,
+      "source_url": "Imaging Report - Memorial Medical Center.pdf",
+      "notes": "No distant metastases identified."
+    },
+    {
+      "document_name": "Pathology Report - Memorial Medical Center.pdf",
+      "patient_facing_title": "Final pathology report",
+      "type": "Pathology Report",
+      "service_date": "2025-09-22T00:00:00.000Z",
+      "pages": 8,
+      "source_url": "Pathology Report - Memorial Medical Center.pdf",
+      "notes": "Complete diagnostic workup with staging."
+    },
+    {
+      "document_name": "Biomarker Testing - Memorial Medical Center.pdf",
+      "patient_facing_title": "PD-L1 immunohistochemistry",
+      "type": "Biomarker Report",
+      "service_date": "2025-09-28T00:00:00.000Z",
+      "pages": 2,
+      "source_url": "Biomarker Testing - Memorial Medical Center.pdf",
+      "notes": "High PD-L1 expression detected."
+    },
+    {
+      "document_name": "Genetic Testing - GeneDx Laboratory.pdf",
+      "patient_facing_title": "BRCA1/2 genetic test results",
+      "type": "Genetic Testing Report",
+      "service_date": "2025-10-05T00:00:00.000Z",
+      "pages": 12,
+      "source_url": "Genetic Testing - GeneDx Laboratory.pdf",
+      "notes": "BRCA1 pathogenic variant identified."
+    },
+    {
+      "document_name": "Clinical Notes - Dr. Anderson.pdf",
+      "patient_facing_title": "Genetic counseling visit",
+      "type": "Consultation Note",
+      "service_date": "2025-10-12T00:00:00.000Z",
+      "pages": 3,
+      "source_url": "Clinical Notes - Dr. Anderson.pdf",
+      "notes": "Discussed BRCA1 results and family screening."
+    },
+    {
+      "document_name": "Clinical Notes - Dr. Chen.pdf",
+      "patient_facing_title": "Medical oncology consultation",
+      "type": "Consultation Note",
+      "service_date": "2025-11-05T00:00:00.000Z",
+      "pages": 5,
+      "source_url": "Clinical Notes - Dr. Chen.pdf",
+      "notes": "Treatment plan discussion - neoadjuvant chemotherapy with HER2 targeted therapy."
+    }
+  ],
+  "treatments": [
+    {
+      "treatment_section": "1 - Medical Oncology",
+      "table_title": "Chemotherapy + HER2 Targeted Therapy",
+      "table_description": "For HER2-positive breast cancer, chemotherapy combined with HER2-targeted drugs is highly effective at shrinking tumors and preventing recurrence.",
+      "row_type": "HER2 Targeted",
+      "row_order": 5,
+      "column_1_value": "Trastuzumab (Herceptin) + Pertuzumab (Perjeta) - Given with chemotherapy",
+      "column_2_value": "Heart monitoring required, possible infusion reactions, diarrhea",
+      "column_3_value": "Usually given every 3 weeks for 1 year total",
+      "likelihood": ""
+    },
+    {
+      "treatment_section": "1 - Medical Oncology",
+      "table_title": "Chemotherapy + HER2 Targeted Therapy",
+      "table_description": "For HER2-positive breast cancer, chemotherapy combined with HER2-targeted drugs is highly effective at shrinking tumors and preventing recurrence.",
+      "row_type": "Anthracyclines",
+      "row_order": 10,
+      "column_1_value": "Doxorubicin + Cyclophosphamide (AC)",
+      "column_2_value": "Nausea, fatigue, hair loss, low blood counts, heart monitoring needed",
+      "column_3_value": "Usually 4 cycles (every 2-3 weeks)",
+      "likelihood": ""
+    },
+    {
+      "treatment_section": "1 - Medical Oncology",
+      "table_title": "Chemotherapy + HER2 Targeted Therapy",
+      "table_description": "For HER2-positive breast cancer, chemotherapy combined with HER2-targeted drugs is highly effective at shrinking tumors and preventing recurrence.",
+      "row_type": "Taxanes",
+      "row_order": 20,
+      "column_1_value": "Paclitaxel (Taxol) or Docetaxel (Taxotere) - Given after AC with HER2 drugs",
+      "column_2_value": "Numbness/tingling in hands/feet, hair loss, muscle aches, allergic reactions",
+      "column_3_value": "Usually 12 weekly doses or 4 doses every 3 weeks",
+      "likelihood": ""
+    },
+    {
+      "treatment_section": "1 - Medical Oncology",
+      "table_title": "Endocrine Therapy",
+      "table_description": "Since your cancer is estrogen receptor positive, hormone-blocking therapy will be recommended after chemotherapy to reduce recurrence risk.",
+      "row_type": "SERMs",
+      "row_order": 10,
+      "column_1_value": "Tamoxifen - For premenopausal women",
+      "column_2_value": "Hot flashes, vaginal discharge, small blood clot risk",
+      "column_3_value": "Daily pill for 5-10 years",
+      "likelihood": ""
+    },
+    {
+      "treatment_section": "1 - Medical Oncology",
+      "table_title": "Endocrine Therapy",
+      "table_description": "Since your cancer is estrogen receptor positive, hormone-blocking therapy will be recommended after chemotherapy to reduce recurrence risk.",
+      "row_type": "Ovarian suppression",
+      "row_order": 20,
+      "column_1_value": "Ovarian suppression (goserelin/leuprolide) + Aromatase inhibitor - May be recommended given BRCA1 status",
+      "column_2_value": "Hot flashes, joint pain, bone thinning, menopausal symptoms",
+      "column_3_value": "Monthly injections for 5 years + daily AI pill",
+      "likelihood": ""
+    },
+    {
+      "treatment_section": "2 - Surgical Oncology",
+      "table_title": "Surgery",
+      "table_description": "Surgery will typically be performed after neoadjuvant chemotherapy to remove remaining cancer. Given BRCA1 status, bilateral mastectomy may be discussed.",
+      "row_type": "Lumpectomy",
+      "row_order": 10,
+      "column_1_value": "Lumpectomy (if excellent response to chemotherapy) - Usually followed by radiation",
+      "column_2_value": "Shorter recovery, breast preservation, radiation required",
+      "column_3_value": "Performed after chemotherapy completion",
+      "likelihood": ""
+    },
+    {
+      "treatment_section": "2 - Surgical Oncology",
+      "table_title": "Surgery",
+      "table_description": "Surgery will typically be performed after neoadjuvant chemotherapy to remove remaining cancer. Given BRCA1 status, bilateral mastectomy may be discussed.",
+      "row_type": "Mastectomy",
+      "row_order": 20,
+      "column_1_value": "Bilateral mastectomy - May be recommended given BRCA1 mutation and future cancer risk",
+      "column_2_value": "Longer recovery, removes both breasts to reduce future risk",
+      "column_3_value": "Performed after chemotherapy completion",
+      "likelihood": ""
+    },
+    {
+      "treatment_section": "2 - Surgical Oncology",
+      "table_title": "Surgery",
+      "table_description": "Surgery will typically be performed after neoadjuvant chemotherapy to remove remaining cancer. Given BRCA1 status, bilateral mastectomy may be discussed.",
+      "row_type": "Breast reconstruction",
+      "row_order": 40,
+      "column_1_value": "Breast reconstruction (immediate or delayed) - Multiple options available",
+      "column_2_value": "Additional surgery time, various recovery based on method chosen",
+      "column_3_value": "Can be done at surgery or later",
+      "likelihood": ""
+    },
+    {
+      "treatment_section": "3 - Radiation Oncology",
+      "table_title": "Radiation Therapy",
+      "table_description": "Radiation therapy is typically recommended after lumpectomy. May also be recommended after mastectomy for Stage IIIA with lymph node involvement.",
+      "row_type": "Breast or Chest Wall Radiation",
+      "row_order": 10,
+      "column_1_value": "Breast radiation (after lumpectomy) or chest wall radiation (after mastectomy)",
+      "column_2_value": "Skin changes like sunburn, fatigue, breast firmness",
+      "column_3_value": "Usually 5-6 weeks, 5 days/week",
+      "likelihood": ""
+    },
+    {
+      "treatment_section": "3 - Radiation Oncology",
+      "table_title": "Radiation Therapy",
+      "table_description": "Radiation therapy is typically recommended after lumpectomy. May also be recommended after mastectomy for Stage IIIA with lymph node involvement.",
+      "row_type": "Regional Nodal Radiation",
+      "row_order": 20,
+      "column_1_value": "Lymph node radiation - Recommended due to multiple positive nodes",
+      "column_2_value": "Similar to chest radiation plus small lymphedema risk",
+      "column_3_value": "Given at same time as breast/chest radiation",
+      "likelihood": ""
+    }
+  ],
+  "summaries": {
+    "diagnosis": [
+      {
+        "block_id": "summary_1_her2_positive",
+        "match_value": "Stage IIIA",
+        "title": "HER2-Positive & Hormone Receptor Positive",
+        "body": "Your cancer is both HER2-positive and hormone receptor positive. This means you can benefit from both HER2-targeted therapies and hormone therapy, giving you multiple effective treatment options."
+      },
+      {
+        "block_id": "summary_2_brca1",
+        "match_value": "Stage IIIA",
+        "title": "BRCA1 Mutation Detected",
+        "body": "The BRCA1 gene mutation increases your risk of breast and ovarian cancers. This is important information for your treatment decisions (such as considering bilateral mastectomy) and for your family members who may want genetic testing."
+      },
+      {
+        "block_id": "summary_3_stage_3",
+        "match_value": "Stage IIIA",
+        "title": "Stage IIIA Treatment Approach",
+        "body": "Stage IIIA breast cancer is locally advanced. The typical approach is chemotherapy first (neoadjuvant) to shrink the tumor, followed by surgery, then additional treatment with targeted therapy, hormone therapy, and often radiation."
+      }
+    ],
+    "testing_and_consultations": [
+      {
+        "block_id": "testing_summary_1",
+        "match_value": "in_planning",
+        "title": "Currently in: Planning Phase",
+        "body": "You've completed diagnostic and staging testing. Your care team is now finalizing your treatment plan. You may have a few more consultations and pre-treatment tests before starting therapy."
+      },
+      {
+        "block_id": "testing_summary_2",
+        "match_value": "in_planning",
+        "title": "Preparing for Treatment",
+        "body": "Before starting chemotherapy, you'll complete baseline tests like heart function assessment and blood work. If you're considering fertility preservation, those consultations should happen soon."
+      },
+      {
+        "block_id": "testing_summary_3",
+        "match_value": "in_planning",
+        "title": "Your Care Team is Ready",
+        "body": "You've met with your medical oncologist and have consultations scheduled with surgery. Your multidisciplinary team will coordinate your care throughout treatment."
+      }
+    ],
+    "treatment_planning": [
+      {
+        "block_id": "treatment_summary_1",
+        "match_value": "HER2 positive",
+        "title": "HER2-Targeted Therapy is Key",
+        "body": "HER2-targeted drugs like trastuzumab and pertuzumab dramatically improve outcomes for HER2-positive breast cancer. These will be a central part of your treatment plan."
+      },
+      {
+        "block_id": "treatment_summary_2",
+        "match_value": "Stage IIIA",
+        "title": "Neoadjuvant Chemotherapy First",
+        "body": "For Stage IIIA breast cancer, starting with chemotherapy before surgery (neoadjuvant approach) helps shrink the tumor and may allow for less extensive surgery."
+      },
+      {
+        "block_id": "treatment_summary_3",
+        "match_value": "",
+        "title": "BRCA1 Considerations",
+        "body": "Your BRCA1 mutation is important for surgical planning. Many women with BRCA1 mutations choose bilateral mastectomy to reduce future cancer risk, but this is a personal decision to discuss with your surgeon."
+      }
+    ]
+  },
+  "questions": {
+    "meta": {
+      "most_likely": "HER2 Targeted Therapy + Chemotherapy",
+      "most_likely_key": "her2_targeted_chemo",
+      "stage": "Stage IIIA",
+      "cancer_type": "Invasive Ductal Carcinoma (IDC)"
+    },
+    "items": [
+      {
+        "section": "Questions For Your Medical Oncologist",
+        "topic": "Treatment Planning",
+        "subtopic": "Treatment Sequence:",
+        "question": "With Stage IIIA HER2-positive breast cancer, what is the recommended sequence of treatments? Will I start with chemotherapy before surgery?",
+        "matched_logic": "Criteria \"always\" → included for all patients"
+      },
+      {
+        "section": "Questions For Your Medical Oncologist",
+        "topic": "Treatment Planning",
+        "subtopic": "HER2 Targeted Therapy:",
+        "question": "What HER2-targeted drugs do you recommend (trastuzumab, pertuzumab, others)? How long will I receive these medications?",
+        "matched_logic": "Criteria \"HER2 positive\" → included"
+      },
+      {
+        "section": "Questions For Your Medical Oncologist",
+        "topic": "Treatment Planning",
+        "subtopic": "Chemotherapy Details:",
+        "question": "What chemotherapy regimen do you recommend? What are the most common side effects I should prepare for?",
+        "matched_logic": "Criteria \"always\" → included for all patients"
+      },
+      {
+        "section": "Questions For Your Medical Oncologist",
+        "topic": "Treatment Planning",
+        "subtopic": "Heart Monitoring:",
+        "question": "Since HER2 drugs can affect the heart, how often will my heart function be monitored during treatment?",
+        "matched_logic": "Criteria \"HER2 positive\" → included"
+      },
+      {
+        "section": "Questions For Your Medical Oncologist",
+        "topic": "Treatment Planning",
+        "subtopic": "Hormone Therapy:",
+        "question": "After chemotherapy, what hormone therapy do you recommend given that I'm ER-positive and premenopausal?",
+        "matched_logic": "Criteria \"ER positive\" → included"
+      },
+      {
+        "section": "Questions For Your Medical Oncologist",
+        "topic": "Treatment Planning",
+        "subtopic": "BRCA1 Implications:",
+        "question": "How does my BRCA1 mutation affect my treatment plan? Are there any BRCA-specific therapies I should consider?",
+        "matched_logic": "Criteria \"BRCA positive\" → included"
+      },
+      {
+        "section": "Questions For Your Medical Oncologist",
+        "topic": "Daily Life & Support",
+        "subtopic": "Fertility Preservation:",
+        "question": "Given my age and BRCA1 status, what are my options for fertility preservation? How soon do we need to do this before starting treatment?",
+        "matched_logic": "Criteria \"age < 45\" → included"
+      },
+      {
+        "section": "Questions For Your Medical Oncologist",
+        "topic": "Daily Life & Support",
+        "subtopic": "Treatment Timeline:",
+        "question": "What is the total expected timeline for my treatment from start to finish?",
+        "matched_logic": "Criteria \"always\" → included for all patients"
+      },
+      {
+        "section": "Questions For Your Medical Oncologist",
+        "topic": "Daily Life & Support",
+        "subtopic": "Side Effect Management:",
+        "question": "What medications or strategies can help manage common side effects like nausea, fatigue, and neuropathy?",
+        "matched_logic": "Criteria \"always\" → included for all patients"
+      },
+      {
+        "section": "Questions For Your Surgical Oncologist",
+        "topic": "Treatment Planning",
+        "subtopic": "Timing of Surgery:",
+        "question": "When will surgery be scheduled relative to my chemotherapy? How will you assess if the chemotherapy is working?",
+        "matched_logic": "MATCH: logic=\"if neoadjuvant chemo recommended\""
+      },
+      {
+        "section": "Questions For Your Surgical Oncologist",
+        "topic": "Treatment Planning",
+        "subtopic": "Surgical Options with BRCA1:",
+        "question": "Given my BRCA1 mutation, what are the pros and cons of lumpectomy versus unilateral versus bilateral mastectomy?",
+        "matched_logic": "MATCH: logic=\"if BRCA positive\""
+      },
+      {
+        "section": "Questions For Your Surgical Oncologist",
+        "topic": "Treatment Planning",
+        "subtopic": "Lymph Node Surgery:",
+        "question": "Since I have positive lymph nodes now, what lymph node surgery will I need after chemotherapy?",
+        "matched_logic": "MATCH: logic=\"if N+ disease\""
+      },
+      {
+        "section": "Questions For Your Surgical Oncologist",
+        "topic": "Treatment Planning",
+        "subtopic": "Reconstruction Options:",
+        "question": "If I choose mastectomy, what are my reconstruction options? Can it be done at the same time as the mastectomy?",
+        "matched_logic": "MATCH: logic=\"if surgery recommended\""
+      },
+      {
+        "section": "Questions For Your Surgical Oncologist",
+        "topic": "Treatment Planning",
+        "subtopic": "Ovarian Cancer Prevention:",
+        "question": "Given my BRCA1 mutation, when should I consider preventive surgery for ovarian cancer risk?",
+        "matched_logic": "MATCH: logic=\"if BRCA positive\""
+      },
+      {
+        "section": "Questions For Your Surgical Oncologist",
+        "topic": "Daily Life & Support",
+        "subtopic": "Recovery Timeline:",
+        "question": "What is the typical recovery time for the surgery you're recommending? When can I return to work and normal activities?",
+        "matched_logic": "MATCH: logic=\"if surgery\""
+      },
+      {
+        "section": "Questions For Your Radiation Oncologist",
+        "topic": "Treatment Planning",
+        "subtopic": "Radiation Recommendations:",
+        "question": "Will I need radiation therapy after surgery? Does it matter whether I have lumpectomy or mastectomy?",
+        "matched_logic": "MATCH: logic=\"if radiation likely\""
+      },
+      {
+        "section": "Questions For Your Radiation Oncologist",
+        "topic": "Treatment Planning",
+        "subtopic": "Lymph Node Radiation:",
+        "question": "Since I have multiple positive lymph nodes, will you also radiate my lymph node areas?",
+        "matched_logic": "MATCH: logic=\"if N+ disease\""
+      },
+      {
+        "section": "Questions For Your Radiation Oncologist",
+        "topic": "Treatment Planning",
+        "subtopic": "Timing of Radiation:",
+        "question": "When will radiation start after surgery? How long will the treatment course be?",
+        "matched_logic": "MATCH: logic=\"if radiation likely\""
+      },
+      {
+        "section": "Questions For Your Radiation Oncologist",
+        "topic": "Daily Life & Support",
+        "subtopic": "Side Effects:",
+        "question": "What are the short-term and long-term side effects of radiation I should know about?",
+        "matched_logic": "MATCH: logic=\"if radiation likely\""
+      }
+    ]
+  }
+}
