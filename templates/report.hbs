@@ -1649,7 +1649,7 @@
       <div class="doc-icon">📄</div>
       <div>
         <h1>Your Path Forward Report</h1>
-        <p class="subtitle">{{#if general_info.fname.value}}{{general_info.fname.value}} {{general_info.lname.value}}{{else}}Patient{{/if}}{{#if general_info.age.value}} • Age {{general_info.age.value}}{{/if}} • {{currentDate}}</p>
+        <p class="subtitle">{{#if general_info.fname.value}}{{general_info.fname.value}} {{general_info.lname.value}}{{else}}Patient{{/if}}{{#if general_info.age.value}} • Age {{general_info.age.value}}{{/if}}{{#if general_info.dateOfBirth.value}} • DOB: {{parseDate general_info.dateOfBirth.value}}{{/if}} • {{currentDate}}</p>
       </div>
     </div>
     <button class="export-btn" style="display: none;">
@@ -1818,14 +1818,6 @@
         {{#if @root.tumors}}
         <div class="tumor-section">
           <h3>Diagnosis by Tumor{{#if @root.tumor_metadata.number_of_cancerous_tumors_confirmed_by_biopsy.value}} ({{@root.tumor_metadata.number_of_cancerous_tumors_confirmed_by_biopsy.value}} confirmed){{/if}}{{#if @root.diagnosis.multifocal.value}}{{#ifEq @root.diagnosis.multifocal.value "Yes"}} - Multifocal{{/ifEq}}{{/if}}</h3>
-          {{#if @root.diagnosis.stage_type.value}}
-          <p style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 14px; color: #8B8991; margin-bottom: 0.5rem;">Stage Type: {{@root.diagnosis.stage_type.value}}{{#if @root.diagnosis.stage_type.explanation}} - {{@root.diagnosis.stage_type.explanation}}{{/if}}</p>
-          {{/if}}
-          {{#if @root.tumor_metadata.number_of_cancerous_lymph_nodes_confirmed_by_biopsy.value}}
-          <p style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 14px; color: #8B8991; margin-bottom: 1rem;">Lymph nodes with cancer: {{@root.tumor_metadata.number_of_cancerous_lymph_nodes_confirmed_by_biopsy.value}}</p>
-          {{else}}
-          <p style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 14px; color: #8B8991; margin-bottom: 1rem;">Lymph nodes with cancer: 0 (none detected)</p>
-          {{/if}}
           {{#each @root.tumors}}
             <div class="tumor-section-header">
               <h4>Tumor {{inc @index}}</h4>
@@ -2030,6 +2022,42 @@
               </div>
               <div class="tumor-explanation-box">
                 <p style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 14px; font-weight: 400; color: #8B8991; line-height: 1.6; margin: 0;">{{#if @root.diagnosis.ibc_status.explanation}}{{@root.diagnosis.ibc_status.explanation}}{{else}}Text not available in JSON{{/if}}</p>
+              </div>
+            </div>
+            {{/if}}
+
+            {{#if @root.diagnosis.ihc_result.value}}
+            <div class="tumor-detail-row">
+              <div class="tumor-detail-left">
+                <div class="tumor-detail-label">IHC Result</div>
+                <div class="tumor-detail-value">{{@root.diagnosis.ihc_result.value}}</div>
+              </div>
+              <div class="tumor-explanation-box">
+                <p style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 14px; font-weight: 400; color: #8B8991; line-height: 1.6; margin: 0;">{{#if @root.diagnosis.ihc_result.explanation}}{{@root.diagnosis.ihc_result.explanation}}{{else}}Immunohistochemistry test result{{/if}}</p>
+              </div>
+            </div>
+            {{/if}}
+
+            {{#if @root.diagnosis.fish_ish_result.value}}
+            <div class="tumor-detail-row">
+              <div class="tumor-detail-left">
+                <div class="tumor-detail-label">FISH/ISH Result</div>
+                <div class="tumor-detail-value">{{@root.diagnosis.fish_ish_result.value}}</div>
+              </div>
+              <div class="tumor-explanation-box">
+                <p style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 14px; font-weight: 400; color: #8B8991; line-height: 1.6; margin: 0;">{{#if @root.diagnosis.fish_ish_result.explanation}}{{@root.diagnosis.fish_ish_result.explanation}}{{else}}Fluorescence in situ hybridization test result{{/if}}</p>
+              </div>
+            </div>
+            {{/if}}
+
+            {{#if @root.diagnosis.hormone_receptor_status.value}}
+            <div class="tumor-detail-row">
+              <div class="tumor-detail-left">
+                <div class="tumor-detail-label">Hormone Receptor Status</div>
+                <div class="tumor-detail-value">{{@root.diagnosis.hormone_receptor_status.value}}</div>
+              </div>
+              <div class="tumor-explanation-box">
+                <p style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 14px; font-weight: 400; color: #8B8991; line-height: 1.6; margin: 0;">{{#if @root.diagnosis.hormone_receptor_status.explanation}}{{@root.diagnosis.hormone_receptor_status.explanation}}{{else}}Overall hormone receptor classification{{/if}}</p>
               </div>
             </div>
             {{/if}}
@@ -2713,6 +2741,15 @@
 
       {{!-- Questions Sections - Dynamically rendered from JSON --}}
       {{#if questions}}
+        {{!-- Questions Meta Summary --}}
+        {{#if questions.meta}}
+        <div style="background: #F5F4FF; border-radius: 12px; padding: 20px 24px; margin-bottom: 2rem;">
+          <p style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 15px; font-weight: 400; color: #1F1D2C; margin: 0; line-height: 1.6;">
+            Based on your diagnosis of <strong>{{#if questions.meta.cancer_type}}{{questions.meta.cancer_type}}{{else}}{{diagnosis.cancer_type.value}}{{/if}}</strong> at <strong>{{#if questions.meta.stage}}{{questions.meta.stage}}{{else}}{{diagnosis.stage.value}}{{/if}}</strong>, the most likely treatment approach is <strong style="color: #6B7FFF;">{{#if questions.meta.most_likely}}{{questions.meta.most_likely}}{{else}}to be determined{{/if}}</strong>. The questions below are tailored to help you have informed discussions with your care team.
+          </p>
+        </div>
+        {{/if}}
+        
         {{#each (groupQuestions questions.items)}}
           {{#unless @first}}
             {{!-- Divider between sections --}}
@@ -2786,6 +2823,16 @@
           <div style="background: #FFFFFF; border: 1px solid #C7BEFA; border-radius: 12px; padding: 24px 28px; margin-bottom: 2rem; display: grid; grid-template-columns: auto 1fr; column-gap: 3rem; row-gap: 16px;">
             <span style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 16px; font-weight: 400; color: #1F1D2C;">Patient Name</span>
             <span style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 16px; font-weight: 400; color: #1F1D2C;">{{general_info.fname.value}} {{general_info.lname.value}}</span>
+            
+            {{#if general_info.humanReadableId.value}}
+            <span style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 16px; font-weight: 400; color: #1F1D2C;">Patient ID</span>
+            <span style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 16px; font-weight: 400; color: #1F1D2C;">{{general_info.humanReadableId.value}}</span>
+            {{/if}}
+            
+            {{#if general_info.dateOfBirth.value}}
+            <span style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 16px; font-weight: 400; color: #1F1D2C;">Date of Birth</span>
+            <span style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 16px; font-weight: 400; color: #1F1D2C;">{{parseDate general_info.dateOfBirth.value}}</span>
+            {{/if}}
             
             <span style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 16px; font-weight: 400; color: #1F1D2C;">Date of Review</span>
             <span style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 16px; font-weight: 400; color: #1F1D2C;">{{#if general_info.recordsAsOfDate.value}}{{parseDate general_info.recordsAsOfDate.value}}{{else}}{{currentDate}}{{/if}}</span>
