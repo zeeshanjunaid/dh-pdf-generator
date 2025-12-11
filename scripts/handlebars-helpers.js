@@ -89,4 +89,51 @@ export function registerHelpers(Handlebars) {
     const match = gradeValue.match(/Grade\s*(\d+)/i);
     return match ? match[1] : "--";
   });
+
+  // Group treatments by treatment_section, then by table_title
+  // Returns: [{section, section_name, tables: [{title, description, rows: [...]}]}]
+  Handlebars.registerHelper("groupTreatments", function(treatments, options) {
+    if (!treatments || !Array.isArray(treatments) || treatments.length === 0) {
+      return options.inverse(this);
+    }
+    
+    const sections = {};
+    
+    treatments.forEach(treatment => {
+      const sectionKey = treatment.treatment_section || "Other";
+      const tableTitle = treatment.table_title || "Treatments";
+      
+      if (!sections[sectionKey]) {
+        sections[sectionKey] = {
+          section: sectionKey,
+          section_name: sectionKey.replace(/^\d+\s*-\s*/, ''), // Remove "1 - " prefix
+          tables: {}
+        };
+      }
+      
+      if (!sections[sectionKey].tables[tableTitle]) {
+        sections[sectionKey].tables[tableTitle] = {
+          title: tableTitle,
+          description: treatment.table_description || '',
+          rows: []
+        };
+      }
+      
+      sections[sectionKey].tables[tableTitle].rows.push(treatment);
+    });
+    
+    // Convert to arrays and sort
+    const sectionsArray = Object.values(sections).map(section => ({
+      ...section,
+      tables: Object.values(section.tables).map(table => ({
+        ...table,
+        rows: table.rows.sort((a, b) => (a.row_order || 0) - (b.row_order || 0))
+      }))
+    }));
+    
+    // Sort sections by key (1 - Medical, 2 - Surgical, 3 - Radiation)
+    sectionsArray.sort((a, b) => a.section.localeCompare(b.section));
+    
+    return sectionsArray.map(section => options.fn(section)).join('');
+  });
 }

@@ -5,6 +5,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Defiant Health Diagnostic Report</title>
   <style>
+    @font-face {
+      font-family: 'Druk';
+      src: url('./fonts/Druk-Bold.woff2') format('woff2');
+      font-weight: 700;
+      font-style: normal;
+    }
+
+    @font-face {
+      font-family: 'Quincy CF';
+      src: url('./fonts/QuincyCF-Regular.woff2') format('woff2');
+      font-weight: 400;
+      font-style: normal;
+    }
+
     :root {
       --aubergine: #38284E;
       --ivory: #FFF8F4;
@@ -137,7 +151,7 @@
     .doc-contents h3 {
       font-family: "Visuelt Pro", "Inter", sans-serif;
       font-size: 0.95rem;
-      font-weight: 500;
+      font-weight: 400;
       color: #6B6B6B;
       margin: 0 0 1.5rem 0;
       text-transform: none;
@@ -213,7 +227,6 @@
       padding-bottom: 0;
       line-height: 1;
       text-transform: uppercase;
-      letter-spacing: -0.1em;
     }
 
     /* Heart icon in corner */
@@ -256,7 +269,7 @@
     .note-from-defiant .team-name {
       font-family: "Visuelt Pro", "Inter", sans-serif;
       font-size: 1.05rem;
-      font-weight: 600;
+      font-weight: 500;
       color: var(--defiant-black);
       margin: 0.25rem 0;
     }
@@ -391,13 +404,12 @@
     }
 
     .diagnosis-subtitle {
-      font-family: "Druk", "Quincy CF", serif;
+      font-family: "Quincy CF", serif;
       font-size: 3rem;
       font-weight: 500;
       color: #38284E;
       margin-bottom: 2rem;
       line-height: 98%;
-      letter-spacing: -0.05em;
       max-width: 50%;
     }
 
@@ -413,18 +425,16 @@
 
     .diagnosis-meta-section {
       margin-bottom: 2rem;
-      display: flex;
-      justify-content: space-between;
-      gap: 3rem;
+      display: grid;
+      grid-template-columns: 70% 30%;
+      gap: 40px;
       padding-top: 4rem;
     }
 
     .diagnosis-meta-left {
-      flex: 1;
     }
 
     .diagnosis-meta-right {
-      flex: 1;
       text-align: left;
     }
 
@@ -439,9 +449,9 @@
 
     .diagnosis-sources {
       font-family: "Visuelt Pro", "Inter", sans-serif;
-      font-size: 16px;
+      font-size: 12px;
       font-weight: 400;
-      color: #1F1D2C;
+      color: #8B8991;
       line-height: 1.5;
       margin: 0;
     }
@@ -522,7 +532,7 @@
 
     .progress-step-label {
       font-family: "Visuelt Pro", "Inter", sans-serif;
-      font-size: 14px;
+      font-size: 16px;
       text-align: center;
       white-space: nowrap;
     }
@@ -544,7 +554,7 @@
 
     .progress-step-label {
       font-family: "Visuelt Pro", "Inter", sans-serif;
-      font-size: 14px;
+      font-size: 16px;
       font-weight: 400;
       color: #38284E;
       text-align: center;
@@ -589,8 +599,8 @@
 
     .likely-tests-title {
       font-family: "Visuelt Pro", "Inter", sans-serif;
-      font-size: 18px;
-      font-weight: 600;
+      font-size: 16px;
+      font-weight: 500;
       color: #1F1D2C;
       margin: 0 0 1.5rem 0;
     }
@@ -604,16 +614,17 @@
     .likely-test-item {
       background: #F8F8F8;
       border-radius: 12px;
-      padding: 20px 24px;
+      padding: 12px 16px;
       display: flex;
       gap: 20px;
       align-items: flex-start;
     }
 
     .likely-test-badge {
-      font-family: "Visuelt Pro", "Inter", sans-serif;
-      font-size: 14px;
+      font-family: "Inter", sans-serif;
+      font-size: 12px;
       font-weight: 500;
+      line-height: 1.2;
       color: #0A0A0A;
       border: 1px solid #FF7449;
       border-radius: 8px;
@@ -630,12 +641,12 @@
     }
 
     .likely-test-name {
-      font-family: "Visuelt Pro", "Inter", sans-serif;
-      font-size: 16px;
-      font-weight: 600;
+      font-family: "Visuelt Pro", sans-serif;
+      font-size: 14px;
+      font-weight: 500;
       color: #1F1D2C;
       margin: 0;
-      line-height: 1.4;
+      line-height: 1.3;
     }
 
     .likely-test-description {
@@ -659,7 +670,7 @@
     .testing-items-title {
       font-family: "Visuelt Pro", "Inter", sans-serif;
       font-size: 18px;
-      font-weight: 600;
+      font-weight: 500;
       color: #0A0A0A;
       margin: 0 0 1.25rem 0;
     }
@@ -776,7 +787,6 @@
       font-size: 37px;
       font-weight: 700;
       line-height: 88%;
-      letter-spacing: -0.05em;
       padding: 4px 8px;
       border-radius: 0;
       z-index: 1;
@@ -792,20 +802,28 @@
     .diagnosis-overview-box {
       background: #38284E;
       border-radius: 20px;
-      padding: 24px 40px 36px 40px;
+      padding: 24px 40px 24px 40px;
       margin-bottom: 3rem;
       display: flex;
       justify-content: space-between;
-      align-items: center;
-      gap: 48px;
+      align-items: stretch;
+      gap: 30px;
       color: white;
     }
 
     .diagnosis-stat {
       display: flex;
       flex-direction: column;
-      gap: 12px;
+      justify-content: space-between;
       flex: 1;
+      border-right: 1px solid #170B27;
+      padding-right: 20px;
+      min-height: 100px;
+    }
+
+    .diagnosis-stat:last-child {
+      border-right: none;
+      padding-right: 0;
     }
 
     .diagnosis-stat-label {
@@ -813,12 +831,12 @@
       font-size: 14px;
       font-weight: 500;
       color: #C7BEFA;
-      margin: 0;
+      margin: 0 0 12px 0;
     }
 
     .diagnosis-stat-content {
       display: flex;
-      align-items: center;
+      align-items: flex-start;
       gap: 16px;
     }
 
@@ -1013,7 +1031,7 @@
 
     .tumor-section-header h4:last-child {
       font-family: "Visuelt Pro", "Inter", sans-serif;
-      font-size: 18px;
+      font-size: 14px;
       font-weight: 600;
       color: #1F1D2C;
       margin: 0;
@@ -1037,14 +1055,14 @@
       border-radius: 12px;
       padding: 16px 20px;
       display: flex;
-      gap: 16px;
+      gap: 100px;
       align-items: center;
     }
 
     .tumor-detail-label {
       font-family: "Visuelt Pro", "Inter", sans-serif;
-      font-size: 16px;
-      font-weight: 600;
+      font-size: 14px;
+      font-weight: 500;
       color: #1F1D2C;
       line-height: 1.4;
       white-space: nowrap;
@@ -1052,7 +1070,7 @@
 
     .tumor-detail-value {
       font-family: "Visuelt Pro", "Inter", sans-serif;
-      font-size: 16px;
+      font-size: 14px;
       font-weight: 400;
       color: #8B8991;
       line-height: 1.4;
@@ -1076,7 +1094,7 @@
       font-size: 0.9rem;
       font-weight: 400;
       color: #6B6B6B;
-      line-height: 1.6;
+      line-height: 1.3;
       margin: 0;
     }
 
@@ -1138,6 +1156,16 @@
       margin-top: 0;
       margin-bottom: 1rem;
       color: #C7BEFA;
+    }
+
+    .summary-card-no-icon::before {
+      display: none !important;
+      content: none !important;
+    }
+
+    .summary-card-no-icon::after {
+      display: none !important;
+      content: none !important;
     }
 
     /* Next Steps */
@@ -1335,12 +1363,11 @@
       background: #FFFFFF;
       border: 1px solid #FFC34D;
       border-radius: 12px;
-      padding: 18px;
+      padding: 10px;
       display: flex;
       align-items: center;
-      justify-content: center;
-      text-align: center;
-      min-height: 80px;
+      justify-content: flex-start;
+      text-align: left;
     }
 
     .treatment-goal-text {
@@ -1359,8 +1386,8 @@
 
     .personal-goals-title {
       font-family: "Visuelt Pro", "Inter", sans-serif;
-      font-size: 20px;
-      font-weight: 600;
+      font-size: 16px;
+      font-weight: 400;
       color: #1F1D2C;
       margin: 0 0 24px 0;
       line-height: 1.3;
@@ -1399,7 +1426,7 @@
       padding: 8px 16px;
       font-family: "Visuelt Pro", "Inter", sans-serif;
       font-size: 14px;
-      font-weight: 500;
+      font-weight: 400;
       color: #1F1D2C;
       white-space: nowrap;
     }
@@ -1423,6 +1450,8 @@
       padding: 32px;
       margin-bottom: 48px;
       page-break-inside: avoid;
+      box-sizing: border-box;
+      overflow: hidden;
     }
 
     .treatment-card-header {
@@ -1449,7 +1478,7 @@
     .treatment-name {
       font-family: "Visuelt Pro", "Inter", sans-serif;
       font-size: 18px;
-      font-weight: 600;
+      font-weight: 500;
       color: #1F1D2C;
       margin: 0 0 12px 0;
       line-height: 1.3;
@@ -1457,7 +1486,7 @@
 
     .treatment-intro {
       font-family: "Visuelt Pro", "Inter", sans-serif;
-      font-size: 14px;
+      font-size: 16px;
       font-weight: 400;
       color: #8B8991;
       margin: 0;
@@ -1472,8 +1501,10 @@
 
     .treatment-details {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: 1.6fr 1fr 1fr;
       gap: 32px;
+      box-sizing: border-box;
+      width: 100%;
     }
 
     .treatment-detail-section h4 {
@@ -1514,8 +1545,10 @@
     /* Treatment Grid and Rows */
     .treatment-details-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: 1.6fr 1fr 1fr;
       gap: 32px;
+      box-sizing: border-box;
+      width: 100%;
     }
 
     .treatment-detail-column {
@@ -1533,7 +1566,7 @@
 
     .treatment-detail-text {
       font-family: "Visuelt Pro", "Inter", sans-serif;
-      font-size: 14px;
+      font-size: 16px;
       font-weight: 400;
       color: #8B8991;
       margin: 0;
@@ -1616,24 +1649,11 @@
     .record-item-date {
       font-family: "Visuelt Pro", "Inter", sans-serif;
       font-size: 16px;
-      font-weight: 500;
-      color: #8B8991;
+      font-weight: 400;
+      color: #1F1D2C;
     }
 
     /* Footer */
-    footer.report-footer {
-      text-align: center;
-      font-family: "Visuelt Pro", "Inter", sans-serif;
-      font-size: 0.85rem;
-      color: var(--gray);
-      padding: 1rem 0 2rem 0;
-      margin-top: 1rem;
-      user-select: none;
-    }
-
-    footer.report-footer p {
-      margin: 0.25rem 0;
-    }
 
     /* Reduce bottom margin for last section */
     section.testing-consultations {
@@ -1646,10 +1666,12 @@
 
   <header class="report-header">
     <div class="header-left">
-      <div class="doc-icon">📄</div>
+      <div class="doc-icon">
+        <img src="./icons/document-icon.svg" alt="Document" style="width: 20px; height: 20px;" />
+      </div>
       <div>
         <h1>Your Path Forward Report</h1>
-        <p class="subtitle">{{#if general_info.fname.value}}{{general_info.fname.value}} {{general_info.lname.value}}{{else}}Patient{{/if}}{{#if general_info.age.value}} • Age {{general_info.age.value}}{{/if}}{{#if general_info.dateOfBirth.value}} • DOB: {{parseDate general_info.dateOfBirth.value}}{{/if}} • {{currentDate}}</p>
+        <p class="subtitle">{{#if general_info.fname.value}}{{general_info.fname.value}} {{general_info.lname.value}}{{else}}Patient{{/if}} • {{currentDate}}</p>
       </div>
     </div>
     <button class="export-btn" style="display: none;">
@@ -1663,8 +1685,8 @@
     <div class="doc-contents-nav">
       <a href="#note_from_defiant"><img src="./icons/heart-icon.png" alt="" class="nav-icon" /> A letter from our team</a>
       <a href="#diagnosis_summary"><img src="./icons/diagnosis-icon.png" alt="" class="nav-icon" /> Your Diagnosis</a>
-      <a href="#next_steps"><img src="./icons/document-icon.png" alt="" class="nav-icon" /> Testing and Scans</a>
-      <a href="#treatment_planning"><img src="./icons/link-icon.png" alt="" class="nav-icon" /> Likely Treatment Plan</a>
+      <a href="#next_steps"><img src="./icons/document-icon.png" alt="" class="nav-icon" /> Testing and Consultations</a>
+      <a href="#treatment_planning"><img src="./icons/link-icon.png" alt="" class="nav-icon" /> Treatment Planning</a>
       <a href="#care_team"><img src="./icons/book-icon.png" alt="" class="nav-icon" /> Visit Prep</a>
     </div>
   </nav>
@@ -1676,12 +1698,6 @@
       <h2 class="section-title">{{#if general_info.intro_letter_title.value}}{{general_info.intro_letter_title.value}}{{else}}You're Not Alone{{/if}}</h2>
       
       <p class="greeting">Dear {{#if general_info.fname.value}}{{general_info.fname.value}}{{else}}Patient{{/if}},</p>
-      
-      {{#if general_info.feelingNow.value}}
-      <p style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 1.05rem; font-weight: 400; color: #6B7FFF; font-style: italic; margin: 1.5rem 0; padding-left: 1rem; border-left: 3px solid #C7BEFA;">
-        "{{general_info.feelingNow.value}}"
-      </p>
-      {{/if}}
       
       {{#if general_info.intro_letter_body.value}}
       {{!-- Parse the intro letter body which may contain newlines --}}
@@ -1723,20 +1739,20 @@
         <div class="diagnosis-header">
           <img src="./icons/stethoscope.png" alt="" class="stethoscope-icon" />
           <h3 class="diagnosis-subtitle">Your diagnosis at a glance and what it means</h3>
-          <p class="diagnosis-description">A summary of your diagnosis (as documented) and what it means—covering tumor type, stage, grade, and hormone status—along with plain-language explanations of how these findings help guide treatment decisions.</p>
+          <p class="diagnosis-description">Below you will find a summary of your diagnosis (as documented) and what it means—covering tumor type, stage, grade, and hormone status—along with plain-language explanations of how these findings help guide treatment decisions.</p>
         </div>
 
         <div class="diagnosis-meta-section">
           <div class="diagnosis-meta-left">
-            <h4 class="diagnosis-meta-title">Diagnosis Overview</h4>
-            <p class="diagnosis-sources">
+            <h4 class="diagnosis-meta-title" style="font-size: 18px;">Diagnosis Overview</h4>
+            <p class="diagnosis-sources" style="color: #8B8991; font-size: 16px;">
               Sources: Medical records shared with Defiant Health as of {{currentDate}}{{#if records_reviewed.[0]}}, {{records_reviewed.[0].type}} ({{formatDate records_reviewed.[0].service_date}}){{/if}}{{#if records_reviewed.[1]}}, {{records_reviewed.[1].type}} ({{formatDate records_reviewed.[1].service_date}}){{/if}}
             </p>
           </div>
           <div class="diagnosis-meta-right">
-            <h4 class="diagnosis-meta-title">Your Test Results</h4>
-            <p class="diagnosis-sources" style="color: #8B8991;">
-              A list of all records received by Defiant Health can be view at the <a href="#records_overview" style="color: #8B8991; text-decoration: underline;">end of this report</a>.
+            <h4 class="diagnosis-meta-title" style="font-size: 14px;">Your Test Results</h4>
+            <p class="diagnosis-sources" style="color: #8B8991; font-size: 12px;">
+              A list of all records received by Defiant Health can be view at the <a href="#your_records" style="color: #8B8991; text-decoration: underline;">end of this report</a>.
             </p>
           </div>
         </div>
@@ -1745,6 +1761,15 @@
         <div class="diagnosis-overview-box-wrapper">
           <div class="diagnosis-overview-box">
           {{#if @root.diagnosis}}
+          <div class="diagnosis-stat">
+            <div class="diagnosis-stat-label">Cancer Type</div>
+            <div class="diagnosis-stat-content">
+              <div class="diagnosis-stat-value">
+                <div class="diagnosis-stat-main" style="font-size: 16px; line-height: 1.3;">{{#if @root.diagnosis.cancer_type.value}}{{@root.diagnosis.cancer_type.value}}{{else}}IDC<br>Invasive Ductal<br>Carcinoma{{/if}}</div>
+              </div>
+            </div>
+          </div>
+
           <div class="diagnosis-stat">
             <div class="diagnosis-stat-label">Overall Stage</div>
             <div class="diagnosis-stat-content">
@@ -1817,7 +1842,7 @@
         {{!-- Tumor Details --}}
         {{#if @root.tumors}}
         <div class="tumor-section">
-          <h3>Diagnosis by Tumor{{#if @root.tumor_metadata.number_of_cancerous_tumors_confirmed_by_biopsy.value}} ({{@root.tumor_metadata.number_of_cancerous_tumors_confirmed_by_biopsy.value}} confirmed){{/if}}{{#if @root.diagnosis.multifocal.value}}{{#ifEq @root.diagnosis.multifocal.value "Yes"}} - Multifocal{{/ifEq}}{{/if}}</h3>
+          <h3>Diagnosis by Tumor</h3>
           {{#each @root.tumors}}
             <div class="tumor-section-header">
               <h4>Tumor {{inc @index}}</h4>
@@ -1973,111 +1998,18 @@
         </div>
         {{/if}}
 
-        {{!-- Global Diagnosis Fields --}}
-        {{#if @root.diagnosis}}
-        <div class="tumor-section" style="margin-top: 2rem;">
-          <h3>Additional Genetic and Biomarker Testing</h3>
-          <div class="tumor-details-container">
-            {{#if @root.diagnosis.brca_status.value}}
-            <div class="tumor-detail-row">
-              <div class="tumor-detail-left">
-                <div class="tumor-detail-label">BRCA Status</div>
-                <div class="tumor-detail-value">{{@root.diagnosis.brca_status.value}}{{#if @root.diagnosis.brca_type.value}} ({{@root.diagnosis.brca_type.value}}){{/if}}{{#if @root.diagnosis.brca_variant.value}} - Variant: {{@root.diagnosis.brca_variant.value}}{{/if}}{{#if @root.diagnosis.brca_lab.value}} - {{@root.diagnosis.brca_lab.value}}{{/if}}</div>
-              </div>
-              <div class="tumor-explanation-box">
-                <p style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 14px; font-weight: 400; color: #8B8991; line-height: 1.6; margin: 0;">{{#if @root.diagnosis.brca_status.explanation}}{{@root.diagnosis.brca_status.explanation}}{{else}}Text not available in JSON{{/if}}</p>
-              </div>
-            </div>
-            {{/if}}
-
-            {{#if @root.diagnosis.pdl1_cps_score.value}}
-            <div class="tumor-detail-row">
-              <div class="tumor-detail-left">
-                <div class="tumor-detail-label">PD-L1 CPS Score</div>
-                <div class="tumor-detail-value">{{@root.diagnosis.pdl1_cps_score.value}}{{#if @root.diagnosis.pdl1_interpretation.value}} ({{@root.diagnosis.pdl1_interpretation.value}}){{/if}}{{#if @root.diagnosis.pdl1_threshold_used.value}} - Threshold: {{@root.diagnosis.pdl1_threshold_used.value}}{{/if}}</div>
-              </div>
-              <div class="tumor-explanation-box">
-                <p style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 14px; font-weight: 400; color: #8B8991; line-height: 1.6; margin: 0;">{{#if @root.diagnosis.pdl1_assay.value}}Assay: {{@root.diagnosis.pdl1_assay.value}}{{else}}Text not available in JSON{{/if}}</p>
-              </div>
-            </div>
-            {{/if}}
-
-            {{#if @root.diagnosis.tnbc_status.value}}
-            <div class="tumor-detail-row">
-              <div class="tumor-detail-left">
-                <div class="tumor-detail-label">TNBC Status</div>
-                <div class="tumor-detail-value">{{@root.diagnosis.tnbc_status.value}}</div>
-              </div>
-              <div class="tumor-explanation-box">
-                <p style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 14px; font-weight: 400; color: #8B8991; line-height: 1.6; margin: 0;">{{#if @root.diagnosis.tnbc_status.explanation}}{{@root.diagnosis.tnbc_status.explanation}}{{else}}Text not available in JSON{{/if}}</p>
-              </div>
-            </div>
-            {{/if}}
-
-            {{#if @root.diagnosis.ibc_status.value}}
-            <div class="tumor-detail-row">
-              <div class="tumor-detail-left">
-                <div class="tumor-detail-label">IBC Status</div>
-                <div class="tumor-detail-value">{{@root.diagnosis.ibc_status.value}}</div>
-              </div>
-              <div class="tumor-explanation-box">
-                <p style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 14px; font-weight: 400; color: #8B8991; line-height: 1.6; margin: 0;">{{#if @root.diagnosis.ibc_status.explanation}}{{@root.diagnosis.ibc_status.explanation}}{{else}}Text not available in JSON{{/if}}</p>
-              </div>
-            </div>
-            {{/if}}
-
-            {{#if @root.diagnosis.ihc_result.value}}
-            <div class="tumor-detail-row">
-              <div class="tumor-detail-left">
-                <div class="tumor-detail-label">IHC Result</div>
-                <div class="tumor-detail-value">{{@root.diagnosis.ihc_result.value}}</div>
-              </div>
-              <div class="tumor-explanation-box">
-                <p style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 14px; font-weight: 400; color: #8B8991; line-height: 1.6; margin: 0;">{{#if @root.diagnosis.ihc_result.explanation}}{{@root.diagnosis.ihc_result.explanation}}{{else}}Immunohistochemistry test result{{/if}}</p>
-              </div>
-            </div>
-            {{/if}}
-
-            {{#if @root.diagnosis.fish_ish_result.value}}
-            <div class="tumor-detail-row">
-              <div class="tumor-detail-left">
-                <div class="tumor-detail-label">FISH/ISH Result</div>
-                <div class="tumor-detail-value">{{@root.diagnosis.fish_ish_result.value}}</div>
-              </div>
-              <div class="tumor-explanation-box">
-                <p style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 14px; font-weight: 400; color: #8B8991; line-height: 1.6; margin: 0;">{{#if @root.diagnosis.fish_ish_result.explanation}}{{@root.diagnosis.fish_ish_result.explanation}}{{else}}Fluorescence in situ hybridization test result{{/if}}</p>
-              </div>
-            </div>
-            {{/if}}
-
-            {{#if @root.diagnosis.hormone_receptor_status.value}}
-            <div class="tumor-detail-row">
-              <div class="tumor-detail-left">
-                <div class="tumor-detail-label">Hormone Receptor Status</div>
-                <div class="tumor-detail-value">{{@root.diagnosis.hormone_receptor_status.value}}</div>
-              </div>
-              <div class="tumor-explanation-box">
-                <p style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 14px; font-weight: 400; color: #8B8991; line-height: 1.6; margin: 0;">{{#if @root.diagnosis.hormone_receptor_status.explanation}}{{@root.diagnosis.hormone_receptor_status.explanation}}{{else}}Overall hormone receptor classification{{/if}}</p>
-              </div>
-            </div>
-            {{/if}}
-          </div>
-        </div>
-        {{/if}}
-
         {{!-- Diagnosis Summary - Dynamic section --}}
         {{#if summaries.diagnosis}}
         <div class="meaning-section">
-          <h3>Diagnosis Summary</h3>
-          <p style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 42px; font-weight: 500; color: white; line-height: 1.3; margin: 1.5rem 0;">
+          <h3 style="font-size: 22px;">Diagnosis Summary</h3>
+          <p style="font-family: 'Quincy CF', serif; font-size: 42px; font-weight: 500; color: white; line-height: 1.3; margin: 1.5rem 0;">
             Every cancer is unique.<br>
-            Your journey and the way<br>
-            your body fights will be too.
+            Your journey and the way your body<br>
+            responds will be too.
           </p>
           <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-top: 4rem;">
             {{#filterSummaries summaries.diagnosis diagnosis.stage.value}}
-            <div>
-              <img src="icons/eclipse.svg" alt="" style="width: 59px; height: 59px;">
+            <div class="summary-card-no-icon">
               <h4 style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 1.1rem; font-weight: 600; color: white; margin-bottom: 0.75rem;">{{this.title}}</h4>
               <p style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 0.95rem; font-weight: 400; color: #D6D0CD; line-height: 1.5;">{{this.body}}</p>
             </div>
@@ -2154,14 +2086,14 @@
 
       <div class="diagnosis-meta-section">
         <div class="diagnosis-meta-left">
-          <h4 class="diagnosis-meta-title">Testing and consultations completed to-date</h4>
-          <p class="diagnosis-sources">
+          <h4 class="diagnosis-meta-title" style="font-size: 18px;">Testing and consultations completed to-date</h4>
+          <p class="diagnosis-sources" style="color: #8B8991; font-size: 16px;">
             According to your medical records, the following tests and scans have been completed so far in the process of getting diagnosed for {{#if diagnosis.cancer_type.value}}{{diagnosis.cancer_type.value}}{{else}}breast cancer{{/if}}.
           </p>
         </div>
         <div class="diagnosis-meta-right">
-          <h4 class="diagnosis-meta-title">Sources</h4>
-          <p class="diagnosis-sources">
+          <h4 class="diagnosis-meta-title" style="font-size: 14px;">Sources</h4>
+          <p class="diagnosis-sources" style="color: #8B8991; font-size: 12px;">
             Sources: {{#each records_reviewed}}{{#if @first}}{{this.type}}, {{formatDate this.service_date}}{{/if}}{{/each}}
           </p>
         </div>
@@ -2180,7 +2112,7 @@
               <div class="testing-item-icon">
                 <img src="./icons/black-checkmark.svg" alt="Complete" />
               </div>
-              <div class="testing-item-title">{{this.patient_facing_label}}{{#if this.explanation}} - {{this.explanation}}{{/if}}</div>
+              <div class="testing-item-title">{{this.patient_facing_label}}</div>
             </div>
             <div class="testing-item-right">
               <div class="testing-item-badge">Complete</div>
@@ -2207,7 +2139,7 @@
               <div class="testing-item-icon">
                 <img src="./icons/black-checkmark.svg" alt="Complete" />
               </div>
-              <div class="testing-item-title">{{this.patient_facing_label}}{{#if this.explanation}} - {{this.explanation}}{{/if}}</div>
+              <div class="testing-item-title">{{this.patient_facing_label}}</div>
             </div>
             <div class="testing-item-right">
               <div class="testing-item-badge">Complete</div>
@@ -2239,7 +2171,7 @@
                   <line x1="13.5" y1="2" x2="13.5" y2="5" stroke="#1F1D2C" stroke-width="1.5" stroke-linecap="round"/>
                 </svg>
               </div>
-              <div class="testing-item-title">{{this.patient_facing_label}}{{#if this.explanation}} - {{this.explanation}}{{/if}}</div>
+              <div class="testing-item-title">{{this.patient_facing_label}}</div>
             </div>
             <div class="testing-item-right">
               <div class="testing-item-badge" style="background-color: #FFC34D; color: #1F1D2C; border: 1px solid #7f5810;">Scheduled</div>
@@ -2267,7 +2199,7 @@
               <div class="testing-item-icon">
                 <img src="./icons/black-checkmark.svg" alt="Complete" />
               </div>
-              <div class="testing-item-title">{{this.type}}{{#if this.notes}} - {{this.notes}}{{/if}}</div>
+              <div class="testing-item-title">{{this.type}}</div>
             </div>
             <div class="testing-item-right">
               <div class="testing-item-badge">Complete</div>
@@ -2408,14 +2340,14 @@
       {{!-- Tests and consultations likely still needed --}}
       <div class="diagnosis-meta-section" style="margin-top: 0; padding-top: 0;">
         <div class="diagnosis-meta-left">
-          <h4 class="diagnosis-meta-title">Tests and consultations likely still needed</h4>
-          <p class="diagnosis-sources">
+          <h4 class="diagnosis-meta-title" style="font-size: 18px;">Tests and consultations likely still needed</h4>
+          <p class="diagnosis-sources" style="color: #8B8991; font-size: 16px;">
             These are additional tests and referrals that your oncology and healthcare team may consider based on established breast cancer guidelines for people with cancer types that are similar to yours. These tests or referrals may not happen all at once or be needed at all, but might serve to help you understand what might be ordered by your healthcare team.
           </p>
         </div>
         <div class="diagnosis-meta-right">
-          <h4 class="diagnosis-meta-title">Sources</h4>
-          <p class="diagnosis-sources">
+          <h4 class="diagnosis-meta-title" style="font-size: 14px;">Sources</h4>
+          <p class="diagnosis-sources" style="color: #8B8991; font-size: 12px;">
             Defiant Health and Dana-Farber Clinical Pathways, vX.XX dated X/XX/XXXX and based on guidelines for patients with similar profiles.
           </p>
         </div>
@@ -2511,15 +2443,14 @@
       {{#if summaries.testing_and_consultations}}
       <div class="meaning-section">
         <h3 style="color: #FF7449;">Testing and Consultations Summary</h3>
-        <p style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 42px; font-weight: 500; color: white; line-height: 1.3; margin: 1.5rem 0;">
+        <p style="font-family: 'Quincy CF', serif; font-size: 42px; font-weight: 500; color: white; line-height: 0.7; margin: 1.5rem 0;">
           Every cancer is unique.<br>
           Your journey and the way<br>
           your body fights will be too.
         </p>
         <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-top: 4rem;">
           {{#filterSummaries summaries.testing_and_consultations diagnosis.stage.value}}
-          <div>
-            <img src="icons/circle-orange.svg" alt="" style="width: 59px; height: 59px;">
+          <div class="summary-card-no-icon">
             <h4 style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 1.1rem; font-weight: 600; color: white; margin-bottom: 0.75rem;">{{this.title}}</h4>
             <p style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 0.95rem; font-weight: 400; color: #D6D0CD; line-height: 1.5;">{{this.body}}</p>
           </div>
@@ -2540,9 +2471,9 @@
           When planning your cancer treatment, your doctors will create a plan made just for you—no two people are treated the same. They'll base it on three key things:
         </p>
         <ul style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 16px; font-weight: 400; color: #8B8991; line-height: 1.6; margin: 1rem 0 0 0; padding-left: 1.5rem;">
-          <li style="margin-bottom: 0.5rem;">Your cancer's profile (like the small size and hormone status we discussed)</li>
-          <li style="margin-bottom: 0.5rem;">Your overall health (any other medical issues you may have)</li>
-          <li style="margin-bottom: 0.5rem;">Your personal wishes and goals</li>
+          <li style="margin-bottom: 0.5rem;"><strong style="font-weight: 600; color: #1F1D2C;">Your cancer's profile</strong> (like the small size and hormone status we discussed)</li>
+          <li style="margin-bottom: 0.5rem;"><strong style="font-weight: 600; color: #1F1D2C;">Your overall health</strong> (any other medical issues you may have)</li>
+          <li style="margin-bottom: 0.5rem;"><strong style="font-weight: 600; color: #1F1D2C;">Your personal wishes and goals</strong></li>
         </ul>
         <p class="diagnosis-description" style="margin-top: 1rem;">
           Because every person and every tumor is different, this careful, personalized approach ensures your plan is designed to give you the very best results while honoring your health and preferences.
@@ -2599,22 +2530,22 @@
       {{!-- Treatment Types Section --}}
       <div class="diagnosis-meta-section" style="margin-top: 0; padding-top: 0;">
         <div class="diagnosis-meta-left">
-          <h4 class="diagnosis-meta-title">What types of treatments will be considered</h4>
-          <p class="diagnosis-sources">
+          <h4 class="diagnosis-meta-title" style="font-size: 18px;">What types of treatments will be considered</h4>
+          <p class="diagnosis-sources" style="color: #8B8991; font-size: 16px;">
             Cancer treatment planning is a team effort. Your care may involve specialists from medical oncology, surgical oncology, and sometimes radiation oncology—each focusing on a different part of your care:
           </p>
-          <ul style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 14px; font-weight: 400; color: #8B8991; line-height: 1.6; margin: 1rem 0 0 0; padding-left: 1.25rem; list-style-position: outside;">
+          <ul style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 16px; font-weight: 400; color: #8B8991; line-height: 1.6; margin: 1rem 0 0 0; padding-left: 1.25rem; list-style-position: outside;">
             <li style="margin-bottom: 0.75rem;"><strong style="font-weight: 600; color: #1F1D2C;">Surgical oncology</strong> removes the tumor and checks nearby lymph nodes.</li>
             <li style="margin-bottom: 0.75rem;"><strong style="font-weight: 600; color: #1F1D2C;">Medical oncology</strong> manages treatments that work throughout the body—such as anti-hormone pills, targeted therapies, or chemotherapy if needed—to reduce the risk of recurrence.</li>
             <li style="margin-bottom: 0.75rem;"><strong style="font-weight: 600; color: #1F1D2C;">Radiation oncology</strong> plans radiation treatment, if appropriate, often after a lumpectomy to help prevent the cancer from returning in the breast.</li>
           </ul>
         </div>
         <div class="diagnosis-meta-right">
-          <h4 class="diagnosis-meta-title">Sources</h4>
-          <p class="diagnosis-sources">
+          <h4 class="diagnosis-meta-title" style="font-size: 14px;">Sources</h4>
+          <p class="diagnosis-sources" style="color: #8B8991; font-size: 12px;">
             Defiant Health and Dana-Farber Clinical Pathways, vX.XX dated X/XX/XXXX and based on guidelines for patients with similar profiles.
           </p>
-          <p class="diagnosis-sources" style="margin-top: 1rem;">
+          <p class="diagnosis-sources" style="color: #8B8991; font-size: 12px; margin-top: 1rem;">
             Dana-Farber disclaimer goes here excluding DF from liability for the suggestions made.
           </p>
         </div>
@@ -2641,12 +2572,12 @@
           {{/if}}
 
           {{!-- Yellow separator line --}}
-          <div style="height: 2px; background: #FFC34D; margin: 24px 0;"></div>
+          <div style="height: 1px; background: #FFC34D; margin: 24px 0;"></div>
 
           {{!-- Column headers --}}
           <div class="treatment-details-grid">
             <div class="treatment-detail-column">
-              <h5 class="treatment-detail-header">{{#ifEq ../section "1 - Medical Oncology"}}Medications{{else}}Possible Procedures{{/ifEq}}</h5>
+              <h5 class="treatment-detail-header">{{#ifEq ../section "1 - Medical Oncology"}}Possible Medications{{else}}Possible Procedures{{/ifEq}}</h5>
             </div>
             <div class="treatment-detail-column">
               <h5 class="treatment-detail-header">{{#ifEq ../section "1 - Medical Oncology"}}Side Effects{{else}}What to expect{{/ifEq}}</h5>
@@ -2666,7 +2597,7 @@
               <div class="treatment-detail-column">
                 {{#ifEq ../../section "1 - Medical Oncology"}}
                   {{!-- Medical: inline row_type with column_1_value --}}
-                  <p class="treatment-detail-text">{{#if row_type}}<strong style="font-weight: 600; color: #1F1D2C;">{{row_type}}:</strong> {{/if}}{{column_1_value}}</p>
+                  <p class="treatment-detail-text">{{column_1_value}}</p>
                 {{else}}
                   {{!-- Surgical/Radiation: row_type bold on separate line, then column_1_value --}}
                   {{#if row_type}}<p class="treatment-detail-text" style="font-weight: 600; color: #1F1D2C; margin-bottom: 8px;">{{row_type}}</p>{{/if}}
@@ -2678,7 +2609,7 @@
                   {{!-- Medical: split by comma and show as bullets --}}
                   <ul style="margin: 0; padding: 0; list-style: none;">
                     {{#each (splitLines column_2_value ",")}}
-                    <li style="position: relative; padding-left: 20px; margin-bottom: 8px;">
+                    <li style="position: relative; padding-left: 20px; margin-bottom: 2px;">
                       <span style="position: absolute; left: 0; top: 0; color: #FFC34D; font-size: 16px;">•</span>
                       <span class="treatment-detail-text">{{this}}</span>
                     </li>
@@ -2688,7 +2619,7 @@
                   {{!-- Surgical/Radiation: split by newline and show as bullets, strip existing bullets --}}
                   <ul style="margin: 0; padding: 0; list-style: none;">
                     {{#each (splitLines column_2_value)}}
-                    <li style="position: relative; padding-left: 20px; margin-bottom: 8px;">
+                    <li style="position: relative; padding-left: 20px; margin-bottom: 2px;">
                       <span style="position: absolute; left: 0; top: 0; color: #FFC34D; font-size: 16px;">•</span>
                       <span class="treatment-detail-text">{{stripBullet this}}</span>
                     </li>
@@ -2712,15 +2643,14 @@
       {{#if summaries.treatment_planning}}
       <div class="meaning-section">
         <h3 style="color: #FFC34D;">Treatment Planning Summary</h3>
-        <p style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 42px; font-weight: 500; color: white; line-height: 1.3; margin: 1.5rem 0;">
+        <p style="font-family: 'Quincy CF', serif; font-size: 42px; font-weight: 500; color: white; line-height: 0.7; margin: 1.5rem 0;">
           Your plan will be unique to you —<br>
           shaped by both your diagnosis<br>
           and what matters to you.
         </p>
         <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-top: 4rem;">
           {{#filterSummaries summaries.treatment_planning diagnosis.stage.value}}
-          <div>
-            <img src="icons/circle-yellow.svg" alt="" style="width: 59px; height: 59px;">
+          <div class="summary-card-no-icon">
             <h4 style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 1.1rem; font-weight: 600; color: white; margin-bottom: 0.75rem;">{{this.title}}</h4>
             <p style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 0.95rem; font-weight: 400; color: #D6D0CD; line-height: 1.5;">{{this.body}}</p>
           </div>
@@ -2757,9 +2687,9 @@
           {{/unless}}
 
           <div style="margin-top: 3rem;">
-            <h3 style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 18px; font-weight: 600; color: #1F1D2C; margin: 0 0 1.5rem 0;">{{section}}</h3>
+            <h3 style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 20px; font-weight: 600; color: #1F1D2C; margin: 0 0 1.5rem 0;">{{section}}</h3>
             
-            <p style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 16px; font-weight: 400; color: #8B8991; line-height: 1.6; margin: 0 0 1rem 0;">
+            <p style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 14px; font-weight: 400; color: #8B8991; line-height: 1.6; margin: 0 0 1rem 0;">
               {{#ifEq section "Questions For Your Medical Oncologist"}}
                 The Medical Oncologist will focus on treatments that include systemic (drug) therapy and overall risk of the cancer coming back after treatment.
               {{/ifEq}}
@@ -2772,9 +2702,9 @@
             </p>
 
             {{#each topics}}
-              <h4 style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 16px; font-weight: 600; color: #1F1D2C; margin: {{#if @first}}2rem{{else}}2.5rem{{/if}} 0 1rem 0;">{{name}}</h4>
+              <h4 style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 14px; font-weight: 400; color: #1F1D2C; margin: {{#if @first}}2rem{{else}}2.5rem{{/if}} 0 1rem 0;">{{name}}</h4>
 
-              <ul style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 16px; font-weight: 400; color: #8B8991; line-height: 1.6; margin: 0; padding-left: 1.25rem; list-style-position: outside;">
+              <ul style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 14px; font-weight: 400; color: #8B8991; line-height: 1.6; margin: 0; padding-left: 1.25rem; list-style-position: outside;">
                 {{#each questions}}
                   <li style="margin-bottom: 12px;">
                     <strong style="font-weight: 600; color: #8B8991;">{{subtopic}}:</strong> "{{question}}"
@@ -2788,31 +2718,31 @@
     </section>
 
     {{!-- ✳️ DISCLAIMER SECTION --}}
-    <div style="background: #FFE4DC; border-radius: 20px; padding: 48px; margin: 50px 3rem;">
-      <h3 style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 24px; font-weight: 600; color: #38284E; margin: 0 0 1.5rem 0;">Disclaimer</h3>
+    <div style="background: #FFE4DC; border-radius: 20px; padding: 48px; padding-right: 30%; margin: 50px 3rem;">
+      <h3 style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 17px; font-weight: 500; color: #38284E; margin: 0 0 1.5rem 0;">Disclaimer</h3>
       
-      <p style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 16px; font-weight: 400; color: #8B8991; line-height: 1.5; margin: 0 0 1.25rem 0;">
+      <p style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 14px; font-weight: 400; color: #8B8991; line-height: 1.5; margin: 0 0 1.25rem 0;">
         This patient education helps you understand your medical information and prepare for doctor visits. It is not medical advice and does not replace talking with your healthcare team.
       </p>
       
-      <p style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 16px; font-weight: 400; color: #8B8991; line-height: 1.5; margin: 0 0 1.25rem 0;">
-        <strong style="font-weight: 600; color: #38284E;">Questions?</strong> Contact us at support@defianthealth.com
+      <p style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 14px; font-weight: 400; color: #8B8991; line-height: 1.5; margin: 0 0 1.25rem 0;">
+        <strong style="font-weight: 700; color: #38284E;">Questions?</strong> Contact us at support@defianthealth.com
       </p>
       
-      <p style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 16px; font-weight: 400; color: #8B8991; line-height: 1.5; margin: 0 0 1.25rem 0;">
-        <strong style="font-weight: 600; color: #38284E;">Updates:</strong> We recommend updating this decision aid after major appointments or new test results.
+      <p style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 14px; font-weight: 400; color: #8B8991; line-height: 1.5; margin: 0 0 1.25rem 0;">
+        <strong style="font-weight: 700; color: #38284E;">Updates:</strong> We recommend updating this decision aid after major appointments or new test results.
       </p>
       
-      <p style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 16px; font-weight: 400; color: #8B8991; line-height: 1.5; margin: 0;">
+      <p style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 14px; font-weight: 400; color: #8B8991; line-height: 1.5; margin: 0;">
         Your healthcare team is your best source for medical advice tailored to your specific situation. They are there to support you every step of the way.
       </p>
     </div>
 
     {{!-- ✳️ YOUR RECORDS --}}
-    <section class="section testing-consultations">
+    <section id="your_records" class="section testing-consultations">
       <div class="testing-label-tab" style="background-color: #C7BEFA;">YOUR RECORDS</div>
 
-      <h4 style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 18px; font-weight: 700; color: #1F1D2C; margin: 0 0 0.75rem 0;">Records Overview</h4>
+      <h4 style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 20px; font-weight: 700; color: #1F1D2C; margin: 0 0 0.75rem 0;">Records Overview</h4>
 
       {{!-- Two Column Layout: Left (Records Overview + Records Received) and Right (Limitations) --}}
       <div class="records-layout" style="display: flex; gap: 4rem;">
@@ -2870,7 +2800,7 @@
           {{/if}}
 
           {{!-- Records Received (in left column) --}}
-          <h4 style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 16px; font-weight: 600; color: #1F1D2C; margin: 0 0 0.75rem 0;">Records Received</h4>
+          <h4 style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 18px; font-weight: 500; color: #1F1D2C; margin: 0 0 0.75rem 0;">Records Received</h4>
           
           <div style="display: flex; flex-direction: column; gap: 10px;">
             {{!-- NEW JSON FORMAT: records_reviewed array --}}
@@ -2912,7 +2842,7 @@
         {{!-- Right Column: Limitations --}}
         <div style="flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
           <div>
-            <h4 style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 16px; font-weight: 600; color: #1F1D2C; margin: 0 0 0.75rem 0;">Limitations of this report</h4>
+            <h4 style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 18px; font-weight: 500; color: #1F1D2C; margin: 0 0 0.75rem 0;">Limitations of this report</h4>
             
             <p style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 16px; font-weight: 400; color: #8B8991; line-height: 1.6; margin: 0 0 1rem 0;">
               We can only review the test results and doctor notes that were provided to us. If you have had other tests, visits, or treatments not included in these records, this decision aid may be missing important information.
@@ -2933,13 +2863,6 @@
         </div>
       </div>
     </section>
-
-    {{!-- ✳️ FOOTER --}}
-    <footer class="report-footer">
-      <p class="disclaimer">This decision aid is not medical advice and does not replace discussions with your care team.</p>
-      <p class="contact">Questions? Contact Defiant Health at support@defianthealth.com</p>
-      <p class="organization">Defiant Health</p>
-    </footer>
   </main>
 </body>
 </html>

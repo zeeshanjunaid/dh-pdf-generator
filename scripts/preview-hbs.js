@@ -3,6 +3,7 @@ import path from "path";
 import { fileURLToPath } from "url";
 import Handlebars from "handlebars";
 import open from "open";
+import { registerHelpers } from "./handlebars-helpers.js";
 
 
 const __filename = fileURLToPath(import.meta.url);
@@ -14,7 +15,7 @@ const templatePath = path.join(__dirname, "../templates", "report.hbs");
 const outputFile = path.join(__dirname, "../templates", "preview.html");
 
 // Register Handlebars helpers
-Handlebars.registerHelper("eq", (a, b) => a === b);
+registerHelpers(Handlebars);
 
 async function generatePreview() {
   try {

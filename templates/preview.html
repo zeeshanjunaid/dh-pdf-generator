@@ -5,6 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Defiant Health Diagnostic Report</title>
   <style>
+    @font-face {
+      font-family: 'Druk';
+      src: url('./fonts/Druk-Bold.woff2') format('woff2');
+      font-weight: 700;
+      font-style: normal;
+    }
+
     :root {
       --aubergine: #38284E;
       --ivory: #FFF8F4;
@@ -137,7 +144,7 @@
     .doc-contents h3 {
       font-family: "Visuelt Pro", "Inter", sans-serif;
       font-size: 0.95rem;
-      font-weight: 500;
+      font-weight: 400;
       color: #6B6B6B;
       margin: 0 0 1.5rem 0;
       text-transform: none;
@@ -213,7 +220,6 @@
       padding-bottom: 0;
       line-height: 1;
       text-transform: uppercase;
-      letter-spacing: -0.1em;
     }
 
     /* Heart icon in corner */
@@ -716,7 +722,7 @@
       align-items: center;
       gap: 32px;
       flex-shrink: 0;
-      min-width: 200px;
+      min-width: 230px;
       justify-content: flex-end;
     }
 
@@ -743,8 +749,8 @@
       color: #1F1D2C;
       white-space: nowrap;
       flex-shrink: 0;
-      width: 70px;
-      text-align: left;
+      min-width: 100px;
+      text-align: right;
     }
 
     /* Diagnosis label tab */
@@ -850,8 +856,56 @@
     }
 
     .diagnosis-stat-icon svg {
-      width: 32px;
-      height: 32px;
+      width: 62px;
+      height: 62px;
+    }
+
+    /* Circular Progress Indicator */
+    .circular-progress {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      flex-shrink: 0;
+    }
+
+    .circular-progress::before {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      background: conic-gradient(
+        from 90deg,
+        #D4D9A8 0deg,
+        #D4D9A8 calc(var(--progress) * 3.6deg),
+        #4A3A5C calc(var(--progress) * 3.6deg),
+        #4A3A5C 360deg
+      );
+      transform: rotate(-90deg);
+    }
+
+    .circular-progress::after {
+      content: '';
+      position: absolute;
+      width: 62px;
+      height: 62px;
+      border-radius: 50%;
+      background: #38284E;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .circular-progress-text {
+      position: relative;
+      z-index: 1;
+      font-family: "Visuelt Pro", "Inter", sans-serif;
+      font-weight: 500;
+      color: white;
     }
 
     .diagnosis-stat-value {
@@ -863,7 +917,7 @@
     .diagnosis-stat-main {
       font-family: "Visuelt Pro", "Inter", sans-serif;
       font-size: 20px;
-      font-weight: 600;
+      font-weight: 500;
       color: white;
       line-height: 27px;
     }
@@ -874,6 +928,28 @@
       font-weight: 400;
       color: rgba(255, 255, 255, 0.9);
       line-height: 1.2;
+    }
+
+    .diagnosis-stat-hr {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .diagnosis-stat-hr .hr-item {
+      font-family: "Visuelt Pro", "Inter", sans-serif;
+      font-size: 18px;
+      font-weight: 500;
+      color: white;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .diagnosis-stat-hr .hr-plus {
+      color: #E8E4B8;
+      font-size: 22px;
+      font-weight: 700;
     }
 
     .diagnosis-stat-checkmark {
@@ -1351,7 +1427,8 @@
       background: #F8F8F8;
       border-radius: 12px;
       padding: 32px;
-      margin-bottom: 24px;
+      margin-bottom: 48px;
+      page-break-inside: avoid;
     }
 
     .treatment-card-header {
@@ -1377,7 +1454,7 @@
 
     .treatment-name {
       font-family: "Visuelt Pro", "Inter", sans-serif;
-      font-size: 20px;
+      font-size: 18px;
       font-weight: 600;
       color: #1F1D2C;
       margin: 0 0 12px 0;
@@ -1438,6 +1515,46 @@
 
     .treatment-detail-section li::marker {
       color: #FFC34D;
+    }
+
+    /* Treatment Grid and Rows */
+    .treatment-details-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+    }
+
+    .treatment-detail-column {
+      background: transparent;
+    }
+
+    .treatment-detail-header {
+      font-family: "Visuelt Pro", "Inter", sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      color: #1F1D2C;
+      margin: 0 0 16px 0;
+      text-transform: none;
+    }
+
+    .treatment-detail-text {
+      font-family: "Visuelt Pro", "Inter", sans-serif;
+      font-size: 14px;
+      font-weight: 400;
+      color: #8B8991;
+      margin: 0;
+      line-height: 1.6;
+    }
+
+    .treatment-row {
+      border-bottom: 1px solid #D1D1D1;
+      padding: 16px 0;
+      page-break-inside: avoid;
+    }
+
+    .treatment-row:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
     }
 
     /* Oncologist Questions */
@@ -1535,13 +1652,15 @@
 
   <header class="report-header">
     <div class="header-left">
-      <div class="doc-icon">📄</div>
+      <div class="doc-icon">
+        <img src="./icons/document-icon.svg" alt="Document" style="width: 20px; height: 20px;" />
+      </div>
       <div>
         <h1>Your Path Forward Report</h1>
-        <p class="subtitle">Alex Johnson • October 21 2025</p>
+        <p class="subtitle">Patient • December 11, 2025</p>
       </div>
     </div>
-    <button class="export-btn">
+    <button class="export-btn" style="display: none;">
       <img src="./icons/export-icon.png" alt="Export" />
       Export PDF
     </button>
@@ -1552,30 +1671,28 @@
     <div class="doc-contents-nav">
       <a href="#note_from_defiant"><img src="./icons/heart-icon.png" alt="" class="nav-icon" /> A letter from our team</a>
       <a href="#diagnosis_summary"><img src="./icons/diagnosis-icon.png" alt="" class="nav-icon" /> Your Diagnosis</a>
-      <a href="#next_steps"><img src="./icons/document-icon.png" alt="" class="nav-icon" /> Testing and Scans</a>
-      <a href="#treatment_planning"><img src="./icons/link-icon.png" alt="" class="nav-icon" /> Likely Treatment Plan</a>
+      <a href="#next_steps"><img src="./icons/document-icon.png" alt="" class="nav-icon" /> Testing and Consultations</a>
+      <a href="#treatment_planning"><img src="./icons/link-icon.png" alt="" class="nav-icon" /> Treatment Planning</a>
       <a href="#care_team"><img src="./icons/book-icon.png" alt="" class="nav-icon" /> Visit Prep</a>
     </div>
   </nav>
 
   <main class="report-body">
-
-      <section id="note_from_defiant" class="section note-from-defiant">
-        <img src="./icons/heart.svg" alt="" class="heart-icon" />
-        <h2 class="section-title">You're Not Alone</h2>
-        
-        <p class="greeting">Dear Alex Johnson,</p>
-        
-        <p class="message-text">We know this diagnosis has turned your world upside down, and feeling shocked right now is completely normal. You don't have to understand everything all at once — that's what we're here for.</p>
-        
-        <p class="message-text">In the pages ahead, we'll walk you through your diagnosis step by step, breaking down what it means and what comes next in a way that makes sense. Take your time with this information, and know that we're with you every step of the way.</p>
-        
-        <p class="signature"><em>With care and respect,</em></p>
-        <p class="team-name">The Defiant Health Team</p>
-        <p class="contact-link"><a href="mailto:care@defianthealth.com">care@defianthealth.com</a></p>
-      </section>
-
-
+    <section id="note_from_defiant" class="section note-from-defiant">
+      <img src="./icons/heart.svg" alt="" class="heart-icon" />
+      <h2 class="section-title">You're Not Alone</h2>
+      
+      <p class="greeting">Dear Patient,</p>
+      
+      
+      <p class="message-text">We know this diagnosis has turned your world upside down, and feeling shocked right now is completely normal. You don't have to understand everything all at once — that's what we're here for.</p>
+      
+      <p class="message-text">In the pages ahead, we'll walk you through your diagnosis step by step, breaking down what it means and what comes next in a way that makes sense. Take your time with this information, and know that we're with you every step of the way.</p>
+      
+      <p class="signature"><em>With care and respect,</em></p>
+      <p class="team-name">The Defiant Health Team</p>
+      <p class="contact-link"><a href="mailto:care@defianthealth.com">care@defianthealth.com</a></p>
+    </section>
 
 
 
@@ -1587,8 +1704,39 @@
 
 
 
-      <section id="diagnosis_summary" class="section diagnosis-summary">
-        <div class="diagnosis-label-tab">YOUR DIAGNOSIS</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <section id="diagnosis_summary" class="section diagnosis-summary">
+      <div class="diagnosis-label-tab">YOUR DIAGNOSIS</div>
         
         <div class="diagnosis-header">
           <img src="./icons/stethoscope.png" alt="" class="stethoscope-icon" />
@@ -1600,7 +1748,7 @@
           <div class="diagnosis-meta-left">
             <h4 class="diagnosis-meta-title">Diagnosis Overview</h4>
             <p class="diagnosis-sources">
-              Sources: Medical records shared with Defiant Health as of 11/02/2025, Telehealth Consult (12/23/2024), Anatomic Pathology (12/1/24)
+              Sources: Medical records shared with Defiant Health as of December 11, 2025
             </p>
           </div>
           <div class="diagnosis-meta-right">
@@ -1613,171 +1761,15 @@
 
         <div class="diagnosis-overview-box-wrapper">
           <div class="diagnosis-overview-box">
-          <div class="diagnosis-stat">
-            <div class="diagnosis-stat-label">Overall Stage</div>
-            <div class="diagnosis-stat-content">
-              <div class="diagnosis-stat-icon">
-                <img src="./icons/circle-1.png" alt="" />
-                <span>I/II</span>
-              </div>
-              <div class="diagnosis-stat-value">
-                <div class="diagnosis-stat-main">Stage I</div>
-              </div>
-            </div>
-          </div>
-
-          <div class="diagnosis-stat">
-            <div class="diagnosis-stat-label">Grade</div>
-            <div class="diagnosis-stat-content">
-              <div class="diagnosis-stat-icon">
-                <img src="./icons/circle-2.png" alt="" />
-                <span>2</span>
-              </div>
-              <div class="diagnosis-stat-value">
-                <div class="diagnosis-stat-main">Nottingham</div>
-                <div class="diagnosis-stat-sub">Grade 2</div>
-              </div>
-            </div>
-          </div>
-
-          <div class="diagnosis-stat">
-            <div class="diagnosis-stat-label">Hormone Receptor Status</div>
-            <div class="diagnosis-stat-content">
-              <div class="diagnosis-stat-value">
-                <div class="diagnosis-stat-main">ER+/PR+, HER2-</div>
-              </div>
-            </div>
-          </div>
-
-          <div class="diagnosis-stat">
-            <div class="diagnosis-stat-label">HER2 Status</div>
-            <div class="diagnosis-stat-content">
-              <div class="diagnosis-stat-icon">
-                <img src="./icons/circle-3.png" alt="" />
-                <span>-</span>
-              </div>
-              <div class="diagnosis-stat-value">
-                <div class="diagnosis-stat-main">ER+/PR+, HER2-</div>
-              </div>
-            </div>
-          </div>
           </div>
         </div>
 
-        <div class="tumor-section">
-          <h3>Diagnosis by Tumor</h3>
-            <div class="tumor-section-header">
-              <h4>Tumor 1</h4>
-              <h4>Explanation</h4>
-            </div>
-            
-            <div class="tumor-details-container">
-              <div class="tumor-detail-row">
-                <div class="tumor-detail-left">
-                  <div class="tumor-detail-label">Cancer Type</div>
-                  <div class="tumor-detail-value">Invasive Ductal Carcinoma</div>
-                </div>
-              </div>
-
-              <div class="tumor-detail-row">
-                <div class="tumor-detail-left">
-                  <div class="tumor-detail-label">Location</div>
-                  <div class="tumor-detail-value">Left breast (0.9cm)</div>
-                </div>
-              </div>
-
-              <div class="tumor-detail-row">
-                <div class="tumor-detail-left">
-                  <div class="tumor-detail-label">Stage</div>
-                  <div class="tumor-detail-value">Stage I</div>
-                </div>
-              </div>
-
-              <div class="tumor-detail-row">
-                <div class="tumor-detail-left">
-                  <div class="tumor-detail-label">Grade</div>
-                  <div class="tumor-detail-value">Grade 2</div>
-                </div>
-              </div>
-
-              <div class="tumor-detail-row">
-                <div class="tumor-detail-left">
-                  <div class="tumor-detail-label">Hormone Receptor Status</div>
-                  <div class="tumor-detail-value">ER+/PR+, HER2-</div>
-                </div>
-              </div>
-
-              <div class="tumor-detail-row">
-                <div class="tumor-detail-left">
-                  <div class="tumor-detail-label">HER2 Status</div>
-                  <div class="tumor-detail-value">ER+/PR+, HER2-</div>
-                </div>
-              </div>
 
 
 
-
-
-
-
-
-            </div>
-        </div>
-
-        <div class="meaning-section">
-          <h3>Diagnosis Summary</h3>
-          <p style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 42px; font-weight: 500; color: white; line-height: 1.3; margin: 1.5rem 0;">
-            Every cancer is unique.<br>
-            Your journey and the way<br>
-            your body fights will be too.
-          </p>
-          <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-top: 4rem;">
-            <div>
-              <img src="icons/eclipse.svg" alt="" style="width: 59px; height: 59px;">
-              <h4 style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 1.1rem; font-weight: 600; color: white; margin-bottom: 0.75rem;">Receptive to Endocrine Therapy</h4>
-              <p style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 0.95rem; font-weight: 400; color: #D6D0CD; line-height: 1.5;">Because your cancer is hormone receptor positive (responds to estrogen), endocrine therapy (hormone-blocking treatments) can be very effective at slowing.</p>
-            </div>
-            <div>
-              <img src="icons/eclipse.svg" alt="" style="width: 59px; height: 59px;">
-              <h4 style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 1.1rem; font-weight: 600; color: white; margin-bottom: 0.75rem;">New Treatments Available</h4>
-              <p style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 0.95rem; font-weight: 400; color: #D6D0CD; line-height: 1.5;">Recent research shows that people with HER2-low breast cancer may benefit from newer targeted treatments like antibody-drug conjugates (medicines that deliver chemotherapy directly to cancer cells).</p>
-            </div>
-            <div>
-              <img src="icons/eclipse.svg" alt="" style="width: 59px; height: 59px;">
-              <h4 style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 1.1rem; font-weight: 600; color: white; margin-bottom: 0.75rem;">Focus on curing cancer</h4>
-              <p style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 0.95rem; font-weight: 400; color: #D6D0CD; line-height: 1.5;">For this type of cancer, the focus is on removing the tumor with clear, healthy margins, preventing the cancer from returning, and using effective treatments while minimizing side effects.</p>
-            </div>
-          </div>
-        </div>
       </section>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <section class="section testing-consultations">
+    <section id="next_steps" class="section testing-consultations">
       <div class="testing-label-tab">TESTING AND CONSULTATIONS</div>
       
       <div class="diagnosis-header">
@@ -1788,31 +1780,30 @@
 
       <div class="progress-bar-wrapper">
         <div class="progress-bar-track">
-          <div class="progress-step-icon completed">
-            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="10" cy="10" r="10" fill="#C7BEFA"/>
-              <path d="M6 10L9 13L14 7" stroke="#38284E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
+          <div class="progress-step-icon pending">
           </div>
           
           <div class="progress-connector"></div>
           
-          <div class="progress-step-icon current"></div>
+          <div class="progress-step-icon pending">
+          </div>
           
           <div class="progress-connector"></div>
           
-          <div class="progress-step-icon pending"></div>
+          <div class="progress-step-icon pending">
+          </div>
           
           <div class="progress-connector"></div>
           
-          <div class="progress-step-icon pending"></div>
+          <div class="progress-step-icon pending">
+          </div>
         </div>
         
         <div class="progress-bar-labels">
-          <div class="progress-step-label completed">Diagnostic Testing</div>
-          <div class="progress-step-label current">Staging Testing</div>
-          <div class="progress-step-label pending">Planning</div>
-          <div class="progress-step-label pending">Treatment</div>
+          <div class="progress-step-label pending"></div>
+          <div class="progress-step-label pending"></div>
+          <div class="progress-step-label pending"></div>
+          <div class="progress-step-label pending"></div>
         </div>
       </div>
 
@@ -1826,10 +1817,11 @@
         <div class="diagnosis-meta-right">
           <h4 class="diagnosis-meta-title">Sources</h4>
           <p class="diagnosis-sources">
-            Sources: Telehealth Consult, 12/23/2024
+            Sources: 
           </p>
         </div>
       </div>
+
 
 
 
@@ -1924,34 +1916,9 @@
         <p class="likely-tests-disclaimer">(These are not medical recommendations but may be helpful discussion points to discuss with your oncologist.)</p>
       </div>
 
-      <div class="meaning-section">
-        <h3 style="color: #FF7449;">Testing and Consultations Summary</h3>
-        <p style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 42px; font-weight: 500; color: white; line-height: 1.3; margin: 1.5rem 0;">
-          Every cancer is unique.<br>
-          Your journey and the way<br>
-          your body fights will be too.
-        </p>
-        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-top: 4rem;">
-          <div>
-            <img src="icons/circle-orange.svg" alt="" style="width: 59px; height: 59px;">
-            <h4 style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 1.1rem; font-weight: 600; color: white; margin-bottom: 0.75rem;">Receptive to Endocrine Therapy</h4>
-            <p style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 0.95rem; font-weight: 400; color: #D6D0CD; line-height: 1.5;">Because your cancer is hormone receptor positive (responds to estrogen), endocrine therapy (hormone-blocking treatments) can be very effective at slowing.</p>
-          </div>
-          <div>
-            <img src="icons/circle-orange.svg" alt="" style="width: 59px; height: 59px;">
-            <h4 style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 1.1rem; font-weight: 600; color: white; margin-bottom: 0.75rem;">New Treatments Available</h4>
-            <p style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 0.95rem; font-weight: 400; color: #D6D0CD; line-height: 1.5;">Recent research shows that people with HER2-low breast cancer may benefit from newer targeted treatments like antibody-drug conjugates (medicines that deliver chemotherapy directly to cancer cells).</p>
-          </div>
-          <div>
-            <img src="icons/circle-orange.svg" alt="" style="width: 59px; height: 59px;">
-            <h4 style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 1.1rem; font-weight: 600; color: white; margin-bottom: 0.75rem;">Focus on curing cancer</h4>
-            <p style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 0.95rem; font-weight: 400; color: #D6D0CD; line-height: 1.5;">For this type of cancer, the focus is on removing the tumor with clear, healthy margins, preventing the cancer from returning, and using effective treatments while minimizing side effects.</p>
-          </div>
-        </div>
-      </div>
     </section>
 
-    <section class="section testing-consultations">
+    <section id="treatment_planning" class="section testing-consultations">
       <div class="testing-label-tab" style="background-color: #FFC34D;">TREATMENT PLANNING</div>
       
       <div class="diagnosis-header">
@@ -1974,7 +1941,7 @@
 
       <div class="treatment-goals-section">
         <h3 class="treatment-goals-title">Typical treatment goals for cancers like yours</h3>
-        <p class="treatment-goals-intro">For <span class="treatment-goals-highlight">stage I breast cancer,</span> the main goals are to:</p>
+        <p class="treatment-goals-intro">For <span class="treatment-goals-highlight">your breast cancer,</span> the main goals are to:</p>
         
         <div class="treatment-goals-grid">
           <div class="treatment-goal-box">
@@ -2036,58 +2003,10 @@
         </div>
       </div>
 
-          
 
-
-
-      <div class="treatment-cards-section">
-        <h3 class="treatment-category-title">Medical Oncology</h3>
-        
-        <div class="treatment-card">
-          <div class="treatment-card-header">
-            <div class="treatment-badge ">Highly Likely</div>
-            <h4 class="treatment-name">Endocrine Therapy</h4>
-            <p class="treatment-intro">Tamoxifen for 5 years</p>
-          </div>
-        </div>
-        <div class="treatment-card">
-          <div class="treatment-card-header">
-            <div class="treatment-badge ">Highly Likely</div>
-            <h4 class="treatment-name">Lumpectomy</h4>
-            <p class="treatment-intro">Breast-conserving surgery</p>
-          </div>
-        </div>
-      </div>
-
-
-      <div class="meaning-section">
-        <h3 style="color: #FFC34D;">Treatment Planning Summary</h3>
-        <p style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 42px; font-weight: 500; color: white; line-height: 1.3; margin: 1.5rem 0;">
-          Every cancer is unique.<br>
-          Your journey and the way<br>
-          your body fights will be too.
-        </p>
-        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-top: 4rem;">
-          <div>
-            <img src="icons/circle-yellow.svg" alt="" style="width: 59px; height: 59px;">
-            <h4 style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 1.1rem; font-weight: 600; color: white; margin-bottom: 0.75rem;">Receptive to Endocrine Therapy</h4>
-            <p style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 0.95rem; font-weight: 400; color: #D6D0CD; line-height: 1.5;">Because your cancer is hormone receptor positive (responds to estrogen), endocrine therapy (hormone-blocking treatments) can be very effective at slowing.</p>
-          </div>
-          <div>
-            <img src="icons/circle-yellow.svg" alt="" style="width: 59px; height: 59px;">
-            <h4 style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 1.1rem; font-weight: 600; color: white; margin-bottom: 0.75rem;">New Treatments Available</h4>
-            <p style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 0.95rem; font-weight: 400; color: #D6D0CD; line-height: 1.5;">Recent research shows that people with HER2-low breast cancer may benefit from newer targeted treatments like antibody-drug conjugates (medicines that deliver chemotherapy directly to cancer cells).</p>
-          </div>
-          <div>
-            <img src="icons/circle-yellow.svg" alt="" style="width: 59px; height: 59px;">
-            <h4 style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 1.1rem; font-weight: 600; color: white; margin-bottom: 0.75rem;">Focus on curing cancer</h4>
-            <p style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 0.95rem; font-weight: 400; color: #D6D0CD; line-height: 1.5;">For this type of cancer, the focus is on removing the tumor with clear, healthy margins, preventing the cancer from returning, and using effective treatments while minimizing side effects.</p>
-          </div>
-        </div>
-      </div>
     </section>
 
-    <section class="section testing-consultations">
+    <section id="care_team" class="section testing-consultations">
       <div class="testing-label-tab" style="background-color: #E4EECE;">VISIT PREP</div>
       
       <div class="diagnosis-header">
@@ -2095,102 +2014,6 @@
         <h3 class="diagnosis-subtitle">Helpful discussion points with your specialist team</h3>
       </div>
 
-      <div style="margin-top: 3rem;">
-        <h3 style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 18px; font-weight: 600; color: #1F1D2C; margin: 0 0 1.5rem 0;">Questions for the Medical Oncologist</h3>
-        
-        <p style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 16px; font-weight: 400; color: #8B8991; line-height: 1.6; margin: 0 0 1rem 0;">
-          The Medical Oncologist will focus on treatments that include systemic (drug) therapy and overall risk of the cancer coming back after treatment.
-        </p>
-
-        <h4 style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 16px; font-weight: 600; color: #1F1D2C; margin: 2rem 0 1rem 0;">Treatment Planning (Systemic Therapy)</h4>
-
-        <ul style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 16px; font-weight: 400; color: #8B8991; line-height: 1.6; margin: 0; padding-left: 1.25rem; list-style-position: outside;">
-          <li style="margin-bottom: 12px;">
-            <strong style="font-weight: 600; color: #8B8991;">OncotypeDX:</strong> "Given my specific tumor status ($\text{HR}+/\text{HER}2-$), how soon can the OncotypeDX test be ordered, and when can we expect the results? How will this single score determine my need for chemotherapy?"
-          </li>
-          <li style="margin-bottom: 12px;">
-            <strong style="font-weight: 600; color: #8B8991;">Hormone Replacement Therapy (HRT):</strong> "I am currently taking an Estrogen Patch and Progesterone Pill. Since my cancer is hormone receptor positive, what is the immediate risk of continuing this, and when exactly should I be taking?"
-          </li>
-          <li style="margin-bottom: 12px;">
-            <strong style="font-weight: 600; color: #8B8991;">Endocrine Therapy:</strong> "What specific anti-hormone medication (e.g., Tamoxifen or an Aromatase Inhibitor) do you recommend, and how many years will I need to take it? What are the most common side effects of this medication?"
-          </li>
-          <li style="margin-bottom: 12px;">
-            <strong style="font-weight: 600; color: #8B8991;">Prophylactic Options:</strong> "If my OncotypeDX score is high, what chemotherapy regimen would you recommend, and how many cycles would that involve?"
-          </li>
-        </ul>
-
-        <h4 style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 16px; font-weight: 600; color: #1F1D2C; margin: 2.5rem 0 1rem 0;">Quality of Life & Support</h4>
-
-        <ul style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 16px; font-weight: 400; color: #8B8991; line-height: 1.6; margin: 0; padding-left: 1.25rem; list-style-position: outside;">
-          <li style="margin-bottom: 12px;">
-            <strong style="font-weight: 600; color: #8B8991;">Fertility:</strong> "Since I am premenopausal and my treatment will include endocrine therapy, what is the impact on my future fertility, and should I meet with the fertility counselor immediately?"
-          </li>
-          <li style="margin-bottom: 12px;">
-            <strong style="font-weight: 600; color: #8B8991;">Side Effects:</strong> "What is the likelihood of experiencing specific side effects, like hair loss, weight changes, or joint pain, with the systemic treatment you anticipate prescribing?"
-          </li>
-          <li style="margin-bottom: 12px;">
-            <strong style="font-weight: 600; color: #8B8991;">Symptom Management:</strong> "What support services or medications are available here at the clinic for managing fatigue, hot flashes, or any emotional concerns related to my diagnosis and treatment?"
-          </li>
-        </ul>
-      </div>
-
-      <div class="testing-divider" style="margin: 3rem 0;"></div>
-
-      <div style="margin-top: 3rem;">
-        <h3 style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 18px; font-weight: 600; color: #1F1D2C; margin: 0 0 1.5rem 0;">Questions for the Surgical Oncologist</h3>
-        
-        <p style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 16px; font-weight: 400; color: #8B8991; line-height: 1.6; margin: 0 0 1rem 0;">
-          The Surgical Oncologist will focus on the definitive removal of the tumor and staging the axilla.
-        </p>
-
-        <h4 style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 16px; font-weight: 600; color: #1F1D2C; margin: 2rem 0 1rem 0;">Treatment Planning (Local Therapy)</h4>
-
-        <ul style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 16px; font-weight: 400; color: #8B8991; line-height: 1.6; margin: 0; padding-left: 1.25rem; list-style-position: outside;">
-          <li style="margin-bottom: 12px;">
-            <strong style="font-weight: 600; color: #8B8991;">Surgical Options:</strong> "Given my tumor size (8 mm) and clear margins, am I a good candidate for Breast-Conserving Surgery (Lumpectomy)? What factors would require me to have a mastectomy instead?"
-          </li>
-          <li style="margin-bottom: 12px;">
-            <strong style="font-weight: 600; color: #8B8991;">Axillary Staging:</strong> "My initial ultrasound was negative for lymph node involvement. Will I still need a Sentinel Lymph Node Biopsy (SLNB) during the surgery, and what happens if cancer is found in those nodes?"
-          </li>
-          <li style="margin-bottom: 12px;">
-            <strong style="font-weight: 600; color: #8B8991;">Margin Status:</strong> "What is your goal for clear margins, and what is the chance I would need a second surgery to clear them (a re-excision)?"
-          </li>
-        </ul>
-
-        <h4 style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 16px; font-weight: 600; color: #1F1D2C; margin: 2.5rem 0 1rem 0;">Quality of Life & Daily Life</h4>
-
-        <ul style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 16px; font-weight: 400; color: #8B8991; line-height: 1.6; margin: 0; padding-left: 1.25rem; list-style-position: outside;">
-          <li style="margin-bottom: 12px;">
-            <strong style="font-weight: 600; color: #8B8991;">Recovery:</strong> "What is the typical recovery time after a lumpectomy or mastectomy? When can I resume normal activities like running and walking my dog (as noted in my history)?"
-          </li>
-          <li style="margin-bottom: 12px;">
-            <strong style="font-weight: 600; color: #8B8991;">Aesthetics:</strong> "What will the breast look like after surgery, and will a plastic surgeon be involved in my care?"
-          </li>
-          <li style="margin-bottom: 12px;">
-            <strong style="font-weight: 600; color: #8B8991;">Support:</strong> "Who is the best point person on your team (e.g., a nurse navigator) for scheduling, pre-op instructions, and answering questions right after surgery?"
-          </li>
-        </ul>
-      </div>
-
-      <div class="testing-divider" style="margin: 3rem 0;"></div>
-
-      <div style="margin-top: 3rem;">
-        <h3 style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 18px; font-weight: 600; color: #1F1D2C; margin-bottom: 1.5rem;">Questions for the Radiation Oncologist (Pending Referral)</h3>
-        <p style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 16px; font-weight: 400; color: #8B8991; margin-bottom: 1rem; line-height: 1.6;">The Radiation Oncologist will discuss post-operative radiation if you choose a lumpectomy.</p>
-        
-        <h4 style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 16px; font-weight: 600; color: #1F1D2C; margin-top: 2rem; margin-bottom: 1rem;">Treatment Planning (Radiation)</h4>
-        <ul style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 16px; font-weight: 400; color: #8B8991; padding-left: 1.25rem; list-style-position: outside; line-height: 1.6;">
-          <li style="margin-bottom: 12px;"><strong style="font-weight: 600; color: #8B8991;">Need for Radiation:</strong> "If I choose a Lumpectom and SNLB, will I definitively need radiation therapy? If so, what is the goal of the radiation (e.g., reducing local recurrence)?"</li>
-          <li style="margin-bottom: 12px;"><strong style="font-weight: 600; color: #8B8991;">Radiation Schedule:</strong> "What is the typical course of treatment (e.g., 6 weeks of standard radiation, or a shorter course like hypofractionated), and how is that decision made?"</li>
-          <li style="margin-bottom: 12px;"><strong style="font-weight: 600; color: #8B8991;">Side Effects:</strong> "What are the most common short-term side effects (skin changes, fatigue) and long-term risks (lung or heart exposure) associated with the specific radiation plan you would recommend for me?"</li>
-        </ul>
-
-        <h4 style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 16px; font-weight: 600; color: #1F1D2C; margin-top: 2.5rem; margin-bottom: 1rem;">Daily Life & Support</h4>
-        <ul style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 16px; font-weight: 400; color: #8B8991; padding-left: 1.25rem; list-style-position: outside; line-height: 1.6;">
-          <li style="margin-bottom: 12px;"><strong style="font-weight: 600; color: #8B8991;">Logistics:</strong> "What daily commitment does treatment require? Can I drive myself to and from my daily radiation appointments?"</li>
-          <li style="margin-bottom: 12px;"><strong style="font-weight: 600; color: #8B8991;">Support:</strong> "Does your center offer resources or support to help manage the fatigue that often comes with daily radiation?"</li>
-        </ul>
-      </div>
     </section>
 
     <div style="background: #FFE4DC; border-radius: 20px; padding: 48px; margin: 50px 3rem;">
