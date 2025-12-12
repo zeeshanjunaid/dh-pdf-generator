@@ -417,7 +417,7 @@
       font-family: "Visuelt Pro", "Inter", sans-serif;
       font-size: 1rem;
       font-weight: 400;
-      color: var(--defiant-black);
+      color: #38284E;
       line-height: 1.6;
       margin-bottom: 2rem;
       max-width: 50%;
@@ -1334,7 +1334,7 @@
       font-family: "Visuelt Pro", "Inter", sans-serif;
       font-size: 24px;
       font-weight: 600;
-      color: #1F1D2C;
+      color: #38284E;
       margin: 0 0 1.5rem 0;
     }
 
@@ -1342,7 +1342,7 @@
       font-family: "Visuelt Pro", "Inter", sans-serif;
       font-size: 16px;
       font-weight: 400;
-      color: #1F1D2C;
+      color: #38284E;
       margin: 0 0 2rem 0;
     }
 
@@ -1388,7 +1388,7 @@
       font-family: "Visuelt Pro", "Inter", sans-serif;
       font-size: 16px;
       font-weight: 400;
-      color: #1F1D2C;
+      color: #38284E;
       margin: 0 0 24px 0;
       line-height: 1.3;
     }
@@ -1479,7 +1479,7 @@
       font-family: "Visuelt Pro", "Inter", sans-serif;
       font-size: 18px;
       font-weight: 500;
-      color: #1F1D2C;
+      color: #38284E;
       margin: 0 0 12px 0;
       line-height: 1.3;
     }
@@ -1488,7 +1488,7 @@
       font-family: "Visuelt Pro", "Inter", sans-serif;
       font-size: 16px;
       font-weight: 400;
-      color: #8B8991;
+      color: #38284E;
       margin: 0;
       line-height: 1.6;
     }
@@ -1568,7 +1568,7 @@
       font-family: "Visuelt Pro", "Inter", sans-serif;
       font-size: 16px;
       font-weight: 400;
-      color: #8B8991;
+      color: #38284E;
       margin: 0;
       line-height: 1.6;
     }
@@ -2027,7 +2027,7 @@
       <div class="diagnosis-header">
         <img src="./icons/document-icon-section.png" alt="" class="stethoscope-icon" />
         <h3 class="diagnosis-subtitle">Your summary of completed and potential next steps</h3>
-        <p class="diagnosis-description">Below is a summary of what's been completed so far, along with possible next steps your oncology team may consider. This is based on established clinical guidelines for patients with profiles similar to yours.</p>
+        <p class="diagnosis-description" style="color: #38284E;">Below is a summary of what's been completed so far, along with possible next steps your oncology team may consider. This is based on established clinical guidelines for patients with profiles similar to yours.</p>
       </div>
 
       {{!-- Progress Bar --}}
@@ -2467,7 +2467,7 @@
       <div class="diagnosis-header">
         <img src="./icons/link.svg" alt="" class="stethoscope-icon" />
         <h3 class="diagnosis-subtitle">Treatment planning for a cancer like yours</h3>
-        <p class="diagnosis-description">
+        <p class="diagnosis-description" style="color: #38284E;">
           When planning your cancer treatment, your doctors will create a plan made just for you—no two people are treated the same. They'll base it on three key things:
         </p>
         <ul style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 16px; font-weight: 400; color: #8B8991; line-height: 1.6; margin: 1rem 0 0 0; padding-left: 1.5rem;">
@@ -2475,7 +2475,7 @@
           <li style="margin-bottom: 0.5rem;"><strong style="font-weight: 600; color: #1F1D2C;">Your overall health</strong> (any other medical issues you may have)</li>
           <li style="margin-bottom: 0.5rem;"><strong style="font-weight: 600; color: #1F1D2C;">Your personal wishes and goals</strong></li>
         </ul>
-        <p class="diagnosis-description" style="margin-top: 1rem;">
+        <p class="diagnosis-description" style="margin-top: 1rem; color: #38284E;">
           Because every person and every tumor is different, this careful, personalized approach ensures your plan is designed to give you the very best results while honoring your health and preferences.
         </p>
       </div>
@@ -2531,7 +2531,7 @@
       <div class="diagnosis-meta-section" style="margin-top: 0; padding-top: 0;">
         <div class="diagnosis-meta-left">
           <h4 class="diagnosis-meta-title" style="font-size: 18px;">What types of treatments will be considered</h4>
-          <p class="diagnosis-sources" style="color: #8B8991; font-size: 16px;">
+          <p class="diagnosis-sources" style="color: #38284E; font-size: 16px;">
             Cancer treatment planning is a team effort. Your care may involve specialists from medical oncology, surgical oncology, and sometimes radiation oncology—each focusing on a different part of your care:
           </p>
           <ul style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 16px; font-weight: 400; color: #8B8991; line-height: 1.6; margin: 1rem 0 0 0; padding-left: 1.25rem; list-style-position: outside;">
@@ -2689,7 +2689,7 @@
           <div style="margin-top: 3rem;">
             <h3 style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 20px; font-weight: 600; color: #1F1D2C; margin: 0 0 1.5rem 0;">{{section}}</h3>
             
-            <p style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 14px; font-weight: 400; color: #8B8991; line-height: 1.6; margin: 0 0 1rem 0;">
+            <p style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 14px; font-weight: 400; color: #38284E; line-height: 1.6; margin: 0 0 1rem 0;">
               {{#ifEq section "Questions For Your Medical Oncologist"}}
                 The Medical Oncologist will focus on treatments that include systemic (drug) therapy and overall risk of the cancer coming back after treatment.
               {{/ifEq}}
@@ -2702,7 +2702,7 @@
             </p>
 
             {{#each topics}}
-              <h4 style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 14px; font-weight: 400; color: #1F1D2C; margin: {{#if @first}}2rem{{else}}2.5rem{{/if}} 0 1rem 0;">{{name}}</h4>
+              <h4 style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 14px; font-weight: 400; color: #38284E; margin: {{#if @first}}2rem{{else}}2.5rem{{/if}} 0 1rem 0;">{{name}}</h4>
 
               <ul style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 14px; font-weight: 400; color: #8B8991; line-height: 1.6; margin: 0; padding-left: 1.25rem; list-style-position: outside;">
                 {{#each questions}}
@@ -2800,7 +2800,7 @@
           {{/if}}
 
           {{!-- Records Received (in left column) --}}
-          <h4 style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 18px; font-weight: 500; color: #1F1D2C; margin: 0 0 0.75rem 0;">Records Received</h4>
+          <h4 style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 18px; font-weight: 500; color: #38284E; margin: 0 0 0.75rem 0;">Records Received</h4>
           
           <div style="display: flex; flex-direction: column; gap: 10px;">
             {{!-- NEW JSON FORMAT: records_reviewed array --}}
@@ -2842,13 +2842,13 @@
         {{!-- Right Column: Limitations --}}
         <div style="flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
           <div>
-            <h4 style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 18px; font-weight: 500; color: #1F1D2C; margin: 0 0 0.75rem 0;">Limitations of this report</h4>
+            <h4 style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 18px; font-weight: 500; color: #38284E; margin: 0 0 0.75rem 0;">Limitations of this report</h4>
             
-            <p style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 16px; font-weight: 400; color: #8B8991; line-height: 1.6; margin: 0 0 1rem 0;">
+            <p style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 16px; font-weight: 400; color: #38284E; line-height: 1.6; margin: 0 0 1rem 0;">
               We can only review the test results and doctor notes that were provided to us. If you have had other tests, visits, or treatments not included in these records, this decision aid may be missing important information.
             </p>
             
-            <p style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 16px; font-weight: 400; color: #8B8991; line-height: 1.6; margin: 0;">
+            <p style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 16px; font-weight: 400; color: #38284E; line-height: 1.6; margin: 0;">
               This patient education does not replace medical advice from your healthcare providers. Treatment options mentioned are generalized and may not apply to your specific situation.
             </p>
           </div>
