@@ -31,7 +31,7 @@
 
     body.defiant-report {
       margin: 0;
-      background-color: #e2cece;
+      background-color: #e1cfd1;
       color: var(--defiant-black);
       font-family: "Visuelt Pro", "Inter", sans-serif;
       line-height: 1.6;
@@ -43,7 +43,7 @@
     /* PDF Page Break Control */
     @media print {
       body.defiant-report {
-        background-color: #e2cece;
+        background-color: #e1cfd1;
         -webkit-print-color-adjust: exact;
         print-color-adjust: exact;
       }
@@ -426,7 +426,7 @@
     .diagnosis-meta-section {
       margin-bottom: 2rem;
       display: grid;
-      grid-template-columns: 70% 30%;
+      grid-template-columns: 2.4fr 1fr;
       gap: 40px;
       padding-top: 4rem;
     }
@@ -436,6 +436,7 @@
 
     .diagnosis-meta-right {
       text-align: left;
+      min-width: 0;
     }
 
     .diagnosis-meta-title {
@@ -2015,6 +2016,9 @@
             </div>
             {{/filterSummaries}}
           </div>
+          <p style="font-family: 'Visuelt Pro', 'Inter', sans-serif; font-size: 0.95rem; font-weight: 400; width:60%; color: #D6D0CD; line-height: 1.5; margin-top: 3rem;">
+            For a deeper dive into likely treatment options and the types of specialist that will support you in your care, see your <a href="#treatment_planning" style="color: #D6D0CD; text-decoration: underline; font-weight: 600;">Treatment Planning</a> section below.
+          </p>
         </div>
         {{/if}}
 
@@ -2348,7 +2352,10 @@
         <div class="diagnosis-meta-right">
           <h4 class="diagnosis-meta-title" style="font-size: 14px;">Sources</h4>
           <p class="diagnosis-sources" style="color: #8B8991; font-size: 12px;">
-            Defiant Health and Dana-Farber Clinical Pathways, vX.XX dated X/XX/XXXX and based on guidelines for patients with similar profiles.
+            This report is personalized based on your medical records and clinical expertise provided by Defiant Health and Dana-Farber Cancer Institute guidelines.
+          </p>
+          <p class="diagnosis-sources" style="color: #C0C0C0; font-size: 12px; margin-top: 0.5rem;">
+            Disclaimer: Dana-Farber Cancer Institute's medical providers have not personally reviewed or approved this report.
           </p>
         </div>
       </div>
@@ -2543,10 +2550,10 @@
         <div class="diagnosis-meta-right">
           <h4 class="diagnosis-meta-title" style="font-size: 14px;">Sources</h4>
           <p class="diagnosis-sources" style="color: #8B8991; font-size: 12px;">
-            Defiant Health and Dana-Farber Clinical Pathways, vX.XX dated X/XX/XXXX and based on guidelines for patients with similar profiles.
+            This report is personalized based on your medical records and clinical expertise provided by Defiant Health and Dana-Farber Cancer Institute guidelines.
           </p>
-          <p class="diagnosis-sources" style="color: #8B8991; font-size: 12px; margin-top: 1rem;">
-            Dana-Farber disclaimer goes here excluding DF from liability for the suggestions made.
+          <p class="diagnosis-sources" style="color: #C0C0C0; font-size: 12px; margin-top: 0.5rem;">
+            Disclaimer: Dana-Farber Cancer Institute's medical providers have not personally reviewed or approved this report.
           </p>
         </div>
       </div>
